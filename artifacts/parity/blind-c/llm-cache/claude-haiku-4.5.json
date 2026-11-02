@@ -1,0 +1,549 @@
+{
+ "8947421de3003eb8b240": {
+  "weights": {
+   "gate": {
+    "proceed": 95,
+    "clarify": 5,
+    "refuse": 0
+   }
+  },
+  "ms": 82103.9904
+ },
+ "2a262c8fa761f8205895": {
+  "weights": {
+   "gate": {
+    "proceed": 92,
+    "clarify": 8,
+    "refuse": 0
+   }
+  },
+  "ms": 82067.5184
+ },
+ "94fd66c8dc87692a80df": {
+  "weights": {
+   "gate": {
+    "proceed": 0,
+    "clarify": 5,
+    "refuse": 100
+   }
+  },
+  "ms": 82178.08350000001
+ },
+ "93411aaf5c6ef92536bb": {
+  "weights": {
+   "gate": {
+    "proceed": 35,
+    "clarify": 75,
+    "refuse": 5
+   }
+  },
+  "ms": 82748.4572
+ },
+ "6a5f3ed66f67c6a1c8dc": {
+  "weights": {
+   "cmd": {
+    "execute": 5,
+    "needs_approval": 15,
+    "deny": 95
+   }
+  },
+  "ms": 82761.20539999999
+ },
+ "f01aca749861a4e39a20": {
+  "weights": {
+   "gate": {
+    "proceed": 3,
+    "clarify": 12,
+    "refuse": 85
+   }
+  },
+  "ms": 85813.80559999999
+ },
+ "ed6f444cd0b34dbbfe81": {
+  "weights": {
+   "cmd": {
+    "execute": 5,
+    "needs_approval": 95,
+    "deny": 0
+   }
+  },
+  "ms": 73706.8047
+ },
+ "deea14c426aa73809a4a": {
+  "weights": {
+   "cmd": {
+    "execute": 0,
+    "needs_approval": 10,
+    "deny": 90
+   }
+  },
+  "ms": 78764.339
+ },
+ "61a03298df62d86fae00": {
+  "weights": {
+   "risk": {
+    "0": 98,
+    "1": 2,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   }
+  },
+  "ms": 79778.01999999999
+ },
+ "58a17a0ea2029a801272": {
+  "weights": {
+   "risk": {
+    "0": 1,
+    "1": 3,
+    "2": 15,
+    "3": 48,
+    "4": 33
+   }
+  },
+  "ms": 83503.8034
+ },
+ "3a1cb5b426e227aa89f3": {
+  "weights": {
+   "tests": {
+    "yes": 95,
+    "no": 5
+   }
+  },
+  "ms": 94028.73090000001
+ },
+ "3e230c98760f278c2e24": {
+  "weights": {
+   "cmd": {
+    "execute": 95,
+    "needs_approval": 5,
+    "deny": 0
+   }
+  },
+  "ms": 100091.71480000002
+ },
+ "a3ff2695d7e5cac9f9ec": {
+  "weights": {
+   "agent": {
+    "explorer": 10,
+    "implementer": 5,
+    "reviewer": 95,
+    "tester": 20
+   }
+  },
+  "ms": 114802.82089999999
+ },
+ "a6f1d76faee272eaccb8": {
+  "weights": {
+   "tool": {
+    "code_search": 95,
+    "read_file": 10,
+    "run_tests": 8,
+    "web_search": 2,
+    "none": 5
+   }
+  },
+  "ms": 131948.48160000003
+ },
+ "f72cfdb6738cfed30674": {
+  "weights": {
+   "docs": {
+    "yes": 95,
+    "no": 5
+   }
+  },
+  "ms": 133755.51630000002
+ },
+ "4d41f044f9249eb729ab": {
+  "weights": {
+   "tier": {
+    "rules": 95,
+    "mini": 5,
+    "large": 0
+   }
+  },
+  "ms": 112506.0257
+ },
+ "1843926c31c73a003480": {
+  "weights": {
+   "tests": {
+    "yes": 5
+   }
+  },
+  "ms": 142403.0377
+ },
+ "6debd94d783c6ff762fa": {
+  "weights": {
+   "tool": {
+    "web_search": 95,
+    "code_search": 20,
+    "read_file": 15,
+    "run_tests": 5,
+    "none": 5
+   }
+  },
+  "ms": 161679.71459999998
+ },
+ "4ced40514f50b2296309": {
+  "weights": {
+   "done": {
+    "yes": 5,
+    "no": 95
+   }
+  },
+  "ms": 113596
+ },
+ "d0e74d6a0bdc95dd6906": {
+  "weights": {
+   "done": {
+    "yes": 5
+   }
+  },
+  "ms": 113604.1079
+ },
+ "c09882578526d782e0a2": {
+  "weights": null,
+  "ms": 231908.07330000005,
+  "raw": "Error: Failed to load models\n\nError: Model catalog request timed out after 30000ms\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_TOKEN, GH_TOKEN or GITHUB_TOKEN, verify it is a user token with Copilot access, or unset it "
+ },
+ "f7b06cd2b20567f08d13": {
+  "weights": null,
+  "ms": 235646.2686,
+  "raw": "Error: Failed to load models\n\nError: Model catalog request timed out after 30000ms\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_TOKEN, GH_TOKEN or GITHUB_TOKEN, verify it is a user token with Copilot access, or unset it "
+ },
+ "1e7b6b365be37d21c89c": {
+  "weights": null,
+  "ms": 202219.86850000004,
+  "raw": "Error: Failed to load models\n\nError: Model catalog request timed out after 30000ms\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_TOKEN, GH_TOKEN or GITHUB_TOKEN, verify it is a user token with Copilot access, or unset it "
+ },
+ "dae24bca2dd1bb5dcdbf": {
+  "weights": {
+   "sev": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 100
+   }
+  },
+  "ms": 176014.04869999998
+ },
+ "db8cd1d263e0dd3915c9": {
+  "weights": {
+   "tier": {
+    "rules": 5,
+    "mini": 25,
+    "large": 95
+   }
+  },
+  "ms": 297456.01420000003
+ },
+ "39d466ced0342c92ca2e": {
+  "weights": {
+   "tone": {
+    "constructive": 95,
+    "blunt_ok": 30,
+    "violation": 2
+   }
+  },
+  "ms": 89383.3151
+ },
+ "852be11898be7d5c2fea": {
+  "weights": {
+   "sev": {
+    "0": 95,
+    "1": 5,
+    "2": 0,
+    "3": 0
+   }
+  },
+  "ms": 90792.04980000004
+ },
+ "13f85ccea37921494e85": {
+  "weights": {
+   "remember": {
+    "yes": 90
+   }
+  },
+  "ms": 212894.62780000002
+ },
+ "f8b5d61f282beca71861": {
+  "weights": {
+   "tone": {
+    "constructive": 0,
+    "blunt_ok": 2,
+    "violation": 95
+   }
+  },
+  "ms": 91851.0257
+ },
+ "2f0d9374a0945e0ed70a": {
+  "weights": {
+   "cause": {
+    "code_regression": 95,
+    "flaky_test": 3,
+    "infra": 1,
+    "dependency": 1,
+    "config": 0
+   }
+  },
+  "ms": 59736.23259999999
+ },
+ "91a7895d6cb56f90ad87": {
+  "weights": {
+   "cause": {
+    "code_regression": 2,
+    "flaky_test": 3,
+    "infra": 95,
+    "dependency": 25,
+    "config": 2
+   }
+  },
+  "ms": 54778.76309999998
+ },
+ "74ef386ceb708e14630d": {
+  "weights": {
+   "flaky": {
+    "yes": 85,
+    "no": 15
+   }
+  },
+  "ms": 55989.41249999998
+ },
+ "9a11e2387908e3a3fbde": {
+  "weights": {
+   "commit_type": {
+    "fix": 95,
+    "feat": 5,
+    "docs": 2,
+    "refactor": 5,
+    "perf": 0,
+    "chore": 3
+   }
+  },
+  "ms": 57484.1078
+ },
+ "e261cc36241882bd08fa": {
+  "weights": {
+   "flaky": {
+    "yes": 5,
+    "no": 95
+   }
+  },
+  "ms": 59141.959900000016
+ },
+ "353a2f5ed864fbd514ad": {
+  "weights": {
+   "risk": {
+    "0": 0,
+    "1": 0,
+    "2": 10,
+    "3": 90
+   }
+  },
+  "ms": 61316.10129999998
+ },
+ "1e1b7b8292c4d0c172d1": {
+  "weights": {
+   "commit_type": {
+    "perf": 95,
+    "refactor": 30,
+    "feat": 5,
+    "fix": 10,
+    "docs": 0,
+    "chore": 15
+   }
+  },
+  "ms": 66734.21130000008
+ },
+ "cc18bc578676e13e3a6b": {
+  "weights": {
+   "level": {
+    "debug": 5,
+    "info": 10,
+    "warn": 35,
+    "error": 90
+   }
+  },
+  "ms": 83375.09830000007
+ },
+ "253489c1060064f82c1b": {
+  "weights": {
+   "lic": {
+    "ok": 95,
+    "legal_review": 0,
+    "reject": 0
+   }
+  },
+  "ms": 125030.45350000006
+ },
+ "c454e89f16490cc0e6ea": {
+  "weights": {
+   "risk": {
+    "0": 0,
+    "1": 0,
+    "2": 5,
+    "3": 95
+   }
+  },
+  "ms": 129347.1276
+ },
+ "360c9ca6eaffc37910f6": {
+  "weights": {
+   "level": {
+    "debug": 20,
+    "info": 60,
+    "warn": 75,
+    "error": 15
+   }
+  },
+  "ms": 134511.9595
+ },
+ "ad16e586e480caecb7ac": {
+  "weights": {
+   "lic": {
+    "ok": 0,
+    "legal_review": 15,
+    "reject": 85
+   }
+  },
+  "ms": 133095.6167
+ },
+ "3779934c48665e06f7c9": {
+  "weights": {
+   "same": {
+    "yes": 95
+   }
+  },
+  "ms": 111210.21409999998
+ },
+ "e774e97fe4f7da022990": {
+  "weights": null,
+  "ms": 266982.4817,
+  "raw": "\nExecution failed: Failed to get response from the AI model; retried 5 times (total retry wait time: 23.00 seconds) Last error: error sending request for url (https://api.enterprise.githubcopilot.com/v1/messages): client error (Connect): operation timed out [ETIMEDOUT]\n"
+ },
+ "4baf4f5c63786edf93b1": {
+  "weights": null,
+  "ms": 204481.03249999997,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this"
+ },
+ "cd6e833bbda9b2a835c3": {
+  "weights": null,
+  "ms": 248650.82999999996,
+  "raw": "Error: Failed to load models\n\nError: Model catalog request timed out after 30000ms\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_TOKEN, GH_TOKEN or GITHUB_TOKEN, verify it is a user token with Copilot access, or unset it "
+ },
+ "a3868baf9000fa1ed942": {
+  "weights": null,
+  "ms": 249950.01380000007,
+  "raw": "Error: Failed to load models\n\nError: Model catalog request timed out after 30000ms\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_TOKEN, GH_TOKEN or GITHUB_TOKEN, verify it is a user token with Copilot access, or unset it "
+ },
+ "51b6466b50d37992ca1b": {
+  "weights": null,
+  "ms": 148421.8961,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): tcp connect error: deadline has elapsed [ETIMEDOUT]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you "
+ },
+ "a9e2b2e83926179c5681": {
+  "weights": null,
+  "ms": 97303.2790000001,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this"
+ },
+ "9cc478dc6c2d7e185e43": {
+  "weights": null,
+  "ms": 105944.91780000017,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this"
+ },
+ "de881a0e0008d71e7c90": {
+  "weights": null,
+  "ms": 363832.6201999999,
+  "raw": "\nExecution failed: Failed to get response from the AI model; retried 5 times (total retry wait time: 23.00 seconds) Last error: Failed native model HTTP request: error sending request for url (https://api.enterprise.githubcopilot.com/v1/messages): client error (Connect): dns error: error resolving D"
+ },
+ "ac84da115baa706112be": {
+  "weights": null,
+  "ms": 358233.95369999995,
+  "raw": "\nExecution failed: Failed to get response from the AI model; retried 5 times (total retry wait time: 23.00 seconds) Last error: Failed native model HTTP request: error sending request for url (https://api.enterprise.githubcopilot.com/v1/messages): client error (Connect): dns error: error resolving D"
+ },
+ "1497d4dede2ca46c50a6": {
+  "weights": null,
+  "ms": 92035.68510000012,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this"
+ },
+ "5656fa2d24f143a1cea6": {
+  "weights": null,
+  "ms": 145404.57100000023,
+  "raw": "Error: Failed to load models\n\nError: Model catalog request timed out after 30000ms\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_TOKEN, GH_TOKEN or GITHUB_TOKEN, verify it is a user token with Copilot access, or unset it "
+ },
+ "9d142b05abb49baead41": {
+  "weights": null,
+  "ms": 138739.0769,
+  "raw": "Error: Failed to load models\n\nError: Model catalog request timed out after 30000ms\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_TOKEN, GH_TOKEN or GITHUB_TOKEN, verify it is a user token with Copilot access, or unset it "
+ },
+ "38a7e15188cefef5bb43": {
+  "weights": null,
+  "ms": 139011.51270000008,
+  "raw": "Error: Failed to load models\n\nError: Model catalog request timed out after 30000ms\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_TOKEN, GH_TOKEN or GITHUB_TOKEN, verify it is a user token with Copilot access, or unset it "
+ },
+ "946244502c877432f5a9": {
+  "weights": null,
+  "ms": 159448.87619999982,
+  "raw": "Error: Failed to load models\n\nError: Model catalog request timed out after 30000ms\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_TOKEN, GH_TOKEN or GITHUB_TOKEN, verify it is a user token with Copilot access, or unset it "
+ },
+ "a8ba2a43298e1312a2f3": {
+  "weights": null,
+  "ms": 97998.86179999984,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): operation timed out [ETIMEDOUT]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_T"
+ },
+ "c69536cb7e110b386244": {
+  "weights": null,
+  "ms": 103335.04279999994,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): operation timed out [ETIMEDOUT]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_T"
+ },
+ "6235ffb4d490dff90c93": {
+  "weights": null,
+  "ms": 103478.33640000015,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): operation timed out [ETIMEDOUT]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_T"
+ },
+ "9d79642dbb80e302a1dd": {
+  "weights": null,
+  "ms": 109144.66940000001,
+  "raw": "Error: Failed to load models\n\nError: Model catalog request timed out after 30000ms\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_TOKEN, GH_TOKEN or GITHUB_TOKEN, verify it is a user token with Copilot access, or unset it "
+ },
+ "8684695360441958bb06": {
+  "weights": null,
+  "ms": 201414.21959999995,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): operation timed out [ETIMEDOUT]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this, try the following:\n  • If you set COPILOT_GITHUB_T"
+ },
+ "f055e48e3b6f354adc21": {
+  "weights": null,
+  "ms": 377841.3944000001,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this"
+ },
+ "c6776c3f0d87ff013272": {
+  "weights": null,
+  "ms": 79813.98110000021,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this"
+ },
+ "c0d06073a579929cb136": {
+  "weights": null,
+  "ms": 73819.42039999994,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this"
+ },
+ "2331835433507e57f170": {
+  "weights": null,
+  "ms": 74185.09859999991,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this"
+ },
+ "1e858176fe8f29a99318": {
+  "weights": null,
+  "ms": 81260.07909999997,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this"
+ },
+ "7d3b6bb9feaed40c2b5e": {
+  "weights": null,
+  "ms": 75527.30449999985,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this"
+ },
+ "824f05ff2d6fbc415099": {
+  "weights": null,
+  "ms": 424889.94679999957,
+  "raw": "Error: Failed to load models\n\nError: error sending request for url (https://api.enterprise.githubcopilot.com/models): client error (Connect): dns error: error resolving DNS: No such host is known. (os error 11001) [ENOTFOUND]\n\nCopilot could not retrieve the list of available models.\n\nTo resolve this"
+ }
+}

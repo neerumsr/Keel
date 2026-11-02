@@ -1,0 +1,842 @@
+[
+ {
+  "at": "2026-10-29T03:46:10.609Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "harness-baseline",
+  "key": "3403b524a5e91071cf5e"
+ },
+ {
+  "at": "2026-10-29T03:46:46.203Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:228",
+  "key": "e0a27613182b273f655e"
+ },
+ {
+  "at": "2026-10-29T03:46:46.236Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:holdout-20:120",
+  "key": "f5bdbc9101187746d8f8"
+ },
+ {
+  "at": "2026-10-29T03:46:46.284Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:211",
+  "key": "f8749149ec1de9f4f329"
+ },
+ {
+  "at": "2026-10-29T03:46:46.306Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:225",
+  "key": "0f7c29f98dd2b84eae7b"
+ },
+ {
+  "at": "2026-10-29T03:47:18.871Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:202",
+  "key": "660c88dd5f9a14ca621a"
+ },
+ {
+  "at": "2026-10-29T03:47:19.893Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:holdout-20:110",
+  "key": "9b731a049fb9a0ab0e8b"
+ },
+ {
+  "at": "2026-10-29T03:47:20.835Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:240",
+  "key": "58cfb9e24e5ffe71d68c"
+ },
+ {
+  "at": "2026-10-29T03:47:21.116Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:holdout-b-20:310",
+  "key": "76bb78e74d609f520219"
+ },
+ {
+  "at": "2026-10-29T03:47:52.915Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:201",
+  "key": "584718f7fc11800bf85d"
+ },
+ {
+  "at": "2026-10-29T03:47:57.948Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:holdout-20:106",
+  "key": "857c75dc4d8649a193f5"
+ },
+ {
+  "at": "2026-10-29T03:47:58.557Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:208",
+  "key": "4f10c1ec47cdbc1f2bec"
+ },
+ {
+  "at": "2026-10-29T03:48:01.645Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:221",
+  "key": "530dfa55430ee8788b15"
+ },
+ {
+  "at": "2026-10-29T03:48:18.825Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:holdout-20:105",
+  "key": "de177ed8580725931656"
+ },
+ {
+  "at": "2026-10-29T03:48:22.153Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:226",
+  "key": "e9f45b8bc0271b47b1f6"
+ },
+ {
+  "at": "2026-10-29T03:48:23.896Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:holdout-b-20:314",
+  "key": "90148e01de13d1c1a0cb"
+ },
+ {
+  "at": "2026-10-29T03:48:28.157Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:220",
+  "key": "7226b6714f6426eb9421"
+ },
+ {
+  "at": "2026-10-29T03:48:50.225Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:holdout-b-20:303",
+  "key": "c66301178ab3c542a83f"
+ },
+ {
+  "at": "2026-10-29T03:48:51.537Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:255",
+  "key": "cba2cdf110d323efc177"
+ },
+ {
+  "at": "2026-10-29T03:48:53.471Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:214",
+  "key": "72dd9d0311f7a0a2af6c"
+ },
+ {
+  "at": "2026-10-29T03:48:54.330Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:open-60:250",
+  "key": "db62442d60dc46d55329"
+ },
+ {
+  "at": "2026-10-29T03:49:43.170Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "harness-baseline",
+  "key": "3403b524a5e91071cf5e"
+ },
+ {
+  "at": "2026-10-29T03:50:31.049Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:open-60:202",
+  "key": "660c88dd5f9a14ca621a"
+ },
+ {
+  "at": "2026-10-29T03:50:31.070Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:open-60:219",
+  "key": "4951e1c645965627eaf2"
+ },
+ {
+  "at": "2026-10-29T03:50:31.098Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:holdout-20:118",
+  "key": "733263d852481745b687"
+ },
+ {
+  "at": "2026-10-29T03:50:31.135Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:open-60:235",
+  "key": "da89e31b188043ae4b61"
+ },
+ {
+  "at": "2026-10-29T03:50:56.265Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:open-60:217",
+  "key": "c1b811a79585db40b365"
+ },
+ {
+  "at": "2026-10-29T03:50:56.523Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:holdout-20:113",
+  "key": "b276989f09cb3db8c8f8"
+ },
+ {
+  "at": "2026-10-29T03:50:59.032Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:holdout-b-20:310",
+  "key": "76bb78e74d609f520219"
+ },
+ {
+  "at": "2026-10-29T03:51:06.138Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:open-60:256",
+  "key": "4cc80da8ae0310fc5b8f"
+ },
+ {
+  "at": "2026-10-29T03:51:47.476Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:open-60:201",
+  "key": "584718f7fc11800bf85d"
+ },
+ {
+  "at": "2026-10-29T03:51:49.097Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:holdout-20:103",
+  "key": "d6ac63b9ddff40563c07"
+ },
+ {
+  "at": "2026-10-29T03:51:50.729Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:open-60:254",
+  "key": "dfd4e7ac3babc47332a8"
+ },
+ {
+  "at": "2026-10-29T03:51:52.691Z",
+  "llm": "gpt-5.6-terra",
+  "purpose": "deliberation:open-60:232",
+  "key": "ce1a873edebb58514346"
+ },
+ {
+  "at": "2026-10-29T03:55:03.512Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:148",
+  "key": "305cf0415861ddfb1135"
+ },
+ {
+  "at": "2026-10-29T03:55:03.537Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:148",
+  "key": "305cf0415861ddfb1135"
+ },
+ {
+  "at": "2026-10-29T03:55:03.621Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:1081",
+  "key": "09746342138e735c81ed"
+ },
+ {
+  "at": "2026-10-29T03:55:03.643Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:1059",
+  "key": "2db53f130a21babbdf3e"
+ },
+ {
+  "at": "2026-10-29T03:55:41.703Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:86",
+  "key": "4f95c9821f85f76a31f9"
+ },
+ {
+  "at": "2026-10-29T03:55:43.005Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:86",
+  "key": "4f95c9821f85f76a31f9"
+ },
+ {
+  "at": "2026-10-29T03:55:46.008Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:1006",
+  "key": "62ef463d81027960ae4c"
+ },
+ {
+  "at": "2026-10-29T03:55:47.965Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:1055",
+  "key": "938438206c0426d6a559"
+ },
+ {
+  "at": "2026-10-29T03:56:14.442Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:142",
+  "key": "75e7742a481b5d8659a7"
+ },
+ {
+  "at": "2026-10-29T03:56:14.694Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:142",
+  "key": "75e7742a481b5d8659a7"
+ },
+ {
+  "at": "2026-10-29T03:56:17.233Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:1067",
+  "key": "a55b14f67086f365f4eb"
+ },
+ {
+  "at": "2026-10-29T03:56:17.861Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:46",
+  "key": "e959f70d58657c02fcd0"
+ },
+ {
+  "at": "2026-10-29T03:56:49.688Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:46",
+  "key": "e959f70d58657c02fcd0"
+ },
+ {
+  "at": "2026-10-29T03:56:50.211Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:36",
+  "key": "72db32b2c7890d0cf385"
+ },
+ {
+  "at": "2026-10-29T03:56:50.784Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:36",
+  "key": "72db32b2c7890d0cf385"
+ },
+ {
+  "at": "2026-10-29T03:56:52.050Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:1051",
+  "key": "60d9193f46eafa6ebe30"
+ },
+ {
+  "at": "2026-10-29T03:57:23.412Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:133",
+  "key": "4bf8a6c84eec5f4b3af2"
+ },
+ {
+  "at": "2026-10-29T03:57:24.792Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "subcall:blind-384:133",
+  "key": "4bf8a6c84eec5f4b3af2"
+ },
+ {
+  "at": "2026-10-29T03:58:13.579Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "harness-baseline",
+  "key": "3403b524a5e91071cf5e"
+ },
+ {
+  "at": "2026-10-29T03:58:57.603Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:open-60:202",
+  "key": "660c88dd5f9a14ca621a"
+ },
+ {
+  "at": "2026-10-29T03:58:57.625Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:blind-384:13",
+  "key": "23857847f7252f83591d"
+ },
+ {
+  "at": "2026-10-29T03:58:57.649Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:blind-384:13",
+  "key": "23857847f7252f83591d"
+ },
+ {
+  "at": "2026-10-29T03:58:57.671Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:open-60:219",
+  "key": "4951e1c645965627eaf2"
+ },
+ {
+  "at": "2026-10-29T03:59:42.681Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:blind-384:1001",
+  "key": "189c230734937d59c58d"
+ },
+ {
+  "at": "2026-10-29T03:59:54.006Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:blind-384:1065",
+  "key": "3505afd29d1476a6abb1"
+ },
+ {
+  "at": "2026-10-29T03:59:57.834Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:blind-384:96",
+  "key": "e4595d308fe2d7152e8f"
+ },
+ {
+  "at": "2026-10-29T04:00:03.630Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:blind-384:96",
+  "key": "e4595d308fe2d7152e8f"
+ },
+ {
+  "at": "2026-10-29T04:00:48.688Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:blind-384:1011",
+  "key": "e63ed1035f2aba4b9eb5"
+ },
+ {
+  "at": "2026-10-29T04:00:58.156Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:holdout-20:118",
+  "key": "733263d852481745b687"
+ },
+ {
+  "at": "2026-10-29T04:00:58.595Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:open-60:235",
+  "key": "da89e31b188043ae4b61"
+ },
+ {
+  "at": "2026-10-29T04:01:07.388Z",
+  "llm": "gpt-5.6-terra@medium",
+  "purpose": "deliberation:open-60:217",
+  "key": "c1b811a79585db40b365"
+ },
+ {
+  "at": "2026-10-29T04:05:34.323Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1083",
+  "key": "f2d89964eff3b0c6eb6d"
+ },
+ {
+  "at": "2026-10-29T04:05:34.355Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1034",
+  "key": "cb277d62de11344eb8ba"
+ },
+ {
+  "at": "2026-10-29T04:05:34.396Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:94",
+  "key": "0d77434831805edaa61b"
+ },
+ {
+  "at": "2026-10-29T04:05:34.451Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:22",
+  "key": "3d89211c2183fcca9eb8"
+ },
+ {
+  "at": "2026-10-29T04:06:24.512Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:16",
+  "key": "1b83b63b984546cf6772"
+ },
+ {
+  "at": "2026-10-29T04:06:36.274Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:83",
+  "key": "d54db1a748fb6dcff652"
+ },
+ {
+  "at": "2026-10-29T04:06:53.250Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1024",
+  "key": "f209128e43b3aa6afc2a"
+ },
+ {
+  "at": "2026-10-29T04:07:04.082Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:134",
+  "key": "08b830fe775012d62460"
+ },
+ {
+  "at": "2026-10-29T04:07:31.301Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1068",
+  "key": "51403eed1512d2cb4fd0"
+ },
+ {
+  "at": "2026-10-29T04:07:41.699Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:147",
+  "key": "cecd3a453511327dc48b"
+ },
+ {
+  "at": "2026-10-29T04:07:43.963Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:67",
+  "key": "717cdf51903d26108a58"
+ },
+ {
+  "at": "2026-10-29T04:08:02.889Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:131",
+  "key": "5717a00c1d553949f26f"
+ },
+ {
+  "at": "2026-10-29T04:08:43.235Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1049",
+  "key": "d627b3d6614186b259fb"
+ },
+ {
+  "at": "2026-10-29T04:08:49.944Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1062",
+  "key": "055c6f89db02a6ada9e0"
+ },
+ {
+  "at": "2026-10-29T04:09:03.788Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:20",
+  "key": "f495dff5a8ab5e8f32a0"
+ },
+ {
+  "at": "2026-10-29T04:09:10.505Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:3",
+  "key": "07d071a262f032576cec"
+ },
+ {
+  "at": "2026-10-29T04:10:16.539Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:127",
+  "key": "e59b272de3e34310616b"
+ },
+ {
+  "at": "2026-10-29T04:10:16.698Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1032",
+  "key": "de1ff61ded2616e54031"
+ },
+ {
+  "at": "2026-10-29T04:10:17.311Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:56",
+  "key": "aab49ab779f7160a4900"
+ },
+ {
+  "at": "2026-10-29T04:10:20.647Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:47",
+  "key": "68fad3902a5b8a3892c3"
+ },
+ {
+  "at": "2026-10-29T04:11:36.325Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1052",
+  "key": "f654cebffb7d4ba2edd5"
+ },
+ {
+  "at": "2026-10-29T04:11:38.729Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1074",
+  "key": "157b828edc02e69aff0e"
+ },
+ {
+  "at": "2026-10-29T04:11:38.903Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1035",
+  "key": "29877b7c1074b55162d8"
+ },
+ {
+  "at": "2026-10-29T04:11:49.315Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1038",
+  "key": "44198e15b9d966454a89"
+ },
+ {
+  "at": "2026-10-29T04:12:55.300Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:145",
+  "key": "3a8ab57cb373c6931311"
+ },
+ {
+  "at": "2026-10-29T04:12:56.362Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1064",
+  "key": "753cd243bc1d407b2769"
+ },
+ {
+  "at": "2026-10-29T04:12:57.655Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:69",
+  "key": "5a60eb6a76b602adca6a"
+ },
+ {
+  "at": "2026-10-29T04:13:29.851Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1008",
+  "key": "3b273eab91a45dcbb1b8"
+ },
+ {
+  "at": "2026-10-29T04:14:19.104Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:2",
+  "key": "555b8fa8c7d6b55fa530"
+ },
+ {
+  "at": "2026-10-29T04:14:22.311Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1058",
+  "key": "87b18ca3a0e9d21e0b1c"
+ },
+ {
+  "at": "2026-10-29T04:14:25.870Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1030",
+  "key": "cc9dbc44d35f69a2b5bf"
+ },
+ {
+  "at": "2026-10-29T04:14:38.080Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1001",
+  "key": "189c230734937d59c58d"
+ },
+ {
+  "at": "2026-10-29T04:15:11.594Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:40",
+  "key": "174521030f391a0b2d04"
+ },
+ {
+  "at": "2026-10-29T04:15:22.118Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:84",
+  "key": "c8a2b76563206121bce4"
+ },
+ {
+  "at": "2026-10-29T04:15:29.333Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:112",
+  "key": "5fde51d513aeda0f847a"
+ },
+ {
+  "at": "2026-10-29T04:15:29.440Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:90",
+  "key": "cf15287f6fa223b42d6b"
+ },
+ {
+  "at": "2026-10-29T04:16:10.600Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1048",
+  "key": "de060e0bfe857fb40cd2"
+ },
+ {
+  "at": "2026-10-29T04:16:16.212Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1",
+  "key": "30c709dd09a3cdad4285"
+ },
+ {
+  "at": "2026-10-29T04:16:20.089Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1037",
+  "key": "a04e2bdb803408987132"
+ },
+ {
+  "at": "2026-10-29T04:16:21.403Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1050",
+  "key": "dfa2425ef5cdb76a187b"
+ },
+ {
+  "at": "2026-10-29T04:17:05.309Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:97",
+  "key": "b86dfa6ea601ab28d146"
+ },
+ {
+  "at": "2026-10-29T04:17:22.586Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1019",
+  "key": "4d078720a3de8802e3a7"
+ },
+ {
+  "at": "2026-10-29T04:17:23.332Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:116",
+  "key": "927e0845f84ba0d18374"
+ },
+ {
+  "at": "2026-10-29T04:17:25.599Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:66",
+  "key": "2f8387fec31d760cb157"
+ },
+ {
+  "at": "2026-10-29T04:18:04.159Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:49",
+  "key": "45d1e77ada09f23df2f4"
+ },
+ {
+  "at": "2026-10-29T04:18:04.556Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:108",
+  "key": "576a64e93c2a953bad4e"
+ },
+ {
+  "at": "2026-10-29T04:18:06.388Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1036",
+  "key": "b4f303f4b39214736676"
+ },
+ {
+  "at": "2026-10-29T04:18:20.747Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:103",
+  "key": "f4e16c64ef3b69a05479"
+ },
+ {
+  "at": "2026-10-29T04:19:10.652Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:41",
+  "key": "4e3c5ca54fb0c92d4ebe"
+ },
+ {
+  "at": "2026-10-29T04:19:12.647Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:25",
+  "key": "e3807e13d18df7bc685d"
+ },
+ {
+  "at": "2026-10-29T04:19:21.693Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1039",
+  "key": "0f94b12c44c985aceb99"
+ },
+ {
+  "at": "2026-10-29T04:19:22.843Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1007",
+  "key": "52e000ce41cc5cb67d6c"
+ },
+ {
+  "at": "2026-10-29T04:20:22.852Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1069",
+  "key": "0c92eaefdb767ebbb3db"
+ },
+ {
+  "at": "2026-10-29T04:20:24.859Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1015",
+  "key": "606d94206e2a380b6d6d"
+ },
+ {
+  "at": "2026-10-29T04:20:26.828Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:23",
+  "key": "1801ae06bd2cdf77cdf2"
+ },
+ {
+  "at": "2026-10-29T04:20:29.923Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1023",
+  "key": "2b95cb4bf5203e23f422"
+ },
+ {
+  "at": "2026-10-29T04:21:12.360Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1065",
+  "key": "3505afd29d1476a6abb1"
+ },
+ {
+  "at": "2026-10-29T04:21:15.990Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:117",
+  "key": "2256fc60eb1f230fea7e"
+ },
+ {
+  "at": "2026-10-29T04:21:20.322Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1060",
+  "key": "f8b100ad2709540e5a26"
+ },
+ {
+  "at": "2026-10-29T04:21:21.481Z",
+  "llm": "claude-haiku-4.5",
+  "purpose": "blind-answer:blind-234:1018",
+  "key": "6a0a579f0fdb620e86fe"
+ },
+ {
+  "at": "2026-10-29T04:22:47.412Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "harness-baseline",
+  "key": "3403b524a5e91071cf5e"
+ },
+ {
+  "at": "2026-10-29T04:23:18.126Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:open-60:202",
+  "key": "660c88dd5f9a14ca621a"
+ },
+ {
+  "at": "2026-10-29T04:23:18.145Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:open-60:219",
+  "key": "4951e1c645965627eaf2"
+ },
+ {
+  "at": "2026-10-29T04:23:18.183Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:holdout-20:118",
+  "key": "733263d852481745b687"
+ },
+ {
+  "at": "2026-10-29T04:23:18.208Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:open-60:235",
+  "key": "da89e31b188043ae4b61"
+ },
+ {
+  "at": "2026-10-29T04:24:03.468Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:open-60:217",
+  "key": "c1b811a79585db40b365"
+ },
+ {
+  "at": "2026-10-29T04:24:03.955Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:holdout-20:113",
+  "key": "b276989f09cb3db8c8f8"
+ },
+ {
+  "at": "2026-10-29T04:24:04.267Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:holdout-b-20:310",
+  "key": "76bb78e74d609f520219"
+ },
+ {
+  "at": "2026-10-29T04:24:06.765Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:open-60:256",
+  "key": "4cc80da8ae0310fc5b8f"
+ },
+ {
+  "at": "2026-10-29T04:24:52.925Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:open-60:201",
+  "key": "584718f7fc11800bf85d"
+ },
+ {
+  "at": "2026-10-29T04:24:56.365Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:holdout-20:103",
+  "key": "d6ac63b9ddff40563c07"
+ },
+ {
+  "at": "2026-10-29T04:24:56.814Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:open-60:254",
+  "key": "dfd4e7ac3babc47332a8"
+ },
+ {
+  "at": "2026-10-29T04:24:57.908Z",
+  "llm": "gpt-5.6-terra@high",
+  "purpose": "deliberation:open-60:232",
+  "key": "ce1a873edebb58514346"
+ },
+ {
+  "at": "2026-10-29T04:26:41.977Z",
+  "llm": "claude-sonnet-5",
+  "purpose": "harness-baseline",
+  "key": "3403b524a5e91071cf5e"
+ },
+ {
+  "at": "2026-10-29T04:27:19.362Z",
+  "llm": "claude-sonnet-5",
+  "purpose": "deliberation:open-60:202",
+  "key": "660c88dd5f9a14ca621a"
+ }
+]

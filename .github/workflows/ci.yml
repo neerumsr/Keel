@@ -1,0 +1,97 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  node:
+    name: Typecheck and Keel tests (Node 22)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run typecheck
+
+      # The neural tests load the first model found in KEEL_MODEL_DIR, models/keel-2, models/keel-base
+      # and skip (not fail) when none is on disk. models/keel-2 is tracked, so they normally run.
+      # Set the repository variable KEEL_FETCH_MODEL=true to also download the zero-shot base.
+      - name: Cache downloaded model
+        if: vars.KEEL_FETCH_MODEL == 'true'
+        uses: actions/cache@v4
+        with:
+          path: models/keel-base
+          key: keel-base-${{ hashFiles('scripts/fetch-model.mjs') }}
+
+      - name: Fetch model
+        if: vars.KEEL_FETCH_MODEL == 'true'
+        run: npm run model:fetch
+
+      - name: Report which model the neural tests will use
+        run: |
+          for d in models/keel-3 models/keel-2 models/keel-base; do
+            if [ -f "$d/onnx/model_quantized.onnx" ]; then echo "model: $d"; exit 0; fi
+          done
+          echo "::warning::No ONNX model on disk; neural tests will be skipped."
+
+      - run: npm run test:keel
+
+  python-parity:
+    name: Hypothesis parity (TypeScript vs Python)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: npm ci
+
+      # Regenerate the fixtures from hypothesis.ts; a diff means they were not refreshed.
+      - name: Fixtures are up to date
+        run: |
+          npm run keel:export-evals
+          git diff --exit-code -- artifacts/hypothesis-fixtures.json
+
+      # Pure standard library; no torch needed.
+      - run: python training/keel/test_hypothesis.py
+
+  audit:
+    name: Secret, PII and size audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Low findings (reviewed synthetic fixtures, private IPs in tests) are printed but do not fail.
+      - run: node scripts/oss-audit.mjs --history --fail-on medium

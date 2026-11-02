@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help guide · Keel docs</title>
+<meta name="description" content="Day-to-day use of Keel: running it, switching it on and off, connecting agents, writing good questions, reading answers and fixing common problems. New here? Start with Quickstart.">
+<script>try{var t=localStorage.getItem('keel-docs-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--bg:#fbfaf6;--surface:#ffffff;--surface2:#f1efe8;--ink:#14171c;--ink2:#262b33;--line:#d9d5c9;--accent:#0b6170;--accent-ink:#ffffff;--accentSoft:#e2f0f1;--ok:#1d6b3a;--okSoft:#e3f2e7;--warm:#9a4a05;--warmSoft:#fbecdc;--danger:#a3261b;--code-bg:#f3f1ea;--link:#0a5a86;--shadow:0 1px 2px rgba(20,23,28,.06),0 6px 20px rgba(20,23,28,.05)}
+html[data-theme=dark]{--bg:#0f1418;--surface:#161d22;--surface2:#1d262c;--ink:#f1f4f6;--ink2:#dbe2e6;--line:#33414a;--accent:#5fc4d2;--accent-ink:#06171b;--accentSoft:#173238;--ok:#6fd393;--okSoft:#15301f;--warm:#f2a65a;--warmSoft:#35250f;--danger:#ff8b7e;--code-bg:#11181d;--link:#8fd0ff;--shadow:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 19px/1.65 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+code,pre{font-family:"Cascadia Mono","JetBrains Mono",Consolas,ui-monospace,Menlo,monospace}
+a{color:var(--link);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}
+.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{max-width:1180px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;gap:18px}
+.brand{white-space:nowrap;flex:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none}
+.brand svg{width:28px;height:28px}
+.top nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px}
+.top nav a{color:var(--ink2);text-decoration:none;font-size:17px;padding:6px 10px;border-radius:8px}
+.top nav a[aria-current]{color:var(--ink);background:var(--surface2);font-weight:600}
+.top nav a:hover{background:var(--surface2)}
+.spacer{flex:1}
+.btn{font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--ink2)}.btn svg{width:18px;height:18px}
+.pbar{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:40}
+main{max-width:940px;margin:0 auto;padding:40px 28px 80px}
+.crumb{font-size:17px;color:var(--ink2);margin:0 0 6px}
+h1{font-size:50px;line-height:1.1;letter-spacing:-.02em;margin:6px 0 18px;font-weight:750}
+.lede{font-size:22px;line-height:1.55;color:var(--ink2);margin:0 0 30px}
+h2{font-size:33px;line-height:1.2;letter-spacing:-.01em;margin:64px 0 16px;padding-top:22px;border-top:1px solid var(--line);font-weight:700}
+h3{font-size:25px;line-height:1.3;margin:40px 0 12px;font-weight:650}
+h4{font-size:21px;margin:28px 0 8px}
+h1,h2,h3,h4{scroll-margin-top:84px;position:relative;overflow-wrap:anywhere}
+.anchor{opacity:0;margin-left:10px;text-decoration:none;color:var(--accent);font-weight:400}
+h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 18px}ul,ol{margin:0 0 20px;padding-left:28px}li{margin:6px 0}li>ul,li>ol{margin:6px 0}
+strong{font-weight:650;color:var(--ink)}
+:not(pre)>code{font-size:.86em;background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+.code{margin:0 0 24px;border:1px solid var(--line);border-radius:12px;background:var(--code-bg);overflow:hidden}
+.code-bar{display:flex;justify-content:space-between;align-items:center;padding:6px 10px 6px 16px;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.copy{font:inherit;font-size:15px;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 10px;cursor:pointer}
+.copy:hover{border-color:var(--ink2)}
+pre{margin:0;padding:16px 18px;overflow-x:auto;font-size:16.5px;line-height:1.55;color:var(--ink)}
+.table-wrap{overflow-x:auto;margin:0 0 26px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:18px;line-height:1.45}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface2);font-weight:650;color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+.num{font-variant-numeric:tabular-nums;font-weight:650;color:var(--ink);background:var(--accentSoft);border-radius:5px;padding:0 4px}
+.callout{margin:0 0 26px;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.callout-strong{background:var(--warmSoft);border-color:var(--warm)}
+.callout>:last-child{margin-bottom:0}
+hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+figure.diagram{margin:10px 0 34px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.fig-scroll{overflow-x:auto}
+figure svg{display:block;width:100%;height:auto;min-width:600px}
+.hbars{display:grid;gap:12px}.hb-row{display:grid;grid-template-columns:210px 1fr 150px;align-items:center;gap:14px}
+.hb-label{font-weight:600;text-align:right}.hb-track{background:var(--surface2);border-radius:6px;height:28px;overflow:hidden}
+.hb-bar{height:100%;background:var(--accent);opacity:.6;border-radius:6px}.hb-bar.strong{opacity:1}.hb-bar.warm{background:var(--warm);opacity:1}
+.hb-val{font-weight:650;font-variant-numeric:tabular-nums}
+figcaption{font-size:17px;color:var(--ink2);margin-top:14px;line-height:1.5}
+svg .box{fill:var(--surface2);stroke:var(--line);stroke-width:1.5}
+svg .accent{fill:var(--accent);stroke:var(--accent)}svg .ok{fill:var(--okSoft);stroke:var(--ok);stroke-width:1.5}svg .warm{fill:var(--warmSoft);stroke:var(--warm);stroke-width:1.5}
+svg .frame{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 5}
+svg .t{fill:var(--ink);font:500 17px "Segoe UI",system-ui,sans-serif}svg .tb{font-weight:650;font-size:18px}svg .ts{font-size:15.5px;fill:var(--ink2)}
+svg .on-accent{fill:var(--accent-ink)}svg .on-ok,svg .on-warm{fill:var(--ink)}svg .ok-t{fill:var(--ok)}
+svg .arrow{stroke:var(--ink2);stroke-width:2}svg .arrow.okline{stroke:var(--ok)}svg .ahead{fill:var(--ink2)}
+svg .track{fill:var(--surface2)}svg .bar{fill:var(--accent);opacity:.55}svg .bar.strong{opacity:1}svg .warmbar{fill:var(--warm);opacity:1}
+svg .grid{stroke:var(--line);stroke-width:1}
+svg .ln-a{stroke:var(--accent);stroke-width:3}svg .ln-b{stroke:var(--warm);stroke-width:3}svg .ln-a-dot{fill:var(--accent)}svg .ln-b-dot{fill:var(--warm)}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:24px;border-top:1px solid var(--line)}
+.pager a{display:block;flex:1;padding:14px 18px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);background:var(--surface)}
+.pager a:hover{border-color:var(--accent)}.pager small{display:block;font-size:16px;color:var(--ink2)}.pager .next{text-align:right}
+footer{font-size:16px;color:var(--ink2);margin-top:28px}
+/* contents menu: middle-left, auto-hide */
+.navtab{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:25;writing-mode:vertical-rl;rotate:180deg;font:600 16px/1 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:0;border-radius:0 10px 10px 0;padding:16px 9px;cursor:pointer;transition:opacity .2s}
+.sidenav{position:fixed;left:14px;top:50%;transform:translate(calc(-100% - 30px),-50%);z-index:26;width:300px;max-height:76vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 10px 14px 14px;box-shadow:0 10px 40px rgba(0,0,0,.14);transition:transform .28s ease}
+body.nav-open .sidenav{transform:translate(0,-50%)}body.nav-open .navtab{opacity:0;pointer-events:none}
+.sidenav-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 8px 6px;font-weight:700;font-size:17px}
+.sidenav-head button{font:inherit;font-size:15px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 8px;cursor:pointer}
+.sidenav ol{list-style:none;margin:0;padding:0}.sidenav li{margin:0}
+.sidenav a{display:block;padding:6px 8px;border-radius:7px;color:var(--ink2);text-decoration:none;font-size:16.5px;line-height:1.35}
+.sidenav a.l3{padding-left:22px;font-size:16px}
+.sidenav a:hover{background:var(--surface2);color:var(--ink)}
+.sidenav a.active{background:var(--accentSoft);color:var(--ink);font-weight:650}
+
+@media (max-width:1240px){.top nav{display:none}}
+@media (max-width:700px){body{font-size:18px}main{padding:26px 18px 60px}h1{font-size:36px}h2{font-size:27px;margin-top:48px}h3{font-size:22px}.lede{font-size:19.5px}.top-in{padding:10px 16px;gap:10px}.brand span{display:none}table{font-size:17px}th,td{padding:9px 10px}pre{font-size:15.5px}figure.diagram{padding:14px}.sidenav{width:min(300px,84vw)}main{padding-left:38px}.navtab{font-size:14px;padding:12px 5px}.hb-row{grid-template-columns:1fr auto;gap:4px 10px}.hb-label{text-align:left;grid-column:1/-1}.hb-track{height:22px}.pager{flex-direction:column}}
+.docmenu{position:fixed;inset:60px 12px auto auto;z-index:35;width:min(340px,92vw);max-height:80vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 10px 40px rgba(0,0,0,.16);display:none}
+.docmenu.open{display:block}.docmenu h4{margin:10px 8px 4px;font-size:16px}.docmenu a{display:block;padding:7px 10px;border-radius:7px;color:var(--ink);text-decoration:none;font-size:17px}.docmenu a:hover{background:var(--surface2)}
+@media print{.top,.navtab,.sidenav,.pbar,.copy,.pager,.docmenu{display:none!important}body{font-size:12pt}main{max-width:none;padding:0}h2{break-after:avoid}figure,table,.code{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="pbar"></div>
+<header class="top"><div class="top-in">
+<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="var(--accent)"/><path d="M8 9h16M16 9v15M9 19c2 4 5 5 7 5s5-1 7-5" stroke="var(--accent-ink)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg><span>Keel docs</span></a>
+<nav aria-label="Documentation"><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="concepts.html">Concepts</a><a href="api-reference.html">API reference</a><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="faq.html">FAQ</a></nav>
+<div class="spacer"></div>
+<button class="btn alldocs" id="alldocs" type="button" aria-haspopup="true">All docs</button>
+<button class="btn" id="theme" type="button" aria-label="Toggle dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Dark</span></button>
+</div></header>
+<div class="docmenu" id="docmenu"><h4>Get started</h4><a href="index.html">Overview</a><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="deployment.html">Deploy</a><a href="concepts.html">Concepts</a><a href="use-cases.html">50 use cases</a><h4>Reference</h4><a href="api-reference.html">API reference</a><a href="help-guide.html">Help guide</a><a href="faq.html">FAQ</a><h4>Evidence</h4><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="comparison.html">Comparison</a><a href="why-keel.html">Why Keel</a><a href="model-card.html">Model card</a><a href="keel-pro.html">Keel-Pro story</a><h4>Internals</h4><a href="architecture.html">Architecture</a><a href="design-doc.html">Design doc</a><a href="training-guide.html">Training guide</a><a href="release-notes.html">Release notes</a><a href="licenses.html">Licenses</a><a href="press.html">Press kit</a></div>
+<button class="navtab" type="button" aria-label="Open contents">Contents</button>
+<aside class="sidenav" aria-label="On this page"><div class="sidenav-head"><span>On this page</span><button id="navclose" type="button" aria-label="Close contents">Close</button></div><ol><li><a class="l2" href="#install-and-run">Install and run</a></li><li><a class="l2" href="#get-your-token">Get your token</a></li><li><a class="l2" href="#turn-keel-on-or-off">Turn Keel on or off</a></li><li><a class="l2" href="#connect-an-agent">Connect an agent</a></li><li><a class="l2" href="#use-the-bench-ui">Use the bench UI</a></li><li><a class="l2" href="#writing-good-questions">Writing good questions</a></li><li><a class="l2" href="#reading-answers">Reading answers</a></li><li><a class="l2" href="#troubleshooting">Troubleshooting</a></li><li><a class="l2" href="#benchmarks-and-tests">Benchmarks and tests</a></li></ol></aside>
+<main>
+<p class="crumb"><a href="index.html">Keel docs</a> / Help guide</p>
+<h1>Help guide</h1>
+<p class="lede">Day-to-day use of Keel: running it, switching it on and off, connecting agents, writing good questions, reading answers and fixing common problems. New here? Start with <a href="quickstart.html">Quickstart</a>. Short answers to common questions are in the <a href="faq.html">FAQ</a>.</p>
+<h2 id="install-and-run">Install and run<a class="anchor" href="#install-and-run" aria-label="Link to this section">#</a></h2>
+<div class="code"><div class="code-bar"><span>powershell</span><button type="button" class="copy">Copy</button></div><pre><code>npm install
+npm run dev          # vite dev: bench UI and API on http://127.0.0.1:8080</code></pre></div>
+<p>For a long-running service, build once and start the standalone Node server. It needs no Vite at runtime and binds the same <code>127.0.0.1:8080</code> (<code>KEEL_HOST</code> and <code>PORT</code> override):</p>
+<div class="code"><div class="code-bar"><span>powershell</span><button type="button" class="copy">Copy</button></div><pre><code>npm run build
+npm start            # node scripts/start.mjs, serves .output/server</code></pre></div>
+<p>There is no sign-in and no hosted backend: the only credential is your local bearer token.</p>
+<p>You need Node 22.6 or later. The trained weights ship in <code>models/keel-3</code> (Keel-3, the default) and <code>models/keel-2</code> (Keel-2, pinnable as <code>decider-2.0.0</code>). If both are missing, <code>npm run model:fetch</code> downloads the MIT zero-shot base into <code>models/keel-base</code>, and Keel answers as <code>decider-2.0.0-zeroshot</code> until you train or restore a model.</p>
+<div class="table-wrap"><table><thead><tr><th>Environment variable</th><th>Default</th><th>Effect</th></tr></thead><tbody><tr><td><code>KEEL_SECRET</code></td><td>Unset: use the per-install secret file</td><td>Secret the bearer token is derived from. Set it to share one key across machines or CI.</td></tr><tr><td><code>KEEL_SECRET_FILE</code></td><td><code>~/.keel/secret</code></td><td>Where the random per-install secret is generated (mode 0600) and read.</td></tr><tr><td><code>KEEL_HOST</code></td><td><code>127.0.0.1</code></td><td>Interface <code>npm run dev</code> and <code>npm start</code> bind. Change it only if you deliberately want other machines to reach Keel.</td></tr><tr><td><code>KEEL_MODEL_DIR</code></td><td><code>models/keel-3</code>, then <code>models/keel-2</code>, then <code>models/keel-base</code></td><td>Load a different default model folder, for example <code>models/keel-2</code> or a candidate.</td></tr><tr><td><code>PORT</code></td><td><code>8080</code></td><td>Port for <code>npm start</code> (the dev server always uses 8080).</td></tr><tr><td><code>KEEL_ENGINE</code></td><td>Unset (neural)</td><td>Set to <code>lexical</code> to force the Keel-1 fallback judge.</td></tr><tr><td><code>KEEL_RATE_PER_MINUTE</code></td><td><code>120</code></td><td>Decisions allowed per 60 s per process. <code>0</code> turns the limit off (benchmark runs).</td></tr><tr><td><code>KEEL_PRO_URL</code></td><td><code>http://127.0.0.1:8090</code></td><td>Keel-Pro sidecar for the <code>decider-pro-1.0.0</code> pin (loopback only, see <code>artifacts/parity/pro/SERVE.md</code>).</td></tr></tbody></table></div>
+<h2 id="get-your-token">Get your token<a class="anchor" href="#get-your-token" aria-label="Link to this section">#</a></h2>
+<p>Decision calls need a bearer token: an HMAC of <code>KEEL_SECRET</code>, or, when that is unset, of a random secret Keel generates on first use in <code>~/.keel/secret</code>. Each install has its own token. These docs write it as <code>&lt;KEEL_TOKEN&gt;</code>; never paste the real value into shared files. Three ways to get yours:</p>
+<ul><li>Run <code>npm run keel:token</code>, which prints it (<code>npm run -s keel:token</code> prints only the token, for use in scripts).</li><li>Open the bench UI at <code>http://localhost:8080</code> from the same machine; the Copilot tab shows it to loopback requests only.</li><li>Run <code>npm run keel:agents</code>. It writes the real token only to your user-level files, <code>~/.copilot/agents/keel.agent.md</code> and the Keel block of <code>~/.copilot/copilot-instructions.md</code>. The repo copies (<code>.github/agents/keel.agent.md</code>, <code>.github/copilot-instructions.md</code>) get a <code>&lt;KEEL_TOKEN&gt;</code> placeholder and are safe to commit; <code>--repo-key</code> embeds the real token there too, for private use only.</li></ul>
+<p>To rotate the token: delete <code>~/.keel/secret</code> (or change <code>KEEL_SECRET</code>), restart the server, then rerun <code>npm run keel:agents</code> and update any client that stores the token.</p>
+<h2 id="turn-keel-on-or-off">Turn Keel on or off<a class="anchor" href="#turn-keel-on-or-off" aria-label="Link to this section">#</a></h2>
+<p>The switch is shared by every agent and the bench UI. Say &quot;Keel on&quot; or &quot;Keel off&quot; to an agent that has the integration, flip it in the UI, or call the API:</p>
+<div class="code"><div class="code-bar"><span>bash</span><button type="button" class="copy">Copy</button></div><pre><code>curl -s -X POST http://localhost:8080/api/v1/switch \
+  -H &quot;Authorization: Bearer $KEEL_TOKEN&quot; -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;enabled&quot;: false}'</code></pre></div>
+<p>While it is off, <code>POST /api/v1/systemone</code> returns <code>409</code> and no model runs; agents fall back to their own judgement. <code>GET /api/v1/status</code> needs no token and reports <code>enabled</code>.</p>
+<h2 id="connect-an-agent">Connect an agent<a class="anchor" href="#connect-an-agent" aria-label="Link to this section">#</a></h2>
+<p>The bundled MCP server, <code>mcp/keel-mcp-server.mjs</code> (bin <code>keel-mcp</code>), gives any MCP client three tools: <code>keel_status</code>, <code>keel_decide</code> and <code>keel_switch</code>. It reads <code>KEEL_URL</code> (default <code>http://localhost:8080</code>), <code>KEEL_TOKEN</code> and <code>KEEL_TIMEOUT_MS</code> (default 15000). Copy-paste configs for GitHub Copilot CLI, VS Code Copilot, Claude Code, OpenAI Codex CLI and Cursor are in <a href="integrations.html">Integrations</a>. Check the bridge with <code>node mcp/smoke.mjs</code>.</p>
+<h2 id="use-the-bench-ui">Use the bench UI<a class="anchor" href="#use-the-bench-ui" aria-label="Link to this section">#</a></h2>
+<p>The bench UI at <code>http://localhost:8080</code> is for people. Paste a state and questions, and it shows the answer, probabilities, model id and latency. Use it to try a rubric before wiring it into an agent.</p>
+<h2 id="writing-good-questions">Writing good questions<a class="anchor" href="#writing-good-questions" aria-label="Link to this section">#</a></h2>
+<ul><li>Put the facts in <code>state</code> and the rubric in <code>instructions</code> and <code>criteria</code>. Never put secrets in <code>state</code>.</li><li>Keep the deciding fact early. The encoder reads about 256 tokens per (state, option) pair.</li><li>Make choice options mutually exclusive and describe each in a few concrete words; the descriptions become the hypotheses the model reads.</li><li>Order score levels from low to high.</li><li>For <code>noul</code>, say what &quot;yes&quot; means when the threshold matters.</li><li>Ask related questions in one request; Keel judges them in parallel.</li></ul>
+<p>More patterns: <a href="concepts.html">Concepts</a> and <a href="use-cases.html">50 use cases</a>.</p>
+<h2 id="reading-answers">Reading answers<a class="anchor" href="#reading-answers" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Field</th><th>Meaning</th></tr></thead><tbody><tr><td>choice</td><td><code>choice</code>, <code>confidence</code>, <code>probabilities</code></td><td>Winning key, its probability, all keys' probabilities</td></tr><tr><td>score</td><td><code>score</code>, <code>probabilities</code></td><td>Expected level index (can be fractional), per-level probabilities</td></tr><tr><td>noul</td><td><code>noul</code></td><td>P(yes). There is no confidence field; pick your own threshold</td></tr></tbody></table></div>
+<p>Act on Keel's answer when confidence (or the distance of <code>noul</code> from 0.5) clears your τ threshold, and send the rest to an LLM or a person. τ = 0.6 is a good starting point. Values of <code>noul</code> between 0.4 and 0.6 mean &quot;unsure&quot;.</p>
+<p>The response's <code>model</code> is the judge that actually answered: <code>decider-3.0.0</code> for Keel-3 (the default), <code>decider-2.0.0</code> for Keel-2 (pinned, or when Keel-3's weights are missing), <code>decider-2.0.0-zeroshot</code> for the base model only, or <code>decider-1.2.0</code> for the lexical fallback or any <code>decider-1.x</code> pin.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="anchor" href="#troubleshooting" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Meaning</th><th>Fix</th></tr></thead><tbody><tr><td><code>409</code> from <code>/systemone</code></td><td>The switch is off; no model ran</td><td>Turn Keel on</td></tr><tr><td><code>401</code></td><td>Missing or wrong token</td><td>Run <code>npm run keel:token</code> again; if the secret changed (new <code>~/.keel/secret</code>, <code>KEEL_SECRET</code>, or a different user account), rerun <code>npm run keel:agents</code> and update stored client configs</td></tr><tr><td>Connection refused from another machine or container</td><td>The server binds <code>127.0.0.1</code> by default</td><td>Call it from the same machine, or set <code>KEEL_HOST</code> deliberately and firewall the port</td></tr><tr><td><code>400</code></td><td>Malformed request</td><td>Check the request against the <a href="api-reference.html">API reference</a></td></tr><tr><td><code>429</code></td><td>More than 120 decisions in 60 seconds</td><td>Wait, then retry once</td></tr><tr><td>MCP tool says &quot;unreachable&quot;</td><td>The server is not running or <code>KEEL_URL</code> is wrong</td><td>Run <code>npm run dev</code>; check <code>KEEL_URL</code></td></tr><tr><td><code>status.neural.error</code> is set</td><td>The model did not load</td><td>Check <code>KEEL_MODEL_DIR</code> and <code>models/keel-2</code>, or run <code>npm run model:fetch</code></td></tr><tr><td><code>engine: &quot;lexical&quot;</code></td><td>Neural is unavailable or forced off</td><td>Unset <code>KEEL_ENGINE</code>; check the model folder</td></tr><tr><td>Slow first call</td><td>The model loads on first use</td><td>Warm it with one request at startup</td></tr></tbody></table></div>
+<h2 id="benchmarks-and-tests">Benchmarks and tests<a class="anchor" href="#benchmarks-and-tests" aria-label="Link to this section">#</a></h2>
+<div class="code"><div class="code-bar"><span>powershell</span><button type="button" class="copy">Copy</button></div><pre><code>npm run test:keel        # unit and wire tests
+npm run keel:token       # print your bearer token (-s for the bare value)
+npm run keel:bench       # labelled and held-out suites for models/keel-2
+npm run keel:tokens      # token-savings benchmark (calls an LLM; costs tokens)</code></pre></div>
+<p>Results and their caveats are in <a href="benchmarks.html">Benchmarks</a> and <a href="token-savings.html">Token savings</a>.</p>
+<nav class="pager" aria-label="Previous and next"><a href="api-reference.html"><small>Previous</small>API reference</a><a class="next" href="faq.html"><small>Next</small>FAQ</a></nav>
+<footer>Generated from <a href="help-guide.md">help-guide.md</a> by <code>node docs/build-html.mjs</code>. Keel is released under the Apache-2.0 licence.</footer>
+</main>
+
+<script>
+(function(){
+var root=document.documentElement,body=document.body;
+var tbtn=document.getElementById('theme');
+function label(){var d=root.dataset.theme==='dark';tbtn.querySelector('span').textContent=d?'Light':'Dark';tbtn.setAttribute('aria-pressed',d)}
+label();tbtn.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('keel-docs-theme',root.dataset.theme)}catch(e){}label()});
+var dm=document.getElementById('docmenu'),db=document.getElementById('alldocs');
+db.addEventListener('click',function(e){e.stopPropagation();dm.classList.toggle('open')});document.addEventListener('click',function(e){if(!dm.contains(e.target))dm.classList.remove('open')});
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.closest('.code').querySelector('code').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1400)},function(){})})});
+var pbar=document.querySelector('.pbar');
+var nav=document.querySelector('.sidenav'),tab=document.querySelector('.navtab');
+if(!nav)return;
+var pinned=false,timer=null,hover=false,wide=matchMedia('(min-width:1101px)');
+function open(){body.classList.add('nav-open')}function close(){if(!pinned&&!hover)body.classList.remove('nav-open')}
+function peek(){if(!wide.matches)return;open();clearTimeout(timer);timer=setTimeout(close,1800)}
+tab.addEventListener('click',function(){pinned=true;open()});
+document.getElementById('navclose').addEventListener('click',function(){pinned=false;hover=false;body.classList.remove('nav-open')});
+nav.addEventListener('mouseenter',function(){hover=true;clearTimeout(timer)});nav.addEventListener('mouseleave',function(){hover=false;timer=setTimeout(close,900)});
+document.addEventListener('mousemove',function(e){if(e.clientX<110&&wide.matches){open();clearTimeout(timer);timer=setTimeout(close,1800)}});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(!wide.matches){pinned=false;body.classList.remove('nav-open')}})});
+var links=[].slice.call(nav.querySelectorAll('a')),heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+var last=0,ticking=false;
+window.addEventListener('scroll',function(){if(ticking)return;ticking=true;requestAnimationFrame(function(){ticking=false;var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;pbar.style.width=(h>0?y/h*100:0)+'%';
+var cur=-1;for(var i=0;i<heads.length;i++){if(heads[i]&&heads[i].getBoundingClientRect().top<120)cur=i}
+links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+if(Math.abs(y-last)>40){peek();last=y}})},{passive:true});
+})();</script>
+</body>
+</html>

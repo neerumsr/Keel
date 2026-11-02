@@ -1,0 +1,37 @@
+# Keel + Keel-Pro on one NVIDIA GPU host: docker compose -f compose.pro.yaml up -d
+# Needs the NVIDIA Container Toolkit and, in the environment or .env:
+#   KEEL_SECRET          long random string (the API key is derived from it)
+#   KEEL_PRO_BASE        host path of the Qwen3.5-27B base model
+#   KEEL_PRO_ADAPTER     host path of the Keel-Pro LoRA adapter
+# Keel only talks to the sidecar over loopback, so keel shares the sidecar's network namespace.
+services:
+  keel-pro-sidecar:
+    build:
+      context: .
+      dockerfile: serve/Dockerfile
+    image: keel-pro-sidecar:local
+    volumes:
+      - ${KEEL_PRO_BASE:?set KEEL_PRO_BASE}:/models/base:ro
+      - ${KEEL_PRO_ADAPTER:?set KEEL_PRO_ADAPTER}:/models/adapter:ro
+    ports:
+      - "8080:8080" # Keel's port, published here because keel runs in this network namespace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    restart: unless-stopped
+
+  keel:
+    build: .
+    image: keel:local
+    network_mode: "service:keel-pro-sidecar"
+    depends_on:
+      - keel-pro-sidecar
+    environment:
+      KEEL_SECRET: ${KEEL_SECRET:?set KEEL_SECRET to a long random string}
+      KEEL_PRO_URL: http://127.0.0.1:8090
+      KEEL_RATE_PER_MINUTE: ${KEEL_RATE_PER_MINUTE:-120}
+    restart: unless-stopped

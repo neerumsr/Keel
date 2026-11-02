@@ -1,0 +1,61 @@
+{
+ "groups": 382,
+ "tokenizer_served_vs_ckpt_mismatching_requests": 0,
+ "margin_absdiff_torch_vs_onnx_fp32": {
+  "max": 2.909451723098755e-05,
+  "p95": 8.219480514526366e-06,
+  "mean": 2.2583255905131397e-06
+ },
+ "margin_absdiff_onnx_fp32_vs_int8": {
+  "max": 6.184195518493652,
+  "p95": 5.063416004180908,
+  "mean": 2.1996815259231948
+ },
+ "margin_absdiff_int8_question_alone_vs_full_request_batch": {
+  "max": 2.442122459411621,
+  "p95": 0.5963190555572507,
+  "mean": 0.08992521858808258
+ },
+ "argmax_flips_torch_vs_int8": 83,
+ "argmax_flips_int8_alone_vs_batched": 4,
+ "per_suite": {
+  "labeled": {
+   "groups": 66,
+   "quant_flips": 9,
+   "batch_flips": 1,
+   "max_quant_diff": 5.281813144683838,
+   "max_batch_diff": 2.442122459411621
+  },
+  "holdout": {
+   "groups": 28,
+   "quant_flips": 11,
+   "batch_flips": 3,
+   "max_quant_diff": 5.8549346923828125,
+   "max_batch_diff": 1.6718904972076416
+  },
+  "holdoutB": {
+   "groups": 28,
+   "quant_flips": 8,
+   "batch_flips": 0,
+   "max_quant_diff": 5.3243818283081055,
+   "max_batch_diff": 1.9633984565734863
+  },
+  "open": {
+   "groups": 60,
+   "quant_flips": 19,
+   "batch_flips": 0,
+   "max_quant_diff": 5.32845401763916,
+   "max_batch_diff": 0.0
+  },
+  "dev": {
+   "groups": 200,
+   "quant_flips": 36,
+   "batch_flips": 0,
+   "max_quant_diff": 6.184196472167969,
+   "max_batch_diff": 0.0
+  }
+ },
+ "pairs_over_160_tokens": 0,
+ "pairs_over_256_tokens": 0,
+ "pairs_total": 1396
+}

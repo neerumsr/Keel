@@ -1,0 +1,60 @@
+# Keel-Lite on Kubernetes (any cloud: AKS, EKS, GKE, or on-prem).
+#   kubectl create secret generic keel --from-literal=KEEL_SECRET="$(openssl rand -base64 48)"
+#   kubectl apply -f deploy/kubernetes/keel.yaml
+# Replace the image with the one you built and pushed. See docs/deployment.md.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keel
+  labels: { app: keel }
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: keel }
+  template:
+    metadata:
+      labels: { app: keel }
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile: { type: RuntimeDefault }
+      containers:
+        - name: keel
+          image: REGISTRY/keel:VERSION
+          ports:
+            - containerPort: 8080
+          env:
+            - name: KEEL_SECRET
+              valueFrom:
+                secretKeyRef: { name: keel, key: KEEL_SECRET }
+            # With more than one replica, point every replica at one Postgres so the on/off switch is shared:
+            # - name: DATABASE_URL
+            #   valueFrom: { secretKeyRef: { name: keel, key: DATABASE_URL } }
+          resources:
+            requests: { cpu: "500m", memory: "1Gi" }
+            limits: { memory: "2Gi" }
+          readinessProbe:
+            httpGet: { path: /api/v1/status, port: 8080 }
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: { path: /api/v1/status, port: 8080 }
+            initialDelaySeconds: 30
+            periodSeconds: 30
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: { drop: ["ALL"] }
+          volumeMounts:
+            - { name: data, mountPath: /data }
+      volumes:
+        - name: data
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: keel
+spec:
+  selector: { app: keel }
+  ports:
+    - port: 80
+      targetPort: 8080

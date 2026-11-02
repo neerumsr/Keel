@@ -1,0 +1,52 @@
+{
+  "id": "decider-3.0.0",
+  "base": "MoritzLaurer/xtremedistil-l6-h256-zeroshot-v1.1-all-33",
+  "hypothesisVersion": 1,
+  "maxLength": 256,
+  "threads": 4,
+  "onnx": "onnx/model_quantized.onnx",
+  "temperature": {
+    "choice": 1.0,
+    "score": 1.0,
+    "noul": 1.7
+  },
+  "abstain": {
+    "threshold": 0.166,
+    "floor": 0
+  },
+  "lexicalBlend": {
+    "choice": 0,
+    "score": 0,
+    "noul": 0
+  },
+  "scoreSmoothing": 0,
+  "noulBias": 0,
+  "trainedOn": "v9 core + teacher_t2dxs_v9core KD 0.5 + v2@0.2, safety-neg 0.5, stacked from t1-r9 (lr 1e-5)",
+  "quantization": "mixed",
+  "calibrationSet": [
+    "training/data/v3/v9/dev.jsonl",
+    "training/data/v3/v9/dev_ood.jsonl"
+  ],
+  "calibration": {
+    "choice": {
+      "temperature": 1.0,
+      "devNll": 0.63,
+      "groups": 2858
+    },
+    "score": {
+      "temperature": 1.0,
+      "devNll": 1.2791,
+      "groups": 4637
+    },
+    "noul": {
+      "temperature": 1.7,
+      "devNll": 0.5201,
+      "groups": 2505
+    }
+  },
+  "training": {
+    "bestDevLoss": 0.8756988732218742,
+    "steps": 2500,
+    "minutes": 28.85657551685969
+  }
+}

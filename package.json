@@ -1,0 +1,112 @@
+{
+  "name": "keel-decider",
+  "version": "3.0.0-rc.1",
+  "description": "Keel: an open-weight, local System One decision model (choice, score, yes/no) for coding agents. Jev- and Microsoft-Decision-1-compatible wire, ~13M-param ONNX cross-encoder, no network on the decision path.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neerumsr/Keel.git"
+  },
+  "homepage": "https://github.com/neerumsr/Keel#readme",
+  "bugs": {
+    "url": "https://github.com/neerumsr/Keel/issues"
+  },
+  "keywords": [
+    "keel",
+    "decision-model",
+    "system-one",
+    "classifier",
+    "cross-encoder",
+    "nli",
+    "zero-shot",
+    "onnx",
+    "onnxruntime",
+    "local-first",
+    "mcp",
+    "model-context-protocol",
+    "copilot",
+    "coding-agent",
+    "agents",
+    "llm",
+    "routing",
+    "guardrails"
+  ],
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "bin": {
+    "keel-mcp": "mcp/keel-mcp-server.mjs"
+  },
+  "files": [
+    "mcp/keel-mcp-server.mjs",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "overrides": {
+    "nf3": "0.3.17"
+  },
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "start": "node scripts/start.mjs",
+    "db:migrate": "node scripts/migrate.mjs",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test scripts/migration-plan.test.mjs && npm run test:keel",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test:keel": "node --experimental-strip-types --test src/lib/decider/wire.test.ts src/lib/decider/local.test.ts src/lib/decider/eval.test.ts src/lib/decider/jev-compare.test.ts src/lib/decider/neural.test.ts src/lib/decider/msd1-compare.test.ts src/lib/decider/systemone-route.test.ts src/lib/decider/pro.test.ts src/lib/loopback.test.ts",
+    "keel:bench": "node --experimental-strip-types scripts/keel-bench.ts --model models/keel-3 --out artifacts/keel-3-report",
+    "keel:compare-jev": "node --experimental-strip-types scripts/compare-jev.ts",
+    "keel:compare-msd1": "node --experimental-strip-types scripts/compare-msd1.ts",
+    "keel:export-evals": "node --experimental-strip-types scripts/export-evals.ts",
+    "model:fetch": "node scripts/fetch-model.mjs",
+    "model:data": "python training/keel/build_data.py --n 40000 --seed 7 --nli 6000",
+    "model:train": "python training/keel/train.py --base models/base-xd6 --out training/runs/xd6 --epochs 3",
+    "model:export": "python training/keel/export.py --ckpt training/runs/t1-r11/best --out models/keel-3 --id decider-3.0.0 --dev training/data/v3/v9/dev.jsonl training/data/v3/v9/dev_ood.jsonl",
+    "keel:agents": "node --experimental-strip-types scripts/write-agent-files.ts",
+    "keel:token": "node --experimental-strip-types -e \"import('./src/lib/decider/auth.server.ts').then(m => console.log(m.copilotKey()))\"",
+    "keel:ab": "node --experimental-strip-types scripts/keel-ab.ts",
+    "keel:tokens": "node --experimental-strip-types scripts/keel-tokens.ts"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.4",
+    "@huggingface/transformers": "^4.3.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@tailwindcss/vite": "^4.3.0",
+    "@tanstack/react-router": "^1.170.0",
+    "@tanstack/react-start": "^1.168.0",
+    "lucide-react": "^0.510.0",
+    "onnxruntime-node": "^1.30.0",
+    "pg": "^8.16.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwindcss": "^4.3.0",
+    "zod": "^4.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@types/node": "^22.16.5",
+    "@types/pg": "^8.11.10",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "eslint": "^9.20.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^15.15.0",
+    "gpt-tokenizer": "^4.1.0",
+    "nitro": "3.0.260610-beta",
+    "playwright": "^1.62.0",
+    "prettier": "^3.4.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.56.1",
+    "vite": "^8.2.0"
+  }
+}

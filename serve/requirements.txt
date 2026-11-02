@@ -1,0 +1,10 @@
+# Keel-Pro sidecar, pinned to the versions used for the published measurements (Python 3.12, CUDA 12.8).
+# torch is installed separately from its CUDA index (see serve/Dockerfile).
+transformers==5.20.2
+peft==0.21.2
+bitsandbytes==0.50.2
+accelerate==1.15.0
+safetensors==0.8.0
+tokenizers==0.23.3
+flash-linear-attention==0.5.2
+numpy==2.5.4

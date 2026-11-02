@@ -1,0 +1,58 @@
+node_modules/
+.vercel/
+.output/
+.tanstack/
+screenshots/
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+Thumbs.db
+
+.env*
+*.log
+
+# ---- Training data and runs (GBs; reproducible, never in git) ----
+# Rebuild with npm run model:data / training/keel/gen_*.py; see training/README.md.
+training/runs/
+training/data/*.jsonl
+training/data/v3/
+training/data/public/
+# Public-benchmark eval subsets: several source licenses forbid redistribution
+# (non-commercial / research-only). Rebuild with training/public/build_eval.py.
+training/public/eval/*.jsonl
+
+# ---- Model weights ----
+# Downloaded base weights (npm run model:fetch [-- --train]).
+models/base-xd6/
+models/keel-base/
+models/teacher-*/
+# Experiment candidates; promoted weights ship as release assets / on Hugging Face.
+models/candidates/
+# Weights binaries are not committed, except the shipped models (keel-2, keel-3):
+# their int8/mixed ONNX files are small (12-18 MB) so a fresh clone works offline.
+models/**/*.onnx
+models/**/*.onnx_data
+models/**/*.safetensors
+models/**/*.bin
+models/**/*.pt
+models/**/*.ckpt
+!models/keel-2/onnx/model_quantized.onnx
+!models/keel-3/onnx/model_quantized.onnx
+
+# ---- Parity program caches (keep the .md summaries, drop bulky raw dumps) ----
+artifacts/parity/msd1/source/
+artifacts/parity/blind/cand-*.json
+artifacts/parity/jev/margins*.json
+artifacts/parity/tokens/report-t*.json
+artifacts/parity/t1-*.json
+artifacts/parity/t2-*.json
+artifacts/parity/oss-audit.json
+
+# ---- Hugging Face staging: the weights are copied in at upload time only ----
+hf/**/*.onnx
+hf/**/*.safetensors
+hf/_stage/
+
+# Hugging Face upload staging (hf/keel-pro/upload.ps1)
+hf/_stage-*/

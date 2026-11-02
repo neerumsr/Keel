@@ -1,0 +1,230 @@
+{
+ "3403b524a5e91071cf5e": {
+  "weights": {
+   "ok": 1
+  },
+  "ms": 43983.03170000002,
+  "usage": {
+   "input": 17312,
+   "output": 9,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8241,
+   "apiMs": 1827,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:58:57.563Z"
+ },
+ "660c88dd5f9a14ca621a": {
+  "weights": {
+   "sentiment": {
+    "negative": 100,
+    "neutral": 0,
+    "positive": 0
+   }
+  },
+  "ms": 45076.28129999997,
+  "usage": {
+   "input": 17482,
+   "output": 20,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8411,
+   "apiMs": 2295,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:59:42.680Z"
+ },
+ "23857847f7252f83591d": {
+  "weights": {
+   "tool": {
+    "code_search": 100,
+    "web_search": 0,
+    "run_tests": 0,
+    "shell": 0,
+    "none": 0
+   }
+  },
+  "ms": 66004.05790000001,
+  "usage": {
+   "input": 17521,
+   "output": 49,
+   "reasoning": 17,
+   "cacheRead": 9068,
+   "cacheWrite": 8450,
+   "apiMs": 2159,
+   "premium": 1
+  },
+  "at": "2026-10-29T04:00:03.629Z"
+ },
+ "4951e1c645965627eaf2": {
+  "weights": {
+   "topic": {
+    "sports": 0,
+    "business": 0,
+    "science": 100,
+    "politics": 0
+   }
+  },
+  "ms": 60162.56039999999,
+  "usage": {
+   "input": 17482,
+   "output": 24,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8411,
+   "apiMs": 2893,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:59:57.833Z"
+ },
+ "3505afd29d1476a6abb1": {
+  "weights": {
+   "commitType": {
+    "fix": 100,
+    "feat": 0,
+    "docs": 0,
+    "refactor": 0,
+    "chore": 0
+   }
+  },
+  "ms": 54681.52099999995,
+  "usage": {
+   "input": 17514,
+   "output": 30,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8443,
+   "apiMs": 1977,
+   "premium": 1
+  },
+  "at": "2026-10-29T04:00:48.687Z"
+ },
+ "189c230734937d59c58d": {
+  "weights": {
+   "nextStep": {
+    "patch": 100,
+    "clarify": 0,
+    "halt": 0
+   }
+  },
+  "ms": 75473.7695,
+  "usage": {
+   "input": 17519,
+   "output": 21,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8448,
+   "apiMs": 1987,
+   "premium": 1
+  },
+  "at": "2026-10-29T04:00:58.155Z"
+ },
+ "e4595d308fe2d7152e8f": {
+  "weights": {
+   "level": {
+    "debug": 100,
+    "info": 0,
+    "warn": 0,
+    "error": 0
+   }
+  },
+  "ms": 69551.3994,
+  "usage": {
+   "input": 17474,
+   "output": 23,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8403,
+   "apiMs": 1742,
+   "premium": 1
+  },
+  "at": "2026-10-29T04:01:07.387Z"
+ },
+ "733263d852481745b687": {
+  "weights": {
+   "action": {
+    "edit": 100,
+    "ask": 0,
+    "stop": 0
+   },
+   "risk": {
+    "0": 5,
+    "1": 70,
+    "2": 25,
+    "3": 0
+   }
+  },
+  "ms": 37019.9486,
+  "usage": {
+   "input": 17575,
+   "output": 37,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8504,
+   "apiMs": 1749,
+   "premium": 1
+  },
+  "at": "2026-10-29T04:01:35.177Z"
+ },
+ "da89e31b188043ae4b61": {
+  "weights": {
+   "pii": {
+    "yes": 0
+   }
+  },
+  "ms": 39706.19959999999,
+  "usage": {
+   "input": 17478,
+   "output": 12,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8407,
+   "apiMs": 2419,
+   "premium": 1
+  },
+  "at": "2026-10-29T04:01:38.302Z"
+ },
+ "e63ed1035f2aba4b9eb5": {
+  "weights": {
+   "worker": {
+    "command_runner": 100,
+    "repository_explorer": 0,
+    "full_coder": 0,
+    "web_scout": 0
+   }
+  },
+  "ms": 49617.27000000002,
+  "usage": {
+   "input": 17517,
+   "output": 30,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8446,
+   "apiMs": 5141,
+   "premium": 1
+  },
+  "at": "2026-10-29T04:01:38.306Z"
+ },
+ "c1b811a79585db40b365": {
+  "weights": {
+   "topic": {
+    "sports": 100,
+    "business": 0,
+    "science": 0,
+    "politics": 0
+   }
+  },
+  "ms": 46486.66739999998,
+  "usage": {
+   "input": 17469,
+   "output": 24,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8398,
+   "apiMs": 1504,
+   "premium": 1
+  },
+  "at": "2026-10-29T04:01:53.875Z"
+ }
+}

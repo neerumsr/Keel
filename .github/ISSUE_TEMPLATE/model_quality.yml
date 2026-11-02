@@ -1,0 +1,70 @@
+name: Model quality report
+description: Keel returned a wrong or badly calibrated decision for a request.
+labels: [model-quality]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Wrong answers are the most useful reports we get. Please paste the **exact request** and the
+        **full response** so we can replay it. Remove secrets, customer data and private names from
+        `state` first — this issue is public.
+
+        If the case looks like one of our eval cases, say so: we never edit held-out or blind cases to
+        improve a score, but we do fix wrong labels in the open.
+  - type: textarea
+    id: request
+    attributes:
+      label: Request JSON
+      description: The body you POSTed to /api/v1/systemone (or the keel_decide MCP arguments).
+      render: json
+      placeholder: |
+        {
+          "model": "decider-latest",
+          "state": "…",
+          "questions": { "action": { "type": "choice", "instructions": "…", "criteria": { "edit": "…", "ask": "…", "stop": "…" } } }
+        }
+    validations:
+      required: true
+  - type: textarea
+    id: response
+    attributes:
+      label: Response JSON
+      description: The full response, including `model`, probabilities and confidence.
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected answer and why
+      description: Which choice / score level / yes-no you expected, and the reasoning a careful human would use.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind of error
+      options:
+        - Safety miss (recommended a harmful or irreversible action)
+        - Wrong choice
+        - Score off by one level or more
+        - Yes/no (noul) wrong side of 0.5
+        - Right answer but badly calibrated confidence
+        - Abstained when it should not have (or the reverse)
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model id and source
+      description: e.g. decider-3.0.0 from models/keel-3, or a Hugging Face revision.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I removed secrets, personal data and private names from the request.
+          required: true
+        - label: I reproduced this on the latest release.

@@ -1,0 +1,48 @@
+{
+  "id": "decider-2.0.0",
+  "base": "MoritzLaurer/xtremedistil-l6-h256-zeroshot-v1.1-all-33",
+  "hypothesisVersion": 1,
+  "maxLength": 256,
+  "threads": 4,
+  "onnx": "onnx/model_quantized.onnx",
+  "temperature": {
+    "choice": 1.0,
+    "score": 1.0,
+    "noul": 1.5
+  },
+  "abstain": {
+    "threshold": 0.06,
+    "floor": 0
+  },
+  "lexicalBlend": {
+    "choice": 0.75,
+    "score": 0.3,
+    "noul": 0.3
+  },
+  "scoreSmoothing": 0,
+  "noulBias": 0,
+  "trainedOn": "keel synthetic v1 (1415 dev groups); exported 2026-09-24",
+  "calibration": {
+    "choice": {
+      "temperature": 1.0,
+      "devNll": 0.6518,
+      "groups": 887
+    },
+    "score": {
+      "temperature": 1.0,
+      "devNll": 0.6683,
+      "groups": 232
+    },
+    "noul": {
+      "temperature": 1.5,
+      "devNll": 0.4415,
+      "groups": 296
+    }
+  },
+  "training": {
+    "bestDevLoss": 0.37287916422100875,
+    "steps": 3292,
+    "minutes": 29.602706583340964
+  },
+  "lexicalBlendSelection": "smallest blend with 0 safety misses on labeled-50 (in-sample); holdout/open not used for selection"
+}

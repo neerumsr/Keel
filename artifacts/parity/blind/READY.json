@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-29T03:47:13.3383799Z",
+  "blindCases": 234,
+  "halves": {
+    "a": 150,
+    "b": 84
+  },
+  "suites": [
+    "holdout-20",
+    "holdout-b-20",
+    "open-60",
+    "blind",
+    "labeled-50 (in-sample)"
+  ],
+  "harness": "node --experimental-strip-types scripts/keel-parity-bench.ts --model <dir> [--model <dir2>] --out <prefix>",
+  "baseline": "artifacts/parity/blind/keel-2-baseline.md",
+  "note": "Trainers/data generators must not open src/lib/decider/eval-blind*.ts or artifacts/parity/blind/**. Run the harness; read only its summary table.",
+  "llmBaseline": {
+    "cache": "artifacts/parity/blind/llm-cache/claude-haiku-4.5.json",
+    "reason": "gpt-5-mini not available in Copilot CLI",
+    "blindFullyRight": "215/234",
+    "harnessFlag": "--llm-model claude-haiku-4.5 (blind) ; default gpt-5-mini reads keel-ab cache for older suites",
+    "model": "claude-haiku-4.5"
+  },
+  "contamination": "artifacts/parity/blind/contamination.md: 0 contaminated, 1 watch",
+  "scoreboard": "artifacts/parity/scoreboard.md"
+}
