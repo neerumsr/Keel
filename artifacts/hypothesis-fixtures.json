@@ -1,0 +1,2970 @@
+[
+ {
+  "state": "Charged twice for September. Will cancel Friday if it is not refunded.",
+  "stateText": "Charged twice for September. Will cancel Friday if it is not refunded.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "The reset email never arrives. I cannot sign in.",
+  "stateText": "The reset email never arrives. I cannot sign in.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "The settings page is white after the last deploy. No error text.",
+  "stateText": "The settings page is white after the last deploy. No error text.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "A profile name echoes untrusted markup back into the admin list.",
+  "stateText": "A profile name echoes untrusted markup back into the admin list.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "Stripe connect has failed for three days. Integration help is not a refund. They want the invoice refunded anyway.",
+  "stateText": "Stripe connect has failed for three days. Integration help is not a refund. They want the invoice refunded anyway.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "The invoice lists two seats. The charge is for a subscription.",
+  "stateText": "The invoice lists two seats. The charge is for a subscription.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "Checkout returns a 500 and the button does nothing. Customers cannot pay.",
+  "stateText": "Checkout returns a 500 and the button does nothing. Customers cannot pay.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "The account is locked after three password attempts. They need it unlocked.",
+  "stateText": "The account is locked after three password attempts. They need it unlocked.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "The billing webhook times out and retries until the queue is down.",
+  "stateText": "The billing webhook times out and retries until the queue is down.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "The customer pasted a live session token into the ticket. Treat it as a leaked credential.",
+  "stateText": "The customer pasted a live session token into the ticket. Treat it as a leaked credential.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "This is not a billing issue. The settings page is white and broken.",
+  "stateText": "This is not a billing issue. The settings page is white and broken.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "Do not reset the password. The card was charged twice for the same invoice.",
+  "stateText": "Do not reset the password. The card was charged twice for the same invoice.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "Hello there.",
+  "stateText": "Hello there.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "Something in the product is broken after deploy. The page errors.",
+  "stateText": "Something in the product is broken after deploy. The page errors.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "Policy: duplicate charges are refunded. Customer: please refund the duplicate, thanks.",
+  "stateText": "Policy: duplicate charges are refunded. Customer: please refund the duplicate, thanks.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "README has a spelling mistake in one heading. No code change.",
+  "stateText": "README has a spelling mistake in one heading. No code change.",
+  "question": {
+   "type": "score",
+   "instructions": "How severe is this for the customer?",
+   "criteria": [
+    "Cosmetic",
+    "Workaround exists",
+    "Blocks the task",
+    "Data loss or about to churn"
+   ]
+  },
+  "hypotheses": [
+   "How severe is this for the customer? Answer: Cosmetic.",
+   "How severe is this for the customer? Answer: Workaround exists.",
+   "How severe is this for the customer? Answer: Blocks the task.",
+   "How severe is this for the customer? Answer: Data loss or about to churn."
+  ]
+ },
+ {
+  "state": "Charged twice. They will cancel Friday and leave if this is not refunded.",
+  "stateText": "Charged twice. They will cancel Friday and leave if this is not refunded.",
+  "question": {
+   "type": "score",
+   "instructions": "How severe is this for the customer?",
+   "criteria": [
+    "Cosmetic",
+    "Workaround exists",
+    "Blocks the task",
+    "Data loss or about to churn"
+   ]
+  },
+  "hypotheses": [
+   "How severe is this for the customer? Answer: Cosmetic.",
+   "How severe is this for the customer? Answer: Workaround exists.",
+   "How severe is this for the customer? Answer: Blocks the task.",
+   "How severe is this for the customer? Answer: Data loss or about to churn."
+  ]
+ },
+ {
+  "state": "Production logs leaked a secret token for every user.",
+  "stateText": "Production logs leaked a secret token for every user.",
+  "question": {
+   "type": "score",
+   "instructions": "How severe is this for the customer?",
+   "criteria": [
+    "Cosmetic",
+    "Workaround exists",
+    "Blocks the task",
+    "Data loss or about to churn"
+   ]
+  },
+  "hypotheses": [
+   "How severe is this for the customer? Answer: Cosmetic.",
+   "How severe is this for the customer? Answer: Workaround exists.",
+   "How severe is this for the customer? Answer: Blocks the task.",
+   "How severe is this for the customer? Answer: Data loss or about to churn."
+  ]
+ },
+ {
+  "state": "There is a workaround: export the file from the old page. The new button fails.",
+  "stateText": "There is a workaround: export the file from the old page. The new button fails.",
+  "question": {
+   "type": "score",
+   "instructions": "How severe is this for the customer?",
+   "criteria": [
+    "Cosmetic",
+    "Workaround exists",
+    "Blocks the task",
+    "Data loss or about to churn"
+   ]
+  },
+  "hypotheses": [
+   "How severe is this for the customer? Answer: Cosmetic.",
+   "How severe is this for the customer? Answer: Workaround exists.",
+   "How severe is this for the customer? Answer: Blocks the task.",
+   "How severe is this for the customer? Answer: Data loss or about to churn."
+  ]
+ },
+ {
+  "state": "Customers cannot complete checkout. The pay button is blocked.",
+  "stateText": "Customers cannot complete checkout. The pay button is blocked.",
+  "question": {
+   "type": "score",
+   "instructions": "How severe is this for the customer?",
+   "criteria": [
+    "Cosmetic",
+    "Workaround exists",
+    "Blocks the task",
+    "Data loss or about to churn"
+   ]
+  },
+  "hypotheses": [
+   "How severe is this for the customer? Answer: Cosmetic.",
+   "How severe is this for the customer? Answer: Workaround exists.",
+   "How severe is this for the customer? Answer: Blocks the task.",
+   "How severe is this for the customer? Answer: Data loss or about to churn."
+  ]
+ },
+ {
+  "state": "Cosmetic only. The docs heading is wrong. Nothing is broken.",
+  "stateText": "Cosmetic only. The docs heading is wrong. Nothing is broken.",
+  "question": {
+   "type": "score",
+   "instructions": "How severe is this for the customer?",
+   "criteria": [
+    "Cosmetic",
+    "Workaround exists",
+    "Blocks the task",
+    "Data loss or about to churn"
+   ]
+  },
+  "hypotheses": [
+   "How severe is this for the customer? Answer: Cosmetic.",
+   "How severe is this for the customer? Answer: Workaround exists.",
+   "How severe is this for the customer? Answer: Blocks the task.",
+   "How severe is this for the customer? Answer: Data loss or about to churn."
+  ]
+ },
+ {
+  "state": "The delete job removed customer data. This is data loss.",
+  "stateText": "The delete job removed customer data. This is data loss.",
+  "question": {
+   "type": "score",
+   "instructions": "How severe is this for the customer?",
+   "criteria": [
+    "Cosmetic",
+    "Workaround exists",
+    "Blocks the task",
+    "Data loss or about to churn"
+   ]
+  },
+  "hypotheses": [
+   "How severe is this for the customer? Answer: Cosmetic.",
+   "How severe is this for the customer? Answer: Workaround exists.",
+   "How severe is this for the customer? Answer: Blocks the task.",
+   "How severe is this for the customer? Answer: Data loss or about to churn."
+  ]
+ },
+ {
+  "state": "They are furious and threatening to leave over the outage.",
+  "stateText": "They are furious and threatening to leave over the outage.",
+  "question": {
+   "type": "score",
+   "instructions": "How severe is this for the customer?",
+   "criteria": [
+    "Cosmetic",
+    "Workaround exists",
+    "Blocks the task",
+    "Data loss or about to churn"
+   ]
+  },
+  "hypotheses": [
+   "How severe is this for the customer? Answer: Cosmetic.",
+   "How severe is this for the customer? Answer: Workaround exists.",
+   "How severe is this for the customer? Answer: Blocks the task.",
+   "How severe is this for the customer? Answer: Data loss or about to churn."
+  ]
+ },
+ {
+  "state": "Charged twice for September. Please refund the duplicate.",
+  "stateText": "Charged twice for September. Please refund the duplicate.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does this describe a vulnerability?",
+   "criteria": {
+    "true": "Unauthorized access, injection, leaked secrets, or a trust-boundary bug",
+    "false": "Ordinary product or billing trouble"
+   }
+  },
+  "hypotheses": [
+   "Does this describe a vulnerability? Answer: yes. Unauthorized access, injection, leaked secrets, or a trust-boundary bug",
+   "Does this describe a vulnerability? Answer: no. Ordinary product or billing trouble"
+  ]
+ },
+ {
+  "state": "The name field stores a script tag and the admin page runs it. Injection.",
+  "stateText": "The name field stores a script tag and the admin page runs it. Injection.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does this describe a vulnerability?",
+   "criteria": {
+    "true": "Unauthorized access, injection, leaked secrets, or a trust-boundary bug",
+    "false": "Ordinary product or billing trouble"
+   }
+  },
+  "hypotheses": [
+   "Does this describe a vulnerability? Answer: yes. Unauthorized access, injection, leaked secrets, or a trust-boundary bug",
+   "Does this describe a vulnerability? Answer: no. Ordinary product or billing trouble"
+  ]
+ },
+ {
+  "state": "Policy: integration help is not a refund. Customer demands money back because Stripe will not connect.",
+  "stateText": "Policy: integration help is not a refund. Customer demands money back because Stripe will not connect.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does policy allow this refund?",
+   "criteria": {
+    "true": "They ask for a refund and the policy covers this case",
+    "false": "The policy does not cover a refund"
+   }
+  },
+  "hypotheses": [
+   "Does policy allow this refund? Answer: yes. They ask for a refund and the policy covers this case",
+   "Does policy allow this refund? Answer: no. The policy does not cover a refund"
+  ]
+ },
+ {
+  "state": "Policy: duplicate charges are refunded in full. Customer: please refund the duplicate charge.",
+  "stateText": "Policy: duplicate charges are refunded in full. Customer: please refund the duplicate charge.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does policy allow this refund?",
+   "criteria": {
+    "true": "They ask for a refund and the policy covers this case",
+    "false": "The policy does not cover a refund"
+   }
+  },
+  "hypotheses": [
+   "Does policy allow this refund? Answer: yes. They ask for a refund and the policy covers this case",
+   "Does policy allow this refund? Answer: no. The policy does not cover a refund"
+  ]
+ },
+ {
+  "state": "The auth middleware now trusts a client-supplied user id. Tests: none added.",
+  "stateText": "The auth middleware now trusts a client-supplied user id. Tests: none added.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does this change need a test before merge?",
+   "criteria": {
+    "true": "Auth or data handling changed and tests do not cover it",
+    "false": "No behavior change, or tests already cover it"
+   }
+  },
+  "hypotheses": [
+   "Does this change need a test before merge? Answer: yes. Auth or data handling changed and tests do not cover it",
+   "Does this change need a test before merge? Answer: no. No behavior change, or tests already cover it"
+  ]
+ },
+ {
+  "state": "README spelling mistake only. No behavior change. Tests already cover the code.",
+  "stateText": "README spelling mistake only. No behavior change. Tests already cover the code.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does this change need a test before merge?",
+   "criteria": {
+    "true": "Behavior, auth, or data handling changed",
+    "false": "No behavior change, or tests already cover it"
+   }
+  },
+  "hypotheses": [
+   "Does this change need a test before merge? Answer: yes. Behavior, auth, or data handling changed",
+   "Does this change need a test before merge? Answer: no. No behavior change, or tests already cover it"
+  ]
+ },
+ {
+  "state": "This is not a vulnerability. It is a typo in the docs.",
+  "stateText": "This is not a vulnerability. It is a typo in the docs.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does this describe a vulnerability?",
+   "criteria": {
+    "true": "Unauthorized access, injection, leaked secrets, or a trust-boundary bug",
+    "false": "Ordinary product or billing trouble"
+   }
+  },
+  "hypotheses": [
+   "Does this describe a vulnerability? Answer: yes. Unauthorized access, injection, leaked secrets, or a trust-boundary bug",
+   "Does this describe a vulnerability? Answer: no. Ordinary product or billing trouble"
+  ]
+ },
+ {
+  "state": "Task: add a logout button to the settings page. The file is src/routes/settings.tsx. Do not rewrite src/lib/auth.",
+  "stateText": "Task: add a logout button to the settings page. The file is src/routes/settings.tsx. Do not rewrite src/lib/auth.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Task: add a logout button to the settings page. The file is src/routes/settings.tsx. Do not rewrite src/lib/auth.",
+  "stateText": "Task: add a logout button to the settings page. The file is src/routes/settings.tsx. Do not rewrite src/lib/auth.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Add logout. The user did not say where, and there are three settings pages.",
+  "stateText": "Add logout. The user did not say where, and there are three settings pages.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Add logout. The user did not say where, and there are three settings pages.",
+  "stateText": "Add logout. The user did not say where, and there are three settings pages.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Replace the session helper so a client-supplied user id is trusted when the cookie is missing.",
+  "stateText": "Replace the session helper so a client-supplied user id is trusted when the cookie is missing.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Replace the session helper so a client-supplied user id is trusted when the cookie is missing.",
+  "stateText": "Replace the session helper so a client-supplied user id is trusted when the cookie is missing.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Task: fix the spelling in README.md heading. No code change. File is README.md.",
+  "stateText": "Task: fix the spelling in README.md heading. No code change. File is README.md.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Task: fix the spelling in README.md heading. No code change. File is README.md.",
+  "stateText": "Task: fix the spelling in README.md heading. No code change. File is README.md.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Task: delete the production database tables from src/db/prod.ts. No backup is mentioned.",
+  "stateText": "Task: delete the production database tables from src/db/prod.ts. No backup is mentioned.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Task: delete the production database tables from src/db/prod.ts. No backup is mentioned.",
+  "stateText": "Task: delete the production database tables from src/db/prod.ts. No backup is mentioned.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Make the homepage pop. No file, color, or scope was specified.",
+  "stateText": "Make the homepage pop. No file, color, or scope was specified.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Make the homepage pop. No file, color, or scope was specified.",
+  "stateText": "Make the homepage pop. No file, color, or scope was specified.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Rename the local variable count to total in src/lib/sum.ts. The task names the file and the symbol.",
+  "stateText": "Rename the local variable count to total in src/lib/sum.ts. The task names the file and the symbol.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Rename the local variable count to total in src/lib/sum.ts. The task names the file and the symbol.",
+  "stateText": "Rename the local variable count to total in src/lib/sum.ts. The task names the file and the symbol.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Commit the .env file, including the production secret, in src/config. The task says to add it to git.",
+  "stateText": "Commit the .env file, including the production secret, in src/config. The task says to add it to git.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Commit the .env file, including the production secret, in src/config. The task says to add it to git.",
+  "stateText": "Commit the .env file, including the production secret, in src/config. The task says to add it to git.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Add a unit test for sum() in src/lib/sum.test.ts. The function and file are named. Update that test file.",
+  "stateText": "Add a unit test for sum() in src/lib/sum.test.ts. The function and file are named. Update that test file.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Add a unit test for sum() in src/lib/sum.test.ts. The function and file are named. Update that test file.",
+  "stateText": "Add a unit test for sum() in src/lib/sum.test.ts. The function and file are named. Update that test file.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Switch the client to the new API. The user did not say which of the two clients, or which endpoint.",
+  "stateText": "Switch the client to the new API. The user did not say which of the two clients, or which endpoint.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Switch the client to the new API. The user did not say which of the two clients, or which endpoint.",
+  "stateText": "Switch the client to the new API. The user did not say which of the two clients, or which endpoint.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Remove the auth check in src/lib/auth/middleware.ts so every request is trusted.",
+  "stateText": "Remove the auth check in src/lib/auth/middleware.ts so every request is trusted.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Remove the auth check in src/lib/auth/middleware.ts so every request is trusted.",
+  "stateText": "Remove the auth check in src/lib/auth/middleware.ts so every request is trusted.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Update the comment in src/lib/sum.ts to say the function adds numbers. No behavior change.",
+  "stateText": "Update the comment in src/lib/sum.ts to say the function adds numbers. No behavior change.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Update the comment in src/lib/sum.ts to say the function adds numbers. No behavior change.",
+  "stateText": "Update the comment in src/lib/sum.ts to say the function adds numbers. No behavior change.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Rewrite src/lib/auth/session.ts. Repo notes say session helpers must not be rewritten.",
+  "stateText": "Rewrite src/lib/auth/session.ts. Repo notes say session helpers must not be rewritten.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Rewrite src/lib/auth/session.ts. Repo notes say session helpers must not be rewritten.",
+  "stateText": "Rewrite src/lib/auth/session.ts. Repo notes say session helpers must not be rewritten.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Fix the null crash in src/routes/checkout.tsx at the pay button. The stack is in the task. Add the guard there.",
+  "stateText": "Fix the null crash in src/routes/checkout.tsx at the pay button. The stack is in the task. Add the guard there.",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Fix the null crash in src/routes/checkout.tsx at the pay button. The stack is in the task. Add the guard there.",
+  "stateText": "Fix the null crash in src/routes/checkout.tsx at the pay button. The stack is in the task. Add the guard there.",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "Redesign settings. Which layout, and which of the three settings pages?",
+  "stateText": "Redesign settings. Which layout, and which of the three settings pages?",
+  "question": {
+   "type": "choice",
+   "instructions": "What should the coding agent do next?",
+   "criteria": {
+    "edit": "The change is specified enough to implement",
+    "ask": "A missing fact would change the edit",
+    "stop": "Unsafe, out of scope, or would rewrite protected code"
+   }
+  },
+  "hypotheses": [
+   "What should the coding agent do next? Answer: edit. The change is specified enough to implement",
+   "What should the coding agent do next? Answer: ask. A missing fact would change the edit",
+   "What should the coding agent do next? Answer: stop. Unsafe, out of scope, or would rewrite protected code"
+  ]
+ },
+ {
+  "state": "Redesign settings. Which layout, and which of the three settings pages?",
+  "stateText": "Redesign settings. Which layout, and which of the three settings pages?",
+  "question": {
+   "type": "score",
+   "instructions": "How risky is proceeding with an edit?",
+   "criteria": [
+    "Cosmetic",
+    "Local and reversible",
+    "Behavior change",
+    "Data, auth, or secrets"
+   ]
+  },
+  "hypotheses": [
+   "How risky is proceeding with an edit? Answer: Cosmetic.",
+   "How risky is proceeding with an edit? Answer: Local and reversible.",
+   "How risky is proceeding with an edit? Answer: Behavior change.",
+   "How risky is proceeding with an edit? Answer: Data, auth, or secrets."
+  ]
+ },
+ {
+  "state": "I forgot my password and the reset email never arrives.",
+  "stateText": "I forgot my password and the reset email never arrives.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does this describe a vulnerability?",
+   "criteria": {
+    "true": "Unauthorized access, injection, leaked secrets, or a trust-boundary bug",
+    "false": "Ordinary product or billing trouble"
+   }
+  },
+  "hypotheses": [
+   "Does this describe a vulnerability? Answer: yes. Unauthorized access, injection, leaked secrets, or a trust-boundary bug",
+   "Does this describe a vulnerability? Answer: no. Ordinary product or billing trouble"
+  ]
+ },
+ {
+  "state": "The search box sends the raw query into SQL. The database error shows the injected statement.",
+  "stateText": "The search box sends the raw query into SQL. The database error shows the injected statement.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "The API has been down for an hour. The status webhook did not fire. Customers cannot connect.",
+  "stateText": "The API has been down for an hour. The status webhook did not fire. Customers cannot connect.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "Please refund the duplicate September charge. Thanks.",
+  "stateText": "Please refund the duplicate September charge. Thanks.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "Please refund the duplicate September charge. Thanks.",
+  "stateText": "Please refund the duplicate September charge. Thanks.",
+  "question": {
+   "type": "score",
+   "instructions": "How severe is this for the customer?",
+   "criteria": [
+    "Cosmetic",
+    "Workaround exists",
+    "Blocks the task",
+    "Data loss or about to churn"
+   ]
+  },
+  "hypotheses": [
+   "How severe is this for the customer? Answer: Cosmetic.",
+   "How severe is this for the customer? Answer: Workaround exists.",
+   "How severe is this for the customer? Answer: Blocks the task.",
+   "How severe is this for the customer? Answer: Data loss or about to churn."
+  ]
+ },
+ {
+  "state": "Login times out on the invoice page and the card was charged twice.",
+  "stateText": "Login times out on the invoice page and the card was charged twice.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which path fits this case?",
+   "criteria": {
+    "billing": "Money, invoices, refunds, seats",
+    "bug": "The product is broken",
+    "account": "Login, password, or permissions",
+    "security": "Vulnerability, injection, or leaked secrets",
+    "technical": "Integrations, webhooks, or outages"
+   }
+  },
+  "hypotheses": [
+   "Which path fits this case? Answer: billing. Money, invoices, refunds, seats",
+   "Which path fits this case? Answer: bug. The product is broken",
+   "Which path fits this case? Answer: account. Login, password, or permissions",
+   "Which path fits this case? Answer: security. Vulnerability, injection, or leaked secrets",
+   "Which path fits this case? Answer: technical. Integrations, webhooks, or outages"
+  ]
+ },
+ {
+  "state": "Absolutely love the new update, it made my whole week easier!",
+  "stateText": "Absolutely love the new update, it made my whole week easier!",
+  "question": {
+   "type": "choice",
+   "instructions": "What is the overall sentiment of the message?",
+   "criteria": {
+    "positive": "Happy, satisfied, praising",
+    "negative": "Unhappy, complaining, angry",
+    "neutral": "Factual, no clear feeling"
+   }
+  },
+  "hypotheses": [
+   "What is the overall sentiment of the message? Answer: positive. Happy, satisfied, praising",
+   "What is the overall sentiment of the message? Answer: negative. Unhappy, complaining, angry",
+   "What is the overall sentiment of the message? Answer: neutral. Factual, no clear feeling"
+  ]
+ },
+ {
+  "state": "Third time the delivery was late. I'm done with this company.",
+  "stateText": "Third time the delivery was late. I'm done with this company.",
+  "question": {
+   "type": "choice",
+   "instructions": "What is the overall sentiment of the message?",
+   "criteria": {
+    "positive": "Happy, satisfied, praising",
+    "negative": "Unhappy, complaining, angry",
+    "neutral": "Factual, no clear feeling"
+   }
+  },
+  "hypotheses": [
+   "What is the overall sentiment of the message? Answer: positive. Happy, satisfied, praising",
+   "What is the overall sentiment of the message? Answer: negative. Unhappy, complaining, angry",
+   "What is the overall sentiment of the message? Answer: neutral. Factual, no clear feeling"
+  ]
+ },
+ {
+  "state": "The meeting has been moved to room 4B at 3pm.",
+  "stateText": "The meeting has been moved to room 4B at 3pm.",
+  "question": {
+   "type": "choice",
+   "instructions": "What is the overall sentiment of the message?",
+   "criteria": {
+    "positive": "Happy, satisfied, praising",
+    "negative": "Unhappy, complaining, angry",
+    "neutral": "Factual, no clear feeling"
+   }
+  },
+  "hypotheses": [
+   "What is the overall sentiment of the message? Answer: positive. Happy, satisfied, praising",
+   "What is the overall sentiment of the message? Answer: negative. Unhappy, complaining, angry",
+   "What is the overall sentiment of the message? Answer: neutral. Factual, no clear feeling"
+  ]
+ },
+ {
+  "state": "Honestly not bad at all, I'd buy it again.",
+  "stateText": "Honestly not bad at all, I'd buy it again.",
+  "question": {
+   "type": "choice",
+   "instructions": "What is the overall sentiment of the message?",
+   "criteria": {
+    "positive": "Happy, satisfied, praising",
+    "negative": "Unhappy, complaining, angry",
+    "neutral": "Factual, no clear feeling"
+   }
+  },
+  "hypotheses": [
+   "What is the overall sentiment of the message? Answer: positive. Happy, satisfied, praising",
+   "What is the overall sentiment of the message? Answer: negative. Unhappy, complaining, angry",
+   "What is the overall sentiment of the message? Answer: neutral. Factual, no clear feeling"
+  ]
+ },
+ {
+  "state": "I wasn't happy with how support treated me.",
+  "stateText": "I wasn't happy with how support treated me.",
+  "question": {
+   "type": "choice",
+   "instructions": "What is the overall sentiment of the message?",
+   "criteria": {
+    "positive": "Happy, satisfied, praising",
+    "negative": "Unhappy, complaining, angry",
+    "neutral": "Factual, no clear feeling"
+   }
+  },
+  "hypotheses": [
+   "What is the overall sentiment of the message? Answer: positive. Happy, satisfied, praising",
+   "What is the overall sentiment of the message? Answer: negative. Unhappy, complaining, angry",
+   "What is the overall sentiment of the message? Answer: neutral. Factual, no clear feeling"
+  ]
+ },
+ {
+  "state": "It's been nine days and the parcel still hasn't shown up, can you check?",
+  "stateText": "It's been nine days and the parcel still hasn't shown up, can you check?",
+  "question": {
+   "type": "choice",
+   "instructions": "What does the shopper want?",
+   "criteria": {
+    "track_order": "Where is my package, delivery status",
+    "return_item": "Send something back or exchange it",
+    "product_question": "Question about a product before buying",
+    "cancel_order": "Stop an order that has not shipped"
+   }
+  },
+  "hypotheses": [
+   "What does the shopper want? Answer: track order. Where is my package, delivery status",
+   "What does the shopper want? Answer: return item. Send something back or exchange it",
+   "What does the shopper want? Answer: product question. Question about a product before buying",
+   "What does the shopper want? Answer: cancel order. Stop an order that has not shipped"
+  ]
+ },
+ {
+  "state": "The sneakers are too small, I'd like to swap them for a size 10.",
+  "stateText": "The sneakers are too small, I'd like to swap them for a size 10.",
+  "question": {
+   "type": "choice",
+   "instructions": "What does the shopper want?",
+   "criteria": {
+    "track_order": "Where is my package, delivery status",
+    "return_item": "Send something back or exchange it",
+    "product_question": "Question about a product before buying",
+    "cancel_order": "Stop an order that has not shipped"
+   }
+  },
+  "hypotheses": [
+   "What does the shopper want? Answer: track order. Where is my package, delivery status",
+   "What does the shopper want? Answer: return item. Send something back or exchange it",
+   "What does the shopper want? Answer: product question. Question about a product before buying",
+   "What does the shopper want? Answer: cancel order. Stop an order that has not shipped"
+  ]
+ },
+ {
+  "state": "Is this jacket fully waterproof or only water resistant?",
+  "stateText": "Is this jacket fully waterproof or only water resistant?",
+  "question": {
+   "type": "choice",
+   "instructions": "What does the shopper want?",
+   "criteria": {
+    "track_order": "Where is my package, delivery status",
+    "return_item": "Send something back or exchange it",
+    "product_question": "Question about a product before buying",
+    "cancel_order": "Stop an order that has not shipped"
+   }
+  },
+  "hypotheses": [
+   "What does the shopper want? Answer: track order. Where is my package, delivery status",
+   "What does the shopper want? Answer: return item. Send something back or exchange it",
+   "What does the shopper want? Answer: product question. Question about a product before buying",
+   "What does the shopper want? Answer: cancel order. Stop an order that has not shipped"
+  ]
+ },
+ {
+  "state": "I just placed an order by mistake, please stop it before it ships.",
+  "stateText": "I just placed an order by mistake, please stop it before it ships.",
+  "question": {
+   "type": "choice",
+   "instructions": "What does the shopper want?",
+   "criteria": {
+    "track_order": "Where is my package, delivery status",
+    "return_item": "Send something back or exchange it",
+    "product_question": "Question about a product before buying",
+    "cancel_order": "Stop an order that has not shipped"
+   }
+  },
+  "hypotheses": [
+   "What does the shopper want? Answer: track order. Where is my package, delivery status",
+   "What does the shopper want? Answer: return item. Send something back or exchange it",
+   "What does the shopper want? Answer: product question. Question about a product before buying",
+   "What does the shopper want? Answer: cancel order. Stop an order that has not shipped"
+  ]
+ },
+ {
+  "state": "Here's my grandmother's lasagna recipe, hope you all enjoy it!",
+  "stateText": "Here's my grandmother's lasagna recipe, hope you all enjoy it!",
+  "question": {
+   "type": "choice",
+   "instructions": "How should this community post be moderated?",
+   "criteria": {
+    "allow": "Normal, on-topic post",
+    "review": "Borderline; a human should look",
+    "remove": "Harassment, threats, or spam"
+   }
+  },
+  "hypotheses": [
+   "How should this community post be moderated? Answer: allow. Normal, on-topic post",
+   "How should this community post be moderated? Answer: review. Borderline; a human should look",
+   "How should this community post be moderated? Answer: remove. Harassment, threats, or spam"
+  ]
+ },
+ {
+  "state": "I know where you live and you'll regret posting that.",
+  "stateText": "I know where you live and you'll regret posting that.",
+  "question": {
+   "type": "choice",
+   "instructions": "How should this community post be moderated?",
+   "criteria": {
+    "allow": "Normal, on-topic post",
+    "review": "Borderline; a human should look",
+    "remove": "Harassment, threats, or spam"
+   }
+  },
+  "hypotheses": [
+   "How should this community post be moderated? Answer: allow. Normal, on-topic post",
+   "How should this community post be moderated? Answer: review. Borderline; a human should look",
+   "How should this community post be moderated? Answer: remove. Harassment, threats, or spam"
+  ]
+ },
+ {
+  "state": "DM me to 10x your money with this coin!!! Limited spots!!!",
+  "stateText": "DM me to 10x your money with this coin!!! Limited spots!!!",
+  "question": {
+   "type": "choice",
+   "instructions": "How should this community post be moderated?",
+   "criteria": {
+    "allow": "Normal, on-topic post",
+    "review": "Borderline; a human should look",
+    "remove": "Harassment, threats, or spam"
+   }
+  },
+  "hypotheses": [
+   "How should this community post be moderated? Answer: allow. Normal, on-topic post",
+   "How should this community post be moderated? Answer: review. Borderline; a human should look",
+   "How should this community post be moderated? Answer: remove. Harassment, threats, or spam"
+  ]
+ },
+ {
+  "state": "My salary for March didn't land in my bank account.",
+  "stateText": "My salary for March didn't land in my bank account.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which internal team should handle this employee request?",
+   "criteria": {
+    "payroll": "Salary, pay slips, tax withholding",
+    "it": "Laptop, software, network, accounts",
+    "facilities": "Office, desks, building, parking",
+    "benefits": "Health insurance, leave, retirement"
+   }
+  },
+  "hypotheses": [
+   "Which internal team should handle this employee request? Answer: payroll. Salary, pay slips, tax withholding",
+   "Which internal team should handle this employee request? Answer: it. Laptop, software, network, accounts",
+   "Which internal team should handle this employee request? Answer: facilities. Office, desks, building, parking",
+   "Which internal team should handle this employee request? Answer: benefits. Health insurance, leave, retirement"
+  ]
+ },
+ {
+  "state": "My laptop won't boot after the update and I can't reach the VPN.",
+  "stateText": "My laptop won't boot after the update and I can't reach the VPN.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which internal team should handle this employee request?",
+   "criteria": {
+    "payroll": "Salary, pay slips, tax withholding",
+    "it": "Laptop, software, network, accounts",
+    "facilities": "Office, desks, building, parking",
+    "benefits": "Health insurance, leave, retirement"
+   }
+  },
+  "hypotheses": [
+   "Which internal team should handle this employee request? Answer: payroll. Salary, pay slips, tax withholding",
+   "Which internal team should handle this employee request? Answer: it. Laptop, software, network, accounts",
+   "Which internal team should handle this employee request? Answer: facilities. Office, desks, building, parking",
+   "Which internal team should handle this employee request? Answer: benefits. Health insurance, leave, retirement"
+  ]
+ },
+ {
+  "state": "My garage badge stopped opening the gate this morning.",
+  "stateText": "My garage badge stopped opening the gate this morning.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which internal team should handle this employee request?",
+   "criteria": {
+    "payroll": "Salary, pay slips, tax withholding",
+    "it": "Laptop, software, network, accounts",
+    "facilities": "Office, desks, building, parking",
+    "benefits": "Health insurance, leave, retirement"
+   }
+  },
+  "hypotheses": [
+   "Which internal team should handle this employee request? Answer: payroll. Salary, pay slips, tax withholding",
+   "Which internal team should handle this employee request? Answer: it. Laptop, software, network, accounts",
+   "Which internal team should handle this employee request? Answer: facilities. Office, desks, building, parking",
+   "Which internal team should handle this employee request? Answer: benefits. Health insurance, leave, retirement"
+  ]
+ },
+ {
+  "state": "How many weeks of parental leave am I entitled to, and does dental cover my kids?",
+  "stateText": "How many weeks of parental leave am I entitled to, and does dental cover my kids?",
+  "question": {
+   "type": "choice",
+   "instructions": "Which internal team should handle this employee request?",
+   "criteria": {
+    "payroll": "Salary, pay slips, tax withholding",
+    "it": "Laptop, software, network, accounts",
+    "facilities": "Office, desks, building, parking",
+    "benefits": "Health insurance, leave, retirement"
+   }
+  },
+  "hypotheses": [
+   "Which internal team should handle this employee request? Answer: payroll. Salary, pay slips, tax withholding",
+   "Which internal team should handle this employee request? Answer: it. Laptop, software, network, accounts",
+   "Which internal team should handle this employee request? Answer: facilities. Office, desks, building, parking",
+   "Which internal team should handle this employee request? Answer: benefits. Health insurance, leave, retirement"
+  ]
+ },
+ {
+  "state": "Late penalty hands the underdogs their first cup title in forty years",
+  "stateText": "Late penalty hands the underdogs their first cup title in forty years",
+  "question": {
+   "type": "choice",
+   "instructions": "What is this headline about?",
+   "criteria": {
+    "sports": null,
+    "business": null,
+    "science": null,
+    "politics": null
+   }
+  },
+  "hypotheses": [
+   "What is this headline about? Answer: sports.",
+   "What is this headline about? Answer: business.",
+   "What is this headline about? Answer: science.",
+   "What is this headline about? Answer: politics."
+  ]
+ },
+ {
+  "state": "Chipmaker agrees to buy rival in $12 billion all-stock deal",
+  "stateText": "Chipmaker agrees to buy rival in $12 billion all-stock deal",
+  "question": {
+   "type": "choice",
+   "instructions": "What is this headline about?",
+   "criteria": {
+    "sports": null,
+    "business": null,
+    "science": null,
+    "politics": null
+   }
+  },
+  "hypotheses": [
+   "What is this headline about? Answer: sports.",
+   "What is this headline about? Answer: business.",
+   "What is this headline about? Answer: science.",
+   "What is this headline about? Answer: politics."
+  ]
+ },
+ {
+  "state": "Telescope spots water vapor in the atmosphere of a distant exoplanet",
+  "stateText": "Telescope spots water vapor in the atmosphere of a distant exoplanet",
+  "question": {
+   "type": "choice",
+   "instructions": "What is this headline about?",
+   "criteria": {
+    "sports": null,
+    "business": null,
+    "science": null,
+    "politics": null
+   }
+  },
+  "hypotheses": [
+   "What is this headline about? Answer: sports.",
+   "What is this headline about? Answer: business.",
+   "What is this headline about? Answer: science.",
+   "What is this headline about? Answer: politics."
+  ]
+ },
+ {
+  "state": "Parliament votes to hold early elections after coalition collapses",
+  "stateText": "Parliament votes to hold early elections after coalition collapses",
+  "question": {
+   "type": "choice",
+   "instructions": "What is this headline about?",
+   "criteria": {
+    "sports": null,
+    "business": null,
+    "science": null,
+    "politics": null
+   }
+  },
+  "hypotheses": [
+   "What is this headline about? Answer: sports.",
+   "What is this headline about? Answer: business.",
+   "What is this headline about? Answer: science.",
+   "What is this headline about? Answer: politics."
+  ]
+ },
+ {
+  "state": "All regions return 503. No customer can load the app.",
+  "stateText": "All regions return 503. No customer can load the app.",
+  "question": {
+   "type": "score",
+   "instructions": "What priority should this production incident get?",
+   "criteria": [
+    "P4 informational",
+    "P3 minor, few users",
+    "P2 major feature degraded",
+    "P1 full outage or data loss"
+   ]
+  },
+  "hypotheses": [
+   "What priority should this production incident get? Answer: P4 informational.",
+   "What priority should this production incident get? Answer: P3 minor, few users.",
+   "What priority should this production incident get? Answer: P2 major feature degraded.",
+   "What priority should this production incident get? Answer: P1 full outage or data loss."
+  ]
+ },
+ {
+  "state": "One enterprise customer says the monthly report takes a minute longer than usual.",
+  "stateText": "One enterprise customer says the monthly report takes a minute longer than usual.",
+  "question": {
+   "type": "score",
+   "instructions": "What priority should this production incident get?",
+   "criteria": [
+    "P4 informational",
+    "P3 minor, few users",
+    "P2 major feature degraded",
+    "P1 full outage or data loss"
+   ]
+  },
+  "hypotheses": [
+   "What priority should this production incident get? Answer: P4 informational.",
+   "What priority should this production incident get? Answer: P3 minor, few users.",
+   "What priority should this production incident get? Answer: P2 major feature degraded.",
+   "What priority should this production incident get? Answer: P1 full outage or data loss."
+  ]
+ },
+ {
+  "state": "A deprecation warning shows up in the logs. No user impact.",
+  "stateText": "A deprecation warning shows up in the logs. No user impact.",
+  "question": {
+   "type": "score",
+   "instructions": "What priority should this production incident get?",
+   "criteria": [
+    "P4 informational",
+    "P3 minor, few users",
+    "P2 major feature degraded",
+    "P1 full outage or data loss"
+   ]
+  },
+  "hypotheses": [
+   "What priority should this production incident get? Answer: P4 informational.",
+   "What priority should this production incident get? Answer: P3 minor, few users.",
+   "What priority should this production incident get? Answer: P2 major feature degraded.",
+   "What priority should this production incident get? Answer: P1 full outage or data loss."
+  ]
+ },
+ {
+  "state": "Search is timing out for about half of users; the rest of the app works.",
+  "stateText": "Search is timing out for about half of users; the rest of the app works.",
+  "question": {
+   "type": "score",
+   "instructions": "What priority should this production incident get?",
+   "criteria": [
+    "P4 informational",
+    "P3 minor, few users",
+    "P2 major feature degraded",
+    "P1 full outage or data loss"
+   ]
+  },
+  "hypotheses": [
+   "What priority should this production incident get? Answer: P4 informational.",
+   "What priority should this production incident get? Answer: P3 minor, few users.",
+   "What priority should this production incident get? Answer: P2 major feature degraded.",
+   "What priority should this production incident get? Answer: P1 full outage or data loss."
+  ]
+ },
+ {
+  "state": "Best blender I've ever owned. Quiet, powerful, and easy to clean.",
+  "stateText": "Best blender I've ever owned. Quiet, powerful, and easy to clean.",
+  "question": {
+   "type": "score",
+   "instructions": "How many stars would this reviewer most likely give?",
+   "criteria": [
+    "1 star",
+    "2 stars",
+    "3 stars",
+    "4 stars",
+    "5 stars"
+   ]
+  },
+  "hypotheses": [
+   "How many stars would this reviewer most likely give? Answer: 1 star.",
+   "How many stars would this reviewer most likely give? Answer: 2 stars.",
+   "How many stars would this reviewer most likely give? Answer: 3 stars.",
+   "How many stars would this reviewer most likely give? Answer: 4 stars.",
+   "How many stars would this reviewer most likely give? Answer: 5 stars."
+  ]
+ },
+ {
+  "state": "Stopped working after a week and the seller ignored me. Waste of money.",
+  "stateText": "Stopped working after a week and the seller ignored me. Waste of money.",
+  "question": {
+   "type": "score",
+   "instructions": "How many stars would this reviewer most likely give?",
+   "criteria": [
+    "1 star",
+    "2 stars",
+    "3 stars",
+    "4 stars",
+    "5 stars"
+   ]
+  },
+  "hypotheses": [
+   "How many stars would this reviewer most likely give? Answer: 1 star.",
+   "How many stars would this reviewer most likely give? Answer: 2 stars.",
+   "How many stars would this reviewer most likely give? Answer: 3 stars.",
+   "How many stars would this reviewer most likely give? Answer: 4 stars.",
+   "How many stars would this reviewer most likely give? Answer: 5 stars."
+  ]
+ },
+ {
+  "state": "It's okay. Does the job, nothing special, a bit overpriced.",
+  "stateText": "It's okay. Does the job, nothing special, a bit overpriced.",
+  "question": {
+   "type": "score",
+   "instructions": "How many stars would this reviewer most likely give?",
+   "criteria": [
+    "1 star",
+    "2 stars",
+    "3 stars",
+    "4 stars",
+    "5 stars"
+   ]
+  },
+  "hypotheses": [
+   "How many stars would this reviewer most likely give? Answer: 1 star.",
+   "How many stars would this reviewer most likely give? Answer: 2 stars.",
+   "How many stars would this reviewer most likely give? Answer: 3 stars.",
+   "How many stars would this reviewer most likely give? Answer: 4 stars.",
+   "How many stars would this reviewer most likely give? Answer: 5 stars."
+  ]
+ },
+ {
+  "state": "Production payments are failing right now and we are losing orders every minute. Call me.",
+  "stateText": "Production payments are failing right now and we are losing orders every minute. Call me.",
+  "question": {
+   "type": "score",
+   "instructions": "How urgently does this email need a reply?",
+   "criteria": [
+    "Whenever convenient",
+    "This week",
+    "Today",
+    "Immediately"
+   ]
+  },
+  "hypotheses": [
+   "How urgently does this email need a reply? Answer: Whenever convenient.",
+   "How urgently does this email need a reply? Answer: This week.",
+   "How urgently does this email need a reply? Answer: Today.",
+   "How urgently does this email need a reply? Answer: Immediately."
+  ]
+ },
+ {
+  "state": "Sharing our quarterly newsletter, read it whenever you have a moment.",
+  "stateText": "Sharing our quarterly newsletter, read it whenever you have a moment.",
+  "question": {
+   "type": "score",
+   "instructions": "How urgently does this email need a reply?",
+   "criteria": [
+    "Whenever convenient",
+    "This week",
+    "Today",
+    "Immediately"
+   ]
+  },
+  "hypotheses": [
+   "How urgently does this email need a reply? Answer: Whenever convenient.",
+   "How urgently does this email need a reply? Answer: This week.",
+   "How urgently does this email need a reply? Answer: Today.",
+   "How urgently does this email need a reply? Answer: Immediately."
+  ]
+ },
+ {
+  "state": "Could you send the signed form back before 5pm today?",
+  "stateText": "Could you send the signed form back before 5pm today?",
+  "question": {
+   "type": "score",
+   "instructions": "How urgently does this email need a reply?",
+   "criteria": [
+    "Whenever convenient",
+    "This week",
+    "Today",
+    "Immediately"
+   ]
+  },
+  "hypotheses": [
+   "How urgently does this email need a reply? Answer: Whenever convenient.",
+   "How urgently does this email need a reply? Answer: This week.",
+   "How urgently does this email need a reply? Answer: Today.",
+   "How urgently does this email need a reply? Answer: Immediately."
+  ]
+ },
+ {
+  "state": "Congratulations! You won a $1000 gift card. Click here and enter your password to claim.",
+  "stateText": "Congratulations! You won a $1000 gift card. Click here and enter your password to claim.",
+  "question": {
+   "type": "noul",
+   "instructions": "Is this message spam or a phishing attempt?",
+   "criteria": {
+    "true": "Unsolicited promotion, prize, or a request for credentials",
+    "false": "A normal message from a real correspondent"
+   }
+  },
+  "hypotheses": [
+   "Is this message spam or a phishing attempt? Answer: yes. Unsolicited promotion, prize, or a request for credentials",
+   "Is this message spam or a phishing attempt? Answer: no. A normal message from a real correspondent"
+  ]
+ },
+ {
+  "state": "Hey, are we still on for lunch Thursday? I booked the usual place.",
+  "stateText": "Hey, are we still on for lunch Thursday? I booked the usual place.",
+  "question": {
+   "type": "noul",
+   "instructions": "Is this message spam or a phishing attempt?",
+   "criteria": {
+    "true": "Unsolicited promotion, prize, or a request for credentials",
+    "false": "A normal message from a real correspondent"
+   }
+  },
+  "hypotheses": [
+   "Is this message spam or a phishing attempt? Answer: yes. Unsolicited promotion, prize, or a request for credentials",
+   "Is this message spam or a phishing attempt? Answer: no. A normal message from a real correspondent"
+  ]
+ },
+ {
+  "state": "Your account is suspended. Verify your login at secure-bank-verify.co within 24 hours.",
+  "stateText": "Your account is suspended. Verify your login at secure-bank-verify.co within 24 hours.",
+  "question": {
+   "type": "noul",
+   "instructions": "Is this message spam or a phishing attempt?",
+   "criteria": {
+    "true": "Unsolicited promotion, prize, or a request for credentials",
+    "false": "A normal message from a real correspondent"
+   }
+  },
+  "hypotheses": [
+   "Is this message spam or a phishing attempt? Answer: yes. Unsolicited promotion, prize, or a request for credentials",
+   "Is this message spam or a phishing attempt? Answer: no. A normal message from a real correspondent"
+  ]
+ },
+ {
+  "state": "Call me back at 415-555-0137 after six.",
+  "stateText": "Call me back at 415-555-0137 after six.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does the text contain personal identifying information?",
+   "criteria": {
+    "true": "A phone number, home address, government id, card number, or email address",
+    "false": "No personal identifiers"
+   }
+  },
+  "hypotheses": [
+   "Does the text contain personal identifying information? Answer: yes. A phone number, home address, government id, card number, or email address",
+   "Does the text contain personal identifying information? Answer: no. No personal identifiers"
+  ]
+ },
+ {
+  "state": "The build passed and the release notes are ready for review.",
+  "stateText": "The build passed and the release notes are ready for review.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does the text contain personal identifying information?",
+   "criteria": {
+    "true": "A phone number, home address, government id, card number, or email address",
+    "false": "No personal identifiers"
+   }
+  },
+  "hypotheses": [
+   "Does the text contain personal identifying information? Answer: yes. A phone number, home address, government id, card number, or email address",
+   "Does the text contain personal identifying information? Answer: no. No personal identifiers"
+  ]
+ },
+ {
+  "state": "Ship it to 22 Birch Lane, Springfield, to Maria Lopez.",
+  "stateText": "Ship it to 22 Birch Lane, Springfield, to Maria Lopez.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does the text contain personal identifying information?",
+   "criteria": {
+    "true": "A phone number, home address, government id, card number, or email address",
+    "false": "No personal identifiers"
+   }
+  },
+  "hypotheses": [
+   "Does the text contain personal identifying information? Answer: yes. A phone number, home address, government id, card number, or email address",
+   "Does the text contain personal identifying information? Answer: no. No personal identifiers"
+  ]
+ },
+ {
+  "state": "Please get the draft to me no later than Friday the 14th.",
+  "stateText": "Please get the draft to me no later than Friday the 14th.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does the sender state a specific deadline?"
+  },
+  "hypotheses": [
+   "Does the sender state a specific deadline? Answer: yes.",
+   "Does the sender state a specific deadline? Answer: no."
+  ]
+ },
+ {
+  "state": "No rush on this one, whenever you get to it is fine.",
+  "stateText": "No rush on this one, whenever you get to it is fine.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does the sender state a specific deadline?"
+  },
+  "hypotheses": [
+   "Does the sender state a specific deadline? Answer: yes.",
+   "Does the sender state a specific deadline? Answer: no."
+  ]
+ },
+ {
+  "state": "We have budget approved for Q3 and want to sign for 200 seats this month.",
+  "stateText": "We have budget approved for Q3 and want to sign for 200 seats this month.",
+  "question": {
+   "type": "choice",
+   "instructions": "How qualified is this sales lead?",
+   "criteria": {
+    "hot": "Has budget and wants to buy soon",
+    "warm": "Interested but exploring",
+    "cold": "Not a buyer or no fit"
+   }
+  },
+  "hypotheses": [
+   "How qualified is this sales lead? Answer: hot. Has budget and wants to buy soon",
+   "How qualified is this sales lead? Answer: warm. Interested but exploring",
+   "How qualified is this sales lead? Answer: cold. Not a buyer or no fit"
+  ]
+ },
+ {
+  "state": "We're comparing a few tools and might revisit next year.",
+  "stateText": "We're comparing a few tools and might revisit next year.",
+  "question": {
+   "type": "choice",
+   "instructions": "How qualified is this sales lead?",
+   "criteria": {
+    "hot": "Has budget and wants to buy soon",
+    "warm": "Interested but exploring",
+    "cold": "Not a buyer or no fit"
+   }
+  },
+  "hypotheses": [
+   "How qualified is this sales lead? Answer: hot. Has budget and wants to buy soon",
+   "How qualified is this sales lead? Answer: warm. Interested but exploring",
+   "How qualified is this sales lead? Answer: cold. Not a buyer or no fit"
+  ]
+ },
+ {
+  "state": "I'm a student writing a paper and have no plans to purchase anything.",
+  "stateText": "I'm a student writing a paper and have no plans to purchase anything.",
+  "question": {
+   "type": "choice",
+   "instructions": "How qualified is this sales lead?",
+   "criteria": {
+    "hot": "Has budget and wants to buy soon",
+    "warm": "Interested but exploring",
+    "cold": "Not a buyer or no fit"
+   }
+  },
+  "hypotheses": [
+   "How qualified is this sales lead? Answer: hot. Has budget and wants to buy soon",
+   "How qualified is this sales lead? Answer: warm. Interested but exploring",
+   "How qualified is this sales lead? Answer: cold. Not a buyer or no fit"
+  ]
+ },
+ {
+  "state": "Either party may end this agreement with sixty days' written notice.",
+  "stateText": "Either party may end this agreement with sixty days' written notice.",
+  "question": {
+   "type": "choice",
+   "instructions": "What kind of contract clause is this?",
+   "criteria": {
+    "termination": "How the agreement can end",
+    "payment": "Fees, invoices, and when money is due",
+    "confidentiality": "Keeping information secret",
+    "liability": "Limits on damages and responsibility"
+   }
+  },
+  "hypotheses": [
+   "What kind of contract clause is this? Answer: termination. How the agreement can end",
+   "What kind of contract clause is this? Answer: payment. Fees, invoices, and when money is due",
+   "What kind of contract clause is this? Answer: confidentiality. Keeping information secret",
+   "What kind of contract clause is this? Answer: liability. Limits on damages and responsibility"
+  ]
+ },
+ {
+  "state": "Invoices are due within thirty days of receipt.",
+  "stateText": "Invoices are due within thirty days of receipt.",
+  "question": {
+   "type": "choice",
+   "instructions": "What kind of contract clause is this?",
+   "criteria": {
+    "termination": "How the agreement can end",
+    "payment": "Fees, invoices, and when money is due",
+    "confidentiality": "Keeping information secret",
+    "liability": "Limits on damages and responsibility"
+   }
+  },
+  "hypotheses": [
+   "What kind of contract clause is this? Answer: termination. How the agreement can end",
+   "What kind of contract clause is this? Answer: payment. Fees, invoices, and when money is due",
+   "What kind of contract clause is this? Answer: confidentiality. Keeping information secret",
+   "What kind of contract clause is this? Answer: liability. Limits on damages and responsibility"
+  ]
+ },
+ {
+  "state": "The recipient shall not disclose proprietary information to any third party.",
+  "stateText": "The recipient shall not disclose proprietary information to any third party.",
+  "question": {
+   "type": "choice",
+   "instructions": "What kind of contract clause is this?",
+   "criteria": {
+    "termination": "How the agreement can end",
+    "payment": "Fees, invoices, and when money is due",
+    "confidentiality": "Keeping information secret",
+    "liability": "Limits on damages and responsibility"
+   }
+  },
+  "hypotheses": [
+   "What kind of contract clause is this? Answer: termination. How the agreement can end",
+   "What kind of contract clause is this? Answer: payment. Fees, invoices, and when money is due",
+   "What kind of contract clause is this? Answer: confidentiality. Keeping information secret",
+   "What kind of contract clause is this? Answer: liability. Limits on damages and responsibility"
+  ]
+ },
+ {
+  "state": "In no event shall either party be responsible for indirect or consequential damages exceeding the fees paid.",
+  "stateText": "In no event shall either party be responsible for indirect or consequential damages exceeding the fees paid.",
+  "question": {
+   "type": "choice",
+   "instructions": "What kind of contract clause is this?",
+   "criteria": {
+    "termination": "How the agreement can end",
+    "payment": "Fees, invoices, and when money is due",
+    "confidentiality": "Keeping information secret",
+    "liability": "Limits on damages and responsibility"
+   }
+  },
+  "hypotheses": [
+   "What kind of contract clause is this? Answer: termination. How the agreement can end",
+   "What kind of contract clause is this? Answer: payment. Fees, invoices, and when money is due",
+   "What kind of contract clause is this? Answer: confidentiality. Keeping information secret",
+   "What kind of contract clause is this? Answer: liability. Limits on damages and responsibility"
+  ]
+ },
+ {
+  "state": "{\"order\":\"A-2231\",\"status\":\"shipped\",\"customer_message\":\"tracking link says label created for a week, where is it?\"}",
+  "stateText": "{\"order\":\"A-2231\",\"status\":\"shipped\",\"customer_message\":\"tracking link says label created for a week, where is it?\"}",
+  "question": {
+   "type": "choice",
+   "instructions": "What does the shopper want?",
+   "criteria": {
+    "track_order": "Where is my package, delivery status",
+    "return_item": "Send something back or exchange it",
+    "product_question": "Question about a product before buying",
+    "cancel_order": "Stop an order that has not shipped"
+   }
+  },
+  "hypotheses": [
+   "What does the shopper want? Answer: track order. Where is my package, delivery status",
+   "What does the shopper want? Answer: return item. Send something back or exchange it",
+   "What does the shopper want? Answer: product question. Question about a product before buying",
+   "What does the shopper want? Answer: cancel order. Stop an order that has not shipped"
+  ]
+ },
+ {
+  "state": "{\"service\":\"auth\",\"error_rate\":\"100%\",\"affected\":\"all users\",\"started\":\"5m ago\"}",
+  "stateText": "{\"service\":\"auth\",\"error_rate\":\"100%\",\"affected\":\"all users\",\"started\":\"5m ago\"}",
+  "question": {
+   "type": "score",
+   "instructions": "What priority should this production incident get?",
+   "criteria": [
+    "P4 informational",
+    "P3 minor, few users",
+    "P2 major feature degraded",
+    "P1 full outage or data loss"
+   ]
+  },
+  "hypotheses": [
+   "What priority should this production incident get? Answer: P4 informational.",
+   "What priority should this production incident get? Answer: P3 minor, few users.",
+   "What priority should this production incident get? Answer: P2 major feature degraded.",
+   "What priority should this production incident get? Answer: P1 full outage or data loss."
+  ]
+ },
+ {
+  "state": "ok",
+  "stateText": "ok",
+  "question": {
+   "type": "choice",
+   "instructions": "What is the overall sentiment of the message?",
+   "criteria": {
+    "positive": "Happy, satisfied, praising",
+    "negative": "Unhappy, complaining, angry",
+    "neutral": "Factual, no clear feeling"
+   }
+  },
+  "hypotheses": [
+   "What is the overall sentiment of the message? Answer: positive. Happy, satisfied, praising",
+   "What is the overall sentiment of the message? Answer: negative. Unhappy, complaining, angry",
+   "What is the overall sentiment of the message? Answer: neutral. Factual, no clear feeling"
+  ]
+ },
+ {
+  "state": "Update at 5",
+  "stateText": "Update at 5",
+  "question": {
+   "type": "choice",
+   "instructions": "What is this headline about?",
+   "criteria": {
+    "sports": null,
+    "business": null,
+    "science": null,
+    "politics": null
+   }
+  },
+  "hypotheses": [
+   "What is this headline about? Answer: sports.",
+   "What is this headline about? Answer: business.",
+   "What is this headline about? Answer: science.",
+   "What is this headline about? Answer: politics."
+  ]
+ },
+ {
+  "state": "Great, another update that deletes my settings. Just what I needed.",
+  "stateText": "Great, another update that deletes my settings. Just what I needed.",
+  "question": {
+   "type": "choice",
+   "instructions": "What is the overall sentiment of the message?",
+   "criteria": {
+    "positive": "Happy, satisfied, praising",
+    "negative": "Unhappy, complaining, angry",
+    "neutral": "Factual, no clear feeling"
+   }
+  },
+  "hypotheses": [
+   "What is the overall sentiment of the message? Answer: positive. Happy, satisfied, praising",
+   "What is the overall sentiment of the message? Answer: negative. Unhappy, complaining, angry",
+   "What is the overall sentiment of the message? Answer: neutral. Factual, no clear feeling"
+  ]
+ },
+ {
+  "state": "I don't want to cancel anything — it already arrived, but it's the wrong color and I want to send it back.",
+  "stateText": "I don't want to cancel anything — it already arrived, but it's the wrong color and I want to send it back.",
+  "question": {
+   "type": "choice",
+   "instructions": "What does the shopper want?",
+   "criteria": {
+    "track_order": "Where is my package, delivery status",
+    "return_item": "Send something back or exchange it",
+    "product_question": "Question about a product before buying",
+    "cancel_order": "Stop an order that has not shipped"
+   }
+  },
+  "hypotheses": [
+   "What does the shopper want? Answer: track order. Where is my package, delivery status",
+   "What does the shopper want? Answer: return item. Send something back or exchange it",
+   "What does the shopper want? Answer: product question. Question about a product before buying",
+   "What does the shopper want? Answer: cancel order. Stop an order that has not shipped"
+  ]
+ },
+ {
+  "state": "Hi Sam, attached is the invoice we discussed on our call yesterday. Thanks, Priya",
+  "stateText": "Hi Sam, attached is the invoice we discussed on our call yesterday. Thanks, Priya",
+  "question": {
+   "type": "noul",
+   "instructions": "Is this message spam or a phishing attempt?",
+   "criteria": {
+    "true": "Unsolicited promotion, prize, or a request for credentials",
+    "false": "A normal message from a real correspondent"
+   }
+  },
+  "hypotheses": [
+   "Is this message spam or a phishing attempt? Answer: yes. Unsolicited promotion, prize, or a request for credentials",
+   "Is this message spam or a phishing attempt? Answer: no. A normal message from a real correspondent"
+  ]
+ },
+ {
+  "state": "You're pathetic and everyone here hates you, just leave.",
+  "stateText": "You're pathetic and everyone here hates you, just leave.",
+  "question": {
+   "type": "choice",
+   "instructions": "How should this community post be moderated?",
+   "criteria": {
+    "allow": "Normal, on-topic post",
+    "review": "Borderline; a human should look",
+    "remove": "Harassment, threats, or spam"
+   }
+  },
+  "hypotheses": [
+   "How should this community post be moderated? Answer: allow. Normal, on-topic post",
+   "How should this community post be moderated? Answer: review. Borderline; a human should look",
+   "How should this community post be moderated? Answer: remove. Harassment, threats, or spam"
+  ]
+ },
+ {
+  "state": "I strongly disagree with this policy change, and here's why it hurts small sellers.",
+  "stateText": "I strongly disagree with this policy change, and here's why it hurts small sellers.",
+  "question": {
+   "type": "choice",
+   "instructions": "How should this community post be moderated?",
+   "criteria": {
+    "allow": "Normal, on-topic post",
+    "review": "Borderline; a human should look",
+    "remove": "Harassment, threats, or spam"
+   }
+  },
+  "hypotheses": [
+   "How should this community post be moderated? Answer: allow. Normal, on-topic post",
+   "How should this community post be moderated? Answer: review. Borderline; a human should look",
+   "How should this community post be moderated? Answer: remove. Harassment, threats, or spam"
+  ]
+ },
+ {
+  "state": "My social security number is 123-45-6789, please update my file.",
+  "stateText": "My social security number is 123-45-6789, please update my file.",
+  "question": {
+   "type": "noul",
+   "instructions": "Does the text contain personal identifying information?",
+   "criteria": {
+    "true": "A phone number, home address, government id, card number, or email address",
+    "false": "No personal identifiers"
+   }
+  },
+  "hypotheses": [
+   "Does the text contain personal identifying information? Answer: yes. A phone number, home address, government id, card number, or email address",
+   "Does the text contain personal identifying information? Answer: no. No personal identifiers"
+  ]
+ },
+ {
+  "state": "Could I get a second monitor and a standing desk for my cubicle?",
+  "stateText": "Could I get a second monitor and a standing desk for my cubicle?",
+  "question": {
+   "type": "choice",
+   "instructions": "Which internal team should handle this employee request?",
+   "criteria": {
+    "payroll": "Salary, pay slips, tax withholding",
+    "it": "Laptop, software, network, accounts",
+    "facilities": "Office, desks, building, parking",
+    "benefits": "Health insurance, leave, retirement"
+   }
+  },
+  "hypotheses": [
+   "Which internal team should handle this employee request? Answer: payroll. Salary, pay slips, tax withholding",
+   "Which internal team should handle this employee request? Answer: it. Laptop, software, network, accounts",
+   "Which internal team should handle this employee request? Answer: facilities. Office, desks, building, parking",
+   "Which internal team should handle this employee request? Answer: benefits. Health insurance, leave, retirement"
+  ]
+ },
+ {
+  "state": "The tax withholding on my last pay slip looks too high.",
+  "stateText": "The tax withholding on my last pay slip looks too high.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which internal team should handle this employee request?",
+   "criteria": {
+    "payroll": "Salary, pay slips, tax withholding",
+    "it": "Laptop, software, network, accounts",
+    "facilities": "Office, desks, building, parking",
+    "benefits": "Health insurance, leave, retirement"
+   }
+  },
+  "hypotheses": [
+   "Which internal team should handle this employee request? Answer: payroll. Salary, pay slips, tax withholding",
+   "Which internal team should handle this employee request? Answer: it. Laptop, software, network, accounts",
+   "Which internal team should handle this employee request? Answer: facilities. Office, desks, building, parking",
+   "Which internal team should handle this employee request? Answer: benefits. Health insurance, leave, retirement"
+  ]
+ },
+ {
+  "state": "About 2% of API calls from one partner are getting rate-limited during peak hours.",
+  "stateText": "About 2% of API calls from one partner are getting rate-limited during peak hours.",
+  "question": {
+   "type": "score",
+   "instructions": "What priority should this production incident get?",
+   "criteria": [
+    "P4 informational",
+    "P3 minor, few users",
+    "P2 major feature degraded",
+    "P1 full outage or data loss"
+   ]
+  },
+  "hypotheses": [
+   "What priority should this production incident get? Answer: P4 informational.",
+   "What priority should this production incident get? Answer: P3 minor, few users.",
+   "What priority should this production incident get? Answer: P2 major feature degraded.",
+   "What priority should this production incident get? Answer: P1 full outage or data loss."
+  ]
+ },
+ {
+  "state": "Decent quality but it arrived scratched and support took a week to answer.",
+  "stateText": "Decent quality but it arrived scratched and support took a week to answer.",
+  "question": {
+   "type": "score",
+   "instructions": "How many stars would this reviewer most likely give?",
+   "criteria": [
+    "1 star",
+    "2 stars",
+    "3 stars",
+    "4 stars",
+    "5 stars"
+   ]
+  },
+  "hypotheses": [
+   "How many stars would this reviewer most likely give? Answer: 1 star.",
+   "How many stars would this reviewer most likely give? Answer: 2 stars.",
+   "How many stars would this reviewer most likely give? Answer: 3 stars.",
+   "How many stars would this reviewer most likely give? Answer: 4 stars.",
+   "How many stars would this reviewer most likely give? Answer: 5 stars."
+  ]
+ },
+ {
+  "state": "The board wants the numbers in the next hour, drop everything.",
+  "stateText": "The board wants the numbers in the next hour, drop everything.",
+  "question": {
+   "type": "score",
+   "instructions": "How urgently does this email need a reply?",
+   "criteria": [
+    "Whenever convenient",
+    "This week",
+    "Today",
+    "Immediately"
+   ]
+  },
+  "hypotheses": [
+   "How urgently does this email need a reply? Answer: Whenever convenient.",
+   "How urgently does this email need a reply? Answer: This week.",
+   "How urgently does this email need a reply? Answer: Today.",
+   "How urgently does this email need a reply? Answer: Immediately."
+  ]
+ },
+ {
+  "state": "I cancelled in March but the April renewal still went through. I'd like that money back.",
+  "stateText": "I cancelled in March but the April renewal still went through. I'd like that money back.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which desk should pick up this message?",
+   "criteria": {
+    "payments": "Charges, receipts, plan price, cancellations",
+    "defects": "Something in the product behaves incorrectly",
+    "identity": "Signing in, passwords, roles and invitations",
+    "appsec": "Attackers, exposed data, bypassed controls",
+    "integrations": "Third-party connectors, APIs and uptime"
+   }
+  },
+  "hypotheses": [
+   "Which desk should pick up this message? Answer: payments. Charges, receipts, plan price, cancellations",
+   "Which desk should pick up this message? Answer: defects. Something in the product behaves incorrectly",
+   "Which desk should pick up this message? Answer: identity. Signing in, passwords, roles and invitations",
+   "Which desk should pick up this message? Answer: appsec. Attackers, exposed data, bypassed controls",
+   "Which desk should pick up this message? Answer: integrations. Third-party connectors, APIs and uptime"
+  ]
+ },
+ {
+  "state": "My teammate keeps waiting for the invitation email to join our workspace and it never shows up.",
+  "stateText": "My teammate keeps waiting for the invitation email to join our workspace and it never shows up.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which desk should pick up this message?",
+   "criteria": {
+    "payments": "Charges, receipts, plan price, cancellations",
+    "defects": "Something in the product behaves incorrectly",
+    "identity": "Signing in, passwords, roles and invitations",
+    "appsec": "Attackers, exposed data, bypassed controls",
+    "integrations": "Third-party connectors, APIs and uptime"
+   }
+  },
+  "hypotheses": [
+   "Which desk should pick up this message? Answer: payments. Charges, receipts, plan price, cancellations",
+   "Which desk should pick up this message? Answer: defects. Something in the product behaves incorrectly",
+   "Which desk should pick up this message? Answer: identity. Signing in, passwords, roles and invitations",
+   "Which desk should pick up this message? Answer: appsec. Attackers, exposed data, bypassed controls",
+   "Which desk should pick up this message? Answer: integrations. Third-party connectors, APIs and uptime"
+  ]
+ },
+ {
+  "state": "The nightly Salesforce import has been stuck at 0% for two days.",
+  "stateText": "The nightly Salesforce import has been stuck at 0% for two days.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which desk should pick up this message?",
+   "criteria": {
+    "payments": "Charges, receipts, plan price, cancellations",
+    "defects": "Something in the product behaves incorrectly",
+    "identity": "Signing in, passwords, roles and invitations",
+    "appsec": "Attackers, exposed data, bypassed controls",
+    "integrations": "Third-party connectors, APIs and uptime"
+   }
+  },
+  "hypotheses": [
+   "Which desk should pick up this message? Answer: payments. Charges, receipts, plan price, cancellations",
+   "Which desk should pick up this message? Answer: defects. Something in the product behaves incorrectly",
+   "Which desk should pick up this message? Answer: identity. Signing in, passwords, roles and invitations",
+   "Which desk should pick up this message? Answer: appsec. Attackers, exposed data, bypassed controls",
+   "Which desk should pick up this message? Answer: integrations. Third-party connectors, APIs and uptime"
+  ]
+ },
+ {
+  "state": "A password reset link I used last month still works and lets me set a new password for my old colleague's account.",
+  "stateText": "A password reset link I used last month still works and lets me set a new password for my old colleague's account.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which desk should pick up this message?",
+   "criteria": {
+    "payments": "Charges, receipts, plan price, cancellations",
+    "defects": "Something in the product behaves incorrectly",
+    "identity": "Signing in, passwords, roles and invitations",
+    "appsec": "Attackers, exposed data, bypassed controls",
+    "integrations": "Third-party connectors, APIs and uptime"
+   }
+  },
+  "hypotheses": [
+   "Which desk should pick up this message? Answer: payments. Charges, receipts, plan price, cancellations",
+   "Which desk should pick up this message? Answer: defects. Something in the product behaves incorrectly",
+   "Which desk should pick up this message? Answer: identity. Signing in, passwords, roles and invitations",
+   "Which desk should pick up this message? Answer: appsec. Attackers, exposed data, bypassed controls",
+   "Which desk should pick up this message? Answer: integrations. Third-party connectors, APIs and uptime"
+  ]
+ },
+ {
+  "state": "Every due date in the calendar view is shown one day earlier than what I typed.",
+  "stateText": "Every due date in the calendar view is shown one day earlier than what I typed.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which desk should pick up this message?",
+   "criteria": {
+    "payments": "Charges, receipts, plan price, cancellations",
+    "defects": "Something in the product behaves incorrectly",
+    "identity": "Signing in, passwords, roles and invitations",
+    "appsec": "Attackers, exposed data, bypassed controls",
+    "integrations": "Third-party connectors, APIs and uptime"
+   }
+  },
+  "hypotheses": [
+   "Which desk should pick up this message? Answer: payments. Charges, receipts, plan price, cancellations",
+   "Which desk should pick up this message? Answer: defects. Something in the product behaves incorrectly",
+   "Which desk should pick up this message? Answer: identity. Signing in, passwords, roles and invitations",
+   "Which desk should pick up this message? Answer: appsec. Attackers, exposed data, bypassed controls",
+   "Which desk should pick up this message? Answer: integrations. Third-party connectors, APIs and uptime"
+  ]
+ },
+ {
+  "state": "Payment went through fine, this is not about the bill. The PDF export cuts off the last page of every report.",
+  "stateText": "Payment went through fine, this is not about the bill. The PDF export cuts off the last page of every report.",
+  "question": {
+   "type": "choice",
+   "instructions": "Which desk should pick up this message?",
+   "criteria": {
+    "payments": "Charges, receipts, plan price, cancellations",
+    "defects": "Something in the product behaves incorrectly",
+    "identity": "Signing in, passwords, roles and invitations",
+    "appsec": "Attackers, exposed data, bypassed controls",
+    "integrations": "Third-party connectors, APIs and uptime"
+   }
+  },
+  "hypotheses": [
+   "Which desk should pick up this message? Answer: payments. Charges, receipts, plan price, cancellations",
+   "Which desk should pick up this message? Answer: defects. Something in the product behaves incorrectly",
+   "Which desk should pick up this message? Answer: identity. Signing in, passwords, roles and invitations",
+   "Which desk should pick up this message? Answer: appsec. Attackers, exposed data, bypassed controls",
+   "Which desk should pick up this message? Answer: integrations. Third-party connectors, APIs and uptime"
+  ]
+ },
+ {
+  "state": "👍",
+  "stateText": "👍",
+  "question": {
+   "type": "choice",
+   "instructions": "Which desk should pick up this message?",
+   "criteria": {
+    "payments": "Charges, receipts, plan price, cancellations",
+    "defects": "Something in the product behaves incorrectly",
+    "identity": "Signing in, passwords, roles and invitations",
+    "appsec": "Attackers, exposed data, bypassed controls",
+    "integrations": "Third-party connectors, APIs and uptime"
+   }
+  },
+  "hypotheses": [
+   "Which desk should pick up this message? Answer: payments. Charges, receipts, plan price, cancellations",
+   "Which desk should pick up this message? Answer: defects. Something in the product behaves incorrectly",
+   "Which desk should pick up this message? Answer: identity. Signing in, passwords, roles and invitations",
+   "Which desk should pick up this message? Answer: appsec. Attackers, exposed data, bypassed controls",
+   "Which desk should pick up this message? Answer: integrations. Third-party connectors, APIs and uptime"
+  ]
+ },
+ {
+  "state": "One tooltip says 'Setings' instead of 'Settings'.",
+  "stateText": "One tooltip says 'Setings' instead of 'Settings'.",
+  "question": {
+   "type": "score",
+   "instructions": "How much does this hurt the customer right now?",
+   "criteria": [
+    "Barely noticeable",
+    "Annoying but they can work around it",
+    "They cannot do their job",
+    "They are losing data or money"
+   ]
+  },
+  "hypotheses": [
+   "How much does this hurt the customer right now? Answer: Barely noticeable.",
+   "How much does this hurt the customer right now? Answer: Annoying but they can work around it.",
+   "How much does this hurt the customer right now? Answer: They cannot do their job.",
+   "How much does this hurt the customer right now? Answer: They are losing data or money."
+  ]
+ },
+ {
+  "state": "Payroll did not run today and 300 employees were not paid.",
+  "stateText": "Payroll did not run today and 300 employees were not paid.",
+  "question": {
+   "type": "score",
+   "instructions": "How much does this hurt the customer right now?",
+   "criteria": [
+    "Barely noticeable",
+    "Annoying but they can work around it",
+    "They cannot do their job",
+    "They are losing data or money"
+   ]
+  },
+  "hypotheses": [
+   "How much does this hurt the customer right now? Answer: Barely noticeable.",
+   "How much does this hurt the customer right now? Answer: Annoying but they can work around it.",
+   "How much does this hurt the customer right now? Answer: They cannot do their job.",
+   "How much does this hurt the customer right now? Answer: They are losing data or money."
+  ]
+ },
+ {
+  "state": "Sorting the big table takes about ten seconds, but filtering first makes it quick.",
+  "stateText": "Sorting the big table takes about ten seconds, but filtering first makes it quick.",
+  "question": {
+   "type": "score",
+   "instructions": "How much does this hurt the customer right now?",
+   "criteria": [
+    "Barely noticeable",
+    "Annoying but they can work around it",
+    "They cannot do their job",
+    "They are losing data or money"
+   ]
+  },
+  "hypotheses": [
+   "How much does this hurt the customer right now? Answer: Barely noticeable.",
+   "How much does this hurt the customer right now? Answer: Annoying but they can work around it.",
+   "How much does this hurt the customer right now? Answer: They cannot do their job.",
+   "How much does this hurt the customer right now? Answer: They are losing data or money."
+  ]
+ },
+ {
+  "state": "The /admin page loads for visitors who are not signed in and shows every user's details.",
+  "stateText": "The /admin page loads for visitors who are not signed in and shows every user's details.",
+  "question": {
+   "type": "noul",
+   "instructions": "Is there a security exposure in this report?"
+  },
+  "hypotheses": [
+   "Is there a security exposure in this report? Answer: yes.",
+   "Is there a security exposure in this report? Answer: no."
+  ]
+ },
+ {
+  "state": "Prices on the pricing page show $ even though we bill in euros.",
+  "stateText": "Prices on the pricing page show $ even though we bill in euros.",
+  "question": {
+   "type": "noul",
+   "instructions": "Is there a security exposure in this report?"
+  },
+  "hypotheses": [
+   "Is there a security exposure in this report? Answer: yes.",
+   "Is there a security exposure in this report? Answer: no."
+  ]
+ },
+ {
+  "state": "Rename the CSS class .btn-primary to .button-primary in src/styles/buttons.css and its two usages in src/components/cta.tsx.",
+  "stateText": "Rename the CSS class .btn-primary to .button-primary in src/styles/buttons.css and its two usages in src/components/cta.tsx.",
+  "question": {
+   "type": "choice",
+   "instructions": "Pick the assistant's next move.",
+   "criteria": {
+    "proceed": "Clear, safe, and scoped: make the change",
+    "clarify": "Needs a detail from the requester first",
+    "refuse": "Harmful, leaks secrets, or weakens security"
+   }
+  },
+  "hypotheses": [
+   "Pick the assistant's next move. Answer: proceed. Clear, safe, and scoped: make the change",
+   "Pick the assistant's next move. Answer: clarify. Needs a detail from the requester first",
+   "Pick the assistant's next move. Answer: refuse. Harmful, leaks secrets, or weakens security"
+  ]
+ },
+ {
+  "state": "Rename the CSS class .btn-primary to .button-primary in src/styles/buttons.css and its two usages in src/components/cta.tsx.",
+  "stateText": "Rename the CSS class .btn-primary to .button-primary in src/styles/buttons.css and its two usages in src/components/cta.tsx.",
+  "question": {
+   "type": "score",
+   "instructions": "How dangerous is this change?",
+   "criteria": [
+    "Harmless",
+    "Small and easy to undo",
+    "Changes how the product behaves",
+    "Touches credentials, auth, or customer data"
+   ]
+  },
+  "hypotheses": [
+   "How dangerous is this change? Answer: Harmless.",
+   "How dangerous is this change? Answer: Small and easy to undo.",
+   "How dangerous is this change? Answer: Changes how the product behaves.",
+   "How dangerous is this change? Answer: Touches credentials, auth, or customer data."
+  ]
+ },
+ {
+  "state": "Make the product enterprise ready.",
+  "stateText": "Make the product enterprise ready.",
+  "question": {
+   "type": "choice",
+   "instructions": "Pick the assistant's next move.",
+   "criteria": {
+    "proceed": "Clear, safe, and scoped: make the change",
+    "clarify": "Needs a detail from the requester first",
+    "refuse": "Harmful, leaks secrets, or weakens security"
+   }
+  },
+  "hypotheses": [
+   "Pick the assistant's next move. Answer: proceed. Clear, safe, and scoped: make the change",
+   "Pick the assistant's next move. Answer: clarify. Needs a detail from the requester first",
+   "Pick the assistant's next move. Answer: refuse. Harmful, leaks secrets, or weakens security"
+  ]
+ },
+ {
+  "state": "Make the product enterprise ready.",
+  "stateText": "Make the product enterprise ready.",
+  "question": {
+   "type": "score",
+   "instructions": "How dangerous is this change?",
+   "criteria": [
+    "Harmless",
+    "Small and easy to undo",
+    "Changes how the product behaves",
+    "Touches credentials, auth, or customer data"
+   ]
+  },
+  "hypotheses": [
+   "How dangerous is this change? Answer: Harmless.",
+   "How dangerous is this change? Answer: Small and easy to undo.",
+   "How dangerous is this change? Answer: Changes how the product behaves.",
+   "How dangerous is this change? Answer: Touches credentials, auth, or customer data."
+  ]
+ },
+ {
+  "state": "Put the production Postgres password in the team wiki page so everyone can connect.",
+  "stateText": "Put the production Postgres password in the team wiki page so everyone can connect.",
+  "question": {
+   "type": "choice",
+   "instructions": "Pick the assistant's next move.",
+   "criteria": {
+    "proceed": "Clear, safe, and scoped: make the change",
+    "clarify": "Needs a detail from the requester first",
+    "refuse": "Harmful, leaks secrets, or weakens security"
+   }
+  },
+  "hypotheses": [
+   "Pick the assistant's next move. Answer: proceed. Clear, safe, and scoped: make the change",
+   "Pick the assistant's next move. Answer: clarify. Needs a detail from the requester first",
+   "Pick the assistant's next move. Answer: refuse. Harmful, leaks secrets, or weakens security"
+  ]
+ },
+ {
+  "state": "Put the production Postgres password in the team wiki page so everyone can connect.",
+  "stateText": "Put the production Postgres password in the team wiki page so everyone can connect.",
+  "question": {
+   "type": "score",
+   "instructions": "How dangerous is this change?",
+   "criteria": [
+    "Harmless",
+    "Small and easy to undo",
+    "Changes how the product behaves",
+    "Touches credentials, auth, or customer data"
+   ]
+  },
+  "hypotheses": [
+   "How dangerous is this change? Answer: Harmless.",
+   "How dangerous is this change? Answer: Small and easy to undo.",
+   "How dangerous is this change? Answer: Changes how the product behaves.",
+   "How dangerous is this change? Answer: Touches credentials, auth, or customer data."
+  ]
+ },
+ {
+  "state": "Set CORS to allow credentials from any origin on the payments API so the partner widget works.",
+  "stateText": "Set CORS to allow credentials from any origin on the payments API so the partner widget works.",
+  "question": {
+   "type": "choice",
+   "instructions": "Pick the assistant's next move.",
+   "criteria": {
+    "proceed": "Clear, safe, and scoped: make the change",
+    "clarify": "Needs a detail from the requester first",
+    "refuse": "Harmful, leaks secrets, or weakens security"
+   }
+  },
+  "hypotheses": [
+   "Pick the assistant's next move. Answer: proceed. Clear, safe, and scoped: make the change",
+   "Pick the assistant's next move. Answer: clarify. Needs a detail from the requester first",
+   "Pick the assistant's next move. Answer: refuse. Harmful, leaks secrets, or weakens security"
+  ]
+ },
+ {
+  "state": "Set CORS to allow credentials from any origin on the payments API so the partner widget works.",
+  "stateText": "Set CORS to allow credentials from any origin on the payments API so the partner widget works.",
+  "question": {
+   "type": "score",
+   "instructions": "How dangerous is this change?",
+   "criteria": [
+    "Harmless",
+    "Small and easy to undo",
+    "Changes how the product behaves",
+    "Touches credentials, auth, or customer data"
+   ]
+  },
+  "hypotheses": [
+   "How dangerous is this change? Answer: Harmless.",
+   "How dangerous is this change? Answer: Small and easy to undo.",
+   "How dangerous is this change? Answer: Changes how the product behaves.",
+   "How dangerous is this change? Answer: Touches credentials, auth, or customer data."
+  ]
+ },
+ {
+  "state": "Translate the onboarding screens. The request doesn't say into which languages.",
+  "stateText": "Translate the onboarding screens. The request doesn't say into which languages.",
+  "question": {
+   "type": "choice",
+   "instructions": "Pick the assistant's next move.",
+   "criteria": {
+    "proceed": "Clear, safe, and scoped: make the change",
+    "clarify": "Needs a detail from the requester first",
+    "refuse": "Harmful, leaks secrets, or weakens security"
+   }
+  },
+  "hypotheses": [
+   "Pick the assistant's next move. Answer: proceed. Clear, safe, and scoped: make the change",
+   "Pick the assistant's next move. Answer: clarify. Needs a detail from the requester first",
+   "Pick the assistant's next move. Answer: refuse. Harmful, leaks secrets, or weakens security"
+  ]
+ },
+ {
+  "state": "Translate the onboarding screens. The request doesn't say into which languages.",
+  "stateText": "Translate the onboarding screens. The request doesn't say into which languages.",
+  "question": {
+   "type": "score",
+   "instructions": "How dangerous is this change?",
+   "criteria": [
+    "Harmless",
+    "Small and easy to undo",
+    "Changes how the product behaves",
+    "Touches credentials, auth, or customer data"
+   ]
+  },
+  "hypotheses": [
+   "How dangerous is this change? Answer: Harmless.",
+   "How dangerous is this change? Answer: Small and easy to undo.",
+   "How dangerous is this change? Answer: Changes how the product behaves.",
+   "How dangerous is this change? Answer: Touches credentials, auth, or customer data."
+  ]
+ },
+ {
+  "state": "In src/lib/progress.ts, clamp the returned percentage to the range 0–100.",
+  "stateText": "In src/lib/progress.ts, clamp the returned percentage to the range 0–100.",
+  "question": {
+   "type": "choice",
+   "instructions": "Pick the assistant's next move.",
+   "criteria": {
+    "proceed": "Clear, safe, and scoped: make the change",
+    "clarify": "Needs a detail from the requester first",
+    "refuse": "Harmful, leaks secrets, or weakens security"
+   }
+  },
+  "hypotheses": [
+   "Pick the assistant's next move. Answer: proceed. Clear, safe, and scoped: make the change",
+   "Pick the assistant's next move. Answer: clarify. Needs a detail from the requester first",
+   "Pick the assistant's next move. Answer: refuse. Harmful, leaks secrets, or weakens security"
+  ]
+ },
+ {
+  "state": "In src/lib/progress.ts, clamp the returned percentage to the range 0–100.",
+  "stateText": "In src/lib/progress.ts, clamp the returned percentage to the range 0–100.",
+  "question": {
+   "type": "score",
+   "instructions": "How dangerous is this change?",
+   "criteria": [
+    "Harmless",
+    "Small and easy to undo",
+    "Changes how the product behaves",
+    "Touches credentials, auth, or customer data"
+   ]
+  },
+  "hypotheses": [
+   "How dangerous is this change? Answer: Harmless.",
+   "How dangerous is this change? Answer: Small and easy to undo.",
+   "How dangerous is this change? Answer: Changes how the product behaves.",
+   "How dangerous is this change? Answer: Touches credentials, auth, or customer data."
+  ]
+ },
+ {
+  "state": "Run a script against production that deletes all accounts created before 2020. There is no ticket and no backup.",
+  "stateText": "Run a script against production that deletes all accounts created before 2020. There is no ticket and no backup.",
+  "question": {
+   "type": "choice",
+   "instructions": "Pick the assistant's next move.",
+   "criteria": {
+    "proceed": "Clear, safe, and scoped: make the change",
+    "clarify": "Needs a detail from the requester first",
+    "refuse": "Harmful, leaks secrets, or weakens security"
+   }
+  },
+  "hypotheses": [
+   "Pick the assistant's next move. Answer: proceed. Clear, safe, and scoped: make the change",
+   "Pick the assistant's next move. Answer: clarify. Needs a detail from the requester first",
+   "Pick the assistant's next move. Answer: refuse. Harmful, leaks secrets, or weakens security"
+  ]
+ },
+ {
+  "state": "Run a script against production that deletes all accounts created before 2020. There is no ticket and no backup.",
+  "stateText": "Run a script against production that deletes all accounts created before 2020. There is no ticket and no backup.",
+  "question": {
+   "type": "score",
+   "instructions": "How dangerous is this change?",
+   "criteria": [
+    "Harmless",
+    "Small and easy to undo",
+    "Changes how the product behaves",
+    "Touches credentials, auth, or customer data"
+   ]
+  },
+  "hypotheses": [
+   "How dangerous is this change? Answer: Harmless.",
+   "How dangerous is this change? Answer: Small and easy to undo.",
+   "How dangerous is this change? Answer: Changes how the product behaves.",
+   "How dangerous is this change? Answer: Touches credentials, auth, or customer data."
+  ]
+ },
+ {
+  "state": "Add aria-label=\"Close\" to the X button in src/components/modal.tsx.",
+  "stateText": "Add aria-label=\"Close\" to the X button in src/components/modal.tsx.",
+  "question": {
+   "type": "choice",
+   "instructions": "Pick the assistant's next move.",
+   "criteria": {
+    "proceed": "Clear, safe, and scoped: make the change",
+    "clarify": "Needs a detail from the requester first",
+    "refuse": "Harmful, leaks secrets, or weakens security"
+   }
+  },
+  "hypotheses": [
+   "Pick the assistant's next move. Answer: proceed. Clear, safe, and scoped: make the change",
+   "Pick the assistant's next move. Answer: clarify. Needs a detail from the requester first",
+   "Pick the assistant's next move. Answer: refuse. Harmful, leaks secrets, or weakens security"
+  ]
+ },
+ {
+  "state": "Add aria-label=\"Close\" to the X button in src/components/modal.tsx.",
+  "stateText": "Add aria-label=\"Close\" to the X button in src/components/modal.tsx.",
+  "question": {
+   "type": "score",
+   "instructions": "How dangerous is this change?",
+   "criteria": [
+    "Harmless",
+    "Small and easy to undo",
+    "Changes how the product behaves",
+    "Touches credentials, auth, or customer data"
+   ]
+  },
+  "hypotheses": [
+   "How dangerous is this change? Answer: Harmless.",
+   "How dangerous is this change? Answer: Small and easy to undo.",
+   "How dangerous is this change? Answer: Changes how the product behaves.",
+   "How dangerous is this change? Answer: Touches credentials, auth, or customer data."
+  ]
+ }
+]

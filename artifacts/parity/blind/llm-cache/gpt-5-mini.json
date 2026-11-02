@@ -1,0 +1,47 @@
+{
+ "f7c0f3efb31010483178": {
+  "weights": null,
+  "ms": 97130.0124,
+  "raw": "Error: Model \"gpt-5-mini\" from --model flag is not available.\n"
+ },
+ "73850843d5c0907a936c": {
+  "weights": null,
+  "ms": 98428.4772,
+  "raw": "Error: Model \"gpt-5-mini\" from --model flag is not available.\n"
+ },
+ "a4b21f26ab5581a4ea6e": {
+  "weights": null,
+  "ms": 103712.05640000002,
+  "raw": "Error: Model \"gpt-5-mini\" from --model flag is not available.\n"
+ },
+ "30c709dd09a3cdad4285": {
+  "weights": null,
+  "ms": 106201.15720000002,
+  "raw": "Error: Model \"gpt-5-mini\" from --model flag is not available.\n"
+ },
+ "555b8fa8c7d6b55fa530": {
+  "weights": null,
+  "ms": 111664.2394,
+  "raw": "Error: Model \"gpt-5-mini\" from --model flag is not available.\n"
+ },
+ "07d071a262f032576cec": {
+  "weights": null,
+  "ms": 112607.1535,
+  "raw": "Error: Model \"gpt-5-mini\" from --model flag is not available.\n"
+ },
+ "3a7cb503df4613f09df1": {
+  "weights": null,
+  "ms": 56970.796,
+  "raw": "Error: Model \"gpt-5-mini\" from --model flag is not available.\n"
+ },
+ "1bd89e546cfe3dee346a": {
+  "weights": null,
+  "ms": 51492.187600000005,
+  "raw": "Error: Model \"gpt-5-mini\" from --model flag is not available.\n"
+ },
+ "abc5a3b3b4b0164193ab": {
+  "weights": null,
+  "ms": 52563.36469999999,
+  "raw": "Error: Model \"gpt-5-mini\" from --model flag is not available.\n"
+ }
+}

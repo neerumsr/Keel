@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1280px;height:640px;font-family:"Segoe UI",Inter,system-ui,sans-serif;background:radial-gradient(1200px 600px at 85% -10%,#1f3b73 0%,#0b1220 55%,#070b14 100%);color:#e8eefc;overflow:hidden;position:relative}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:40px 40px}
+.wrap{position:relative;padding:64px 72px;display:flex;gap:56px;height:100%}
+.left{flex:1.05;display:flex;flex-direction:column}
+.brand{display:flex;align-items:center;gap:16px;font-size:30px;font-weight:700;letter-spacing:.5px}
+.logo{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#5b8cff,#22d3ee);display:grid;place-items:center;font-size:30px;font-weight:800;color:#07101f}
+h1{font-size:62px;line-height:1.05;font-weight:800;margin-top:40px;letter-spacing:-1px}
+h1 span{background:linear-gradient(90deg,#7aa2ff,#22d3ee);-webkit-background-clip:text;color:transparent}
+.sub{font-size:23px;color:#aab7d4;margin-top:22px;line-height:1.4}
+.pills{display:flex;gap:12px;margin-top:auto;flex-wrap:wrap}
+.pill{border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);padding:9px 16px;border-radius:999px;font-size:17px;color:#d6e0f5}
+.right{flex:.95;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:36px 36px 28px;display:flex;flex-direction:column}
+.rt{font-size:20px;color:#aab7d4;text-transform:uppercase;letter-spacing:2px}
+.rh{font-size:28px;font-weight:700;margin-top:6px}
+.bars{margin-top:30px;display:flex;flex-direction:column;gap:22px}
+.row .lab{display:flex;justify-content:space-between;font-size:21px;margin-bottom:8px}
+.row .lab b{font-size:24px}
+.track{height:22px;background:rgba(255,255,255,.07);border-radius:11px;overflow:hidden}
+.fill{height:100%;border-radius:11px;background:#51607e}
+.me .fill{background:linear-gradient(90deg,#5b8cff,#22d3ee)}
+.me .lab{color:#fff;font-weight:700}
+.note{margin-top:auto;font-size:15px;color:#8090b0;line-height:1.4}
+</style></head><body><div class="grid"></div>
+<div class="wrap">
+ <div class="left">
+  <div class="brand"><div class="logo">K</div>Keel</div>
+  <h1>Open-weight<br><span>decision model</span><br>for AI agents</h1>
+  <div class="sub">Route, score and gate every agent step with real probabilities. Runs on your own GPU or CPU.</div>
+  <div class="pills"><div class="pill">Apache-2.0</div><div class="pill">Qwen3.5-27B LoRA</div><div class="pill">245 ms median</div><div class="pill">GGUF · Docker · K8s</div></div>
+ </div>
+ <div class="right">
+  <div class="rt">Decision Index 0.3 · public</div>
+  <div class="rh">Full public suite, 139,677 requests</div>
+  <div class="bars">
+   <div class="row me"><div class="lab"><span>Keel-Pro (open weights)</span><b>62.73</b></div><div class="track"><div class="fill" style="width:89.6%"></div></div></div>
+   <div class="row"><div class="lab"><span>Microsoft-Decision-1 *</span><b>≈62</b></div><div class="track"><div class="fill" style="width:88.6%"></div></div></div>
+   <div class="row"><div class="lab"><span>TypeSafe Jev 1.14</span><b>60.70</b></div><div class="track"><div class="fill" style="width:86.7%"></div></div></div>
+  </div>
+  <div class="note">Keel-Pro measured on one RTX 5090 with the DI kit; gated HLE counted as 0. Jev from the DI board. * Estimate read from Microsoft's published chart. Bars start at 0, scale 0–70.</div>
+ </div>
+</div></body></html>

@@ -1,0 +1,273 @@
+{
+ "3403b524a5e91071cf5e": {
+  "weights": {
+   "ok": 1
+  },
+  "ms": 47872.84349999999,
+  "usage": {
+   "input": 17308,
+   "output": 9,
+   "reasoning": 0,
+   "cacheRead": 0,
+   "cacheWrite": 17305,
+   "apiMs": 1420,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:50:31.044Z"
+ },
+ "733263d852481745b687": {
+  "weights": {
+   "action": {
+    "edit": 100,
+    "ask": 0,
+    "stop": 0
+   },
+   "risk": {
+    "0": 5,
+    "1": 85,
+    "2": 10,
+    "3": 0
+   }
+  },
+  "ms": 25162.461499999976,
+  "usage": {
+   "input": 17574,
+   "output": 37,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8503,
+   "apiMs": 1814,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:50:56.264Z"
+ },
+ "da89e31b188043ae4b61": {
+  "weights": {
+   "pii": {
+    "yes": 0
+   }
+  },
+  "ms": 25380.249300000025,
+  "usage": {
+   "input": 17474,
+   "output": 12,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8403,
+   "apiMs": 1725,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:50:56.516Z"
+ },
+ "4951e1c645965627eaf2": {
+  "weights": {
+   "topic": {
+    "science": 100,
+    "sports": 0,
+    "business": 0,
+    "politics": 0
+   }
+  },
+  "ms": 27960.896699999983,
+  "usage": {
+   "input": 17474,
+   "output": 24,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8403,
+   "apiMs": 1731,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:50:59.032Z"
+ },
+ "660c88dd5f9a14ca621a": {
+  "weights": {
+   "sentiment": {
+    "negative": 100,
+    "neutral": 0,
+    "positive": 0
+   }
+  },
+  "ms": 35088.32289999997,
+  "usage": {
+   "input": 17490,
+   "output": 20,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8419,
+   "apiMs": 3347,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:51:06.138Z"
+ },
+ "c1b811a79585db40b365": {
+  "weights": {
+   "topic": {
+    "sports": 100,
+    "business": 0,
+    "science": 0,
+    "politics": 0
+   }
+  },
+  "ms": 51208.53509999998,
+  "usage": {
+   "input": 17465,
+   "output": 24,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8394,
+   "apiMs": 1594,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:51:47.475Z"
+ },
+ "76bb78e74d609f520219": {
+  "weights": {
+   "impact": {
+    "0": 5,
+    "1": 90,
+    "2": 5,
+    "3": 0
+   }
+  },
+  "ms": 50063.527,
+  "usage": {
+   "input": 17509,
+   "output": 23,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8438,
+   "apiMs": 1585,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:51:49.096Z"
+ },
+ "4cc80da8ae0310fc5b8f": {
+  "weights": {
+   "team": {
+    "payroll": 0,
+    "it": 15,
+    "facilities": 100,
+    "benefits": 0
+   }
+  },
+  "ms": 44562.76270000002,
+  "usage": {
+   "input": 17510,
+   "output": 26,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8439,
+   "apiMs": 1519,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:51:50.728Z"
+ },
+ "b276989f09cb3db8c8f8": {
+  "weights": {
+   "action": {
+    "edit": 100,
+    "ask": 0,
+    "stop": 0
+   },
+   "risk": {
+    "0": 90,
+    "1": 10,
+    "2": 0,
+    "3": 0
+   }
+  },
+  "ms": 56139.82270000002,
+  "usage": {
+   "input": 17584,
+   "output": 37,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8513,
+   "apiMs": 4918,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:51:52.663Z"
+ },
+ "dfd4e7ac3babc47332a8": {
+  "weights": {
+   "verdict": {
+    "allow": 98,
+    "review": 2,
+    "remove": 0
+   }
+  },
+  "ms": 72639.53370000003,
+  "usage": {
+   "input": 17494,
+   "output": 20,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8423,
+   "apiMs": 1748,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:53:03.369Z"
+ },
+ "d6ac63b9ddff40563c07": {
+  "weights": {
+   "route": {
+    "billing": 0,
+    "bug": 25,
+    "account": 5,
+    "security": 0,
+    "technical": 100
+   }
+  },
+  "ms": 77407.272,
+  "usage": {
+   "input": 17520,
+   "output": 27,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8449,
+   "apiMs": 2365,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:53:06.506Z"
+ },
+ "584718f7fc11800bf85d": {
+  "weights": {
+   "sentiment": {
+    "positive": 100,
+    "negative": 0,
+    "neutral": 0
+   }
+  },
+  "ms": 84411.64970000001,
+  "usage": {
+   "input": 17486,
+   "output": 20,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8415,
+   "apiMs": 8050,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:53:11.889Z"
+ },
+ "ce1a873edebb58514346": {
+  "weights": {
+   "spam": {
+    "yes": 0,
+    "no": 100
+   }
+  },
+  "ms": 80570.42969999998,
+  "usage": {
+   "input": 17483,
+   "output": 15,
+   "reasoning": 0,
+   "cacheRead": 9068,
+   "cacheWrite": 8412,
+   "apiMs": 7002,
+   "premium": 1
+  },
+  "at": "2026-10-29T03:53:13.263Z"
+ }
+}

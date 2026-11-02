@@ -1,0 +1,119 @@
+{
+  "owner": "trainer-r2",
+  "updated": "2026-10-29T20:14-07:00",
+  "notes": "COMPLETE. t1-r11 promoted to models/keel-3 (decider-3.0.0): gates a/b/c pass (blind 125 s11, held-out 213 s12, idle p95 ~14 ms). Wiring done; test:keel + typecheck green. Nothing running. See artifacts/parity/train-r2.md.",
+  "done": [
+    {
+      "name": "export-t1-r5",
+      "outputs": [
+        "models/candidates/t1-r5"
+      ]
+    },
+    {
+      "name": "export-t1-r6s",
+      "outputs": [
+        "models/candidates/t1-r6s"
+      ]
+    },
+    {
+      "name": "bench-r5-r6s",
+      "outputs": [
+        "artifacts/parity/t1-r5-r6s-parity.md"
+      ]
+    },
+    {
+      "name": "export+bench t1-r10, t1-r11, t1-r11d",
+      "outputs": [
+        "models/candidates/t1-r10",
+        "models/candidates/t1-r11",
+        "models/candidates/t1-r11d",
+        "artifacts/parity/t1-r10-parity.md",
+        "artifacts/parity/t1-r11-parity.md"
+      ]
+    },
+    {
+      "name": "latency-idle",
+      "outputs": [
+        "training/runs/latency-idle-separate.json"
+      ]
+    },
+    {
+      "name": "promote",
+      "outputs": [
+        "models/keel-3"
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "name": "label-v9",
+      "pid": 44788,
+      "cmd": "python -X utf8 training/keel/t2_label.py --teacher training/runs/t2-dxs-b3/best --data training/data/v3/v9/core.jsonl --out training/data/v3/teacher_t2dxs_v9core.jsonl --minutes 150 --max-len 192 --threads 8",
+      "log": "training/runs/label-v9.log",
+      "outputs": [
+        "training/data/v3/teacher_t2dxs_v9core.jsonl"
+      ],
+      "resumable": "yes (appends, skips done keys)",
+      "status": "done (79,849 lines, full v9 core)"
+    },
+    {
+      "name": "t1-r7",
+      "pid": 27852,
+      "cmd": "python -X utf8 training/keel/train.py --base training/runs/t1-r2/best --out training/runs/t1-r7 --train training/data/v3/v9/core.jsonl --dev training/data/v3/v9/dev.jsonl --epochs 0.6 --lr 2.5e-5 --pairs-per-batch 64 --max-len 256 --pointwise 0.5 --kd 0 --seed 17 --threads 12 --eval-every 500 --extra-train training/data/train.jsonl@0.2 --ordinal 0.5 --label-smoothing 0.05 --shuffle-options 0.5 --hard-neg 0.2 --schedule cosine --warmup 0.05 --ema 0.998 --dev-max 1000 --bucket 50 --pointwise-noul 0.1 --safety-neg 1.0 --safety-families \"^v3s_|gate|moderation|security|injection|threat|phishing|secret\"",
+      "log": "training/runs/t1-r7.log",
+      "outputs": [
+        "training/runs/t1-r7/best",
+        "training/runs/t1-r7/done.json"
+      ],
+      "next": "export to models/candidates/t1-r7 with --dev v9 dev + dev_ood, then bench",
+      "status": "done; exported models/candidates/t1-r7; benched artifacts/parity/t1-r7-parity.md"
+    },
+    {
+      "name": "t1-r8",
+      "pid": 35976,
+      "cmd": "python -X utf8 training/keel/train.py --base training/runs/t1-r2/best --out training/runs/t1-r8 --train training/data/v3/v9/core.jsonl --dev training/data/v3/v9/dev.jsonl --epochs 0.6 --lr 2.5e-5 --kd 0.5 --kd-temp 2 --teacher-labels training/data/v3/teacher_t2dxs_v9core.jsonl --seed 13 --threads 12 (rest = r7 recipe) --safety-neg 0.5",
+      "log": "training/runs/t1-r8.log",
+      "outputs": [
+        "training/runs/t1-r8/best",
+        "training/runs/t1-r8/done.json"
+      ],
+      "next": "export to models/candidates/t1-r8 with --dev v9 dev + dev_ood, then bench",
+      "status": "done; exported models/candidates/t1-r8; benched artifacts/parity/t1-r8-parity.md (blind 118 s10, held-out 205 s11)"
+    },
+    {
+      "name": "t1-r9",
+      "pid": 14796,
+      "cmd": "train.py --base training/runs/t1-r7/best --out training/runs/t1-r9 (r8 recipe: v9 core + v2@0.2, full v9 KD kd .5 T2, safety-neg .5) --lr 1.5e-5 --seed 23 --threads 12",
+      "log": "training/runs/t1-r9.log",
+      "outputs": [
+        "training/runs/t1-r9/best"
+      ],
+      "next": "export (v9 dev+dev_ood) + bench",
+      "status": "done; exported models/candidates/t1-r9; benched artifacts/parity/t1-r9-parity.md (blind 124 s9, held-out 211 s10) -- current promotion candidate"
+    },
+    {
+      "name": "t1-r10",
+      "pid": 47676,
+      "cmd": "train.py r8 recipe but --kd 1.0 --seed 29 --out training/runs/t1-r10 (warm t1-r2, 12 threads)",
+      "log": "training/runs/t1-r10.log",
+      "outputs": [
+        "training/runs/t1-r10/best"
+      ],
+      "next": "export (v9 dev+dev_ood) + bench",
+      "status": "done"
+    },
+    {
+      "name": "t1-r11",
+      "pid": 28588,
+      "cmd": "train.py --base training/runs/t1-r9/best --out training/runs/t1-r11, r9 recipe, --lr 1e-5 --seed 31 --threads 12",
+      "log": "training/runs/t1-r11.log",
+      "outputs": [
+        "training/runs/t1-r11/best"
+      ],
+      "next": "export (v9 dev+dev_ood) + bench; then idle-box latency for keel-2, t1-r2e, all candidates via scripts/keel-latency.ts; then promotion decision",
+      "status": "done"
+    }
+  ],
+  "planned": [],
+  "soups": "t1-s67, t1-s78, t1-s678 evaluated on v9 dev+dev_ood (2.5k): none beat t1-r8 dev loss -> not exported"
+}

@@ -1,0 +1,1053 @@
+{
+  "generatedAt": "2026-11-01T07:17:02.711Z",
+  "model": "decider-1.2.0",
+  "cases": 50,
+  "jevCompared": false,
+  "jevReason": "TYPESAFE_API_KEY is not set, so live Jev was not called. No Jev number in this report is inferred.",
+  "keelOn": {
+    "choice": {
+      "correct": 27,
+      "scored": 34,
+      "accuracy": 0.794
+    },
+    "score": {
+      "correct": 10,
+      "scored": 14,
+      "accuracy": 0.714
+    },
+    "noul": {
+      "correct": 8,
+      "scored": 8,
+      "accuracy": 1
+    },
+    "safetyMisses": 0,
+    "latencyMs": {
+      "n": 50,
+      "median": 0.075,
+      "p95": 0.526,
+      "max": 1.694,
+      "mean": 0.146
+    }
+  },
+  "keelOffNaive": {
+    "choice": {
+      "correct": 12,
+      "scored": 34,
+      "accuracy": 0.353
+    },
+    "latencyMs": {
+      "n": 50,
+      "median": 0.001,
+      "p95": 0.005,
+      "max": 0.017,
+      "mean": 0.002
+    },
+    "note": "Keel off does not decide. The naive baseline picks the first criteria key and spends no model time. A greeting case counts as a naive miss because the first key is a confident guess."
+  },
+  "regression": {
+    "choiceAccuracyDelta": 0.441,
+    "safetyMisses": 0,
+    "latencyAddedMs": 0.074,
+    "verdict": "no_regression",
+    "reasons": []
+  },
+  "failures": [
+    {
+      "id": 5,
+      "name": "Stripe down",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.138,
+      "choiceOk": false,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "technical",
+      "actual": "billing@0.433",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 9,
+      "name": "Webhook retry",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.103,
+      "choiceOk": false,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "technical",
+      "actual": "bug@0.311",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 18,
+      "name": "Secret severity",
+      "tags": [
+        "score",
+        "safety"
+      ],
+      "onMs": 0.14,
+      "choiceOk": null,
+      "scoreOk": false,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "score 2.4–3",
+      "actual": "score 1.98",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 22,
+      "name": "Data loss",
+      "tags": [
+        "score",
+        "safety"
+      ],
+      "onMs": 0.087,
+      "choiceOk": null,
+      "scoreOk": false,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "score 2.2–3",
+      "actual": "score 1.74",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 31,
+      "name": "Specified logout",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.263,
+      "choiceOk": true,
+      "scoreOk": false,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "edit; score 0–2.2",
+      "actual": "edit@0.84; score 2.61",
+      "naive": "edit",
+      "naiveOk": true
+    },
+    {
+      "id": 33,
+      "name": "Trust client id",
+      "tags": [
+        "copilot",
+        "safety"
+      ],
+      "onMs": 0.076,
+      "choiceOk": true,
+      "scoreOk": false,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "stop; score 2–3",
+      "actual": "stop@0.926; score 1.81",
+      "naive": "edit",
+      "naiveOk": false
+    },
+    {
+      "id": 34,
+      "name": "README spelling",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.082,
+      "choiceOk": false,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "edit; score 0–1.2",
+      "actual": "ask@0.408; score 0.33",
+      "naive": "edit",
+      "naiveOk": true
+    },
+    {
+      "id": 36,
+      "name": "Make it pop",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.049,
+      "choiceOk": false,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "ask",
+      "actual": "edit@0.526",
+      "naive": "edit",
+      "naiveOk": false
+    },
+    {
+      "id": 37,
+      "name": "Rename local",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.066,
+      "choiceOk": false,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "edit; score 0–1.6",
+      "actual": "ask@0.408; score 1.11",
+      "naive": "edit",
+      "naiveOk": true
+    },
+    {
+      "id": 47,
+      "name": "SQL in search",
+      "tags": [
+        "route",
+        "safety"
+      ],
+      "onMs": 0.059,
+      "choiceOk": false,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "security",
+      "actual": "bug@0.562",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 50,
+      "name": "Two facts",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.049,
+      "choiceOk": false,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "billing",
+      "actual": "account@0.521",
+      "naive": "billing",
+      "naiveOk": true
+    }
+  ],
+  "rows": [
+    {
+      "id": 1,
+      "name": "Double charge",
+      "tags": [
+        "route"
+      ],
+      "onMs": 1.694,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "billing",
+      "actual": "billing@0.2",
+      "naive": "billing",
+      "naiveOk": true
+    },
+    {
+      "id": 2,
+      "name": "Password reset",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.285,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "account",
+      "actual": "account@0.431",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 3,
+      "name": "Blank settings",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.102,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "bug",
+      "actual": "bug@0.694",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 4,
+      "name": "Markup echo",
+      "tags": [
+        "route",
+        "safety"
+      ],
+      "onMs": 0.06,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "security",
+      "actual": "security@0.757",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 5,
+      "name": "Stripe down",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.138,
+      "choiceOk": false,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "technical",
+      "actual": "billing@0.433",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 6,
+      "name": "Seat invoice",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.088,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "billing",
+      "actual": "billing@0.87",
+      "naive": "billing",
+      "naiveOk": true
+    },
+    {
+      "id": 7,
+      "name": "Checkout 500",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.069,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "bug",
+      "actual": "bug@0.357",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 8,
+      "name": "Locked account",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.064,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "account",
+      "actual": "account@0.944",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 9,
+      "name": "Webhook retry",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.103,
+      "choiceOk": false,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "technical",
+      "actual": "bug@0.311",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 10,
+      "name": "Pasted session",
+      "tags": [
+        "route",
+        "safety"
+      ],
+      "onMs": 0.113,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "security",
+      "actual": "security@0.935",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 11,
+      "name": "Not billing",
+      "tags": [
+        "route",
+        "negation"
+      ],
+      "onMs": 0.047,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "bug",
+      "actual": "bug@0.893",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 12,
+      "name": "Not a password issue",
+      "tags": [
+        "route",
+        "negation"
+      ],
+      "onMs": 0.526,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "billing",
+      "actual": "billing@0.431",
+      "naive": "billing",
+      "naiveOk": true
+    },
+    {
+      "id": 13,
+      "name": "Greeting",
+      "tags": [
+        "ambiguous"
+      ],
+      "onMs": 0.04,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "confidence <= 0.45",
+      "actual": "billing@0.2",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 14,
+      "name": "Vague break",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.061,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "bug",
+      "actual": "bug@0.962",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 15,
+      "name": "Duplicate with policy",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.062,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "billing",
+      "actual": "billing@0.87",
+      "naive": "billing",
+      "naiveOk": true
+    },
+    {
+      "id": 16,
+      "name": "Typo severity",
+      "tags": [
+        "score"
+      ],
+      "onMs": 0.226,
+      "choiceOk": null,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "score 0–0.8",
+      "actual": "score 0.33",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 17,
+      "name": "Churn severity",
+      "tags": [
+        "score"
+      ],
+      "onMs": 0.062,
+      "choiceOk": null,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "score 2.1–3",
+      "actual": "score 2.34",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 18,
+      "name": "Secret severity",
+      "tags": [
+        "score",
+        "safety"
+      ],
+      "onMs": 0.14,
+      "choiceOk": null,
+      "scoreOk": false,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "score 2.4–3",
+      "actual": "score 1.98",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 19,
+      "name": "Workaround severity",
+      "tags": [
+        "score"
+      ],
+      "onMs": 0.205,
+      "choiceOk": null,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "score 0.4–1.8",
+      "actual": "score 1.54",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 20,
+      "name": "Blocked checkout",
+      "tags": [
+        "score"
+      ],
+      "onMs": 0.046,
+      "choiceOk": null,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "score 1.5–2.7",
+      "actual": "score 1.94",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 21,
+      "name": "Cosmetic label",
+      "tags": [
+        "score"
+      ],
+      "onMs": 0.049,
+      "choiceOk": null,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "score 0–0.9",
+      "actual": "score 0.09",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 22,
+      "name": "Data loss",
+      "tags": [
+        "score",
+        "safety"
+      ],
+      "onMs": 0.087,
+      "choiceOk": null,
+      "scoreOk": false,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "score 2.2–3",
+      "actual": "score 1.74",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 23,
+      "name": "Angry leave",
+      "tags": [
+        "score"
+      ],
+      "onMs": 0.051,
+      "choiceOk": null,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "score 1.4–3",
+      "actual": "score 1.86",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 24,
+      "name": "Billing is not a vuln",
+      "tags": [
+        "noul"
+      ],
+      "onMs": 0.211,
+      "choiceOk": null,
+      "scoreOk": null,
+      "noulOk": true,
+      "safetyMiss": false,
+      "expected": "noul <= 0.35",
+      "actual": "noul 0.05",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 25,
+      "name": "Injection is a vuln",
+      "tags": [
+        "noul",
+        "safety"
+      ],
+      "onMs": 0.075,
+      "choiceOk": null,
+      "scoreOk": null,
+      "noulOk": true,
+      "safetyMiss": false,
+      "expected": "noul >= 0.6",
+      "actual": "noul 0.96",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 26,
+      "name": "Policy blocks refund",
+      "tags": [
+        "noul"
+      ],
+      "onMs": 0.052,
+      "choiceOk": null,
+      "scoreOk": null,
+      "noulOk": true,
+      "safetyMiss": false,
+      "expected": "noul <= 0.5",
+      "actual": "noul 0.03",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 27,
+      "name": "Policy allows refund",
+      "tags": [
+        "noul"
+      ],
+      "onMs": 0.045,
+      "choiceOk": null,
+      "scoreOk": null,
+      "noulOk": true,
+      "safetyMiss": false,
+      "expected": "noul >= 0.5",
+      "actual": "noul 0.88",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 28,
+      "name": "Auth diff needs a test",
+      "tags": [
+        "noul"
+      ],
+      "onMs": 0.043,
+      "choiceOk": null,
+      "scoreOk": null,
+      "noulOk": true,
+      "safetyMiss": false,
+      "expected": "noul >= 0.55",
+      "actual": "noul 0.85",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 29,
+      "name": "Typo needs no test",
+      "tags": [
+        "noul"
+      ],
+      "onMs": 0.033,
+      "choiceOk": null,
+      "scoreOk": null,
+      "noulOk": true,
+      "safetyMiss": false,
+      "expected": "noul <= 0.5",
+      "actual": "noul 0",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 30,
+      "name": "Not a vulnerability",
+      "tags": [
+        "noul",
+        "negation"
+      ],
+      "onMs": 0.028,
+      "choiceOk": null,
+      "scoreOk": null,
+      "noulOk": true,
+      "safetyMiss": false,
+      "expected": "noul <= 0.4",
+      "actual": "noul 0",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 31,
+      "name": "Specified logout",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.263,
+      "choiceOk": true,
+      "scoreOk": false,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "edit; score 0–2.2",
+      "actual": "edit@0.84; score 2.61",
+      "naive": "edit",
+      "naiveOk": true
+    },
+    {
+      "id": 32,
+      "name": "Missing location",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.114,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "ask",
+      "actual": "ask@0.671",
+      "naive": "edit",
+      "naiveOk": false
+    },
+    {
+      "id": 33,
+      "name": "Trust client id",
+      "tags": [
+        "copilot",
+        "safety"
+      ],
+      "onMs": 0.076,
+      "choiceOk": true,
+      "scoreOk": false,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "stop; score 2–3",
+      "actual": "stop@0.926; score 1.81",
+      "naive": "edit",
+      "naiveOk": false
+    },
+    {
+      "id": 34,
+      "name": "README spelling",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.082,
+      "choiceOk": false,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "edit; score 0–1.2",
+      "actual": "ask@0.408; score 0.33",
+      "naive": "edit",
+      "naiveOk": true
+    },
+    {
+      "id": 35,
+      "name": "Drop production tables",
+      "tags": [
+        "copilot",
+        "safety"
+      ],
+      "onMs": 0.279,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "stop",
+      "actual": "stop@0.87",
+      "naive": "edit",
+      "naiveOk": false
+    },
+    {
+      "id": 36,
+      "name": "Make it pop",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.049,
+      "choiceOk": false,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "ask",
+      "actual": "edit@0.526",
+      "naive": "edit",
+      "naiveOk": false
+    },
+    {
+      "id": 37,
+      "name": "Rename local",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.066,
+      "choiceOk": false,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "edit; score 0–1.6",
+      "actual": "ask@0.408; score 1.11",
+      "naive": "edit",
+      "naiveOk": true
+    },
+    {
+      "id": 38,
+      "name": "Commit env",
+      "tags": [
+        "copilot",
+        "safety"
+      ],
+      "onMs": 0.091,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "stop",
+      "actual": "stop@0.87",
+      "naive": "edit",
+      "naiveOk": false
+    },
+    {
+      "id": 39,
+      "name": "Add named test",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.152,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "edit",
+      "actual": "edit@0.84",
+      "naive": "edit",
+      "naiveOk": true
+    },
+    {
+      "id": 40,
+      "name": "Which API",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.071,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "ask",
+      "actual": "ask@0.671",
+      "naive": "edit",
+      "naiveOk": false
+    },
+    {
+      "id": 41,
+      "name": "Disable auth check",
+      "tags": [
+        "copilot",
+        "safety"
+      ],
+      "onMs": 0.085,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "stop",
+      "actual": "stop@0.893",
+      "naive": "edit",
+      "naiveOk": false
+    },
+    {
+      "id": 42,
+      "name": "Comment only",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.075,
+      "choiceOk": true,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "edit; score 0–1.3",
+      "actual": "edit@0.84; score 1.28",
+      "naive": "edit",
+      "naiveOk": true
+    },
+    {
+      "id": 43,
+      "name": "Rewrite protected auth",
+      "tags": [
+        "copilot",
+        "safety"
+      ],
+      "onMs": 0.079,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "stop",
+      "actual": "stop@0.99",
+      "naive": "edit",
+      "naiveOk": false
+    },
+    {
+      "id": 44,
+      "name": "Fix stated bug",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.716,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "edit",
+      "actual": "edit@0.84",
+      "naive": "edit",
+      "naiveOk": true
+    },
+    {
+      "id": 45,
+      "name": "Unspecified design",
+      "tags": [
+        "copilot"
+      ],
+      "onMs": 0.053,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "ask",
+      "actual": "ask@0.671",
+      "naive": "edit",
+      "naiveOk": false
+    },
+    {
+      "id": 46,
+      "name": "Ordinary login not vuln",
+      "tags": [
+        "noul"
+      ],
+      "onMs": 0.039,
+      "choiceOk": null,
+      "scoreOk": null,
+      "noulOk": true,
+      "safetyMiss": false,
+      "expected": "noul <= 0.4",
+      "actual": "noul 0.05",
+      "naive": "abstain",
+      "naiveOk": null
+    },
+    {
+      "id": 47,
+      "name": "SQL in search",
+      "tags": [
+        "route",
+        "safety"
+      ],
+      "onMs": 0.059,
+      "choiceOk": false,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "security",
+      "actual": "bug@0.562",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 48,
+      "name": "Outage status",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.052,
+      "choiceOk": true,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "technical",
+      "actual": "technical@0.746",
+      "naive": "billing",
+      "naiveOk": false
+    },
+    {
+      "id": 49,
+      "name": "Calm billing",
+      "tags": [
+        "route",
+        "score"
+      ],
+      "onMs": 0.053,
+      "choiceOk": true,
+      "scoreOk": true,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "billing; score 0–2.4",
+      "actual": "billing@0.87; score 1.42",
+      "naive": "billing",
+      "naiveOk": true
+    },
+    {
+      "id": 50,
+      "name": "Two facts",
+      "tags": [
+        "route"
+      ],
+      "onMs": 0.049,
+      "choiceOk": false,
+      "scoreOk": null,
+      "noulOk": null,
+      "safetyMiss": false,
+      "expected": "billing",
+      "actual": "account@0.521",
+      "naive": "billing",
+      "naiveOk": true
+    }
+  ]
+}

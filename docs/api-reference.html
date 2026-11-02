@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API reference · Keel docs</title>
+<meta name="description" content="Every endpoint, field, alias, limit and error in Keel's System One-compatible HTTP API.">
+<script>try{var t=localStorage.getItem('keel-docs-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--bg:#fbfaf6;--surface:#ffffff;--surface2:#f1efe8;--ink:#14171c;--ink2:#262b33;--line:#d9d5c9;--accent:#0b6170;--accent-ink:#ffffff;--accentSoft:#e2f0f1;--ok:#1d6b3a;--okSoft:#e3f2e7;--warm:#9a4a05;--warmSoft:#fbecdc;--danger:#a3261b;--code-bg:#f3f1ea;--link:#0a5a86;--shadow:0 1px 2px rgba(20,23,28,.06),0 6px 20px rgba(20,23,28,.05)}
+html[data-theme=dark]{--bg:#0f1418;--surface:#161d22;--surface2:#1d262c;--ink:#f1f4f6;--ink2:#dbe2e6;--line:#33414a;--accent:#5fc4d2;--accent-ink:#06171b;--accentSoft:#173238;--ok:#6fd393;--okSoft:#15301f;--warm:#f2a65a;--warmSoft:#35250f;--danger:#ff8b7e;--code-bg:#11181d;--link:#8fd0ff;--shadow:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 19px/1.65 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+code,pre{font-family:"Cascadia Mono","JetBrains Mono",Consolas,ui-monospace,Menlo,monospace}
+a{color:var(--link);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}
+.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{max-width:1180px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;gap:18px}
+.brand{white-space:nowrap;flex:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none}
+.brand svg{width:28px;height:28px}
+.top nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px}
+.top nav a{color:var(--ink2);text-decoration:none;font-size:17px;padding:6px 10px;border-radius:8px}
+.top nav a[aria-current]{color:var(--ink);background:var(--surface2);font-weight:600}
+.top nav a:hover{background:var(--surface2)}
+.spacer{flex:1}
+.btn{font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--ink2)}.btn svg{width:18px;height:18px}
+.pbar{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:40}
+main{max-width:940px;margin:0 auto;padding:40px 28px 80px}
+.crumb{font-size:17px;color:var(--ink2);margin:0 0 6px}
+h1{font-size:50px;line-height:1.1;letter-spacing:-.02em;margin:6px 0 18px;font-weight:750}
+.lede{font-size:22px;line-height:1.55;color:var(--ink2);margin:0 0 30px}
+h2{font-size:33px;line-height:1.2;letter-spacing:-.01em;margin:64px 0 16px;padding-top:22px;border-top:1px solid var(--line);font-weight:700}
+h3{font-size:25px;line-height:1.3;margin:40px 0 12px;font-weight:650}
+h4{font-size:21px;margin:28px 0 8px}
+h1,h2,h3,h4{scroll-margin-top:84px;position:relative;overflow-wrap:anywhere}
+.anchor{opacity:0;margin-left:10px;text-decoration:none;color:var(--accent);font-weight:400}
+h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 18px}ul,ol{margin:0 0 20px;padding-left:28px}li{margin:6px 0}li>ul,li>ol{margin:6px 0}
+strong{font-weight:650;color:var(--ink)}
+:not(pre)>code{font-size:.86em;background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+.code{margin:0 0 24px;border:1px solid var(--line);border-radius:12px;background:var(--code-bg);overflow:hidden}
+.code-bar{display:flex;justify-content:space-between;align-items:center;padding:6px 10px 6px 16px;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.copy{font:inherit;font-size:15px;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 10px;cursor:pointer}
+.copy:hover{border-color:var(--ink2)}
+pre{margin:0;padding:16px 18px;overflow-x:auto;font-size:16.5px;line-height:1.55;color:var(--ink)}
+.table-wrap{overflow-x:auto;margin:0 0 26px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:18px;line-height:1.45}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface2);font-weight:650;color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+.num{font-variant-numeric:tabular-nums;font-weight:650;color:var(--ink);background:var(--accentSoft);border-radius:5px;padding:0 4px}
+.callout{margin:0 0 26px;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.callout-strong{background:var(--warmSoft);border-color:var(--warm)}
+.callout>:last-child{margin-bottom:0}
+hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+figure.diagram{margin:10px 0 34px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.fig-scroll{overflow-x:auto}
+figure svg{display:block;width:100%;height:auto;min-width:600px}
+.hbars{display:grid;gap:12px}.hb-row{display:grid;grid-template-columns:210px 1fr 150px;align-items:center;gap:14px}
+.hb-label{font-weight:600;text-align:right}.hb-track{background:var(--surface2);border-radius:6px;height:28px;overflow:hidden}
+.hb-bar{height:100%;background:var(--accent);opacity:.6;border-radius:6px}.hb-bar.strong{opacity:1}.hb-bar.warm{background:var(--warm);opacity:1}
+.hb-val{font-weight:650;font-variant-numeric:tabular-nums}
+figcaption{font-size:17px;color:var(--ink2);margin-top:14px;line-height:1.5}
+svg .box{fill:var(--surface2);stroke:var(--line);stroke-width:1.5}
+svg .accent{fill:var(--accent);stroke:var(--accent)}svg .ok{fill:var(--okSoft);stroke:var(--ok);stroke-width:1.5}svg .warm{fill:var(--warmSoft);stroke:var(--warm);stroke-width:1.5}
+svg .frame{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 5}
+svg .t{fill:var(--ink);font:500 17px "Segoe UI",system-ui,sans-serif}svg .tb{font-weight:650;font-size:18px}svg .ts{font-size:15.5px;fill:var(--ink2)}
+svg .on-accent{fill:var(--accent-ink)}svg .on-ok,svg .on-warm{fill:var(--ink)}svg .ok-t{fill:var(--ok)}
+svg .arrow{stroke:var(--ink2);stroke-width:2}svg .arrow.okline{stroke:var(--ok)}svg .ahead{fill:var(--ink2)}
+svg .track{fill:var(--surface2)}svg .bar{fill:var(--accent);opacity:.55}svg .bar.strong{opacity:1}svg .warmbar{fill:var(--warm);opacity:1}
+svg .grid{stroke:var(--line);stroke-width:1}
+svg .ln-a{stroke:var(--accent);stroke-width:3}svg .ln-b{stroke:var(--warm);stroke-width:3}svg .ln-a-dot{fill:var(--accent)}svg .ln-b-dot{fill:var(--warm)}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:24px;border-top:1px solid var(--line)}
+.pager a{display:block;flex:1;padding:14px 18px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);background:var(--surface)}
+.pager a:hover{border-color:var(--accent)}.pager small{display:block;font-size:16px;color:var(--ink2)}.pager .next{text-align:right}
+footer{font-size:16px;color:var(--ink2);margin-top:28px}
+/* contents menu: middle-left, auto-hide */
+.navtab{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:25;writing-mode:vertical-rl;rotate:180deg;font:600 16px/1 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:0;border-radius:0 10px 10px 0;padding:16px 9px;cursor:pointer;transition:opacity .2s}
+.sidenav{position:fixed;left:14px;top:50%;transform:translate(calc(-100% - 30px),-50%);z-index:26;width:300px;max-height:76vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 10px 14px 14px;box-shadow:0 10px 40px rgba(0,0,0,.14);transition:transform .28s ease}
+body.nav-open .sidenav{transform:translate(0,-50%)}body.nav-open .navtab{opacity:0;pointer-events:none}
+.sidenav-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 8px 6px;font-weight:700;font-size:17px}
+.sidenav-head button{font:inherit;font-size:15px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 8px;cursor:pointer}
+.sidenav ol{list-style:none;margin:0;padding:0}.sidenav li{margin:0}
+.sidenav a{display:block;padding:6px 8px;border-radius:7px;color:var(--ink2);text-decoration:none;font-size:16.5px;line-height:1.35}
+.sidenav a.l3{padding-left:22px;font-size:16px}
+.sidenav a:hover{background:var(--surface2);color:var(--ink)}
+.sidenav a.active{background:var(--accentSoft);color:var(--ink);font-weight:650}
+
+@media (max-width:1240px){.top nav{display:none}}
+@media (max-width:700px){body{font-size:18px}main{padding:26px 18px 60px}h1{font-size:36px}h2{font-size:27px;margin-top:48px}h3{font-size:22px}.lede{font-size:19.5px}.top-in{padding:10px 16px;gap:10px}.brand span{display:none}table{font-size:17px}th,td{padding:9px 10px}pre{font-size:15.5px}figure.diagram{padding:14px}.sidenav{width:min(300px,84vw)}main{padding-left:38px}.navtab{font-size:14px;padding:12px 5px}.hb-row{grid-template-columns:1fr auto;gap:4px 10px}.hb-label{text-align:left;grid-column:1/-1}.hb-track{height:22px}.pager{flex-direction:column}}
+.docmenu{position:fixed;inset:60px 12px auto auto;z-index:35;width:min(340px,92vw);max-height:80vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 10px 40px rgba(0,0,0,.16);display:none}
+.docmenu.open{display:block}.docmenu h4{margin:10px 8px 4px;font-size:16px}.docmenu a{display:block;padding:7px 10px;border-radius:7px;color:var(--ink);text-decoration:none;font-size:17px}.docmenu a:hover{background:var(--surface2)}
+@media print{.top,.navtab,.sidenav,.pbar,.copy,.pager,.docmenu{display:none!important}body{font-size:12pt}main{max-width:none;padding:0}h2{break-after:avoid}figure,table,.code{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="pbar"></div>
+<header class="top"><div class="top-in">
+<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="var(--accent)"/><path d="M8 9h16M16 9v15M9 19c2 4 5 5 7 5s5-1 7-5" stroke="var(--accent-ink)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg><span>Keel docs</span></a>
+<nav aria-label="Documentation"><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="concepts.html">Concepts</a><a href="api-reference.html" aria-current="page">API reference</a><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="faq.html">FAQ</a></nav>
+<div class="spacer"></div>
+<button class="btn alldocs" id="alldocs" type="button" aria-haspopup="true">All docs</button>
+<button class="btn" id="theme" type="button" aria-label="Toggle dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Dark</span></button>
+</div></header>
+<div class="docmenu" id="docmenu"><h4>Get started</h4><a href="index.html">Overview</a><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="deployment.html">Deploy</a><a href="concepts.html">Concepts</a><a href="use-cases.html">50 use cases</a><h4>Reference</h4><a href="api-reference.html">API reference</a><a href="help-guide.html">Help guide</a><a href="faq.html">FAQ</a><h4>Evidence</h4><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="comparison.html">Comparison</a><a href="why-keel.html">Why Keel</a><a href="model-card.html">Model card</a><a href="keel-pro.html">Keel-Pro story</a><h4>Internals</h4><a href="architecture.html">Architecture</a><a href="design-doc.html">Design doc</a><a href="training-guide.html">Training guide</a><a href="release-notes.html">Release notes</a><a href="licenses.html">Licenses</a><a href="press.html">Press kit</a></div>
+<button class="navtab" type="button" aria-label="Open contents">Contents</button>
+<aside class="sidenav" aria-label="On this page"><div class="sidenav-head"><span>On this page</span><button id="navclose" type="button" aria-label="Close contents">Close</button></div><ol><li><a class="l2" href="#endpoints">Endpoints</a></li><li><a class="l2" href="#authentication">Authentication</a></li><li><a class="l2" href="#post-apiv1systemone">POST /api/v1/systemone</a></li><li><a class="l3" href="#request">Request</a></li><li><a class="l3" href="#response">Response</a></li><li><a class="l2" href="#post-providersmicrosoftv1systemone">POST /providers/microsoft/v1/systemone</a></li><li><a class="l2" href="#model-aliases">Model aliases</a></li><li><a class="l2" href="#limits">Limits</a></li><li><a class="l2" href="#errors">Errors</a></li><li><a class="l2" href="#get-apiv1status">GET /api/v1/status</a></li><li><a class="l2" href="#post-apiv1switch">POST /api/v1/switch</a></li><li><a class="l2" href="#get-apiv1models">GET /api/v1/models</a></li><li><a class="l2" href="#differences-from-jev-and-microsoft-decision-1">Differences from Jev and Microsoft-Decision-1</a></li><li><a class="l2" href="#code-samples">Code samples</a></li><li><a class="l3" href="#curl">curl</a></li><li><a class="l3" href="#powershell">PowerShell</a></li><li><a class="l3" href="#python">Python</a></li><li><a class="l3" href="#typescript">TypeScript</a></li><li><a class="l2" href="#migrating-from-a-hosted-service">Migrating from a hosted service</a></li></ol></aside>
+<main>
+<p class="crumb"><a href="index.html">Keel docs</a> / API reference</p>
+<h1>API reference</h1>
+<p class="lede">Every endpoint, field, alias, limit and error in Keel's System One-compatible HTTP API.</p>
+<p>The base URL is <code>http://localhost:8080</code>, the port <code>npm run dev</code> serves. All bodies are UTF-8 JSON. Compressed request bodies (<code>Content-Encoding: zstd</code> or <code>gzip</code>) are not supported yet and return 400.</p>
+<h2 id="endpoints">Endpoints<a class="anchor" href="#endpoints" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Method and path</th><th>Auth</th><th>Purpose</th></tr></thead><tbody><tr><td><code>POST /api/v1/systemone</code></td><td>Key</td><td>Score one state against 1–64 typed questions</td></tr><tr><td><code>POST /providers/microsoft/v1/systemone</code></td><td>Key</td><td>Same handler, on the Microsoft Foundry path</td></tr><tr><td><code>GET /api/v1/status</code></td><td>None</td><td>Switch state, loaded model, engine, fallback</td></tr><tr><td><code>POST /api/v1/switch</code></td><td>Bearer only</td><td>Turn Keel on or off</td></tr><tr><td><code>GET /api/v1/models</code></td><td>None</td><td>List of accepted model aliases</td></tr></tbody></table></div>
+<p>There is no <code>/v1/systemone</code> route without the <code>/api</code> prefix. Jev SDKs reach the right path when their base URL is <code>http://localhost:8080/api</code>.</p>
+<h2 id="authentication">Authentication<a class="anchor" href="#authentication" aria-label="Link to this section">#</a></h2>
+<p>Decision calls accept either header:</p>
+<div class="code"><div class="code-bar"><span>http</span><button type="button" class="copy">Copy</button></div><pre><code>Authorization: Bearer &lt;key&gt;
+api-key: &lt;key&gt;</code></pre></div>
+<p>The switch accepts only <code>Authorization: Bearer</code>. Status and models are public.</p>
+<p>The key is a local password for this Keel process, not a vendor API key. It is the first 40 characters of base64url(HMAC-SHA256(secret, <code>&quot;keel-local-decider-v1&quot;</code>)). The secret is <code>KEEL_SECRET</code> if set; otherwise it is a random 32-byte secret that Keel generates on first use and stores in <code>~/.keel/secret</code> (override the path with <code>KEEL_SECRET_FILE</code>; file mode 0600). Every install therefore has its own key. Print yours with <code>npm run keel:token</code>. To rotate it, delete the secret file or change <code>KEEL_SECRET</code>, restart, and rerun <code>npm run keel:agents</code>. Keys are compared in constant time.</p>
+<p>Entra ID and OAuth tokens are not accepted, because Keel has no identity provider.</p>
+<h2 id="post-apiv1systemone">POST /api/v1/systemone<a class="anchor" href="#post-apiv1systemone" aria-label="Link to this section">#</a></h2>
+<h3 id="request">Request<a class="anchor" href="#request" aria-label="Link to this section">#</a></h3>
+<div class="code"><div class="code-bar"><span>json</span><button type="button" class="copy">Copy</button></div><pre><code>{
+  &quot;model&quot;: &quot;decider-latest&quot;,
+  &quot;state&quot;: &quot;git push --force origin main&quot;,
+  &quot;questions&quot;: {
+    &quot;cmd&quot;: {
+      &quot;type&quot;: &quot;choice&quot;,
+      &quot;instructions&quot;: &quot;The agent wants to run this command. What should happen?&quot;,
+      &quot;criteria&quot;: {
+        &quot;run&quot;: &quot;Read-only or workspace-scoped&quot;,
+        &quot;confirm&quot;: &quot;Has side effects; ask the user&quot;,
+        &quot;block&quot;: &quot;Destructive or exfiltrates data&quot;
+      }
+    }
+  }
+}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Type</th><th>Required</th><th>Notes</th></tr></thead><tbody><tr><td><code>model</code></td><td>string</td><td>No</td><td>An alias from the table below. Defaults to <code>decider-latest</code>. Unknown names return 400.</td></tr><tr><td><code>state</code></td><td>string, object or array</td><td>Yes</td><td>The text being judged. Objects and arrays are serialised to JSON text. Up to 8,000 characters.</td></tr><tr><td><code>questions</code></td><td>object</td><td>Yes</td><td>1–64 entries. The key is your question id and is echoed in <code>answers</code>.</td></tr><tr><td><code>questions.&lt;id&gt;.type</code></td><td><code>choice</code>, <code>score</code> or <code>noul</code></td><td>Yes</td><td>Jev's <code>box</code> type returns 400.</td></tr><tr><td><code>questions.&lt;id&gt;.instructions</code></td><td>string or null</td><td>Noul: yes, unless <code>criteria</code> is set</td><td>Up to 4,000 characters.</td></tr><tr><td><code>questions.&lt;id&gt;.criteria</code></td><td>object, array or null</td><td>Choice and score: yes</td><td>See below.</td></tr><tr><td><code>questions.&lt;id&gt;.options</code></td><td>array</td><td>No</td><td>Jev's alternative to choice <code>criteria</code>: a list of option descriptions. Keys are derived from each description.</td></tr></tbody></table></div>
+<p>Criteria by type:</p>
+<ul><li><strong>choice</strong>: an object <code>{ &quot;&lt;option&gt;&quot;: &quot;&lt;description&gt;&quot; | null }</code> with 1–255 options. Option keys must be unique.</li><li><strong>score</strong>: an ordered array such as <code>[&quot;Low&quot;, &quot;Medium&quot;, &quot;High&quot;]</code>, or an object with numeric keys such as <code>{ &quot;0&quot;: &quot;Low&quot;, &quot;1&quot;: &quot;Medium&quot;, &quot;2&quot;: &quot;High&quot; }</code>, with 1–10 levels. Structured level values are echoed in <code>legend</code>.</li><li><strong>noul</strong>: optional <code>{ &quot;true&quot;: &quot;&lt;what yes means&gt;&quot;, &quot;false&quot;: &quot;&lt;what no means&gt;&quot; }</code>.</li></ul>
+<p>Keel is text-only. Image inputs are not supported, and Jev's long-context header is ignored.</p>
+<h3 id="response">Response<a class="anchor" href="#response" aria-label="Link to this section">#</a></h3>
+<div class="code"><div class="code-bar"><span>json</span><button type="button" class="copy">Copy</button></div><pre><code>{
+  &quot;model&quot;: &quot;decider-3.0.0&quot;,
+  &quot;answers&quot;: {
+    &quot;cmd&quot;: { &quot;type&quot;: &quot;choice&quot;, &quot;choice&quot;: &quot;block&quot;, &quot;confidence&quot;: 0.882,
+             &quot;probabilities&quot;: { &quot;run&quot;: 0.0762, &quot;confirm&quot;: 0.0422, &quot;block&quot;: 0.8816 } }
+  },
+  &quot;usage&quot;: { &quot;input_tokens&quot;: 0, &quot;output_tokens&quot;: 0 }
+}</code></pre></div>
+<p>This is real Keel-3 (<code>decider-3.0.0</code>) output for the request above.</p>
+<div class="table-wrap"><table><thead><tr><th>Answer field</th><th>Types</th><th>Meaning</th></tr></thead><tbody><tr><td><code>type</code></td><td>all</td><td>Echo of the question type</td></tr><tr><td><code>choice</code></td><td>choice</td><td>The most likely option key</td></tr><tr><td><code>score</code></td><td>score</td><td>Expected level Σ i·pᵢ, to 2 decimals</td></tr><tr><td><code>noul</code></td><td>noul</td><td>P(yes), to 4 decimals</td></tr><tr><td><code>confidence</code></td><td>choice, score</td><td>The top probability (<code>decider-*</code> and MSD1 aliases), or Jev-style confidence (<code>jev-*</code>), to 3 decimals. See <a href="concepts.html#confidence">Concepts</a>.</td></tr><tr><td><code>probabilities</code></td><td>choice, score</td><td>The full distribution, to 4 decimals. Keys are option names for choice and level indexes for score.</td></tr><tr><td><code>legend</code></td><td>score</td><td>Level index → level name</td></tr></tbody></table></div>
+<p><code>model</code> is the id of the judge that actually answered. <code>usage</code> is always zero. Responses carry <code>Cache-Control: no-store</code>.</p>
+<h2 id="post-providersmicrosoftv1systemone">POST /providers/microsoft/v1/systemone<a class="anchor" href="#post-providersmicrosoftv1systemone" aria-label="Link to this section">#</a></h2>
+<p>This is the same handler as <code>/api/v1/systemone</code>, mounted on the path Microsoft Foundry uses for Microsoft-Decision-1. Send the <code>api-key</code> header and <code>&quot;model&quot;: &quot;microsoft-decision-1&quot;</code>, or omit <code>model</code>. Custom Foundry deployment names return 400, because Keel has no deployments.</p>
+<h2 id="model-aliases">Model aliases<a class="anchor" href="#model-aliases" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Alias</th><th>Answered by</th><th>Confidence style</th></tr></thead><tbody><tr><td><code>decider-latest</code>, <code>decider-3.0.0</code>, <code>decider-preview</code></td><td>Neural model (Keel-3)</td><td>Top probability</td></tr><tr><td><code>decider-2.0.0</code></td><td>Keel-2, pinned (<code>models/keel-2</code>)</td><td>Top probability</td></tr><tr><td><code>decider-1.2.0</code>, <code>decider-1.1.0</code>, <code>decider-1.0.0</code></td><td>Lexical judge <code>decider-1.2.0</code></td><td>Top probability</td></tr><tr><td><code>jev-latest</code>, <code>jev-1.14.0</code>, <code>jev-1.13.0</code>, <code>jev-preview</code></td><td>Neural model</td><td>Jev style</td></tr><tr><td><code>microsoft-decision-1</code>, <code>Microsoft-Decision-1</code>, <code>microsoft/microsoft-decision-1</code>, <code>microsoft/microsoft-decision-1-20261009</code></td><td>Neural model</td><td>Top probability</td></tr></tbody></table></div>
+<p>&quot;Neural model&quot; means the first loadable directory among <code>KEEL_MODEL_DIR</code>, <code>models/keel-3</code>, <code>models/keel-2</code> and <code>models/keel-base</code>. Its id is <code>decider-3.0.0</code> with the shipped weights, <code>decider-2.0.0</code> if Keel-3's weights are missing, or <code>decider-2.0.0-zeroshot</code> when only the base is installed. <code>GET /api/v1/models</code> reports what each alias <code>resolves_to</code>. If it cannot load, or <code>KEEL_ENGINE=lexical</code> is set, the lexical judge answers as <code>decider-1.2.0</code>. Vendor aliases exist for drop-in compatibility and never mean that a hosted service answered.</p>
+<h2 id="limits">Limits<a class="anchor" href="#limits" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Limit</th><th style="text-align:right">Value</th></tr></thead><tbody><tr><td>Questions per request</td><td style="text-align:right">64</td></tr><tr><td>Total alternatives across all questions</td><td style="text-align:right">1,024</td></tr><tr><td>Options per choice</td><td style="text-align:right">1–255</td></tr><tr><td>Levels per score</td><td style="text-align:right">1–10</td></tr><tr><td>Question id and option key</td><td style="text-align:right">128 characters, no control characters</td></tr><tr><td><code>state</code></td><td style="text-align:right">8,000 characters</td></tr><tr><td><code>instructions</code></td><td style="text-align:right">4,000 characters</td></tr><tr><td>Option or level description</td><td style="text-align:right">1,000 characters</td></tr><tr><td>Encoder window</td><td style="text-align:right">about 256 tokens per (state, option) pair</td></tr><tr><td>Rate</td><td style="text-align:right">120 decision requests per 60 seconds per server process (<code>KEEL_RATE_PER_MINUTE</code>)</td></tr></tbody></table></div>
+<p>The <code>decider-pro-1.0.0</code> pin (the optional Keel-Pro sidecar, <code>artifacts/parity/pro/SERVE.md</code>) reads long contexts, so it accepts an empty <code>state</code> (everything in the question), states up to 200,000 characters, instructions up to 100,000 and descriptions up to 8,000. The counts above are the same for every model.</p>
+<p>Reserved question ids are <code>confidence</code>, <code>probabilities</code>, <code>usage</code>, <code>model</code>, <code>answers</code>, <code>state</code>, <code>questions</code>, <code>error</code>, <code>type</code> and <code>quota</code>.</p>
+<p>The MCP tool <code>keel_decide</code> is stricter than the wire. It allows 1–8 questions and 1,200-character instructions per call.</p>
+<h2 id="errors">Errors<a class="anchor" href="#errors" aria-label="Link to this section">#</a></h2>
+<p>Every error uses one envelope:</p>
+<div class="code"><div class="code-bar"><span>json</span><button type="button" class="copy">Copy</button></div><pre><code>{ &quot;error&quot;: { &quot;type&quot;: &quot;invalid_request&quot;, &quot;message&quot;: &quot;state is 9120 characters. The limit is 8000.&quot;, &quot;request_id&quot;: &quot;req_3f9c0a1b2d4e5f60&quot; } }</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th style="text-align:right">Status</th><th><code>type</code></th><th>When</th><th>What to do</th></tr></thead><tbody><tr><td style="text-align:right">400</td><td><code>invalid_request</code></td><td>The body is not JSON or is compressed, or a field is missing, too long or the wrong shape</td><td>Fix the request. The message names the field.</td></tr><tr><td style="text-align:right">401</td><td><code>unauthorized</code></td><td>The key is missing or wrong</td><td>Send <code>Authorization: Bearer &lt;key&gt;</code> or <code>api-key: &lt;key&gt;</code>.</td></tr><tr><td style="text-align:right">409</td><td><code>disabled</code></td><td>The switch is off. No model ran.</td><td>Fall back to your own logic, or turn Keel on.</td></tr><tr><td style="text-align:right">429</td><td><code>rate_limited</code></td><td>More than 120 requests in 60 seconds (<code>KEEL_RATE_PER_MINUTE</code> changes it)</td><td>Back off and retry. There is no <code>Retry-After</code> header.</td></tr></tbody></table></div>
+<h2 id="get-apiv1status">GET /api/v1/status<a class="anchor" href="#get-apiv1status" aria-label="Link to this section">#</a></h2>
+<div class="code"><div class="code-bar"><span>json</span><button type="button" class="copy">Copy</button></div><pre><code>{&quot;enabled&quot;:true,&quot;model&quot;:&quot;decider-3.0.0&quot;,&quot;engine&quot;:&quot;neural&quot;,&quot;neural&quot;:{&quot;loaded&quot;:true,&quot;id&quot;:&quot;decider-3.0.0&quot;,&quot;error&quot;:null},&quot;fallback&quot;:&quot;decider-1.2.0&quot;}</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody><tr><td><code>enabled</code></td><td>Switch state. When false, decisions return 409.</td></tr><tr><td><code>model</code></td><td>The judge that would answer <code>decider-latest</code> now</td></tr><tr><td><code>engine</code></td><td><code>neural</code> or <code>lexical</code></td></tr><tr><td><code>neural.loaded</code>, <code>neural.id</code>, <code>neural.error</code></td><td>Whether the ONNX model loaded, its id, and the load error if any</td></tr><tr><td><code>fallback</code></td><td>The lexical judge id</td></tr></tbody></table></div>
+<h2 id="post-apiv1switch">POST /api/v1/switch<a class="anchor" href="#post-apiv1switch" aria-label="Link to this section">#</a></h2>
+<div class="code"><div class="code-bar"><span>bash</span><button type="button" class="copy">Copy</button></div><pre><code>curl -s -X POST http://localhost:8080/api/v1/switch \
+  -H &quot;Authorization: Bearer $KEEL_TOKEN&quot; -H &quot;Content-Type: application/json&quot; -d '{&quot;enabled&quot;:false}'
+# {&quot;enabled&quot;:false}</code></pre></div>
+<p>The switch lives in memory and resets to on when the server restarts.</p>
+<h2 id="get-apiv1models">GET /api/v1/models<a class="anchor" href="#get-apiv1models" aria-label="Link to this section">#</a></h2>
+<div class="code"><div class="code-bar"><span>json</span><button type="button" class="copy">Copy</button></div><pre><code>{&quot;object&quot;:&quot;list&quot;,&quot;data&quot;:[{&quot;id&quot;:&quot;decider-latest&quot;,&quot;object&quot;:&quot;model&quot;,&quot;owned_by&quot;:&quot;keel&quot;,&quot;resolves_to&quot;:&quot;decider-3.0.0&quot;}, ...]}</code></pre></div>
+<p>The real list has one entry per alias. It is an OpenAI-style list, which the Jev SDK's <code>models.list()</code> does not parse yet.</p>
+<h2 id="differences-from-jev-and-microsoft-decision-1">Differences from Jev and Microsoft-Decision-1<a class="anchor" href="#differences-from-jev-and-microsoft-decision-1" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Area</th><th>Keel</th><th>Jev and Microsoft-Decision-1</th></tr></thead><tbody><tr><td>Where it runs</td><td>Your machine</td><td>Hosted API</td></tr><tr><td>Auth</td><td>Local derived key, as Bearer or <code>api-key</code></td><td>Vendor key. Foundry also supports Entra ID.</td></tr><tr><td>Question types</td><td><code>choice</code>, <code>score</code>, <code>noul</code></td><td>Jev also has <code>box</code> and image inputs</td></tr><tr><td>Context</td><td>About 256 tokens per pair</td><td>Jev 64k tokens, Microsoft-Decision-1 32k tokens (vendor-documented)</td></tr><tr><td>Compressed bodies</td><td>Not supported</td><td>Jev SDKs compress bodies of 1 KiB or more</td></tr><tr><td><code>usage</code></td><td>Always 0</td><td>Billed input tokens</td></tr><tr><td>Rate limit</td><td>120 per minute per process</td><td>Per-account quotas</td></tr><tr><td><code>models.list()</code></td><td>OpenAI-style list</td><td>SDK-specific shape</td></tr></tbody></table></div>
+<h2 id="code-samples">Code samples<a class="anchor" href="#code-samples" aria-label="Link to this section">#</a></h2>
+<h3 id="curl">curl<a class="anchor" href="#curl" aria-label="Link to this section">#</a></h3>
+<div class="code"><div class="code-bar"><span>bash</span><button type="button" class="copy">Copy</button></div><pre><code>curl -s http://localhost:8080/api/v1/systemone \
+  -H &quot;Authorization: Bearer $KEEL_TOKEN&quot; -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;state&quot;:&quot;Invoice charged twice&quot;,&quot;questions&quot;:{&quot;route&quot;:{&quot;type&quot;:&quot;choice&quot;,&quot;instructions&quot;:&quot;Which queue?&quot;,&quot;criteria&quot;:{&quot;billing&quot;:&quot;Money or invoices&quot;,&quot;bug&quot;:&quot;Product broken&quot;}}}}'</code></pre></div>
+<h3 id="powershell">PowerShell<a class="anchor" href="#powershell" aria-label="Link to this section">#</a></h3>
+<div class="code"><div class="code-bar"><span>powershell</span><button type="button" class="copy">Copy</button></div><pre><code>$body = @{ state = &quot;Invoice charged twice&quot;; questions = @{ route = @{ type = &quot;choice&quot;; instructions = &quot;Which queue?&quot;
+  criteria = @{ billing = &quot;Money or invoices&quot;; bug = &quot;Product broken&quot; } } } } | ConvertTo-Json -Depth 8
+Invoke-RestMethod http://localhost:8080/api/v1/systemone -Method Post -ContentType &quot;application/json&quot; `
+  -Headers @{ Authorization = &quot;Bearer $env:KEEL_TOKEN&quot; } -Body $body</code></pre></div>
+<h3 id="python">Python<a class="anchor" href="#python" aria-label="Link to this section">#</a></h3>
+<div class="code"><div class="code-bar"><span>python</span><button type="button" class="copy">Copy</button></div><pre><code>import os, requests
+r = requests.post(&quot;http://localhost:8080/api/v1/systemone&quot;,
+    headers={&quot;api-key&quot;: os.environ[&quot;KEEL_TOKEN&quot;]},
+    json={&quot;state&quot;: &quot;Invoice charged twice&quot;,
+          &quot;questions&quot;: {&quot;route&quot;: {&quot;type&quot;: &quot;choice&quot;, &quot;instructions&quot;: &quot;Which queue?&quot;,
+                                  &quot;criteria&quot;: {&quot;billing&quot;: &quot;Money or invoices&quot;, &quot;bug&quot;: &quot;Product broken&quot;}}}},
+    timeout=5)
+print(r.json()[&quot;answers&quot;][&quot;route&quot;][&quot;choice&quot;])</code></pre></div>
+<h3 id="typescript">TypeScript<a class="anchor" href="#typescript" aria-label="Link to this section">#</a></h3>
+<div class="code"><div class="code-bar"><span>ts</span><button type="button" class="copy">Copy</button></div><pre><code>const res = await fetch(&quot;http://localhost:8080/api/v1/systemone&quot;, {
+  method: &quot;POST&quot;,
+  headers: { Authorization: `Bearer ${process.env.KEEL_TOKEN}`, &quot;Content-Type&quot;: &quot;application/json&quot; },
+  body: JSON.stringify({ state: &quot;Invoice charged twice&quot;, questions: { route: { type: &quot;choice&quot;, instructions: &quot;Which queue?&quot;, criteria: { billing: &quot;Money or invoices&quot;, bug: &quot;Product broken&quot; } } } }),
+});
+const { answers } = await res.json();</code></pre></div>
+<h2 id="migrating-from-a-hosted-service">Migrating from a hosted service<a class="anchor" href="#migrating-from-a-hosted-service" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>From</th><th>Change</th></tr></thead><tbody><tr><td>Jev REST</td><td>Replace <code>https://api.typesafe.ai/v1/systemone</code> with <code>http://localhost:8080/api/v1/systemone</code>, and use the Keel key</td></tr><tr><td>Jev SDK</td><td>Set <code>TYPESAFE_BASE_URL=http://localhost:8080/api</code> and <code>TYPESAFE_API_KEY=&lt;Keel key&gt;</code>, and pass <code>compression=False</code></td></tr><tr><td>Microsoft-Decision-1 on Foundry</td><td>Replace <code>{endpoint}/providers/microsoft/v1/systemone</code> with <code>http://localhost:8080/providers/microsoft/v1/systemone</code>, and send <code>api-key: &lt;Keel key&gt;</code></td></tr><tr><td>OpenRouter</td><td>Set the base URL to <code>http://localhost:8080/api</code> and keep <code>model: &quot;microsoft/microsoft-decision-1&quot;</code></td></tr></tbody></table></div>
+<nav class="pager" aria-label="Previous and next"><a href="use-cases.html"><small>Previous</small>50 use cases</a><a class="next" href="help-guide.html"><small>Next</small>Help guide</a></nav>
+<footer>Generated from <a href="api-reference.md">api-reference.md</a> by <code>node docs/build-html.mjs</code>. Keel is released under the Apache-2.0 licence.</footer>
+</main>
+
+<script>
+(function(){
+var root=document.documentElement,body=document.body;
+var tbtn=document.getElementById('theme');
+function label(){var d=root.dataset.theme==='dark';tbtn.querySelector('span').textContent=d?'Light':'Dark';tbtn.setAttribute('aria-pressed',d)}
+label();tbtn.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('keel-docs-theme',root.dataset.theme)}catch(e){}label()});
+var dm=document.getElementById('docmenu'),db=document.getElementById('alldocs');
+db.addEventListener('click',function(e){e.stopPropagation();dm.classList.toggle('open')});document.addEventListener('click',function(e){if(!dm.contains(e.target))dm.classList.remove('open')});
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.closest('.code').querySelector('code').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1400)},function(){})})});
+var pbar=document.querySelector('.pbar');
+var nav=document.querySelector('.sidenav'),tab=document.querySelector('.navtab');
+if(!nav)return;
+var pinned=false,timer=null,hover=false,wide=matchMedia('(min-width:1101px)');
+function open(){body.classList.add('nav-open')}function close(){if(!pinned&&!hover)body.classList.remove('nav-open')}
+function peek(){if(!wide.matches)return;open();clearTimeout(timer);timer=setTimeout(close,1800)}
+tab.addEventListener('click',function(){pinned=true;open()});
+document.getElementById('navclose').addEventListener('click',function(){pinned=false;hover=false;body.classList.remove('nav-open')});
+nav.addEventListener('mouseenter',function(){hover=true;clearTimeout(timer)});nav.addEventListener('mouseleave',function(){hover=false;timer=setTimeout(close,900)});
+document.addEventListener('mousemove',function(e){if(e.clientX<110&&wide.matches){open();clearTimeout(timer);timer=setTimeout(close,1800)}});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(!wide.matches){pinned=false;body.classList.remove('nav-open')}})});
+var links=[].slice.call(nav.querySelectorAll('a')),heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+var last=0,ticking=false;
+window.addEventListener('scroll',function(){if(ticking)return;ticking=true;requestAnimationFrame(function(){ticking=false;var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;pbar.style.width=(h>0?y/h*100:0)+'%';
+var cur=-1;for(var i=0;i<heads.length;i++){if(heads[i]&&heads[i].getBoundingClientRect().top<120)cur=i}
+links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+if(Math.abs(y-last)>40){peek();last=y}})},{passive:true});
+})();</script>
+</body>
+</html>

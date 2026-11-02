@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concepts · Keel docs</title>
+<meta name="description" content="What Keel computes, how to read its numbers, and how to build a &quot;Keel first, LLM fallback&quot; decision.">
+<script>try{var t=localStorage.getItem('keel-docs-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--bg:#fbfaf6;--surface:#ffffff;--surface2:#f1efe8;--ink:#14171c;--ink2:#262b33;--line:#d9d5c9;--accent:#0b6170;--accent-ink:#ffffff;--accentSoft:#e2f0f1;--ok:#1d6b3a;--okSoft:#e3f2e7;--warm:#9a4a05;--warmSoft:#fbecdc;--danger:#a3261b;--code-bg:#f3f1ea;--link:#0a5a86;--shadow:0 1px 2px rgba(20,23,28,.06),0 6px 20px rgba(20,23,28,.05)}
+html[data-theme=dark]{--bg:#0f1418;--surface:#161d22;--surface2:#1d262c;--ink:#f1f4f6;--ink2:#dbe2e6;--line:#33414a;--accent:#5fc4d2;--accent-ink:#06171b;--accentSoft:#173238;--ok:#6fd393;--okSoft:#15301f;--warm:#f2a65a;--warmSoft:#35250f;--danger:#ff8b7e;--code-bg:#11181d;--link:#8fd0ff;--shadow:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 19px/1.65 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+code,pre{font-family:"Cascadia Mono","JetBrains Mono",Consolas,ui-monospace,Menlo,monospace}
+a{color:var(--link);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}
+.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{max-width:1180px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;gap:18px}
+.brand{white-space:nowrap;flex:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none}
+.brand svg{width:28px;height:28px}
+.top nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px}
+.top nav a{color:var(--ink2);text-decoration:none;font-size:17px;padding:6px 10px;border-radius:8px}
+.top nav a[aria-current]{color:var(--ink);background:var(--surface2);font-weight:600}
+.top nav a:hover{background:var(--surface2)}
+.spacer{flex:1}
+.btn{font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--ink2)}.btn svg{width:18px;height:18px}
+.pbar{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:40}
+main{max-width:940px;margin:0 auto;padding:40px 28px 80px}
+.crumb{font-size:17px;color:var(--ink2);margin:0 0 6px}
+h1{font-size:50px;line-height:1.1;letter-spacing:-.02em;margin:6px 0 18px;font-weight:750}
+.lede{font-size:22px;line-height:1.55;color:var(--ink2);margin:0 0 30px}
+h2{font-size:33px;line-height:1.2;letter-spacing:-.01em;margin:64px 0 16px;padding-top:22px;border-top:1px solid var(--line);font-weight:700}
+h3{font-size:25px;line-height:1.3;margin:40px 0 12px;font-weight:650}
+h4{font-size:21px;margin:28px 0 8px}
+h1,h2,h3,h4{scroll-margin-top:84px;position:relative;overflow-wrap:anywhere}
+.anchor{opacity:0;margin-left:10px;text-decoration:none;color:var(--accent);font-weight:400}
+h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 18px}ul,ol{margin:0 0 20px;padding-left:28px}li{margin:6px 0}li>ul,li>ol{margin:6px 0}
+strong{font-weight:650;color:var(--ink)}
+:not(pre)>code{font-size:.86em;background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+.code{margin:0 0 24px;border:1px solid var(--line);border-radius:12px;background:var(--code-bg);overflow:hidden}
+.code-bar{display:flex;justify-content:space-between;align-items:center;padding:6px 10px 6px 16px;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.copy{font:inherit;font-size:15px;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 10px;cursor:pointer}
+.copy:hover{border-color:var(--ink2)}
+pre{margin:0;padding:16px 18px;overflow-x:auto;font-size:16.5px;line-height:1.55;color:var(--ink)}
+.table-wrap{overflow-x:auto;margin:0 0 26px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:18px;line-height:1.45}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface2);font-weight:650;color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+.num{font-variant-numeric:tabular-nums;font-weight:650;color:var(--ink);background:var(--accentSoft);border-radius:5px;padding:0 4px}
+.callout{margin:0 0 26px;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.callout-strong{background:var(--warmSoft);border-color:var(--warm)}
+.callout>:last-child{margin-bottom:0}
+hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+figure.diagram{margin:10px 0 34px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.fig-scroll{overflow-x:auto}
+figure svg{display:block;width:100%;height:auto;min-width:600px}
+.hbars{display:grid;gap:12px}.hb-row{display:grid;grid-template-columns:210px 1fr 150px;align-items:center;gap:14px}
+.hb-label{font-weight:600;text-align:right}.hb-track{background:var(--surface2);border-radius:6px;height:28px;overflow:hidden}
+.hb-bar{height:100%;background:var(--accent);opacity:.6;border-radius:6px}.hb-bar.strong{opacity:1}.hb-bar.warm{background:var(--warm);opacity:1}
+.hb-val{font-weight:650;font-variant-numeric:tabular-nums}
+figcaption{font-size:17px;color:var(--ink2);margin-top:14px;line-height:1.5}
+svg .box{fill:var(--surface2);stroke:var(--line);stroke-width:1.5}
+svg .accent{fill:var(--accent);stroke:var(--accent)}svg .ok{fill:var(--okSoft);stroke:var(--ok);stroke-width:1.5}svg .warm{fill:var(--warmSoft);stroke:var(--warm);stroke-width:1.5}
+svg .frame{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 5}
+svg .t{fill:var(--ink);font:500 17px "Segoe UI",system-ui,sans-serif}svg .tb{font-weight:650;font-size:18px}svg .ts{font-size:15.5px;fill:var(--ink2)}
+svg .on-accent{fill:var(--accent-ink)}svg .on-ok,svg .on-warm{fill:var(--ink)}svg .ok-t{fill:var(--ok)}
+svg .arrow{stroke:var(--ink2);stroke-width:2}svg .arrow.okline{stroke:var(--ok)}svg .ahead{fill:var(--ink2)}
+svg .track{fill:var(--surface2)}svg .bar{fill:var(--accent);opacity:.55}svg .bar.strong{opacity:1}svg .warmbar{fill:var(--warm);opacity:1}
+svg .grid{stroke:var(--line);stroke-width:1}
+svg .ln-a{stroke:var(--accent);stroke-width:3}svg .ln-b{stroke:var(--warm);stroke-width:3}svg .ln-a-dot{fill:var(--accent)}svg .ln-b-dot{fill:var(--warm)}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:24px;border-top:1px solid var(--line)}
+.pager a{display:block;flex:1;padding:14px 18px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);background:var(--surface)}
+.pager a:hover{border-color:var(--accent)}.pager small{display:block;font-size:16px;color:var(--ink2)}.pager .next{text-align:right}
+footer{font-size:16px;color:var(--ink2);margin-top:28px}
+/* contents menu: middle-left, auto-hide */
+.navtab{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:25;writing-mode:vertical-rl;rotate:180deg;font:600 16px/1 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:0;border-radius:0 10px 10px 0;padding:16px 9px;cursor:pointer;transition:opacity .2s}
+.sidenav{position:fixed;left:14px;top:50%;transform:translate(calc(-100% - 30px),-50%);z-index:26;width:300px;max-height:76vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 10px 14px 14px;box-shadow:0 10px 40px rgba(0,0,0,.14);transition:transform .28s ease}
+body.nav-open .sidenav{transform:translate(0,-50%)}body.nav-open .navtab{opacity:0;pointer-events:none}
+.sidenav-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 8px 6px;font-weight:700;font-size:17px}
+.sidenav-head button{font:inherit;font-size:15px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 8px;cursor:pointer}
+.sidenav ol{list-style:none;margin:0;padding:0}.sidenav li{margin:0}
+.sidenav a{display:block;padding:6px 8px;border-radius:7px;color:var(--ink2);text-decoration:none;font-size:16.5px;line-height:1.35}
+.sidenav a.l3{padding-left:22px;font-size:16px}
+.sidenav a:hover{background:var(--surface2);color:var(--ink)}
+.sidenav a.active{background:var(--accentSoft);color:var(--ink);font-weight:650}
+
+@media (max-width:1240px){.top nav{display:none}}
+@media (max-width:700px){body{font-size:18px}main{padding:26px 18px 60px}h1{font-size:36px}h2{font-size:27px;margin-top:48px}h3{font-size:22px}.lede{font-size:19.5px}.top-in{padding:10px 16px;gap:10px}.brand span{display:none}table{font-size:17px}th,td{padding:9px 10px}pre{font-size:15.5px}figure.diagram{padding:14px}.sidenav{width:min(300px,84vw)}main{padding-left:38px}.navtab{font-size:14px;padding:12px 5px}.hb-row{grid-template-columns:1fr auto;gap:4px 10px}.hb-label{text-align:left;grid-column:1/-1}.hb-track{height:22px}.pager{flex-direction:column}}
+.docmenu{position:fixed;inset:60px 12px auto auto;z-index:35;width:min(340px,92vw);max-height:80vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 10px 40px rgba(0,0,0,.16);display:none}
+.docmenu.open{display:block}.docmenu h4{margin:10px 8px 4px;font-size:16px}.docmenu a{display:block;padding:7px 10px;border-radius:7px;color:var(--ink);text-decoration:none;font-size:17px}.docmenu a:hover{background:var(--surface2)}
+@media print{.top,.navtab,.sidenav,.pbar,.copy,.pager,.docmenu{display:none!important}body{font-size:12pt}main{max-width:none;padding:0}h2{break-after:avoid}figure,table,.code{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="pbar"></div>
+<header class="top"><div class="top-in">
+<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="var(--accent)"/><path d="M8 9h16M16 9v15M9 19c2 4 5 5 7 5s5-1 7-5" stroke="var(--accent-ink)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg><span>Keel docs</span></a>
+<nav aria-label="Documentation"><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="concepts.html" aria-current="page">Concepts</a><a href="api-reference.html">API reference</a><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="faq.html">FAQ</a></nav>
+<div class="spacer"></div>
+<button class="btn alldocs" id="alldocs" type="button" aria-haspopup="true">All docs</button>
+<button class="btn" id="theme" type="button" aria-label="Toggle dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Dark</span></button>
+</div></header>
+<div class="docmenu" id="docmenu"><h4>Get started</h4><a href="index.html">Overview</a><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="deployment.html">Deploy</a><a href="concepts.html">Concepts</a><a href="use-cases.html">50 use cases</a><h4>Reference</h4><a href="api-reference.html">API reference</a><a href="help-guide.html">Help guide</a><a href="faq.html">FAQ</a><h4>Evidence</h4><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="comparison.html">Comparison</a><a href="why-keel.html">Why Keel</a><a href="model-card.html">Model card</a><a href="keel-pro.html">Keel-Pro story</a><h4>Internals</h4><a href="architecture.html">Architecture</a><a href="design-doc.html">Design doc</a><a href="training-guide.html">Training guide</a><a href="release-notes.html">Release notes</a><a href="licenses.html">Licenses</a><a href="press.html">Press kit</a></div>
+<button class="navtab" type="button" aria-label="Open contents">Contents</button>
+<aside class="sidenav" aria-label="On this page"><div class="sidenav-head"><span>On this page</span><button id="navclose" type="button" aria-label="Close contents">Close</button></div><ol><li><a class="l2" href="#the-idea-in-one-paragraph">The idea in one paragraph</a></li><li><a class="l2" href="#state-and-questions">State and questions</a></li><li><a class="l2" href="#the-three-question-types">The three question types</a></li><li><a class="l3" href="#choice">choice</a></li><li><a class="l3" href="#score">score</a></li><li><a class="l3" href="#noul">noul</a></li><li><a class="l2" href="#probabilities">Probabilities</a></li><li><a class="l2" href="#confidence">Confidence</a></li><li><a class="l2" href="#abstain-when-keel-thinks-no-option-fits">Abstain: when Keel thinks no option fits</a></li><li><a class="l2" href="#the-τ-gate-keel-first-llm-fallback">The τ gate: Keel first, LLM fallback</a></li><li><a class="l2" href="#the-onoff-switch">The on/off switch</a></li><li><a class="l2" href="#determinism">Determinism</a></li><li><a class="l2" href="#which-judge-answered">Which judge answered</a></li><li><a class="l2" href="#next">Next</a></li></ol></aside>
+<main>
+<p class="crumb"><a href="index.html">Keel docs</a> / Concepts</p>
+<h1>Concepts</h1>
+<p class="lede">What Keel computes, how to read its numbers, and how to build a &quot;Keel first, LLM fallback&quot; decision.</p>
+<h2 id="the-idea-in-one-paragraph">The idea in one paragraph<a class="anchor" href="#the-idea-in-one-paragraph" aria-label="Link to this section">#</a></h2>
+<p>Agents and apps are full of small, typed branches: which queue gets this ticket, how severe is this incident, is this command safe to run, does this answer stick to its sources. Asking a general LLM each of these costs hundreds of tokens and a second or more. Keel answers them with a small cross-encoder that runs on your CPU. You describe the situation in <code>state</code>, ask typed <code>questions</code> about it, and get back a probability distribution over the allowed answers. You then decide what to do. Keel never takes the action itself.</p>
+<figure class="diagram" id="fig-question-types"><div class="fig-scroll"><svg viewBox="0 0 960 280" role="img" aria-label="Choice, score and noul question types" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="10" y="10" width="290" height="260" rx="10" class="box"/><text x="155" y="44" class="t tb" text-anchor="middle">choice</text><text x="155" y="70" class="t ts" text-anchor="middle">pick one option</text><text x="30" y="115" class="t ts" text-anchor="start">edit</text><rect x="120" y="99" width="150" height="22" rx="5" class="track"/><rect x="120" y="99" width="117" height="22" rx="5" class="bar strong"/><text x="30" y="157" class="t ts" text-anchor="start">ask</text><rect x="120" y="141" width="150" height="22" rx="5" class="track"/><rect x="120" y="141" width="25.500000000000004" height="22" rx="5" class="bar"/><text x="30" y="199" class="t ts" text-anchor="start">stop</text><rect x="120" y="183" width="150" height="22" rx="5" class="track"/><rect x="120" y="183" width="7.5" height="22" rx="5" class="bar"/><text x="155" y="250" class="t ts" text-anchor="middle">choice + confidence</text><rect x="335" y="10" width="290" height="260" rx="10" class="box"/><text x="480" y="44" class="t tb" text-anchor="middle">score</text><text x="480" y="70" class="t ts" text-anchor="middle">ordered levels</text><text x="355" y="115" class="t ts" text-anchor="start">low</text><rect x="445" y="99" width="150" height="22" rx="5" class="track"/><rect x="445" y="99" width="15" height="22" rx="5" class="bar strong"/><text x="355" y="157" class="t ts" text-anchor="start">medium</text><rect x="445" y="141" width="150" height="22" rx="5" class="track"/><rect x="445" y="141" width="37.5" height="22" rx="5" class="bar"/><text x="355" y="199" class="t ts" text-anchor="start">high</text><rect x="445" y="183" width="150" height="22" rx="5" class="track"/><rect x="445" y="183" width="97.5" height="22" rx="5" class="bar"/><text x="480" y="250" class="t ts" text-anchor="middle">expected level, e.g. 1.55</text><rect x="660" y="10" width="290" height="260" rx="10" class="box"/><text x="805" y="44" class="t tb" text-anchor="middle">noul</text><text x="805" y="70" class="t ts" text-anchor="middle">yes or no</text><text x="680" y="115" class="t ts" text-anchor="start">yes</text><rect x="770" y="99" width="150" height="22" rx="5" class="track"/><rect x="770" y="99" width="136.5" height="22" rx="5" class="bar strong"/><text x="680" y="157" class="t ts" text-anchor="start">no</text><rect x="770" y="141" width="150" height="22" rx="5" class="track"/><rect x="770" y="141" width="13.5" height="22" rx="5" class="bar"/><text x="805" y="250" class="t ts" text-anchor="middle">P(yes) = 0.91</text></svg></div><figcaption>The three question types and what comes back. Probabilities are illustrative.</figcaption></figure>
+<h2 id="state-and-questions">State and questions<a class="anchor" href="#state-and-questions" aria-label="Link to this section">#</a></h2>
+<p>A request has one <code>state</code> and one or more <code>questions</code>:</p>
+<div class="code"><div class="code-bar"><span>json</span><button type="button" class="copy">Copy</button></div><pre><code>{
+  &quot;model&quot;: &quot;decider-latest&quot;,
+  &quot;state&quot;: &quot;Deploy failed: migration 0042 timed out on the orders table. Rollback succeeded.&quot;,
+  &quot;questions&quot;: {
+    &quot;owner&quot;:    { &quot;type&quot;: &quot;choice&quot;, &quot;instructions&quot;: &quot;Which team owns the fix?&quot;,
+                  &quot;criteria&quot;: { &quot;platform&quot;: &quot;CI, deploy tooling&quot;, &quot;data&quot;: &quot;Schemas and migrations&quot;, &quot;app&quot;: &quot;Product code&quot; } },
+    &quot;severity&quot;: { &quot;type&quot;: &quot;score&quot;,  &quot;instructions&quot;: &quot;How severe is this?&quot;,
+                  &quot;criteria&quot;: [&quot;SEV4 minor&quot;, &quot;SEV3 limited&quot;, &quot;SEV2 major&quot;, &quot;SEV1 critical&quot;] },
+    &quot;page&quot;:     { &quot;type&quot;: &quot;noul&quot;,   &quot;instructions&quot;: &quot;Should someone be paged right now?&quot; }
+  }
+}</code></pre></div>
+<ul><li><strong><code>state</code></strong> is the text being judged: a ticket, a diff summary, a shell command, a retrieved page. It can be up to 8,000 characters, but the encoder reads about 256 tokens per (state, option) pair, so put the decisive facts first.</li><li><strong>Each question is scored independently</strong> against the same state. One request with three questions costs the same as three requests, minus HTTP overhead.</li><li><strong><code>instructions</code></strong> tells Keel what is being decided. Write it as a short question.</li><li><strong><code>criteria</code></strong> lists the allowed answers. Describe each option in a few concrete words: Keel compares the state against each description, so &quot;Schemas and migrations&quot; works much better than &quot;data&quot;.</li></ul>
+<h2 id="the-three-question-types">The three question types<a class="anchor" href="#the-three-question-types" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>You give</th><th>You get</th><th>Use it for</th></tr></thead><tbody><tr><td><code>choice</code></td><td>1–255 named options</td><td><code>choice</code>, <code>confidence</code>, <code>probabilities</code></td><td>Routing, classification, picking a tool or a sub-agent</td></tr><tr><td><code>score</code></td><td>1–10 ordered levels</td><td><code>score</code> (expected level), <code>confidence</code>, <code>legend</code>, <code>probabilities</code></td><td>Severity, priority, risk, quality ratings</td></tr><tr><td><code>noul</code></td><td>A yes/no question</td><td><code>noul</code> = P(yes)</td><td>Gates: is this PII, is this an injection, should this ship with tests</td></tr></tbody></table></div>
+<h3 id="choice">choice<a class="anchor" href="#choice" aria-label="Link to this section">#</a></h3>
+<p>Options are the keys of <code>criteria</code>. A value can be a description string or <code>null</code>. Keel also accepts the Jev <code>options</code> array form. The answer is the most likely key:</p>
+<div class="code"><div class="code-bar"><span>json</span><button type="button" class="copy">Copy</button></div><pre><code>{ &quot;type&quot;: &quot;choice&quot;, &quot;choice&quot;: &quot;data&quot;, &quot;confidence&quot;: 0.81,
+  &quot;probabilities&quot;: { &quot;platform&quot;: 0.12, &quot;data&quot;: 0.81, &quot;app&quot;: 0.07 } }</code></pre></div>
+<h3 id="score">score<a class="anchor" href="#score" aria-label="Link to this section">#</a></h3>
+<p>Levels are ordered from 0. <code>criteria</code> can be a list, or an object with numeric keys. The answer is the <strong>expected level</strong>, Σ i·pᵢ, rounded to 2 decimals, so it can be fractional. A score of 1.6 on a 0–3 scale means &quot;between level 1 and 2, leaning 2&quot;. <code>legend</code> echoes the level names so you can print them.</p>
+<div class="code"><div class="code-bar"><span>json</span><button type="button" class="copy">Copy</button></div><pre><code>{ &quot;type&quot;: &quot;score&quot;, &quot;score&quot;: 1.62, &quot;confidence&quot;: 0.55,
+  &quot;legend&quot;: { &quot;0&quot;: &quot;SEV4 minor&quot;, &quot;1&quot;: &quot;SEV3 limited&quot;, &quot;2&quot;: &quot;SEV2 major&quot;, &quot;3&quot;: &quot;SEV1 critical&quot; },
+  &quot;probabilities&quot;: { &quot;0&quot;: 0.05, &quot;1&quot;: 0.31, &quot;2&quot;: 0.55, &quot;3&quot;: 0.09 } }</code></pre></div>
+<p>To get a single level, round <code>score</code> or take the arg-max of <code>probabilities</code>. They usually agree. When they do not, the distribution is spread and you should look at <code>confidence</code>.</p>
+<h3 id="noul">noul<a class="anchor" href="#noul" aria-label="Link to this section">#</a></h3>
+<p>A noul is a yes/no question. The answer is a single number, <code>noul</code> = P(yes), between 0 and 1. A noul has <strong>no confidence field</strong>. Its distance from 0.5 is the confidence. You pick the threshold per use: a PII gate might fire at 0.3, a &quot;ship it&quot; gate might need 0.8.</p>
+<div class="code"><div class="code-bar"><span>json</span><button type="button" class="copy">Copy</button></div><pre><code>{ &quot;type&quot;: &quot;noul&quot;, &quot;noul&quot;: 0.87 }</code></pre></div>
+<p>You can make the meaning of yes and no explicit with <code>criteria: { &quot;true&quot;: &quot;...&quot;, &quot;false&quot;: &quot;...&quot; }</code>. A noul needs either <code>instructions</code> or <code>criteria</code>.</p>
+<h2 id="probabilities">Probabilities<a class="anchor" href="#probabilities" aria-label="Link to this section">#</a></h2>
+<p>Every choice and score answer carries the full distribution, rounded to 4 decimals and summing to 1. Use it:</p>
+<ul><li><strong>Margins.</strong> If the top two options are close, treat the decision as unsure even if the top one is above your threshold.</li><li><strong>Asymmetric costs.</strong> For a run / confirm / block command gate, you can act on <code>P(block) &gt; 0.2</code> even when <code>run</code> wins, because a wrong &quot;run&quot; costs far more than a wrong &quot;confirm&quot;.</li><li><strong>Logging.</strong> Store the distribution, not just the winner. It makes later threshold tuning possible without re-running.</li></ul>
+<h2 id="confidence">Confidence<a class="anchor" href="#confidence" aria-label="Link to this section">#</a></h2>
+<p>Keel reports confidence in two styles, picked by the model alias you send:</p>
+<div class="table-wrap"><table><thead><tr><th>Alias family</th><th><code>confidence</code> for choice</th><th><code>confidence</code> for score</th></tr></thead><tbody><tr><td><code>decider-*</code>, <code>microsoft-decision-1</code> and its aliases</td><td>Top probability, p_max</td><td>Probability of the most likely level</td></tr><tr><td><code>jev-*</code></td><td>(p_max − 1/n) / (1 − 1/n), so 0 means uniform and 1 means certain</td><td>1 − (spread around the mode ÷ spread of a uniform distribution)</td></tr></tbody></table></div>
+<p>The Jev style exists so that clients ported from Jev keep the meaning of their existing thresholds. For example, a three-way choice split of 0.6 / 0.3 / 0.1 reports 0.6 under <code>decider-latest</code> and 0.4 under <code>jev-latest</code>. Pick one alias family and calibrate your thresholds against it.</p>
+<p>Keel's calibration is measured with expected calibration error (ECE, lower is better). On the blind suite, choice ECE is <span class="num" data-num="k2.ece.blind">0.182</span> for Keel-2 and <span class="num" data-num="k3.ece.blind">0.108</span> for the Keel-3 RC, against <span class="num" data-num="llm.ece.blind">0.080</span> for claude-haiku-4.5. A Keel-3 RC confidence of 0.8 is therefore right roughly 80% of the time on unseen data; for Keel-2 it is noticeably over-confident.</p>
+<h2 id="abstain-when-keel-thinks-no-option-fits">Abstain: when Keel thinks no option fits<a class="anchor" href="#abstain-when-keel-thinks-no-option-fits" aria-label="Link to this section">#</a></h2>
+<p>Keel scores each option by asking &quot;does the state entail this description?&quot;. If <strong>no</strong> option is entailed above a small threshold (<code>abstain.threshold</code> in <code>keel.json</code>), Keel flattens the distribution toward uniform. You see this as low confidence on every option, not as an error.</p>
+<p>Keel never refuses and never invents an option. &quot;None of the above&quot; is your decision to make: add an explicit <code>other</code> option, or treat low confidence as &quot;ask someone else&quot;.</p>
+<h2 id="the-τ-gate-keel-first-llm-fallback">The τ gate: Keel first, LLM fallback<a class="anchor" href="#the-τ-gate-keel-first-llm-fallback" aria-label="Link to this section">#</a></h2>
+<p>This is the pattern that saves tokens. Pick a confidence threshold <strong>τ</strong>. If Keel's confidence is at least τ, use Keel's answer. Otherwise ask your LLM, a human, or a stricter policy.</p>
+<figure class="diagram" id="fig-tau-gate"><div class="fig-scroll"><svg viewBox="0 0 940 250" role="img" aria-label="Tau gate diagram" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="20" y="85" width="170" height="80" rx="10" class="box"/><text x="105" y="131" class="t tb" text-anchor="middle">state + question</text><line x1="190" y1="125" x2="240" y2="125" class="arrow" marker-end="url(#ah)"/><rect x="240" y="75" width="190" height="100" rx="10" class="accent"/><text x="335" y="121" class="t tb on-accent" text-anchor="middle">Keel</text><text x="335" y="145" class="t ts on-accent" text-anchor="middle">answer + confidence</text><line x1="430" y1="125" x2="490" y2="125" class="arrow" marker-end="url(#ah)"/><polygon points="570,70 650,125 570,180 490,125" class="box"/><text x="570" y="121" class="t ts" text-anchor="middle">confidence</text><text x="570" y="143" class="t tb" text-anchor="middle">≥ τ ?</text><path d="M650,125 L700,125 L700,55 L740,55" class="arrow okline" fill="none" marker-end="url(#ah)"/><text x="690" y="45" class="t ts ok-t" text-anchor="end">yes</text><rect x="740" y="20" width="180" height="70" rx="10" class="ok"/><text x="830" y="51" class="t tb on-ok" text-anchor="middle">Use Keel's answer</text><text x="830" y="75" class="t ts on-ok" text-anchor="middle">~20 ms, free</text><path d="M650,125 L700,125 L700,195 L740,195" class="arrow" fill="none" marker-end="url(#ah)"/><text x="690" y="222" class="t ts" text-anchor="end">no</text><rect x="740" y="160" width="180" height="70" rx="10" class="warm"/><text x="830" y="191" class="t tb on-warm" text-anchor="middle">LLM, human or policy</text><text x="830" y="215" class="t ts on-warm" text-anchor="middle">the hard cases</text></svg></div><figcaption>The τ gate. Keel's calibrated confidence decides who answers. Raising τ sends more questions to the LLM: more accurate, more tokens.</figcaption></figure>
+<div class="code"><div class="code-bar"><span>python</span><button type="button" class="copy">Copy</button></div><pre><code>def decide(state, question, tau=0.6):
+    a = keel(state, question)            # ~20 ms, free
+    conf = a.get(&quot;confidence&quot;, 2 * abs(a.get(&quot;noul&quot;, 0.5) - 0.5))
+    if conf &gt;= tau:
+        return a, &quot;keel&quot;
+    return llm(state, question), &quot;llm&quot;   # ~1 s, costs tokens</code></pre></div>
+<p>For a noul, the snippet maps P(yes) to a confidence of 2·|p − 0.5|, so 0.9 and 0.1 are both confident, and 0.5 is not.</p>
+<p>Measured on our held-out suites at τ = 0.6, the Keel-3 release candidate <code>t1-r2e</code> answered <span class="num" data-num="tok.k3.ho.avoided">75/100</span> calls itself and the hybrid was <strong>more</strong> accurate than the LLM alone (<span class="num" data-num="tok.k3.ho.acc">75 → 89 of 100 cases fully right</span>). Raising τ sends more to the LLM: fewer savings, higher accuracy on hard suites. See <a href="token-savings.html">Token savings</a> for the full τ table.</p>
+<p>Always gate safety-critical answers separately. Do not let a confident <code>run</code> or <code>approve</code> from Keel skip a human on destructive or irreversible actions.</p>
+<h2 id="the-onoff-switch">The on/off switch<a class="anchor" href="#the-onoff-switch" aria-label="Link to this section">#</a></h2>
+<p>Keel has a process-wide switch, shared by the bench UI, the API and the MCP server.</p>
+<ul><li><code>GET /api/v1/status</code> returns <code>{&quot;enabled&quot;: true|false, ...}</code>. It needs no key.</li><li><code>POST /api/v1/switch</code> with <code>{&quot;enabled&quot;: false}</code> turns Keel off. It needs the bearer key.</li><li>When Keel is off, <code>POST /api/v1/systemone</code> returns <strong>409 <code>disabled</code></strong> and runs no model.</li></ul>
+<p>Agents check the status before their first decision. If Keel is off, they fall back to their own judgement and do not call the decision endpoint. This gives a user a single kill switch: &quot;Keel off&quot; in chat stops every agent from consulting it. The switch is in memory, so restarting the server turns Keel back on.</p>
+<h2 id="determinism">Determinism<a class="anchor" href="#determinism" aria-label="Link to this section">#</a></h2>
+<p>The same request to the same model gives the same answer, every time. There is no sampling and no temperature at inference. The calibration temperatures in <code>keel.json</code> are fixed constants. This makes Keel decisions easy to test: snapshot a response in your unit tests and it will not drift until you change the model.</p>
+<p>Two things can change an answer: a different model version (check the response <code>model</code> field), and a fallback to the lexical judge when the neural model fails to load (check <code>GET /api/v1/status</code>).</p>
+<h2 id="which-judge-answered">Which judge answered<a class="anchor" href="#which-judge-answered" aria-label="Link to this section">#</a></h2>
+<p>The response <code>model</code> is always the judge that actually answered, not the alias you requested:</p>
+<div class="table-wrap"><table><thead><tr><th><code>model</code> in the response</th><th>Meaning</th></tr></thead><tbody><tr><td><code>decider-3.0.0</code></td><td>Keel-3, the default neural model</td></tr><tr><td><code>decider-2.0.0</code></td><td>Keel-2, when you pin <code>decider-2.0.0</code> or Keel-3's weights are missing</td></tr><tr><td><code>decider-2.0.0-zeroshot</code></td><td>Only the untrained base model is installed (<code>models/keel-base</code>)</td></tr><tr><td><code>decider-1.2.0</code></td><td>Lexical judge, because you pinned <code>decider-1.x</code>, set <code>KEEL_ENGINE=lexical</code>, or the neural model failed to load</td></tr></tbody></table></div>
+<p>Jev and Microsoft-Decision-1 aliases are accepted for drop-in compatibility. They never mean that a hosted service answered.</p>
+<h2 id="next">Next<a class="anchor" href="#next" aria-label="Link to this section">#</a></h2>
+<ul><li><a href="api-reference.html">API reference</a> for every field, limit and error.</li><li><a href="use-cases.html">Use cases</a> for 50 ready-made request bodies.</li><li><a href="token-savings.html">Token savings</a> for when the τ gate pays off, and when it does not.</li></ul>
+<nav class="pager" aria-label="Previous and next"><a href="deployment.html"><small>Previous</small>Deploy</a><a class="next" href="use-cases.html"><small>Next</small>50 use cases</a></nav>
+<footer>Generated from <a href="concepts.md">concepts.md</a> by <code>node docs/build-html.mjs</code>. Keel is released under the Apache-2.0 licence.</footer>
+</main>
+
+<script>
+(function(){
+var root=document.documentElement,body=document.body;
+var tbtn=document.getElementById('theme');
+function label(){var d=root.dataset.theme==='dark';tbtn.querySelector('span').textContent=d?'Light':'Dark';tbtn.setAttribute('aria-pressed',d)}
+label();tbtn.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('keel-docs-theme',root.dataset.theme)}catch(e){}label()});
+var dm=document.getElementById('docmenu'),db=document.getElementById('alldocs');
+db.addEventListener('click',function(e){e.stopPropagation();dm.classList.toggle('open')});document.addEventListener('click',function(e){if(!dm.contains(e.target))dm.classList.remove('open')});
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.closest('.code').querySelector('code').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1400)},function(){})})});
+var pbar=document.querySelector('.pbar');
+var nav=document.querySelector('.sidenav'),tab=document.querySelector('.navtab');
+if(!nav)return;
+var pinned=false,timer=null,hover=false,wide=matchMedia('(min-width:1101px)');
+function open(){body.classList.add('nav-open')}function close(){if(!pinned&&!hover)body.classList.remove('nav-open')}
+function peek(){if(!wide.matches)return;open();clearTimeout(timer);timer=setTimeout(close,1800)}
+tab.addEventListener('click',function(){pinned=true;open()});
+document.getElementById('navclose').addEventListener('click',function(){pinned=false;hover=false;body.classList.remove('nav-open')});
+nav.addEventListener('mouseenter',function(){hover=true;clearTimeout(timer)});nav.addEventListener('mouseleave',function(){hover=false;timer=setTimeout(close,900)});
+document.addEventListener('mousemove',function(e){if(e.clientX<110&&wide.matches){open();clearTimeout(timer);timer=setTimeout(close,1800)}});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(!wide.matches){pinned=false;body.classList.remove('nav-open')}})});
+var links=[].slice.call(nav.querySelectorAll('a')),heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+var last=0,ticking=false;
+window.addEventListener('scroll',function(){if(ticking)return;ticking=true;requestAnimationFrame(function(){ticking=false;var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;pbar.style.width=(h>0?y/h*100:0)+'%';
+var cur=-1;for(var i=0;i<heads.length;i++){if(heads[i]&&heads[i].getBoundingClientRect().top<120)cur=i}
+links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+if(Math.abs(y-last)>40){peek();last=y}})},{passive:true});
+})();</script>
+</body>
+</html>

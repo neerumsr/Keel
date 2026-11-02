@@ -1,0 +1,659 @@
+{
+  "model": "models\\candidates\\t1-q0",
+  "id": "decider-3.0.0-rc.t1-q0",
+  "generated": "2026-10-29T05:20:36.830Z",
+  "limit": 1000,
+  "meanAccuracy": 0.4415613240007802,
+  "results": [
+    {
+      "dataset": "ag_news",
+      "kind": "choice",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.772,
+      "ci95": [
+        0.7449845019985327,
+        0.7969336651704709
+      ],
+      "macroF1": 0.7644428158595082,
+      "ece": 0.12764619999999965,
+      "p50ms": 28.41569999999956,
+      "p95ms": 46.628600000000006,
+      "majorityBaseline": 0.25,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "fancyzhx/ag_news",
+        "config": null,
+        "splits": [
+          "test"
+        ],
+        "pool": 7600,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "unspecified; AG corpus offered for academic/non-commercial use",
+        "notes": ""
+      },
+      "jevDI": null
+    },
+    {
+      "dataset": "emotion",
+      "kind": "choice",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.568,
+      "ci95": [
+        0.5370950847871004,
+        0.5983844570051503
+      ],
+      "macroF1": 0.4730574224983292,
+      "ece": 0.11768139999999985,
+      "p50ms": 21.91649999999936,
+      "p95ms": 35.46279999999388,
+      "majorityBaseline": 0.348,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "dair-ai/emotion",
+        "config": "split",
+        "splits": [
+          "test"
+        ],
+        "pool": 2000,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "educational/research use only (dataset card)",
+        "notes": ""
+      },
+      "jevDI": null
+    },
+    {
+      "dataset": "mnli_m",
+      "kind": "choice",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.378,
+      "ci95": [
+        0.3484671638540017,
+        0.4084665994010776
+      ],
+      "macroF1": 0.3733283120364123,
+      "ece": 0.1745283999999998,
+      "p50ms": 21.069700000007288,
+      "p95ms": 35.78020000000106,
+      "majorityBaseline": 0.355,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "nyu-mll/glue",
+        "config": "mnli",
+        "splits": [
+          "validation_matched"
+        ],
+        "pool": 9815,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "OANC (permissive) + CC BY-SA 3.0 portions",
+        "notes": "Keel-2 training replayed MNLI train pairs (NLI form); matched validation not used in training."
+      },
+      "jevDI": null
+    },
+    {
+      "dataset": "anli",
+      "kind": "choice",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.367,
+      "ci95": [
+        0.3376880168364738,
+        0.3973299381875061
+      ],
+      "macroF1": 0.3317449993985848,
+      "ece": 0.1783214,
+      "p50ms": 30.166499999992084,
+      "p95ms": 46.05009999999311,
+      "majorityBaseline": 0.334,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "facebook/anli",
+        "config": null,
+        "splits": [
+          "test_r1",
+          "test_r2",
+          "test_r3"
+        ],
+        "pool": 3200,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "CC BY-NC 4.0",
+        "notes": "R1+R2+R3 test pooled (3,200), stratified sample."
+      },
+      "jevDI": {
+        "raw": 0.7427,
+        "metric": "macro-F1",
+        "benchmark": "ANLI"
+      }
+    },
+    {
+      "dataset": "banking77",
+      "kind": "choice",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.356,
+      "ci95": [
+        0.326925514171364,
+        0.3861766326215165
+      ],
+      "macroF1": 0.3471450108479774,
+      "ece": 0.17388050000000008,
+      "p50ms": 172.5783999999985,
+      "p95ms": 274.7222000000038,
+      "majorityBaseline": 0.013,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "PolyAI/banking77",
+        "config": null,
+        "splits": [
+          "test"
+        ],
+        "pool": 3080,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "CC BY 4.0",
+        "notes": "77 options exceed the production wire limit (12)."
+      },
+      "jevDI": {
+        "raw": 0.7994,
+        "metric": "macro-F1",
+        "benchmark": "BANKING77"
+      }
+    },
+    {
+      "dataset": "clinc150",
+      "kind": "choice",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.331,
+      "ci95": [
+        0.30252900425429646,
+        0.3607644874679036
+      ],
+      "macroF1": 0.3538420264233365,
+      "ece": 0.13135870000000022,
+      "p50ms": 329.00719999999274,
+      "p95ms": 424.50740000000224,
+      "majorityBaseline": 0.182,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "clinc/clinc_oos",
+        "config": "plus",
+        "splits": [
+          "test"
+        ],
+        "pool": 5500,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "CC BY 3.0",
+        "notes": "151 options exceed the production wire limit (12)."
+      },
+      "jevDI": {
+        "raw": 0.9028,
+        "metric": "macro-F1",
+        "benchmark": "CLINC150+OOS"
+      }
+    },
+    {
+      "dataset": "winogrande",
+      "kind": "choice",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.505,
+      "ci95": [
+        0.47405144035460534,
+        0.5359102906595307
+      ],
+      "macroF1": 0.4862581848411915,
+      "ece": 0.18229580000000012,
+      "p50ms": 10.922000000020489,
+      "p95ms": 14.969400000059977,
+      "majorityBaseline": 0.504,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "allenai/winogrande",
+        "config": "winogrande_xl",
+        "splits": [
+          "validation"
+        ],
+        "pool": 1267,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "CC BY 4.0",
+        "notes": "Test labels hidden; validation used."
+      },
+      "jevDI": {
+        "raw": 0.9108,
+        "metric": "accuracy",
+        "benchmark": "WinoGrande"
+      }
+    },
+    {
+      "dataset": "mmlu",
+      "kind": "choice",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.257,
+      "ci95": [
+        0.23088155574698166,
+        0.2849783169660042
+      ],
+      "macroF1": 0.25703126685316313,
+      "ece": 0.23286589999999996,
+      "p50ms": 23.04859999998007,
+      "p95ms": 77.54440000001341,
+      "majorityBaseline": 0.274,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "cais/mmlu",
+        "config": "all",
+        "splits": [
+          "test"
+        ],
+        "pool": 14042,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "MIT",
+        "notes": "Stratified by subject."
+      },
+      "jevDI": {
+        "raw": 0.9167,
+        "metric": "accuracy",
+        "benchmark": "MMLU"
+      }
+    },
+    {
+      "dataset": "boolq",
+      "kind": "noul",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.672,
+      "ci95": [
+        0.64229107739265,
+        0.7003924694936319
+      ],
+      "macroF1": 0.5950137300223236,
+      "ece": 0.12457860000000005,
+      "p50ms": 26.544699999969453,
+      "p95ms": 49.865300000063144,
+      "brier": 0.2242591947000001,
+      "positiveRate": 0.814,
+      "majorityBaseline": 0.622,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "google/boolq",
+        "config": null,
+        "splits": [
+          "validation"
+        ],
+        "pool": 3270,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "noul",
+        "balanced": false,
+        "license": "CC BY-SA 3.0",
+        "notes": "Test labels hidden; validation used. Long passages truncated by Keel's token window."
+      },
+      "jevDI": null
+    },
+    {
+      "dataset": "rte",
+      "kind": "noul",
+      "n": 277,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.6353790613718412,
+      "ci95": [
+        0.5772027120772254,
+        0.6898517413940553
+      ],
+      "macroF1": 0.6039776346521339,
+      "ece": 0.16809205776173297,
+      "p50ms": 17.431699999957345,
+      "p95ms": 36.416199999977835,
+      "brier": 0.25712798068592047,
+      "positiveRate": 0.7545126353790613,
+      "majorityBaseline": 0.5270758122743683,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "nyu-mll/glue",
+        "config": "rte",
+        "splits": [
+          "validation"
+        ],
+        "pool": 277,
+        "n": 277,
+        "seed": 20261028,
+        "kind": "noul",
+        "balanced": false,
+        "license": "unspecified (PASCAL RTE; via GLUE)",
+        "notes": "All 277 validation items."
+      },
+      "jevDI": null
+    },
+    {
+      "dataset": "mrpc",
+      "kind": "noul",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.501,
+      "ci95": [
+        0.47006526890602685,
+        0.5319270772968004
+      ],
+      "macroF1": 0.5008876997324399,
+      "ece": 0.20935390000000023,
+      "p50ms": 19.235800000024028,
+      "p95ms": 28.14220000000205,
+      "brier": 0.30929007767,
+      "positiveRate": 0.35,
+      "majorityBaseline": 0.665,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "nyu-mll/glue",
+        "config": "mrpc",
+        "splits": [
+          "test"
+        ],
+        "pool": 1725,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "noul",
+        "balanced": false,
+        "license": "Microsoft Research Paraphrase Corpus license",
+        "notes": ""
+      },
+      "jevDI": null
+    },
+    {
+      "dataset": "sst2",
+      "kind": "choice",
+      "n": 872,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.7947247706422018,
+      "ci95": [
+        0.7666510737596656,
+        0.8202130350015532
+      ],
+      "macroF1": 0.7943935328435809,
+      "ece": 0.12549621559633034,
+      "p50ms": 11.467499999911524,
+      "p95ms": 17.239300000015646,
+      "majorityBaseline": 0.5091743119266054,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "nyu-mll/glue",
+        "config": "sst2",
+        "splits": [
+          "validation"
+        ],
+        "pool": 872,
+        "n": 872,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "unspecified (SST, Stanford; via GLUE)",
+        "notes": "GLUE test labels hidden; validation used."
+      },
+      "jevDI": null
+    },
+    {
+      "dataset": "hellaswag",
+      "kind": "choice",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.265,
+      "ci95": [
+        0.23858278861465607,
+        0.29321585372094755
+      ],
+      "macroF1": 0.26465818849279493,
+      "ece": 0.3246196000000001,
+      "p50ms": 38.62260000000242,
+      "p95ms": 61.179200000013225,
+      "majorityBaseline": 0.257,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "Rowan/hellaswag",
+        "config": null,
+        "splits": [
+          "validation"
+        ],
+        "pool": 10042,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "MIT",
+        "notes": "Test labels hidden; validation used."
+      },
+      "jevDI": {
+        "raw": 0.9434,
+        "metric": "accuracy",
+        "benchmark": "HellaSwag"
+      }
+    },
+    {
+      "dataset": "arc_easy",
+      "kind": "choice",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.326,
+      "ci95": [
+        0.29766062459508447,
+        0.3556711361129795
+      ],
+      "macroF1": 0.3239268721015136,
+      "ece": 0.17461349999999995,
+      "p50ms": 18.165000000037253,
+      "p95ms": 32.243900000001304,
+      "majorityBaseline": 0.267,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "allenai/ai2_arc",
+        "config": "ARC-Easy",
+        "splits": [
+          "test"
+        ],
+        "pool": 2376,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "CC BY-SA 4.0",
+        "notes": ""
+      },
+      "jevDI": {
+        "raw": 0.9933,
+        "metric": "accuracy",
+        "benchmark": "ARC-Easy"
+      }
+    },
+    {
+      "dataset": "arc_challenge",
+      "kind": "choice",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.261,
+      "ci95": [
+        0.23473071958379402,
+        0.2890985379405008
+      ],
+      "macroF1": 0.25691090413579026,
+      "ece": 0.22667550000000009,
+      "p50ms": 19.90260000003036,
+      "p95ms": 34.5566000000108,
+      "majorityBaseline": 0.266,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "allenai/ai2_arc",
+        "config": "ARC-Challenge",
+        "splits": [
+          "test"
+        ],
+        "pool": 1172,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "choice",
+        "balanced": false,
+        "license": "CC BY-SA 4.0",
+        "notes": ""
+      },
+      "jevDI": {
+        "raw": 0.9761,
+        "metric": "accuracy",
+        "benchmark": "ARC-Challenge"
+      }
+    },
+    {
+      "dataset": "stsb",
+      "kind": "score",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.179,
+      "ci95": [
+        0.15648172434680807,
+        0.20397514454565469
+      ],
+      "macroF1": 0.08409676853708388,
+      "ece": 0.28675689999999987,
+      "p50ms": 34.24370000010822,
+      "p95ms": 53.636399999959394,
+      "accuracyArgmax": 0.189,
+      "macroF1Argmax": 0.13347807631445988,
+      "within1": 0.393,
+      "spearman": 0.10392680840172162,
+      "mae": 1.3368183276033412,
+      "majorityBaseline": 0.231,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "nyu-mll/glue",
+        "config": "stsb",
+        "splits": [
+          "validation"
+        ],
+        "pool": 1500,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "score",
+        "balanced": false,
+        "license": "STS Benchmark: mixed sources (CC BY-SA 3.0 annotations)",
+        "notes": "GLUE test labels hidden; validation used. Gold level = round(similarity)."
+      },
+      "jevDI": null
+    },
+    {
+      "dataset": "civil_comments",
+      "kind": "noul",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.613,
+      "ci95": [
+        0.582433759131263,
+        0.6427013617882128
+      ],
+      "macroF1": 0.6001896774553468,
+      "ece": 0.23651769999999958,
+      "p50ms": 17.676800000015646,
+      "p95ms": 44.45090000005439,
+      "brier": 0.27922577760999984,
+      "positiveRate": 0.679,
+      "majorityBaseline": 0.5,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "google/civil_comments",
+        "config": null,
+        "splits": [
+          "test"
+        ],
+        "pool": 60000,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "noul",
+        "balanced": true,
+        "license": "CC0 1.0",
+        "notes": "Toxic = toxicity >= 0.5. Class-balanced 50/50 sample (natural rate ~8%) from first 60k test rows."
+      },
+      "jevDI": null
+    },
+    {
+      "dataset": "esci",
+      "kind": "score",
+      "n": 1000,
+      "rejected": 0,
+      "diagnostic": false,
+      "accuracy": 0.167,
+      "ci95": [
+        0.1451661838787161,
+        0.19138253057982002
+      ],
+      "macroF1": 0.1324360868600152,
+      "ece": 0.2905211000000001,
+      "p50ms": 27.98450000002049,
+      "p95ms": 45.76410000002943,
+      "accuracyArgmax": 0.147,
+      "macroF1Argmax": 0.14472693971659725,
+      "within1": 0.334,
+      "spearman": -0.008478624336271902,
+      "mae": 1.23109,
+      "majorityBaseline": 0.554,
+      "rejectReasons": {},
+      "manifest": {
+        "hf": "tasksource/esci",
+        "config": null,
+        "splits": [
+          "test"
+        ],
+        "pool": 59756,
+        "n": 1000,
+        "seed": 20261028,
+        "kind": "score",
+        "balanced": false,
+        "license": "Apache 2.0",
+        "notes": "US locale; stream prefix of the test split; ordinal levels I<C<S<E."
+      },
+      "jevDI": {
+        "raw": 0.5718,
+        "metric": "macro-F1",
+        "benchmark": "Amazon ESCI"
+      }
+    }
+  ]
+}

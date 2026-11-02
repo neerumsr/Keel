@@ -1,0 +1,20 @@
+Keel — an open-weight, local decision model
+Copyright 2026 The Keel Authors
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This product includes or is derived from the following third-party works.
+Their licenses apply to those parts. See docs/licenses.md for the full,
+per-artifact list (base weights, datasets, and runtime dependencies).
+
+- xtremedistil-l6-h256-zeroshot-v1.1-all-33 by Moritz Laurer (MIT License),
+  itself derived from microsoft/xtremedistil-l6-h256-uncased (MIT License).
+  Keel's default weights are a fine-tune of this model.
+- Multi-Genre NLI (MultiNLI) corpus, used as replay data during training.
+- ONNX Runtime (MIT License), Hugging Face Transformers (Apache-2.0).
+
+"Jev", "System One" and "TypeSafe" are names of TypeSafe AI. "Microsoft",
+"Microsoft-Decision-1", "GitHub Copilot" and "VS Code" are names of Microsoft.
+"Claude" is a name of Anthropic. "Codex" is a name of OpenAI. Keel is an
+independent project and is not affiliated with or endorsed by any of them.
+Comparisons in this repository describe interoperability and measured results.

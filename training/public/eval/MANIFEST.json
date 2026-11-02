@@ -1,0 +1,256 @@
+{
+  "ag_news": {
+    "hf": "fancyzhx/ag_news",
+    "config": null,
+    "splits": [
+      "test"
+    ],
+    "pool": 7600,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "unspecified; AG corpus offered for academic/non-commercial use",
+    "notes": ""
+  },
+  "emotion": {
+    "hf": "dair-ai/emotion",
+    "config": "split",
+    "splits": [
+      "test"
+    ],
+    "pool": 2000,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "educational/research use only (dataset card)",
+    "notes": ""
+  },
+  "mnli_m": {
+    "hf": "nyu-mll/glue",
+    "config": "mnli",
+    "splits": [
+      "validation_matched"
+    ],
+    "pool": 9815,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "OANC (permissive) + CC BY-SA 3.0 portions",
+    "notes": "Keel-2 training replayed MNLI train pairs (NLI form); matched validation not used in training."
+  },
+  "anli": {
+    "hf": "facebook/anli",
+    "config": null,
+    "splits": [
+      "test_r1",
+      "test_r2",
+      "test_r3"
+    ],
+    "pool": 3200,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "CC BY-NC 4.0",
+    "notes": "R1+R2+R3 test pooled (3,200), stratified sample."
+  },
+  "banking77": {
+    "hf": "PolyAI/banking77",
+    "config": null,
+    "splits": [
+      "test"
+    ],
+    "pool": 3080,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "CC BY 4.0",
+    "notes": "77 options in one choice question (wire limit is now 255)."
+  },
+  "clinc150": {
+    "hf": "clinc/clinc_oos",
+    "config": "plus",
+    "splits": [
+      "test"
+    ],
+    "pool": 5500,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "CC BY 3.0",
+    "notes": "151 options (incl. oos) in one choice question (wire limit is now 255)."
+  },
+  "winogrande": {
+    "hf": "allenai/winogrande",
+    "config": "winogrande_xl",
+    "splits": [
+      "validation"
+    ],
+    "pool": 1267,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "CC BY 4.0",
+    "notes": "Test labels hidden; validation used."
+  },
+  "mmlu": {
+    "hf": "cais/mmlu",
+    "config": "all",
+    "splits": [
+      "test"
+    ],
+    "pool": 14042,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "MIT",
+    "notes": "Stratified by subject."
+  },
+  "boolq": {
+    "hf": "google/boolq",
+    "config": null,
+    "splits": [
+      "validation"
+    ],
+    "pool": 3270,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "noul",
+    "balanced": false,
+    "license": "CC BY-SA 3.0",
+    "notes": "Test labels hidden; validation used. Long passages truncated by Keel's token window."
+  },
+  "rte": {
+    "hf": "nyu-mll/glue",
+    "config": "rte",
+    "splits": [
+      "validation"
+    ],
+    "pool": 277,
+    "n": 277,
+    "seed": 20261028,
+    "kind": "noul",
+    "balanced": false,
+    "license": "unspecified (PASCAL RTE; via GLUE)",
+    "notes": "All 277 validation items."
+  },
+  "mrpc": {
+    "hf": "nyu-mll/glue",
+    "config": "mrpc",
+    "splits": [
+      "test"
+    ],
+    "pool": 1725,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "noul",
+    "balanced": false,
+    "license": "Microsoft Research Paraphrase Corpus license",
+    "notes": ""
+  },
+  "sst2": {
+    "hf": "nyu-mll/glue",
+    "config": "sst2",
+    "splits": [
+      "validation"
+    ],
+    "pool": 872,
+    "n": 872,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "unspecified (SST, Stanford; via GLUE)",
+    "notes": "GLUE test labels hidden; validation used."
+  },
+  "hellaswag": {
+    "hf": "Rowan/hellaswag",
+    "config": null,
+    "splits": [
+      "validation"
+    ],
+    "pool": 10042,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "MIT",
+    "notes": "Test labels hidden; validation used."
+  },
+  "arc_easy": {
+    "hf": "allenai/ai2_arc",
+    "config": "ARC-Easy",
+    "splits": [
+      "test"
+    ],
+    "pool": 2376,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "CC BY-SA 4.0",
+    "notes": ""
+  },
+  "arc_challenge": {
+    "hf": "allenai/ai2_arc",
+    "config": "ARC-Challenge",
+    "splits": [
+      "test"
+    ],
+    "pool": 1172,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "choice",
+    "balanced": false,
+    "license": "CC BY-SA 4.0",
+    "notes": ""
+  },
+  "stsb": {
+    "hf": "nyu-mll/glue",
+    "config": "stsb",
+    "splits": [
+      "validation"
+    ],
+    "pool": 1500,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "score",
+    "balanced": false,
+    "license": "STS Benchmark: mixed sources (CC BY-SA 3.0 annotations)",
+    "notes": "GLUE test labels hidden; validation used. Gold level = round(similarity)."
+  },
+  "civil_comments": {
+    "hf": "google/civil_comments",
+    "config": null,
+    "splits": [
+      "test"
+    ],
+    "pool": 60000,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "noul",
+    "balanced": true,
+    "license": "CC0 1.0",
+    "notes": "Toxic = toxicity >= 0.5. Class-balanced 50/50 sample (natural rate ~8%) from first 60k test rows."
+  },
+  "esci": {
+    "hf": "tasksource/esci",
+    "config": null,
+    "splits": [
+      "test"
+    ],
+    "pool": 59756,
+    "n": 1000,
+    "seed": 20261028,
+    "kind": "score",
+    "balanced": false,
+    "license": "Apache 2.0",
+    "notes": "US locale; stream prefix of the test split; ordinal levels I<C<S<E."
+  }
+}

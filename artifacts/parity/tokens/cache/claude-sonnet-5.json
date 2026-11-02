@@ -1,0 +1,38 @@
+{
+ "3403b524a5e91071cf5e": {
+  "weights": {
+   "ok": 1
+  },
+  "ms": 37378.6263,
+  "usage": {
+   "input": 29094,
+   "output": 9,
+   "reasoning": 0,
+   "cacheRead": 0,
+   "cacheWrite": 29092,
+   "apiMs": 1938,
+   "premium": 1
+  },
+  "at": "2026-10-29T04:27:19.357Z"
+ },
+ "660c88dd5f9a14ca621a": {
+  "weights": {
+   "sentiment": {
+    "positive": 0,
+    "negative": 95,
+    "neutral": 5
+   }
+  },
+  "ms": 59149.18600000001,
+  "usage": {
+   "input": 29371,
+   "output": 33,
+   "reasoning": 0,
+   "cacheRead": 16361,
+   "cacheWrite": 13008,
+   "apiMs": 3533,
+   "premium": 1
+  },
+  "at": "2026-10-29T04:28:18.513Z"
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "fp32": {
+  "size_mb": 51.1,
+  "max_diff": 0.0,
+  "mean_maxdiff": 0.0,
+  "argmax_flips": "0/382",
+  "p50_ms_per_question": 21.06,
+  "p95_ms_per_question": 45.39
+ },
+ "shipped (dynamic QInt8, all ops)": {
+  "size_mb": 13.0,
+  "max_diff": 6.184,
+  "mean_maxdiff": 2.2,
+  "argmax_flips": "83/382",
+  "p50_ms_per_question": 23.94,
+  "p95_ms_per_question": 48.66
+ },
+ "dynamic QInt8 per-channel": {
+  "size_mb": 13.0,
+  "max_diff": 5.821,
+  "mean_maxdiff": 2.014,
+  "argmax_flips": "65/382",
+  "p50_ms_per_question": 21.11,
+  "p95_ms_per_question": 45.81
+ },
+ "dynamic QInt8 MatMul-only (no Gather/embeddings)": {
+  "size_mb": 36.8,
+  "max_diff": 6.258,
+  "mean_maxdiff": 2.232,
+  "argmax_flips": "81/382",
+  "p50_ms_per_question": 25.23,
+  "p95_ms_per_question": 67.95
+ },
+ "dynamic QInt8 MatMul-only per-channel": {
+  "size_mb": 36.9,
+  "max_diff": 5.863,
+  "mean_maxdiff": 2.013,
+  "argmax_flips": "67/382",
+  "p50_ms_per_question": 24.11,
+  "p95_ms_per_question": 55.17
+ },
+ "dynamic QUInt8 reduce_range": {
+  "size_mb": 13.0,
+  "max_diff": 6.12,
+  "mean_maxdiff": 2.945,
+  "argmax_flips": "122/382",
+  "p50_ms_per_question": 36.41,
+  "p95_ms_per_question": 94.49
+ }
+}

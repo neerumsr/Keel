@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deploy Keel · Keel docs</title>
+<meta name="description" content="Run Keel on your laptop, in a container, on Kubernetes or in any cloud. This page gives a copy-paste path for each, with the sizes we measured and the security rules that keep your">
+<script>try{var t=localStorage.getItem('keel-docs-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--bg:#fbfaf6;--surface:#ffffff;--surface2:#f1efe8;--ink:#14171c;--ink2:#262b33;--line:#d9d5c9;--accent:#0b6170;--accent-ink:#ffffff;--accentSoft:#e2f0f1;--ok:#1d6b3a;--okSoft:#e3f2e7;--warm:#9a4a05;--warmSoft:#fbecdc;--danger:#a3261b;--code-bg:#f3f1ea;--link:#0a5a86;--shadow:0 1px 2px rgba(20,23,28,.06),0 6px 20px rgba(20,23,28,.05)}
+html[data-theme=dark]{--bg:#0f1418;--surface:#161d22;--surface2:#1d262c;--ink:#f1f4f6;--ink2:#dbe2e6;--line:#33414a;--accent:#5fc4d2;--accent-ink:#06171b;--accentSoft:#173238;--ok:#6fd393;--okSoft:#15301f;--warm:#f2a65a;--warmSoft:#35250f;--danger:#ff8b7e;--code-bg:#11181d;--link:#8fd0ff;--shadow:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 19px/1.65 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+code,pre{font-family:"Cascadia Mono","JetBrains Mono",Consolas,ui-monospace,Menlo,monospace}
+a{color:var(--link);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}
+.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{max-width:1180px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;gap:18px}
+.brand{white-space:nowrap;flex:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none}
+.brand svg{width:28px;height:28px}
+.top nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px}
+.top nav a{color:var(--ink2);text-decoration:none;font-size:17px;padding:6px 10px;border-radius:8px}
+.top nav a[aria-current]{color:var(--ink);background:var(--surface2);font-weight:600}
+.top nav a:hover{background:var(--surface2)}
+.spacer{flex:1}
+.btn{font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--ink2)}.btn svg{width:18px;height:18px}
+.pbar{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:40}
+main{max-width:940px;margin:0 auto;padding:40px 28px 80px}
+.crumb{font-size:17px;color:var(--ink2);margin:0 0 6px}
+h1{font-size:50px;line-height:1.1;letter-spacing:-.02em;margin:6px 0 18px;font-weight:750}
+.lede{font-size:22px;line-height:1.55;color:var(--ink2);margin:0 0 30px}
+h2{font-size:33px;line-height:1.2;letter-spacing:-.01em;margin:64px 0 16px;padding-top:22px;border-top:1px solid var(--line);font-weight:700}
+h3{font-size:25px;line-height:1.3;margin:40px 0 12px;font-weight:650}
+h4{font-size:21px;margin:28px 0 8px}
+h1,h2,h3,h4{scroll-margin-top:84px;position:relative;overflow-wrap:anywhere}
+.anchor{opacity:0;margin-left:10px;text-decoration:none;color:var(--accent);font-weight:400}
+h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 18px}ul,ol{margin:0 0 20px;padding-left:28px}li{margin:6px 0}li>ul,li>ol{margin:6px 0}
+strong{font-weight:650;color:var(--ink)}
+:not(pre)>code{font-size:.86em;background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+.code{margin:0 0 24px;border:1px solid var(--line);border-radius:12px;background:var(--code-bg);overflow:hidden}
+.code-bar{display:flex;justify-content:space-between;align-items:center;padding:6px 10px 6px 16px;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.copy{font:inherit;font-size:15px;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 10px;cursor:pointer}
+.copy:hover{border-color:var(--ink2)}
+pre{margin:0;padding:16px 18px;overflow-x:auto;font-size:16.5px;line-height:1.55;color:var(--ink)}
+.table-wrap{overflow-x:auto;margin:0 0 26px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:18px;line-height:1.45}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface2);font-weight:650;color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+.num{font-variant-numeric:tabular-nums;font-weight:650;color:var(--ink);background:var(--accentSoft);border-radius:5px;padding:0 4px}
+.callout{margin:0 0 26px;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.callout-strong{background:var(--warmSoft);border-color:var(--warm)}
+.callout>:last-child{margin-bottom:0}
+hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+figure.diagram{margin:10px 0 34px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.fig-scroll{overflow-x:auto}
+figure svg{display:block;width:100%;height:auto;min-width:600px}
+.hbars{display:grid;gap:12px}.hb-row{display:grid;grid-template-columns:210px 1fr 150px;align-items:center;gap:14px}
+.hb-label{font-weight:600;text-align:right}.hb-track{background:var(--surface2);border-radius:6px;height:28px;overflow:hidden}
+.hb-bar{height:100%;background:var(--accent);opacity:.6;border-radius:6px}.hb-bar.strong{opacity:1}.hb-bar.warm{background:var(--warm);opacity:1}
+.hb-val{font-weight:650;font-variant-numeric:tabular-nums}
+figcaption{font-size:17px;color:var(--ink2);margin-top:14px;line-height:1.5}
+svg .box{fill:var(--surface2);stroke:var(--line);stroke-width:1.5}
+svg .accent{fill:var(--accent);stroke:var(--accent)}svg .ok{fill:var(--okSoft);stroke:var(--ok);stroke-width:1.5}svg .warm{fill:var(--warmSoft);stroke:var(--warm);stroke-width:1.5}
+svg .frame{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 5}
+svg .t{fill:var(--ink);font:500 17px "Segoe UI",system-ui,sans-serif}svg .tb{font-weight:650;font-size:18px}svg .ts{font-size:15.5px;fill:var(--ink2)}
+svg .on-accent{fill:var(--accent-ink)}svg .on-ok,svg .on-warm{fill:var(--ink)}svg .ok-t{fill:var(--ok)}
+svg .arrow{stroke:var(--ink2);stroke-width:2}svg .arrow.okline{stroke:var(--ok)}svg .ahead{fill:var(--ink2)}
+svg .track{fill:var(--surface2)}svg .bar{fill:var(--accent);opacity:.55}svg .bar.strong{opacity:1}svg .warmbar{fill:var(--warm);opacity:1}
+svg .grid{stroke:var(--line);stroke-width:1}
+svg .ln-a{stroke:var(--accent);stroke-width:3}svg .ln-b{stroke:var(--warm);stroke-width:3}svg .ln-a-dot{fill:var(--accent)}svg .ln-b-dot{fill:var(--warm)}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:24px;border-top:1px solid var(--line)}
+.pager a{display:block;flex:1;padding:14px 18px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);background:var(--surface)}
+.pager a:hover{border-color:var(--accent)}.pager small{display:block;font-size:16px;color:var(--ink2)}.pager .next{text-align:right}
+footer{font-size:16px;color:var(--ink2);margin-top:28px}
+/* contents menu: middle-left, auto-hide */
+.navtab{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:25;writing-mode:vertical-rl;rotate:180deg;font:600 16px/1 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:0;border-radius:0 10px 10px 0;padding:16px 9px;cursor:pointer;transition:opacity .2s}
+.sidenav{position:fixed;left:14px;top:50%;transform:translate(calc(-100% - 30px),-50%);z-index:26;width:300px;max-height:76vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 10px 14px 14px;box-shadow:0 10px 40px rgba(0,0,0,.14);transition:transform .28s ease}
+body.nav-open .sidenav{transform:translate(0,-50%)}body.nav-open .navtab{opacity:0;pointer-events:none}
+.sidenav-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 8px 6px;font-weight:700;font-size:17px}
+.sidenav-head button{font:inherit;font-size:15px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 8px;cursor:pointer}
+.sidenav ol{list-style:none;margin:0;padding:0}.sidenav li{margin:0}
+.sidenav a{display:block;padding:6px 8px;border-radius:7px;color:var(--ink2);text-decoration:none;font-size:16.5px;line-height:1.35}
+.sidenav a.l3{padding-left:22px;font-size:16px}
+.sidenav a:hover{background:var(--surface2);color:var(--ink)}
+.sidenav a.active{background:var(--accentSoft);color:var(--ink);font-weight:650}
+
+@media (max-width:1240px){.top nav{display:none}}
+@media (max-width:700px){body{font-size:18px}main{padding:26px 18px 60px}h1{font-size:36px}h2{font-size:27px;margin-top:48px}h3{font-size:22px}.lede{font-size:19.5px}.top-in{padding:10px 16px;gap:10px}.brand span{display:none}table{font-size:17px}th,td{padding:9px 10px}pre{font-size:15.5px}figure.diagram{padding:14px}.sidenav{width:min(300px,84vw)}main{padding-left:38px}.navtab{font-size:14px;padding:12px 5px}.hb-row{grid-template-columns:1fr auto;gap:4px 10px}.hb-label{text-align:left;grid-column:1/-1}.hb-track{height:22px}.pager{flex-direction:column}}
+.docmenu{position:fixed;inset:60px 12px auto auto;z-index:35;width:min(340px,92vw);max-height:80vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 10px 40px rgba(0,0,0,.16);display:none}
+.docmenu.open{display:block}.docmenu h4{margin:10px 8px 4px;font-size:16px}.docmenu a{display:block;padding:7px 10px;border-radius:7px;color:var(--ink);text-decoration:none;font-size:17px}.docmenu a:hover{background:var(--surface2)}
+@media print{.top,.navtab,.sidenav,.pbar,.copy,.pager,.docmenu{display:none!important}body{font-size:12pt}main{max-width:none;padding:0}h2{break-after:avoid}figure,table,.code{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="pbar"></div>
+<header class="top"><div class="top-in">
+<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="var(--accent)"/><path d="M8 9h16M16 9v15M9 19c2 4 5 5 7 5s5-1 7-5" stroke="var(--accent-ink)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg><span>Keel docs</span></a>
+<nav aria-label="Documentation"><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="concepts.html">Concepts</a><a href="api-reference.html">API reference</a><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="faq.html">FAQ</a></nav>
+<div class="spacer"></div>
+<button class="btn alldocs" id="alldocs" type="button" aria-haspopup="true">All docs</button>
+<button class="btn" id="theme" type="button" aria-label="Toggle dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Dark</span></button>
+</div></header>
+<div class="docmenu" id="docmenu"><h4>Get started</h4><a href="index.html">Overview</a><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="deployment.html">Deploy</a><a href="concepts.html">Concepts</a><a href="use-cases.html">50 use cases</a><h4>Reference</h4><a href="api-reference.html">API reference</a><a href="help-guide.html">Help guide</a><a href="faq.html">FAQ</a><h4>Evidence</h4><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="comparison.html">Comparison</a><a href="why-keel.html">Why Keel</a><a href="model-card.html">Model card</a><a href="keel-pro.html">Keel-Pro story</a><h4>Internals</h4><a href="architecture.html">Architecture</a><a href="design-doc.html">Design doc</a><a href="training-guide.html">Training guide</a><a href="release-notes.html">Release notes</a><a href="licenses.html">Licenses</a><a href="press.html">Press kit</a></div>
+<button class="navtab" type="button" aria-label="Open contents">Contents</button>
+<aside class="sidenav" aria-label="On this page"><div class="sidenav-head"><span>On this page</span><button id="navclose" type="button" aria-label="Close contents">Close</button></div><ol><li><a class="l2" href="#pick-a-setup">Pick a setup</a></li><li><a class="l2" href="#sizes-we-measured">Sizes we measured</a></li><li><a class="l2" href="#how-the-pieces-fit">How the pieces fit</a></li><li><a class="l2" href="#1-local-no-container">1. Local (no container)</a></li><li><a class="l2" href="#2-docker-keel-lite">2. Docker (Keel-Lite)</a></li><li><a class="l2" href="#3-docker-compose-with-keel-pro">3. Docker Compose with Keel-Pro</a></li><li><a class="l2" href="#4-kubernetes">4. Kubernetes</a></li><li><a class="l2" href="#5-cloud-recipes">5. Cloud recipes</a></li><li><a class="l3" href="#keel-lite-cpu">Keel-Lite (CPU)</a></li><li><a class="l3" href="#keel-pro-gpu">Keel-Pro (GPU)</a></li><li><a class="l2" href="#6-keel-pro-gguf-with-llamacpp">6. Keel-Pro GGUF with llama.cpp</a></li><li><a class="l2" href="#security-checklist">Security checklist</a></li><li><a class="l2" href="#settings">Settings</a></li><li><a class="l2" href="#operate-it">Operate it</a></li><li><a class="l2" href="#call-a-deployed-keel">Call a deployed Keel</a></li><li><a class="l2" href="#troubleshooting">Troubleshooting</a></li><li><a class="l2" href="#what-we-tested">What we tested</a></li></ol></aside>
+<main>
+<p class="crumb"><a href="index.html">Keel docs</a> / Deploy</p>
+<h1>Deploy Keel</h1>
+<p class="lede">Run Keel on your laptop, in a container, on Kubernetes or in any cloud. This page gives a copy-paste path for each, with the sizes we measured and the security rules that keep your decision data private.</p>
+<figure class="diagram" id="fig-deploy-pick"><div class="fig-scroll"><svg viewBox="0 0 1000 300" role="img" aria-label="Decision tree: accuracy need, team sharing and GPU size pick Keel-Lite local, Keel-Lite container, Keel-Pro sidecar or GGUF" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="370" y="15" width="260" height="60" rx="10" class="accent"/><text x="500" y="51" class="t tb on-accent" text-anchor="middle">Need the best accuracy?</text><line x1="450" y1="75" x2="210" y2="120" class="arrow" marker-end="url(#ah)"/><text x="300" y="92" class="t ts" text-anchor="middle">no</text><line x1="550" y1="75" x2="790" y2="120" class="arrow" marker-end="url(#ah)"/><text x="700" y="92" class="t ts" text-anchor="middle">yes</text><rect x="90" y="120" width="240" height="60" rx="10" class="box"/><text x="210" y="156" class="t tb" text-anchor="middle">Shared by a team?</text><rect x="670" y="120" width="240" height="60" rx="10" class="box"/><text x="790" y="156" class="t tb" text-anchor="middle">NVIDIA GPU, 24 GB+?</text><line x1="160" y1="180" x2="90" y2="225" class="arrow" marker-end="url(#ah)"/><text x="100" y="205" class="t ts" text-anchor="middle">no</text><line x1="260" y1="180" x2="330" y2="225" class="arrow" marker-end="url(#ah)"/><text x="320" y="205" class="t ts" text-anchor="middle">yes</text><line x1="740" y1="180" x2="670" y2="225" class="arrow" marker-end="url(#ah)"/><text x="680" y="205" class="t ts" text-anchor="middle">yes</text><line x1="840" y1="180" x2="910" y2="225" class="arrow" marker-end="url(#ah)"/><text x="905" y="205" class="t ts" text-anchor="middle">no</text><rect x="5" y="225" width="175" height="65" rx="10" class="ok"/><text x="92.5" y="253.5" class="t tb on-ok" text-anchor="middle">Keel-Lite, local</text><text x="92.5" y="277.5" class="t ts on-ok" text-anchor="middle">npm start</text><rect x="245" y="225" width="205" height="65" rx="10" class="ok"/><text x="347.5" y="253.5" class="t tb on-ok" text-anchor="middle">Keel-Lite container</text><text x="347.5" y="277.5" class="t ts on-ok" text-anchor="middle">Docker · K8s · cloud</text><rect x="560" y="225" width="220" height="65" rx="10" class="warm"/><text x="670" y="253.5" class="t tb on-warm" text-anchor="middle">Keel-Pro sidecar</text><text x="670" y="277.5" class="t ts on-warm" text-anchor="middle">Compose · K8s GPU pod</text><rect x="805" y="225" width="190" height="65" rx="10" class="warm"/><text x="900" y="253.5" class="t tb on-warm" text-anchor="middle">Keel-Pro GGUF</text><text x="900" y="277.5" class="t ts on-warm" text-anchor="middle">llama.cpp, ~17 GB</text></svg></div><figcaption>Which setup? Start at the top. Most teams need only Keel-Lite; add Keel-Pro when accuracy matters more than cost.</figcaption></figure>
+<h2 id="pick-a-setup">Pick a setup<a class="anchor" href="#pick-a-setup" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>You want</th><th>Use</th><th>Hardware</th><th>Speed (measured)</th><th>Section</th></tr></thead><tbody><tr><td>Fast, free decisions next to your agent</td><td><strong>Keel-Lite</strong> (<code>decider-latest</code>)</td><td>Any CPU, 1–2 GB RAM</td><td>p95 about 14 ms in-process</td><td><a href="#1-local-no-container">Local</a>, <a href="#2-docker-keel-lite">Docker</a></td></tr><tr><td>A shared Keel for a team or service</td><td><strong>Keel-Lite in a container</strong></td><td>0.5–1 vCPU, 1–2 GB per replica</td><td>same, plus your network</td><td><a href="#4-kubernetes">Kubernetes</a>, <a href="#5-cloud-recipes">Cloud</a></td></tr><tr><td>The most accurate decisions (Decision Index 62.73, full public suite)</td><td><strong>Keel-Pro</strong> (<code>decider-pro-1.0.0</code>)</td><td>NVIDIA GPU, 24 GB+ (32 GB+ recommended)</td><td>median 245 ms per request (DI full public suite, RTX 5090)</td><td><a href="#3-docker-compose-with-keel-pro">Compose</a>, <a href="#4-kubernetes">Kubernetes</a></td></tr><tr><td>Keel-Pro on a smaller GPU or a Mac, outside Keel</td><td><strong>Keel-Pro GGUF</strong> with llama.cpp</td><td>~17 GB (Q4_K_M)</td><td>median 0.24 s per question (RTX 5090)</td><td><a href="#6-keel-pro-gguf-with-llamacpp">GGUF</a></td></tr></tbody></table></div>
+<p>Keel-Lite is always there. Keel-Pro is opt-in: a request gets it only when it pins <code>&quot;model&quot;: &quot;decider-pro-1.0.0&quot;</code>.</p>
+<h2 id="sizes-we-measured">Sizes we measured<a class="anchor" href="#sizes-we-measured" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Part</th><th>Disk</th><th>Memory</th><th>Notes</th></tr></thead><tbody><tr><td>Keel server image (app + Keel-2/Keel-3 ONNX)</td><td>about 210 MB of app files</td><td>355 MB working set, 771 MB peak under load</td><td>Measured on Windows from the same files the image ships</td></tr><tr><td>Keel-Pro sidecar</td><td>Qwen3.5-27B base about 52 GB, adapter about 0.8 GB</td><td>about 21 GB GPU (4-bit NF4 base + LoRA)</td><td>Long states need headroom; 32 GB+ is comfortable</td></tr><tr><td>Keel-Pro GGUF</td><td>Q4_K_M 16.8 GB, Q8_0 29.0 GB</td><td>about the file size, in VRAM</td><td>llama.cpp; matched the HF run on 30/30 dev questions</td></tr></tbody></table></div>
+<h2 id="how-the-pieces-fit">How the pieces fit<a class="anchor" href="#how-the-pieces-fit" aria-label="Link to this section">#</a></h2>
+<figure class="diagram" id="fig-deploy-pod"><div class="fig-scroll"><svg viewBox="0 0 1000 260" role="img" aria-label="Agent to ingress to Keel server, which calls the Keel-Pro sidecar over localhost inside one pod" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><style>.dp-dot{offset-path:path("M60,130 L300,130 L470,130 L640,130 L760,130");animation:dpm 4s linear infinite}@keyframes dpm{from{offset-distance:0%}to{offset-distance:100%}}@media (prefers-reduced-motion:reduce){.dp-dot{animation:none}}</style><rect x="385" y="20" width="600" height="220" rx="10" class="box"/><text x="685" y="45" class="t tb" text-anchor="middle">one pod · shared localhost</text><rect x="10" y="95" width="140" height="70" rx="10" class="box"/><text x="80" y="126" class="t tb" text-anchor="middle">Your agent</text><text x="80" y="150" class="t ts" text-anchor="middle">Bearer key</text><line x1="150" y1="130" x2="200" y2="130" class="arrow" marker-end="url(#ah)"/><rect x="200" y="95" width="140" height="70" rx="10" class="box"/><text x="270" y="126" class="t tb" text-anchor="middle">Ingress</text><text x="270" y="150" class="t ts" text-anchor="middle">TLS</text><line x1="340" y1="130" x2="400" y2="130" class="arrow" marker-end="url(#ah)"/><rect x="400" y="85" width="220" height="90" rx="10" class="accent"/><text x="510" y="126" class="t tb on-accent" text-anchor="middle">Keel server :8080</text><text x="510" y="150" class="t ts on-accent" text-anchor="middle">key · validation · Keel-Lite</text><line x1="620" y1="130" x2="735" y2="130" class="arrow" marker-end="url(#ah)"/><text x="678" y="118" class="t ts" text-anchor="middle">127.0.0.1</text><rect x="735" y="85" width="230" height="90" rx="10" class="warm"/><text x="850" y="126" class="t tb on-warm" text-anchor="middle">Keel-Pro sidecar :8090</text><text x="850" y="150" class="t ts on-warm" text-anchor="middle">GPU · no external port</text><text x="685" y="215" class="t ts" text-anchor="middle">KEEL_SECRET from a secret store · weights on a volume</text><circle r="8" class="ln-a-dot dp-dot"/></svg></div><figcaption>One pod (or one Compose network). Requests come in over TLS with the key; Keel answers Keel-Lite itself and passes Pro-pinned questions to the sidecar over localhost. The sidecar is never reachable from outside.</figcaption></figure>
+<ul><li><strong>Keel server</strong> (Node, port 8080) checks the key, validates the request, runs Keel-Lite and formats every answer.</li><li><strong>Keel-Pro sidecar</strong> (Python, port 8090) turns questions into option probabilities on the GPU. It has <strong>no auth of its own</strong> and binds <code>127.0.0.1</code>. Keel refuses to send decision data to a sidecar that is not on loopback.</li><li>So in containers the two must <strong>share one network namespace</strong>: one Kubernetes pod, or Compose <code>network_mode: service:…</code>. The sidecar port is never exposed.</li></ul>
+<h2 id="1-local-no-container">1. Local (no container)<a class="anchor" href="#1-local-no-container" aria-label="Link to this section">#</a></h2>
+<div class="code"><div class="code-bar"><span>powershell</span><button type="button" class="copy">Copy</button></div><pre><code>npm install
+npm run build; npm start            # http://127.0.0.1:8080, loopback only
+npm run -s keel:token               # your API key</code></pre></div>
+<p>Keel-Pro locally: see <a href="../artifacts/parity/pro/SERVE.md">Keel-Pro serving</a>.</p>
+<h2 id="2-docker-keel-lite">2. Docker (Keel-Lite)<a class="anchor" href="#2-docker-keel-lite" aria-label="Link to this section">#</a></h2>
+<div class="code"><div class="code-bar"><span>bash</span><button type="button" class="copy">Copy</button></div><pre><code>docker build -t keel .
+export KEEL_SECRET=&quot;$(openssl rand -base64 48)&quot;       # keep it in your secret store, not in git
+docker run -d --name keel -p 8080:8080 -e KEEL_SECRET keel
+docker exec keel npm run -s keel:token              # the API key (derived from KEEL_SECRET)
+curl -s http://localhost:8080/api/v1/status</code></pre></div>
+<p>Or with Compose: put <code>KEEL_SECRET=…</code> in a <code>.env</code> file (gitignored) and run <code>docker compose up -d</code>.</p>
+<p>Inside the container Keel listens on all interfaces (<code>KEEL_HOST=0.0.0.0</code>) so the port can be published. That is safe because:</p>
+<div class="table-wrap"><table><thead><tr><th>Request from another machine</th><th>Result</th></tr></thead><tbody><tr><td><code>POST /api/v1/systemone</code> without the key</td><td><code>401</code></td></tr><tr><td><code>POST /api/v1/systemone</code> with the key</td><td>the answer</td></tr><tr><td>The web UI's private functions (they reveal the key)</td><td><code>403</code>; the UI works only through <code>localhost</code></td></tr></tbody></table></div>
+<p>Need the UI on a remote box? Use an SSH tunnel: <code>ssh -L 8080:localhost:8080 &lt;host&gt;</code>, then open <code>http://localhost:8080</code>.</p>
+<h2 id="3-docker-compose-with-keel-pro">3. Docker Compose with Keel-Pro<a class="anchor" href="#3-docker-compose-with-keel-pro" aria-label="Link to this section">#</a></h2>
+<p>On one Linux host with an NVIDIA GPU and the <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html" rel="noopener">NVIDIA Container Toolkit</a>:</p>
+<div class="code"><div class="code-bar"><span>bash</span><button type="button" class="copy">Copy</button></div><pre><code># 1. Weights (once). The base is Apache-2.0; the adapter is the Keel-Pro release.
+hf download Qwen/Qwen3.5-27B --local-dir /srv/keel/Qwen3.5-27B
+#    Keel-Pro adapter: from the Hugging Face release, or from your own training run (docs/keel-pro.md)
+
+# 2. Config (.env next to compose.pro.yaml, never committed)
+KEEL_SECRET=&lt;long random string&gt;
+KEEL_PRO_BASE=/srv/keel/Qwen3.5-27B
+KEEL_PRO_ADAPTER=/srv/keel/keel-pro-adapter
+
+# 3. Run
+docker compose -f compose.pro.yaml up -d
+docker compose -f compose.pro.yaml logs -f keel-pro-sidecar     # wait for {&quot;event&quot;: &quot;ready&quot;} (a few minutes)</code></pre></div>
+<p>Ask Keel-Pro:</p>
+<div class="code"><div class="code-bar"><span>bash</span><button type="button" class="copy">Copy</button></div><pre><code>TOKEN=$(docker compose -f compose.pro.yaml exec keel npm run -s keel:token)
+curl -s http://localhost:8080/api/v1/systemone -H &quot;Authorization: Bearer $TOKEN&quot; -H &quot;Content-Type: application/json&quot; \
+  -d '{&quot;model&quot;:&quot;decider-pro-1.0.0&quot;,&quot;state&quot;:&quot;Deploy failed: health check timeout after DB migration.&quot;,
+       &quot;questions&quot;:{&quot;next&quot;:{&quot;type&quot;:&quot;choice&quot;,&quot;instructions&quot;:&quot;What should on-call do first?&quot;,
+         &quot;criteria&quot;:{&quot;retry&quot;:&quot;Run the deploy again&quot;,&quot;rollback&quot;:&quot;Undo the release&quot;,&quot;page&quot;:&quot;Wake the DB owner&quot;}}}}'</code></pre></div>
+<p>If the sidecar is down, Pro requests get <code>503 model_unavailable</code>. They never silently fall back to Keel-Lite.</p>
+<h2 id="4-kubernetes">4. Kubernetes<a class="anchor" href="#4-kubernetes" aria-label="Link to this section">#</a></h2>
+<p>Works the same on AKS, EKS, GKE or your own cluster. Build and push both images to your registry, then replace <code>REGISTRY/…:VERSION</code> in the manifests.</p>
+<div class="code"><div class="code-bar"><span>bash</span><button type="button" class="copy">Copy</button></div><pre><code>kubectl create secret generic keel --from-literal=KEEL_SECRET=&quot;$(openssl rand -base64 48)&quot;
+
+# Keel-Lite: 2 replicas, CPU only
+kubectl apply -f deploy/kubernetes/keel.yaml
+
+# Keel + Keel-Pro: one pod with both containers on a GPU node (needs the NVIDIA device plugin)
+kubectl apply -f deploy/kubernetes/keel-pro.yaml</code></pre></div>
+<div class="table-wrap"><table><thead><tr><th>In the manifests</th><th>Why</th></tr></thead><tbody><tr><td>Both containers in one pod (<code>keel-pro.yaml</code>)</td><td>They share <code>localhost</code>, so the sidecar stays private</td></tr><tr><td><code>startupProbe</code> allows 15 minutes</td><td>Loading a 27B model from disk takes minutes</td></tr><tr><td><code>runAsNonRoot</code>, <code>drop: ALL</code>, no privilege escalation</td><td>Least privilege</td></tr><tr><td><code>KEEL_SECRET</code> from a Secret</td><td>Same key on every replica; rotate by changing the Secret</td></tr><tr><td>Optional <code>DATABASE_URL</code></td><td>With 2+ replicas, one Postgres keeps the on/off switch the same everywhere</td></tr></tbody></table></div>
+<p>Put your ingress (with TLS) in front of the <code>keel</code> or <code>keel-pro</code> Service.</p>
+<h2 id="5-cloud-recipes">5. Cloud recipes<a class="anchor" href="#5-cloud-recipes" aria-label="Link to this section">#</a></h2>
+<p>These are standard managed-container commands. <strong>We test the container images, not each cloud account</strong>; see <a href="#what-we-tested">What we tested</a>.</p>
+<h3 id="keel-lite-cpu">Keel-Lite (CPU)<a class="anchor" href="#keel-lite-cpu" aria-label="Link to this section">#</a></h3>
+<p><strong>Azure Container Apps</strong></p>
+<div class="code"><div class="code-bar"><span>bash</span><button type="button" class="copy">Copy</button></div><pre><code>az group create -n keel-rg -l eastus
+az acr create -n &lt;acr&gt; -g keel-rg --sku Basic
+az acr build -r &lt;acr&gt; -t keel:1.0 .
+az containerapp env create -n keel-env -g keel-rg -l eastus
+az containerapp create -n keel -g keel-rg --environment keel-env \
+  --image &lt;acr&gt;.azurecr.io/keel:1.0 --registry-server &lt;acr&gt;.azurecr.io --registry-identity system \
+  --target-port 8080 --ingress external --cpu 1 --memory 2Gi --min-replicas 1 \
+  --secrets keel-secret=&lt;long random string&gt; --env-vars KEEL_SECRET=secretref:keel-secret</code></pre></div>
+<p><strong>Google Cloud Run</strong></p>
+<div class="code"><div class="code-bar"><span>bash</span><button type="button" class="copy">Copy</button></div><pre><code>printf '%s' &quot;&lt;long random string&gt;&quot; | gcloud secrets create keel-secret --data-file=-
+gcloud run deploy keel --source . --port 8080 --memory 2Gi --min-instances 1 \
+  --set-secrets KEEL_SECRET=keel-secret:latest --allow-unauthenticated   # Keel's own key still guards every call</code></pre></div>
+<p><strong>AWS (ECR + App Runner)</strong></p>
+<div class="code"><div class="code-bar"><span>bash</span><button type="button" class="copy">Copy</button></div><pre><code>aws ecr create-repository --repository-name keel
+docker build -t &lt;account&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/keel:1.0 . &amp;&amp; docker push &lt;account&gt;.dkr.ecr.&lt;region&gt;.amazonaws.com/keel:1.0
+# Store KEEL_SECRET in Secrets Manager, then create the App Runner service from the image with port 8080 and
+# RuntimeEnvironmentSecrets KEEL_SECRET=&lt;secret ARN&gt;. ECS Fargate with the same image works too.</code></pre></div>
+<h3 id="keel-pro-gpu">Keel-Pro (GPU)<a class="anchor" href="#keel-pro-gpu" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Cloud</th><th>Simplest path</th><th>GPU that fits</th></tr></thead><tbody><tr><td>Any</td><td>A GPU VM + <a href="#3-docker-compose-with-keel-pro">Compose</a></td><td>24 GB+: L4 (tight), L40S 48 GB, A100, H100, RTX PRO 6000</td></tr><tr><td>Azure</td><td>AKS with a GPU node pool + <code>keel-pro.yaml</code></td><td>NC A100 v4, NCads H100 v5</td></tr><tr><td>AWS</td><td>EKS with a GPU node group + <code>keel-pro.yaml</code></td><td>g6e (L40S), p4d/p5</td></tr><tr><td>Google Cloud</td><td>GKE with a GPU node pool + <code>keel-pro.yaml</code></td><td>g2 (L4, tight), a2/a3</td></tr></tbody></table></div>
+<p>Keep the weights on a persistent volume or bake a private image layer. Do not download 52 GB on every start.</p>
+<h2 id="6-keel-pro-gguf-with-llamacpp">6. Keel-Pro GGUF with llama.cpp<a class="anchor" href="#6-keel-pro-gguf-with-llamacpp" aria-label="Link to this section">#</a></h2>
+<p>For a smaller GPU or Apple silicon, the GGUF build runs in llama.cpp. It answers with the same letters policy (<code>scripts/di/gguf_engine.py</code> shows the exact prompt and scoring). The Keel server does not proxy to llama.cpp today, so call it from your own code, or use the sidecar for the <code>decider-pro-1.0.0</code> pin.</p>
+<h2 id="security-checklist">Security checklist<a class="anchor" href="#security-checklist" aria-label="Link to this section">#</a></h2>
+<ul><li>[ ] <code>KEEL_SECRET</code> is long, random, and comes from a secret store. Never bake it into an image or commit it.</li><li>[ ] TLS terminates at your ingress or load balancer. Keel itself speaks plain HTTP.</li><li>[ ] The sidecar port (8090) is never published or exposed by a Service.</li><li>[ ] Keep the default rate limit (<code>KEEL_RATE_PER_MINUTE=120</code> per instance) on public endpoints.</li><li>[ ] Logs never contain the key or decision <code>state</code>. Keel does not log either.</li><li>[ ] Report vulnerabilities privately: <a href="../SECURITY.md">SECURITY.md</a>.</li></ul>
+<h2 id="settings">Settings<a class="anchor" href="#settings" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Variable</th><th>Default</th><th>What it does</th></tr></thead><tbody><tr><td><code>KEEL_SECRET</code></td><td>random, stored in <code>KEEL_SECRET_FILE</code></td><td>Seed of the API key. Set it in any shared deployment.</td></tr><tr><td><code>KEEL_SECRET_FILE</code></td><td><code>~/.keel/secret</code> (<code>/data/secret</code> in the image)</td><td>Where the generated secret is kept when <code>KEEL_SECRET</code> is unset</td></tr><tr><td><code>KEEL_HOST</code></td><td><code>127.0.0.1</code> (<code>0.0.0.0</code> in the image)</td><td>Interface to listen on</td></tr><tr><td><code>PORT</code></td><td><code>8080</code></td><td>HTTP port</td></tr><tr><td><code>KEEL_PRO_URL</code></td><td><code>http://127.0.0.1:8090</code></td><td>Keel-Pro sidecar; loopback only</td></tr><tr><td><code>KEEL_RATE_PER_MINUTE</code></td><td><code>120</code></td><td>Decisions per minute per instance; <code>0</code> turns the limit off</td></tr><tr><td><code>KEEL_MODEL_DIR</code></td><td><code>models/keel-3</code>, then <code>models/keel-2</code></td><td>Keel-Lite model directory</td></tr><tr><td><code>DATABASE_URL</code></td><td>unset (embedded PGlite)</td><td>Postgres for the shared on/off switch</td></tr></tbody></table></div>
+<h2 id="operate-it">Operate it<a class="anchor" href="#operate-it" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Task</th><th>How</th></tr></thead><tbody><tr><td>Health check</td><td><code>GET /api/v1/status</code> (no key needed). Sidecar: <code>GET /health</code> from inside the pod</td></tr><tr><td>Pin a model version</td><td>Clients send <code>&quot;model&quot;: &quot;decider-3.0.0&quot;</code> or <code>&quot;decider-pro-1.0.0&quot;</code>; <code>decider-latest</code> follows the default</td></tr><tr><td>Upgrade</td><td>Roll out a new image tag. Pinned clients keep the model they asked for</td></tr><tr><td>Roll back</td><td>Redeploy the previous tag</td></tr><tr><td>Scale</td><td>Keel-Lite: add replicas (CPU-bound, stateless). Keel-Pro: one GPU per pod, add pods</td></tr><tr><td>Turn decisions off</td><td><code>POST /api/v1/switch {&quot;enabled&quot;: false}</code>, or the UI switch</td></tr></tbody></table></div>
+<h2 id="call-a-deployed-keel">Call a deployed Keel<a class="anchor" href="#call-a-deployed-keel" aria-label="Link to this section">#</a></h2>
+<p>Every client from the <a href="quickstart.html">Quickstart</a> and <a href="integrations.html">Integrations</a> works. Only the base URL and key change:</p>
+<div class="table-wrap"><table><thead><tr><th>Client</th><th>Setting</th></tr></thead><tbody><tr><td>curl / any HTTP</td><td><code>https://&lt;your-host&gt;/api/v1/systemone</code> + <code>Authorization: Bearer &lt;key&gt;</code></td></tr><tr><td>TypeSafe Jev SDKs</td><td><code>TYPESAFE_BASE_URL=https://&lt;your-host&gt;/api</code></td></tr><tr><td>Microsoft-Decision-1 clients</td><td><code>https://&lt;your-host&gt;/providers/microsoft/v1/systemone</code> + <code>api-key: &lt;key&gt;</code></td></tr><tr><td>MCP (<code>keel-mcp</code>)</td><td><code>KEEL_URL=https://&lt;your-host&gt;</code>, <code>KEEL_TOKEN=&lt;key&gt;</code></td></tr></tbody></table></div>
+<h2 id="troubleshooting">Troubleshooting<a class="anchor" href="#troubleshooting" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Symptom</th><th>Cause</th><th>Fix</th></tr></thead><tbody><tr><td><code>401 unauthorized</code></td><td>Wrong or missing key</td><td>Read it again with <code>npm run -s keel:token</code> in the same environment (same <code>KEEL_SECRET</code>)</td></tr><tr><td>Keys differ between replicas</td><td>No <code>KEEL_SECRET</code>, so each replica generated its own</td><td>Set <code>KEEL_SECRET</code> from one Secret</td></tr><tr><td><code>503 model_unavailable</code> on Pro</td><td>Sidecar not ready or not on loopback</td><td>Wait for <code>{&quot;event&quot;: &quot;ready&quot;}</code>; keep both containers in one pod/namespace</td></tr><tr><td>Sidecar <code>CUDA out of memory</code></td><td>GPU under 24 GB, or very long states</td><td>Use a bigger GPU or the GGUF build</td></tr><tr><td>UI shows 403 from another machine</td><td>By design: the UI reveals the key</td><td>SSH tunnel to <code>localhost</code></td></tr><tr><td><code>429</code></td><td>Rate limit</td><td>Raise <code>KEEL_RATE_PER_MINUTE</code> deliberately</td></tr></tbody></table></div>
+<h2 id="what-we-tested">What we tested<a class="anchor" href="#what-we-tested" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Check</th><th>Status</th></tr></thead><tbody><tr><td>Keel image layout (built server + models, no <code>node_modules</code>) answers a decision; 401 without key; 403 for remote UI functions</td><td>✅ Tested locally</td></tr><tr><td><code>docker build</code> + run + one decision</td><td>✅ In CI on every pull request (<code>.github/workflows/containers.yml</code>)</td></tr><tr><td>Keel-Pro sidecar</td><td>✅ Tested on an RTX 5090, outside a container; image builds in CI</td></tr><tr><td>Keel-Pro image on a cloud GPU</td><td>⬜ Not yet. Reports welcome</td></tr><tr><td>Azure / Google / AWS recipes</td><td>⬜ Standard commands, not yet run by us end to end</td></tr></tbody></table></div>
+<nav class="pager" aria-label="Previous and next"><a href="integrations.html"><small>Previous</small>Integrations</a><a class="next" href="concepts.html"><small>Next</small>Concepts</a></nav>
+<footer>Generated from <a href="deployment.md">deployment.md</a> by <code>node docs/build-html.mjs</code>. Keel is released under the Apache-2.0 licence.</footer>
+</main>
+
+<script>
+(function(){
+var root=document.documentElement,body=document.body;
+var tbtn=document.getElementById('theme');
+function label(){var d=root.dataset.theme==='dark';tbtn.querySelector('span').textContent=d?'Light':'Dark';tbtn.setAttribute('aria-pressed',d)}
+label();tbtn.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('keel-docs-theme',root.dataset.theme)}catch(e){}label()});
+var dm=document.getElementById('docmenu'),db=document.getElementById('alldocs');
+db.addEventListener('click',function(e){e.stopPropagation();dm.classList.toggle('open')});document.addEventListener('click',function(e){if(!dm.contains(e.target))dm.classList.remove('open')});
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.closest('.code').querySelector('code').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1400)},function(){})})});
+var pbar=document.querySelector('.pbar');
+var nav=document.querySelector('.sidenav'),tab=document.querySelector('.navtab');
+if(!nav)return;
+var pinned=false,timer=null,hover=false,wide=matchMedia('(min-width:1101px)');
+function open(){body.classList.add('nav-open')}function close(){if(!pinned&&!hover)body.classList.remove('nav-open')}
+function peek(){if(!wide.matches)return;open();clearTimeout(timer);timer=setTimeout(close,1800)}
+tab.addEventListener('click',function(){pinned=true;open()});
+document.getElementById('navclose').addEventListener('click',function(){pinned=false;hover=false;body.classList.remove('nav-open')});
+nav.addEventListener('mouseenter',function(){hover=true;clearTimeout(timer)});nav.addEventListener('mouseleave',function(){hover=false;timer=setTimeout(close,900)});
+document.addEventListener('mousemove',function(e){if(e.clientX<110&&wide.matches){open();clearTimeout(timer);timer=setTimeout(close,1800)}});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(!wide.matches){pinned=false;body.classList.remove('nav-open')}})});
+var links=[].slice.call(nav.querySelectorAll('a')),heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+var last=0,ticking=false;
+window.addEventListener('scroll',function(){if(ticking)return;ticking=true;requestAnimationFrame(function(){ticking=false;var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;pbar.style.width=(h>0?y/h*100:0)+'%';
+var cur=-1;for(var i=0;i<heads.length;i++){if(heads[i]&&heads[i].getBoundingClientRect().top<120)cur=i}
+links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+if(Math.abs(y-last)>40){peek();last=y}})},{passive:true});
+})();</script>
+</body>
+</html>

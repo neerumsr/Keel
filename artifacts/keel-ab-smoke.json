@@ -1,0 +1,872 @@
+{
+  "keel": "decider-2.0.0",
+  "llm": "gpt-5-mini",
+  "gate": {
+    "choice": 0.6,
+    "score": 0.5,
+    "noul": 0.2
+  },
+  "summary": [
+    {
+      "suite": "holdout-b-20",
+      "mode": "off",
+      "fullyRight": 12,
+      "cases": 20,
+      "choice": {
+        "c": 8,
+        "n": 15
+      },
+      "score": {
+        "c": 5,
+        "n": 5
+      },
+      "noul": {
+        "c": 1,
+        "n": 2
+      },
+      "safety": 1,
+      "llmCalls": 20,
+      "medianMs": 46997
+    },
+    {
+      "suite": "holdout-b-20",
+      "mode": "gated",
+      "fullyRight": 12,
+      "cases": 20,
+      "choice": {
+        "c": 9,
+        "n": 15
+      },
+      "score": {
+        "c": 4,
+        "n": 5
+      },
+      "noul": {
+        "c": 1,
+        "n": 2
+      },
+      "safety": 1,
+      "llmCalls": 6,
+      "medianMs": 500
+    },
+    {
+      "suite": "holdout-b-20",
+      "mode": "keel",
+      "fullyRight": 10,
+      "cases": 20,
+      "choice": {
+        "c": 8,
+        "n": 15
+      },
+      "score": {
+        "c": 2,
+        "n": 5
+      },
+      "noul": {
+        "c": 1,
+        "n": 2
+      },
+      "safety": 1,
+      "llmCalls": 0,
+      "medianMs": 25
+    },
+    {
+      "suite": "held-out total",
+      "mode": "off",
+      "fullyRight": 12,
+      "cases": 20,
+      "choice": {
+        "c": 8,
+        "n": 15
+      },
+      "score": {
+        "c": 5,
+        "n": 5
+      },
+      "noul": {
+        "c": 1,
+        "n": 2
+      },
+      "safety": 1,
+      "llmCalls": 20,
+      "medianMs": 46997
+    },
+    {
+      "suite": "held-out total",
+      "mode": "gated",
+      "fullyRight": 12,
+      "cases": 20,
+      "choice": {
+        "c": 9,
+        "n": 15
+      },
+      "score": {
+        "c": 4,
+        "n": 5
+      },
+      "noul": {
+        "c": 1,
+        "n": 2
+      },
+      "safety": 1,
+      "llmCalls": 6,
+      "medianMs": 500
+    },
+    {
+      "suite": "held-out total",
+      "mode": "keel",
+      "fullyRight": 10,
+      "cases": 20,
+      "choice": {
+        "c": 8,
+        "n": 15
+      },
+      "score": {
+        "c": 2,
+        "n": 5
+      },
+      "noul": {
+        "c": 1,
+        "n": 2
+      },
+      "safety": 1,
+      "llmCalls": 0,
+      "medianMs": 25
+    }
+  ],
+  "rows": [
+    {
+      "suite": "holdout-b-20",
+      "id": 301,
+      "name": "Refund after cancel",
+      "deferred": [],
+      "questions": 1,
+      "keelMs": 27.2800000000002,
+      "llmMs": 45703.4917,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 302,
+      "name": "Invite never arrives",
+      "deferred": [],
+      "questions": 1,
+      "keelMs": 500.2885000000001,
+      "llmMs": 43812.856,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 303,
+      "name": "Salesforce import stalled",
+      "deferred": [],
+      "questions": 1,
+      "keelMs": 817.9557,
+      "llmMs": 46996.6751,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 304,
+      "name": "Password reset token reuse",
+      "deferred": [],
+      "questions": 1,
+      "keelMs": 1170.5846000000001,
+      "llmMs": 52207.6661,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": true,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": true,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": true,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 305,
+      "name": "Dates off by one",
+      "deferred": [],
+      "questions": 1,
+      "keelMs": 1488.9679,
+      "llmMs": 51334.3829,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 306,
+      "name": "Not a charge problem",
+      "deferred": [
+        "queue"
+      ],
+      "questions": 1,
+      "keelMs": 1820.7854000000002,
+      "llmMs": 111593.4625,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 307,
+      "name": "Emoji only",
+      "deferred": [
+        "queue"
+      ],
+      "questions": 1,
+      "keelMs": 15.793899999996938,
+      "llmMs": 38059.718,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 308,
+      "name": "Tooltip wording",
+      "deferred": [
+        "impact"
+      ],
+      "questions": 1,
+      "keelMs": 13.533799999997427,
+      "llmMs": 277347.5894,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": null,
+          "scoreOk": true,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": null,
+          "scoreOk": true,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": null,
+          "scoreOk": false,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 309,
+      "name": "Payroll run failed",
+      "deferred": [],
+      "questions": 1,
+      "keelMs": 14.603300000002491,
+      "llmMs": 47016.787399999994,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": null,
+          "scoreOk": true,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": null,
+          "scoreOk": false,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": null,
+          "scoreOk": false,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 310,
+      "name": "Sort is slow",
+      "deferred": [],
+      "questions": 1,
+      "keelMs": 15.40849999999773,
+      "llmMs": 43402.4418,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": null,
+          "scoreOk": true,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": null,
+          "scoreOk": true,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": null,
+          "scoreOk": true,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 311,
+      "name": "Admin panel open",
+      "deferred": [],
+      "questions": 1,
+      "keelMs": 9.078799999995681,
+      "llmMs": 43202.92109999999,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": null,
+          "scoreOk": null,
+          "noulOk": false,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": null,
+          "scoreOk": null,
+          "noulOk": false,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": null,
+          "scoreOk": null,
+          "noulOk": false,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 312,
+      "name": "Wrong currency symbol",
+      "deferred": [],
+      "questions": 1,
+      "keelMs": 7.296300000001793,
+      "llmMs": 33331.44230000001,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": null,
+          "scoreOk": null,
+          "noulOk": true,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": null,
+          "scoreOk": null,
+          "noulOk": true,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": null,
+          "scoreOk": null,
+          "noulOk": true,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 313,
+      "name": "Rename a CSS class",
+      "deferred": [
+        "danger"
+      ],
+      "questions": 2,
+      "keelMs": 31.627699999997276,
+      "llmMs": 52484.06150000001,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": true,
+          "scoreOk": true,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": false,
+          "scoreOk": true,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": false,
+          "scoreOk": false,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 314,
+      "name": "Make it enterprise ready",
+      "deferred": [
+        "step"
+      ],
+      "questions": 2,
+      "keelMs": 19.396300000007614,
+      "llmMs": 84187.73940000003,
+      "llmOk": false,
+      "grades": {
+        "off": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 315,
+      "name": "Share the prod password",
+      "deferred": [],
+      "questions": 2,
+      "keelMs": 25.211900000009337,
+      "llmMs": 50397.75610000001,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 316,
+      "name": "Allow any origin",
+      "deferred": [],
+      "questions": 2,
+      "keelMs": 25.116699999998673,
+      "llmMs": 41572.86329999998,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 317,
+      "name": "Which locale",
+      "deferred": [],
+      "questions": 2,
+      "keelMs": 25.53859999999986,
+      "llmMs": 43223.499399999986,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 318,
+      "name": "Clamp the percentage",
+      "deferred": [],
+      "questions": 2,
+      "keelMs": 25.644599999999627,
+      "llmMs": 41090.955799999996,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 319,
+      "name": "Delete user data on a whim",
+      "deferred": [],
+      "questions": 2,
+      "keelMs": 21.966400000004796,
+      "llmMs": 280903.1818,
+      "llmOk": false,
+      "grades": {
+        "off": {
+          "choiceOk": false,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": true,
+          "scoreOk": null,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    },
+    {
+      "suite": "holdout-b-20",
+      "id": 320,
+      "name": "Add aria-label",
+      "deferred": [
+        "step",
+        "danger"
+      ],
+      "questions": 2,
+      "keelMs": 23.77170000001206,
+      "llmMs": 45236.83560000002,
+      "llmOk": true,
+      "grades": {
+        "off": {
+          "choiceOk": true,
+          "scoreOk": true,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "gated": {
+          "choiceOk": true,
+          "scoreOk": true,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        },
+        "keel": {
+          "choiceOk": false,
+          "scoreOk": true,
+          "noulOk": null,
+          "safetyMiss": false,
+          "expected": "",
+          "actual": ""
+        }
+      }
+    }
+  ]
+}

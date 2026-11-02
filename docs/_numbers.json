@@ -1,0 +1,478 @@
+{
+  "k2.blind": {
+    "value": "92/234",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.blind.choice": {
+    "value": "59",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.blind.lat": {
+    "value": "8.0 / 19.6 ms",
+    "source": "artifacts/parity/t1-r11-parity.md (loaded process, several models)"
+  },
+  "k2.blind.noul": {
+    "value": "20",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.blind.safety": {
+    "value": "11",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.blind.score": {
+    "value": "13",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.blindc": {
+    "value": "47/100",
+    "source": "artifacts/parity/t1-r11-parity.md (blind-c confirmation rows)"
+  },
+  "k2.blindc.bytype": {
+    "value": "32 / 4 / 11",
+    "source": "artifacts/parity/t1-r11-parity.md (blind-c confirmation rows)"
+  },
+  "k2.blindc.safety": {
+    "value": "10",
+    "source": "artifacts/parity/t1-r11-parity.md (blind-c confirmation rows)"
+  },
+  "k2.ece.blind": {
+    "value": "0.182",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.h100": {
+    "value": "59/100",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.h20": {
+    "value": "15/20",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.hb20": {
+    "value": "10/20",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.heldout": {
+    "value": "151/334",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.heldout.safety": {
+    "value": "14",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.open60": {
+    "value": "34/60",
+    "source": "artifacts/parity/scoreboard.md (Keel-2 baseline, parity harness)"
+  },
+  "k2.p50.clean": {
+    "value": "6–12 ms",
+    "source": "artifacts/parity/msd1/positioning.md:21; artifacts/parity/jev/model-audit.md:25 (warm, short prompts)"
+  },
+  "k2.p95.idle": {
+    "value": "13.3–14.5 ms",
+    "source": "artifacts/parity/train-r2.md (idle latency, scripts/keel-latency.ts, one model per process; training/runs/latency-idle-separate.json)"
+  },
+  "k2.size": {
+    "value": "13 MB",
+    "source": "models/keel-2/onnx/model_quantized.onnx (12,970,711 bytes)"
+  },
+  "k3.blind": {
+    "value": "125/234",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.blind.choice": {
+    "value": "78",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.blind.lat": {
+    "value": "14.9 / 26.7 ms",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.blind.noul": {
+    "value": "27",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.blind.safety": {
+    "value": "11",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.blind.score": {
+    "value": "20",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.blindc": {
+    "value": "40/100",
+    "source": "artifacts/parity/t1-r11-parity.md (blind-c confirmation rows)"
+  },
+  "k3.blindc.bytype": {
+    "value": "32 / 4 / 4",
+    "source": "artifacts/parity/t1-r11-parity.md (blind-c confirmation rows)"
+  },
+  "k3.blindc.delta": {
+    "value": "−7",
+    "source": "artifacts/parity/t1-r11-parity.md (blind-c confirmation rows)"
+  },
+  "k3.blindc.noul.delta": {
+    "value": "−7",
+    "source": "artifacts/parity/t1-r11-parity.md (blind-c confirmation rows)"
+  },
+  "k3.blindc.safety": {
+    "value": "12",
+    "source": "artifacts/parity/t1-r11-parity.md (blind-c confirmation rows)"
+  },
+  "k3.blindc.safety.delta": {
+    "value": "+2",
+    "source": "artifacts/parity/t1-r11-parity.md (blind-c confirmation rows)"
+  },
+  "k3.ece.blind": {
+    "value": "0.108",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.final.pass": {
+    "value": "2,500 steps in about 33 CPU minutes",
+    "source": "artifacts/parity/train-r2.md (t1-r11 pass)"
+  },
+  "k3.h100": {
+    "value": "88/100",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.h20": {
+    "value": "18/20",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.hb20": {
+    "value": "18/20",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.heldout": {
+    "value": "213/334",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.heldout.safety": {
+    "value": "12",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.open60": {
+    "value": "52/60",
+    "source": "artifacts/parity/t1-r11-parity.md; artifacts/parity/scoreboard.md (Keel-3 promotion entry, t1-r11)"
+  },
+  "k3.p95.idle": {
+    "value": "13.7–14.3 ms",
+    "source": "artifacts/parity/train-r2.md (idle latency, scripts/keel-latency.ts, one model per process; training/runs/latency-idle-separate.json)"
+  },
+  "k3.size": {
+    "value": "17.7 MB",
+    "source": "models/keel-3/onnx/model_quantized.onnx (17,744,999 bytes)"
+  },
+  "k3.train.steps": {
+    "value": "2,723 steps in 49.7 CPU minutes",
+    "source": "training/runs/t1-r2/done.json; artifacts/parity/train-1.md:58"
+  },
+  "lex.blind": {
+    "value": "87/234",
+    "source": "artifacts/parity/scoreboard.md (lexical decider-1.2.0)"
+  },
+  "lex.blind.safety": {
+    "value": "22",
+    "source": "artifacts/parity/scoreboard.md (lexical decider-1.2.0)"
+  },
+  "lex.h100": {
+    "value": "42/100",
+    "source": "artifacts/parity/scoreboard.md (lexical decider-1.2.0)"
+  },
+  "lex.h20": {
+    "value": "9/20",
+    "source": "artifacts/parity/scoreboard.md (lexical decider-1.2.0)"
+  },
+  "lex.hb20": {
+    "value": "8/20",
+    "source": "artifacts/parity/scoreboard.md (lexical decider-1.2.0)"
+  },
+  "lex.heldout": {
+    "value": "129/334",
+    "source": "artifacts/parity/scoreboard.md (lexical decider-1.2.0)"
+  },
+  "lex.heldout.safety": {
+    "value": "27",
+    "source": "artifacts/parity/scoreboard.md (lexical decider-1.2.0)"
+  },
+  "lex.open60": {
+    "value": "25/60",
+    "source": "artifacts/parity/scoreboard.md (lexical decider-1.2.0)"
+  },
+  "llm.blind": {
+    "value": "215/234",
+    "source": "artifacts/parity/scoreboard.md (claude-haiku-4.5 via Copilot CLI, blind/held-out 334)"
+  },
+  "llm.blind.choice": {
+    "value": "125",
+    "source": "artifacts/parity/scoreboard.md (claude-haiku-4.5 via Copilot CLI, blind/held-out 334)"
+  },
+  "llm.blind.lat": {
+    "value": "55.7 / 93.1 s",
+    "source": "artifacts/parity/scoreboard.md (claude-haiku-4.5 via Copilot CLI, blind/held-out 334)"
+  },
+  "llm.blind.noul": {
+    "value": "57",
+    "source": "artifacts/parity/scoreboard.md (claude-haiku-4.5 via Copilot CLI, blind/held-out 334)"
+  },
+  "llm.blind.safety": {
+    "value": "0",
+    "source": "artifacts/parity/scoreboard.md (claude-haiku-4.5 via Copilot CLI, blind/held-out 334)"
+  },
+  "llm.blind.score": {
+    "value": "33",
+    "source": "artifacts/parity/scoreboard.md (claude-haiku-4.5 via Copilot CLI, blind/held-out 334)"
+  },
+  "llm.blindc": {
+    "value": "37/100 (39 answered)",
+    "source": "artifacts/parity/t1-r11-parity.md (claude-haiku-4.5 cache, 39 of 100 answered)"
+  },
+  "llm.ece.blind": {
+    "value": "0.080",
+    "source": "artifacts/parity/scoreboard.md (claude-haiku-4.5 via Copilot CLI, blind/held-out 334)"
+  },
+  "llm.h100": {
+    "value": "75/100",
+    "source": "artifacts/parity/scoreboard.md; artifacts/keel-ab-report.md (gpt-5-mini via Copilot CLI)"
+  },
+  "llm.h20": {
+    "value": "16/20",
+    "source": "artifacts/parity/scoreboard.md; artifacts/keel-ab-report.md (gpt-5-mini via Copilot CLI)"
+  },
+  "llm.hb20": {
+    "value": "13/20",
+    "source": "artifacts/parity/scoreboard.md; artifacts/keel-ab-report.md (gpt-5-mini via Copilot CLI)"
+  },
+  "llm.heldout": {
+    "value": "290/334",
+    "source": "artifacts/parity/scoreboard.md (claude-haiku-4.5 via Copilot CLI, blind/held-out 334)"
+  },
+  "llm.heldout.safety": {
+    "value": "2",
+    "source": "artifacts/parity/scoreboard.md (claude-haiku-4.5 via Copilot CLI, blind/held-out 334)"
+  },
+  "llm.open60": {
+    "value": "46/60",
+    "source": "artifacts/parity/scoreboard.md; artifacts/keel-ab-report.md (gpt-5-mini via Copilot CLI)"
+  },
+  "llm.p50": {
+    "value": "55.7 s",
+    "source": "artifacts/parity/scoreboard.md (claude-haiku-4.5 via Copilot CLI, blind/held-out 334)"
+  },
+  "pro.blind": {
+    "value": "134/234",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.blind.choice": {
+    "value": "94",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.blind.lat": {
+    "value": "117 / 242 ms",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.blind.noul": {
+    "value": "27",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.blind.safety": {
+    "value": "11",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.blind.score": {
+    "value": "14",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.ece.blind": {
+    "value": "0.109",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.h100": {
+    "value": "85/100",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.h20": {
+    "value": "18/20",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.hb20": {
+    "value": "16/20",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.heldout": {
+    "value": "219/334",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.heldout.safety": {
+    "value": "13",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.open60": {
+    "value": "51/60",
+    "source": "artifacts/parity/scoreboard.md (t2-dxs-b3 entry)"
+  },
+  "pro.size": {
+    "value": "108 MB",
+    "source": "models/candidates/t2-dxs-b3/onnx (108,366,341 bytes)"
+  },
+  "pub.k2.agnews": {
+    "value": "79.8%",
+    "source": "artifacts/parity/public/keel-2.md"
+  },
+  "pub.k2.anli": {
+    "value": "34.7%",
+    "source": "artifacts/parity/public/keel-2.md"
+  },
+  "pub.k2.arcc": {
+    "value": "23.5%",
+    "source": "artifacts/parity/public/keel-2.md"
+  },
+  "pub.k2.banking77": {
+    "value": "42.6%",
+    "source": "artifacts/parity/public/keel-2.md"
+  },
+  "pub.k2.civil": {
+    "value": "58.1%",
+    "source": "artifacts/parity/public/keel-2.md"
+  },
+  "pub.k2.clinc150": {
+    "value": "38.3%",
+    "source": "artifacts/parity/public/keel-2.md"
+  },
+  "pub.k2.hellaswag": {
+    "value": "29.5%",
+    "source": "artifacts/parity/public/keel-2.md"
+  },
+  "pub.k2.mean": {
+    "value": "42.8%",
+    "source": "artifacts/parity/public/keel-2.md"
+  },
+  "pub.k2.mmlu": {
+    "value": "26.1%",
+    "source": "artifacts/parity/public/keel-2.md"
+  },
+  "pub.k2.sst2": {
+    "value": "74.3%",
+    "source": "artifacts/parity/public/keel-2.md"
+  },
+  "pub.t1r1.mean": {
+    "value": "45.7%",
+    "source": "artifacts/parity/public/t1-r1.md"
+  },
+  "tok.k2.blind.acc": {
+    "value": "64 → 49 of 71",
+    "source": "artifacts/parity/tokens/report.md (Keel-2, tau 0.6)"
+  },
+  "tok.k2.blind.cut": {
+    "value": "50.8%",
+    "source": "artifacts/parity/tokens/report.md (Keel-2, tau 0.6)"
+  },
+  "tok.k2.ho.accdelta": {
+    "value": "6",
+    "source": "artifacts/parity/tokens/report.md (Keel-2, tau 0.6)"
+  },
+  "tok.k2.ho.avoided": {
+    "value": "59/100",
+    "source": "artifacts/parity/tokens/report.md (Keel-2, tau 0.6)"
+  },
+  "tok.k2.ho.cut": {
+    "value": "60.6%",
+    "source": "artifacts/parity/tokens/report.md (Keel-2, tau 0.6)"
+  },
+  "tok.k3.blind.acc": {
+    "value": "64/71 → 63/71 (−1.4 pts)",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.blind.cut": {
+    "value": "44.9%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.blind.cut.t05": {
+    "value": "60.8%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.blind.cut.t07": {
+    "value": "30.2%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.blind.cut.t08": {
+    "value": "23%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.blind.cut.t09": {
+    "value": "10.7%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.blind.safety": {
+    "value": "0 → 1",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.breakeven": {
+    "value": "215",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.ho.acc": {
+    "value": "75 → 89 of 100 cases fully right",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.ho.avoided": {
+    "value": "75/100",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.ho.cut": {
+    "value": "75.8%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.ho.cut.t05": {
+    "value": "85.5%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.ho.cut.t07": {
+    "value": "64.7%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.ho.cut.t08": {
+    "value": "58.5%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.ho.cut.t09": {
+    "value": "50.6%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.scB": {
+    "value": "2,164,128 → 541,032 tokens (75%)",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.scC.haiku": {
+    "value": "57%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.scC.sonnet": {
+    "value": "431.8%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.scC.terra": {
+    "value": "748.8%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.wl.gating": {
+    "value": "100%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.wl.guardrail": {
+    "value": "100%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.wl.moderation": {
+    "value": "60.2%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.wl.routing": {
+    "value": "80.1%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  },
+  "tok.k3.wl.severity": {
+    "value": "39%",
+    "source": "artifacts/parity/tokens/report-t1-r2e.md (Keel-3 RC t1-r2e)"
+  }
+}
