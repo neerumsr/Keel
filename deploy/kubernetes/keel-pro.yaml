@@ -1,0 +1,87 @@
+# Keel + Keel-Pro on a Kubernetes GPU node. Containers in one pod share localhost, which is how Keel reaches the
+# sidecar (it refuses non-loopback sidecar URLs, and the sidecar has no auth of its own).
+#   kubectl create secret generic keel --from-literal=KEEL_SECRET="$(openssl rand -base64 48)"
+#   Put the Qwen3.5-27B base and the Keel-Pro adapter on the keel-pro-weights volume (base/ and adapter/).
+#   kubectl apply -f deploy/kubernetes/keel-pro.yaml
+# Needs the NVIDIA device plugin and a GPU with 24 GB+ (32 GB+ recommended). See docs/deployment.md.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: keel-pro-weights
+spec:
+  accessModes: ["ReadWriteOnce"]
+  resources:
+    requests: { storage: 80Gi }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: keel-pro
+  labels: { app: keel-pro }
+spec:
+  replicas: 1
+  strategy: { type: Recreate }
+  selector:
+    matchLabels: { app: keel-pro }
+  template:
+    metadata:
+      labels: { app: keel-pro }
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile: { type: RuntimeDefault }
+      containers:
+        - name: sidecar
+          image: REGISTRY/keel-pro-sidecar:VERSION
+          args: ["--model-dir", "/models/base", "--adapter", "/models/adapter", "--load-4bit", "--port", "8090"]
+          resources:
+            limits: { nvidia.com/gpu: 1, memory: "48Gi" }
+            requests: { cpu: "4", memory: "32Gi" }
+          startupProbe:
+            exec: { command: ["curl", "-fsS", "http://127.0.0.1:8090/health"] }
+            periodSeconds: 10
+            failureThreshold: 90
+          livenessProbe:
+            exec: { command: ["curl", "-fsS", "http://127.0.0.1:8090/health"] }
+            periodSeconds: 30
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: { drop: ["ALL"] }
+          volumeMounts:
+            - { name: weights, mountPath: /models, readOnly: true }
+        - name: keel
+          image: REGISTRY/keel:VERSION
+          ports:
+            - containerPort: 8080
+          env:
+            - name: KEEL_PRO_URL
+              value: http://127.0.0.1:8090
+            - name: KEEL_SECRET
+              valueFrom:
+                secretKeyRef: { name: keel, key: KEEL_SECRET }
+          resources:
+            requests: { cpu: "500m", memory: "1Gi" }
+            limits: { memory: "2Gi" }
+          readinessProbe:
+            httpGet: { path: /api/v1/status, port: 8080 }
+            periodSeconds: 10
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities: { drop: ["ALL"] }
+          volumeMounts:
+            - { name: data, mountPath: /data }
+      volumes:
+        - name: weights
+          persistentVolumeClaim: { claimName: keel-pro-weights }
+        - name: data
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: keel-pro
+spec:
+  selector: { app: keel-pro }
+  ports:
+    - port: 80
+      targetPort: 8080

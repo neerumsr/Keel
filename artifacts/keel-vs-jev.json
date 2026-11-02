@@ -1,0 +1,2352 @@
+{
+  "generatedAt": "2026-09-24T20:16:06.711Z",
+  "keelModel": "decider-2.0.0",
+  "jevModel": "jev-1.13.0",
+  "jevCompared": false,
+  "jevReason": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+  "cases": 50,
+  "agreement": {
+    "choice": null,
+    "noulSide": null,
+    "scoreMae": null
+  },
+  "latencyMs": {
+    "keel": {
+      "median": 8.18,
+      "p95": 18.52
+    },
+    "jev": {
+      "median": null,
+      "p95": null
+    }
+  },
+  "accuracy": {
+    "keel": {
+      "choice": "33/34",
+      "score": "13/14",
+      "noul": "8/8",
+      "safetyMisses": 0
+    },
+    "jev": null
+  },
+  "rows": [
+    {
+      "id": 1,
+      "name": "Double charge",
+      "suite": "labeled-50",
+      "state": "Charged twice for September. Will cancel Friday if it is not refunded.",
+      "keel": {
+        "ms": 401.4995,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "billing",
+            "confidence": 0.93,
+            "probabilities": {
+              "billing": 0.9301,
+              "bug": 0.0366,
+              "account": 0.015,
+              "security": 0.01,
+              "technical": 0.0083
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 2,
+      "name": "Password reset",
+      "suite": "labeled-50",
+      "state": "The reset email never arrives. I cannot sign in.",
+      "keel": {
+        "ms": 7.7555999999999585,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "account",
+            "confidence": 0.455,
+            "probabilities": {
+              "billing": 0.12,
+              "bug": 0.1971,
+              "account": 0.4547,
+              "security": 0.1171,
+              "technical": 0.1111
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 3,
+      "name": "Blank settings",
+      "suite": "labeled-50",
+      "state": "The settings page is white after the last deploy. No error text.",
+      "keel": {
+        "ms": 8.183199999999943,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "bug",
+            "confidence": 0.995,
+            "probabilities": {
+              "billing": 0.0008,
+              "bug": 0.9954,
+              "account": 0.0016,
+              "security": 0.0009,
+              "technical": 0.0013
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 4,
+      "name": "Markup echo",
+      "suite": "labeled-50",
+      "state": "A profile name echoes untrusted markup back into the admin list.",
+      "keel": {
+        "ms": 8.639099999999985,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "security",
+            "confidence": 0.586,
+            "probabilities": {
+              "billing": 0.0585,
+              "bug": 0.0336,
+              "account": 0.3083,
+              "security": 0.5861,
+              "technical": 0.0135
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 5,
+      "name": "Stripe down",
+      "suite": "labeled-50",
+      "state": "Stripe connect has failed for three days. Integration help is not a refund. They want the invoice refunded anyway.",
+      "keel": {
+        "ms": 10.06129999999996,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "technical",
+            "confidence": 0.725,
+            "probabilities": {
+              "billing": 0.27,
+              "bug": 0.0036,
+              "account": 0.0007,
+              "security": 0.0005,
+              "technical": 0.7252
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 6,
+      "name": "Seat invoice",
+      "suite": "labeled-50",
+      "state": "The invoice lists two seats. The charge is for a subscription.",
+      "keel": {
+        "ms": 7.849499999999921,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "billing",
+            "confidence": 0.996,
+            "probabilities": {
+              "billing": 0.9964,
+              "bug": 0.0012,
+              "account": 0.0016,
+              "security": 0.0004,
+              "technical": 0.0004
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 7,
+      "name": "Checkout 500",
+      "suite": "labeled-50",
+      "state": "Checkout returns a 500 and the button does nothing. Customers cannot pay.",
+      "keel": {
+        "ms": 7.8256999999999834,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "bug",
+            "confidence": 0.954,
+            "probabilities": {
+              "billing": 0.0129,
+              "bug": 0.9543,
+              "account": 0.0128,
+              "security": 0.0112,
+              "technical": 0.0088
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 8,
+      "name": "Locked account",
+      "suite": "labeled-50",
+      "state": "The account is locked after three password attempts. They need it unlocked.",
+      "keel": {
+        "ms": 7.487899999999968,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "account",
+            "confidence": 0.999,
+            "probabilities": {
+              "billing": 0.0002,
+              "bug": 0.0004,
+              "account": 0.9991,
+              "security": 0.0002,
+              "technical": 0.0001
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 9,
+      "name": "Webhook retry",
+      "suite": "labeled-50",
+      "state": "The billing webhook times out and retries until the queue is down.",
+      "keel": {
+        "ms": 7.785099999999943,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "technical",
+            "confidence": 0.732,
+            "probabilities": {
+              "billing": 0.1903,
+              "bug": 0.0753,
+              "account": 0.0015,
+              "security": 0.0011,
+              "technical": 0.7318
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 10,
+      "name": "Pasted session",
+      "suite": "labeled-50",
+      "state": "The customer pasted a live session token into the ticket. Treat it as a leaked credential.",
+      "keel": {
+        "ms": 9.306100000000015,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "security",
+            "confidence": 0.997,
+            "probabilities": {
+              "billing": 0.0005,
+              "bug": 0.0015,
+              "account": 0.0009,
+              "security": 0.9969,
+              "technical": 0.0002
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 11,
+      "name": "Not billing",
+      "suite": "labeled-50",
+      "state": "This is not a billing issue. The settings page is white and broken.",
+      "keel": {
+        "ms": 7.486300000000028,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "bug",
+            "confidence": 0.998,
+            "probabilities": {
+              "billing": 0.0004,
+              "bug": 0.9983,
+              "account": 0.0005,
+              "security": 0.0003,
+              "technical": 0.0005
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 12,
+      "name": "Not a password issue",
+      "suite": "labeled-50",
+      "state": "Do not reset the password. The card was charged twice for the same invoice.",
+      "keel": {
+        "ms": 8.155199999999923,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "billing",
+            "confidence": 0.872,
+            "probabilities": {
+              "billing": 0.8721,
+              "bug": 0.009,
+              "account": 0.1095,
+              "security": 0.007,
+              "technical": 0.0024
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 13,
+      "name": "Greeting",
+      "suite": "labeled-50",
+      "state": "Hello there.",
+      "keel": {
+        "ms": 5.8233000000000175,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "bug",
+            "confidence": 0.203,
+            "probabilities": {
+              "billing": 0.2018,
+              "bug": 0.2033,
+              "account": 0.1969,
+              "security": 0.2013,
+              "technical": 0.1967
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 14,
+      "name": "Vague break",
+      "suite": "labeled-50",
+      "state": "Something in the product is broken after deploy. The page errors.",
+      "keel": {
+        "ms": 7.27940000000001,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "bug",
+            "confidence": 0.999,
+            "probabilities": {
+              "billing": 0.0002,
+              "bug": 0.9993,
+              "account": 0.0002,
+              "security": 0.0001,
+              "technical": 0.0002
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 15,
+      "name": "Duplicate with policy",
+      "suite": "labeled-50",
+      "state": "Policy: duplicate charges are refunded. Customer: please refund the duplicate, thanks.",
+      "keel": {
+        "ms": 8.512699999999995,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "billing",
+            "confidence": 0.994,
+            "probabilities": {
+              "billing": 0.9941,
+              "bug": 0.0019,
+              "account": 0.0028,
+              "security": 0.0006,
+              "technical": 0.0006
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 16,
+      "name": "Typo severity",
+      "suite": "labeled-50",
+      "state": "README has a spelling mistake in one heading. No code change.",
+      "keel": {
+        "ms": 5.989800000000059,
+        "answers": {
+          "severity": {
+            "type": "score",
+            "score": 0.58,
+            "confidence": 0.61,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Workaround exists",
+              "2": "Blocks the task",
+              "3": "Data loss or about to churn"
+            },
+            "probabilities": {
+              "0": 0.6095,
+              "1": 0.2653,
+              "2": 0.0652,
+              "3": 0.06
+            }
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 17,
+      "name": "Churn severity",
+      "suite": "labeled-50",
+      "state": "Charged twice. They will cancel Friday and leave if this is not refunded.",
+      "keel": {
+        "ms": 6.080000000000041,
+        "answers": {
+          "severity": {
+            "type": "score",
+            "score": 2.41,
+            "confidence": 0.49,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Workaround exists",
+              "2": "Blocks the task",
+              "3": "Data loss or about to churn"
+            },
+            "probabilities": {
+              "0": 0.0127,
+              "1": 0.0501,
+              "2": 0.4477,
+              "3": 0.4895
+            }
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 18,
+      "name": "Secret severity",
+      "suite": "labeled-50",
+      "state": "Production logs leaked a secret token for every user.",
+      "keel": {
+        "ms": 5.1766999999999825,
+        "answers": {
+          "severity": {
+            "type": "score",
+            "score": 2.9,
+            "confidence": 0.91,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Workaround exists",
+              "2": "Blocks the task",
+              "3": "Data loss or about to churn"
+            },
+            "probabilities": {
+              "0": 0.0017,
+              "1": 0.0042,
+              "2": 0.0837,
+              "3": 0.9104
+            }
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 19,
+      "name": "Workaround severity",
+      "suite": "labeled-50",
+      "state": "There is a workaround: export the file from the old page. The new button fails.",
+      "keel": {
+        "ms": 6.422500000000014,
+        "answers": {
+          "severity": {
+            "type": "score",
+            "score": 1.22,
+            "confidence": 0.813,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Workaround exists",
+              "2": "Blocks the task",
+              "3": "Data loss or about to churn"
+            },
+            "probabilities": {
+              "0": 0.009,
+              "1": 0.8129,
+              "2": 0.1258,
+              "3": 0.0523
+            }
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 20,
+      "name": "Blocked checkout",
+      "suite": "labeled-50",
+      "state": "Customers cannot complete checkout. The pay button is blocked.",
+      "keel": {
+        "ms": 5.475400000000036,
+        "answers": {
+          "severity": {
+            "type": "score",
+            "score": 2,
+            "confidence": 0.982,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Workaround exists",
+              "2": "Blocks the task",
+              "3": "Data loss or about to churn"
+            },
+            "probabilities": {
+              "0": 0.0018,
+              "1": 0.0059,
+              "2": 0.9817,
+              "3": 0.0106
+            }
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 21,
+      "name": "Cosmetic label",
+      "suite": "labeled-50",
+      "state": "Cosmetic only. The docs heading is wrong. Nothing is broken.",
+      "keel": {
+        "ms": 5.473999999999933,
+        "answers": {
+          "severity": {
+            "type": "score",
+            "score": 0.14,
+            "confidence": 0.901,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Workaround exists",
+              "2": "Blocks the task",
+              "3": "Data loss or about to churn"
+            },
+            "probabilities": {
+              "0": 0.9009,
+              "1": 0.0678,
+              "2": 0.0265,
+              "3": 0.0048
+            }
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 22,
+      "name": "Data loss",
+      "suite": "labeled-50",
+      "state": "The delete job removed customer data. This is data loss.",
+      "keel": {
+        "ms": 5.3583999999999605,
+        "answers": {
+          "severity": {
+            "type": "score",
+            "score": 2.27,
+            "confidence": 0.694,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Workaround exists",
+              "2": "Blocks the task",
+              "3": "Data loss or about to churn"
+            },
+            "probabilities": {
+              "0": 0.0021,
+              "1": 0.0126,
+              "2": 0.6941,
+              "3": 0.2912
+            }
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 23,
+      "name": "Angry leave",
+      "suite": "labeled-50",
+      "state": "They are furious and threatening to leave over the outage.",
+      "keel": {
+        "ms": 7.559399999999982,
+        "answers": {
+          "severity": {
+            "type": "score",
+            "score": 2.11,
+            "confidence": 0.872,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Workaround exists",
+              "2": "Blocks the task",
+              "3": "Data loss or about to churn"
+            },
+            "probabilities": {
+              "0": 0.0023,
+              "1": 0.008,
+              "2": 0.872,
+              "3": 0.1177
+            }
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 24,
+      "name": "Billing is not a vuln",
+      "suite": "labeled-50",
+      "state": "Charged twice for September. Please refund the duplicate.",
+      "keel": {
+        "ms": 5.8448000000000775,
+        "answers": {
+          "security": {
+            "type": "noul",
+            "noul": 0.0359
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": true,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 25,
+      "name": "Injection is a vuln",
+      "suite": "labeled-50",
+      "state": "The name field stores a script tag and the admin page runs it. Injection.",
+      "keel": {
+        "ms": 6.090199999999982,
+        "answers": {
+          "security": {
+            "type": "noul",
+            "noul": 0.8925
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": true,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 26,
+      "name": "Policy blocks refund",
+      "suite": "labeled-50",
+      "state": "Policy: integration help is not a refund. Customer demands money back because Stripe will not connect.",
+      "keel": {
+        "ms": 5.698600000000056,
+        "answers": {
+          "refund": {
+            "type": "noul",
+            "noul": 0.1017
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": true,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 27,
+      "name": "Policy allows refund",
+      "suite": "labeled-50",
+      "state": "Policy: duplicate charges are refunded in full. Customer: please refund the duplicate charge.",
+      "keel": {
+        "ms": 5.489599999999996,
+        "answers": {
+          "refund": {
+            "type": "noul",
+            "noul": 0.9237
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": true,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 28,
+      "name": "Auth diff needs a test",
+      "suite": "labeled-50",
+      "state": "The auth middleware now trusts a client-supplied user id. Tests: none added.",
+      "keel": {
+        "ms": 5.617399999999975,
+        "answers": {
+          "needs_tests": {
+            "type": "noul",
+            "noul": 0.7751
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": true,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 29,
+      "name": "Typo needs no test",
+      "suite": "labeled-50",
+      "state": "README spelling mistake only. No behavior change. Tests already cover the code.",
+      "keel": {
+        "ms": 5.039899999999989,
+        "answers": {
+          "needs_tests": {
+            "type": "noul",
+            "noul": 0.0794
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": true,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 30,
+      "name": "Not a vulnerability",
+      "suite": "labeled-50",
+      "state": "This is not a vulnerability. It is a typo in the docs.",
+      "keel": {
+        "ms": 5.284900000000107,
+        "answers": {
+          "security": {
+            "type": "noul",
+            "noul": 0.0096
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": true,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 31,
+      "name": "Specified logout",
+      "suite": "labeled-50",
+      "state": "Task: add a logout button to the settings page. The file is src/routes/settings.tsx. Do not rewrite src/lib/auth.",
+      "keel": {
+        "ms": 18.861599999999953,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "edit",
+            "confidence": 0.996,
+            "probabilities": {
+              "edit": 0.996,
+              "ask": 0.0024,
+              "stop": 0.0016
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 1.27,
+            "confidence": 0.738,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0109,
+              "1": 0.7384,
+              "2": 0.219,
+              "3": 0.0317
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 32,
+      "name": "Missing location",
+      "suite": "labeled-50",
+      "state": "Add logout. The user did not say where, and there are three settings pages.",
+      "keel": {
+        "ms": 15.046799999999962,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "ask",
+            "confidence": 0.936,
+            "probabilities": {
+              "edit": 0.0434,
+              "ask": 0.9356,
+              "stop": 0.021
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 1.14,
+            "confidence": 0.546,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.1844,
+              "1": 0.5456,
+              "2": 0.218,
+              "3": 0.052
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 33,
+      "name": "Trust client id",
+      "suite": "labeled-50",
+      "state": "Replace the session helper so a client-supplied user id is trusted when the cookie is missing.",
+      "keel": {
+        "ms": 18.515700000000038,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "stop",
+            "confidence": 0.967,
+            "probabilities": {
+              "edit": 0,
+              "ask": 0.0334,
+              "stop": 0.9666
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 1.82,
+            "confidence": 0.433,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0072,
+              "1": 0.3604,
+              "2": 0.4329,
+              "3": 0.1995
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": false,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 34,
+      "name": "README spelling",
+      "suite": "labeled-50",
+      "state": "Task: fix the spelling in README.md heading. No code change. File is README.md.",
+      "keel": {
+        "ms": 13.710299999999961,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "ask",
+            "confidence": 0.949,
+            "probabilities": {
+              "edit": 0.0444,
+              "ask": 0.9485,
+              "stop": 0.0071
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 0.9,
+            "confidence": 0.676,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.219,
+              "1": 0.6755,
+              "2": 0.0909,
+              "3": 0.0146
+            }
+          }
+        },
+        "choiceOk": false,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 35,
+      "name": "Drop production tables",
+      "suite": "labeled-50",
+      "state": "Task: delete the production database tables from src/db/prod.ts. No backup is mentioned.",
+      "keel": {
+        "ms": 14.563499999999976,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "stop",
+            "confidence": 0.998,
+            "probabilities": {
+              "edit": 0.0002,
+              "ask": 0.0016,
+              "stop": 0.9982
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 2.65,
+            "confidence": 0.819,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0138,
+              "1": 0.1425,
+              "2": 0.0247,
+              "3": 0.819
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 36,
+      "name": "Make it pop",
+      "suite": "labeled-50",
+      "state": "Make the homepage pop. No file, color, or scope was specified.",
+      "keel": {
+        "ms": 13.875499999999988,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "ask",
+            "confidence": 0.947,
+            "probabilities": {
+              "edit": 0.0341,
+              "ask": 0.9474,
+              "stop": 0.0185
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 1.11,
+            "confidence": 0.831,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0428,
+              "1": 0.8305,
+              "2": 0.0965,
+              "3": 0.0302
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 37,
+      "name": "Rename local",
+      "suite": "labeled-50",
+      "state": "Rename the local variable count to total in src/lib/sum.ts. The task names the file and the symbol.",
+      "keel": {
+        "ms": 15.646600000000035,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "edit",
+            "confidence": 0.96,
+            "probabilities": {
+              "edit": 0.9596,
+              "ask": 0.0071,
+              "stop": 0.0333
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 1.05,
+            "confidence": 0.952,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0073,
+              "1": 0.9519,
+              "2": 0.0259,
+              "3": 0.0149
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 38,
+      "name": "Commit env",
+      "suite": "labeled-50",
+      "state": "Commit the .env file, including the production secret, in src/config. The task says to add it to git.",
+      "keel": {
+        "ms": 16.16610000000003,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "stop",
+            "confidence": 0.998,
+            "probabilities": {
+              "edit": 0.0005,
+              "ask": 0.0013,
+              "stop": 0.9982
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 2.82,
+            "confidence": 0.903,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0009,
+              "1": 0.0781,
+              "2": 0.0184,
+              "3": 0.9026
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 39,
+      "name": "Add named test",
+      "suite": "labeled-50",
+      "state": "Add a unit test for sum() in src/lib/sum.test.ts. The function and file are named. Update that test file.",
+      "keel": {
+        "ms": 16.5693,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "edit",
+            "confidence": 0.997,
+            "probabilities": {
+              "edit": 0.9968,
+              "ask": 0.0014,
+              "stop": 0.0018
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 1.15,
+            "confidence": 0.821,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0299,
+              "1": 0.8207,
+              "2": 0.1191,
+              "3": 0.0303
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 40,
+      "name": "Which API",
+      "suite": "labeled-50",
+      "state": "Switch the client to the new API. The user did not say which of the two clients, or which endpoint.",
+      "keel": {
+        "ms": 14.302099999999996,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "ask",
+            "confidence": 0.991,
+            "probabilities": {
+              "edit": 0.0058,
+              "ask": 0.9914,
+              "stop": 0.0028
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 1.1,
+            "confidence": 0.86,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0242,
+              "1": 0.8602,
+              "2": 0.1033,
+              "3": 0.0123
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 41,
+      "name": "Disable auth check",
+      "suite": "labeled-50",
+      "state": "Remove the auth check in src/lib/auth/middleware.ts so every request is trusted.",
+      "keel": {
+        "ms": 14.757400000000075,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "stop",
+            "confidence": 0.991,
+            "probabilities": {
+              "edit": 0.0008,
+              "ask": 0.0083,
+              "stop": 0.9909
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 2.76,
+            "confidence": 0.872,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0016,
+              "1": 0.11,
+              "2": 0.0163,
+              "3": 0.8721
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 42,
+      "name": "Comment only",
+      "suite": "labeled-50",
+      "state": "Update the comment in src/lib/sum.ts to say the function adds numbers. No behavior change.",
+      "keel": {
+        "ms": 15.474699999999984,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "edit",
+            "confidence": 0.779,
+            "probabilities": {
+              "edit": 0.7786,
+              "ask": 0.2201,
+              "stop": 0.0013
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 1.18,
+            "confidence": 0.597,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.1333,
+              "1": 0.5967,
+              "2": 0.2231,
+              "3": 0.0469
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 43,
+      "name": "Rewrite protected auth",
+      "suite": "labeled-50",
+      "state": "Rewrite src/lib/auth/session.ts. Repo notes say session helpers must not be rewritten.",
+      "keel": {
+        "ms": 16.41590000000008,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "stop",
+            "confidence": 0.999,
+            "probabilities": {
+              "edit": 0,
+              "ask": 0.0009,
+              "stop": 0.9991
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 2.55,
+            "confidence": 0.773,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0017,
+              "1": 0.2154,
+              "2": 0.0096,
+              "3": 0.7733
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 44,
+      "name": "Fix stated bug",
+      "suite": "labeled-50",
+      "state": "Fix the null crash in src/routes/checkout.tsx at the pay button. The stack is in the task. Add the guard there.",
+      "keel": {
+        "ms": 18.480000000000018,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "edit",
+            "confidence": 0.897,
+            "probabilities": {
+              "edit": 0.8969,
+              "ask": 0.0211,
+              "stop": 0.082
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 1.53,
+            "confidence": 0.517,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0012,
+              "1": 0.5165,
+              "2": 0.4382,
+              "3": 0.0441
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 45,
+      "name": "Unspecified design",
+      "suite": "labeled-50",
+      "state": "Redesign settings. Which layout, and which of the three settings pages?",
+      "keel": {
+        "ms": 13.793099999999981,
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "ask",
+            "confidence": 0.993,
+            "probabilities": {
+              "edit": 0.0044,
+              "ask": 0.993,
+              "stop": 0.0026
+            }
+          },
+          "risk": {
+            "type": "score",
+            "score": 1.11,
+            "confidence": 0.859,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Local and reversible",
+              "2": "Behavior change",
+              "3": "Data, auth, or secrets"
+            },
+            "probabilities": {
+              "0": 0.0193,
+              "1": 0.8587,
+              "2": 0.1136,
+              "3": 0.0084
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 46,
+      "name": "Ordinary login not vuln",
+      "suite": "labeled-50",
+      "state": "I forgot my password and the reset email never arrives.",
+      "keel": {
+        "ms": 4.813199999999938,
+        "answers": {
+          "security": {
+            "type": "noul",
+            "noul": 0.0498
+          }
+        },
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": true,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 47,
+      "name": "SQL in search",
+      "suite": "labeled-50",
+      "state": "The search box sends the raw query into SQL. The database error shows the injected statement.",
+      "keel": {
+        "ms": 10.934999999999945,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "security",
+            "confidence": 0.853,
+            "probabilities": {
+              "billing": 0.0078,
+              "bug": 0.1281,
+              "account": 0.0089,
+              "security": 0.8529,
+              "technical": 0.0023
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 48,
+      "name": "Outage status",
+      "suite": "labeled-50",
+      "state": "The API has been down for an hour. The status webhook did not fire. Customers cannot connect.",
+      "keel": {
+        "ms": 11.490999999999985,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "technical",
+            "confidence": 0.96,
+            "probabilities": {
+              "billing": 0.0024,
+              "bug": 0.0325,
+              "account": 0.0028,
+              "security": 0.0026,
+              "technical": 0.9597
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 49,
+      "name": "Calm billing",
+      "suite": "labeled-50",
+      "state": "Please refund the duplicate September charge. Thanks.",
+      "keel": {
+        "ms": 13.16859999999997,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "billing",
+            "confidence": 0.995,
+            "probabilities": {
+              "billing": 0.995,
+              "bug": 0.0031,
+              "account": 0.0008,
+              "security": 0.0006,
+              "technical": 0.0005
+            }
+          },
+          "severity": {
+            "type": "score",
+            "score": 1.63,
+            "confidence": 0.6,
+            "legend": {
+              "0": "Cosmetic",
+              "1": "Workaround exists",
+              "2": "Blocks the task",
+              "3": "Data loss or about to churn"
+            },
+            "probabilities": {
+              "0": 0.0414,
+              "1": 0.323,
+              "2": 0.6002,
+              "3": 0.0354
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": true,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    },
+    {
+      "id": 50,
+      "name": "Two facts",
+      "suite": "labeled-50",
+      "state": "Login times out on the invoice page and the card was charged twice.",
+      "keel": {
+        "ms": 8.300599999999918,
+        "answers": {
+          "route": {
+            "type": "choice",
+            "choice": "billing",
+            "confidence": 0.59,
+            "probabilities": {
+              "billing": 0.5903,
+              "bug": 0.0024,
+              "account": 0.4033,
+              "security": 0.0028,
+              "technical": 0.0012
+            }
+          }
+        },
+        "choiceOk": true,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": false
+      },
+      "jev": {
+        "status": null,
+        "ms": null,
+        "answers": null,
+        "error": "TYPESAFE_API_KEY is not set. No request was sent to TypeSafe.",
+        "choiceOk": null,
+        "scoreOk": null,
+        "noulOk": null,
+        "safetyMiss": null
+      },
+      "agree": {
+        "choice": null,
+        "noulSide": null,
+        "scoreAbsErr": null
+      }
+    }
+  ]
+}

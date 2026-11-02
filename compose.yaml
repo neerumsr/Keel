@@ -1,0 +1,13 @@
+# Keel-Lite on CPU: docker compose up -d
+# Needs KEEL_SECRET in the environment or a .env file next to this file (never commit it).
+# For Keel-Pro on a GPU use compose.pro.yaml. See docs/deployment.md.
+services:
+  keel:
+    build: .
+    image: keel:local
+    ports:
+      - "8080:8080"
+    environment:
+      KEEL_SECRET: ${KEEL_SECRET:?set KEEL_SECRET to a long random string}
+      KEEL_RATE_PER_MINUTE: ${KEEL_RATE_PER_MINUTE:-120}
+    restart: unless-stopped

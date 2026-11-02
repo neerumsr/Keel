@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture · Keel docs</title>
+<meta name="description" content="How a request flows through Keel, how the MCP server and vendor aliases fit in, how models are loaded, and how a model gets from training data to models/keel-2.">
+<script>try{var t=localStorage.getItem('keel-docs-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--bg:#fbfaf6;--surface:#ffffff;--surface2:#f1efe8;--ink:#14171c;--ink2:#262b33;--line:#d9d5c9;--accent:#0b6170;--accent-ink:#ffffff;--accentSoft:#e2f0f1;--ok:#1d6b3a;--okSoft:#e3f2e7;--warm:#9a4a05;--warmSoft:#fbecdc;--danger:#a3261b;--code-bg:#f3f1ea;--link:#0a5a86;--shadow:0 1px 2px rgba(20,23,28,.06),0 6px 20px rgba(20,23,28,.05)}
+html[data-theme=dark]{--bg:#0f1418;--surface:#161d22;--surface2:#1d262c;--ink:#f1f4f6;--ink2:#dbe2e6;--line:#33414a;--accent:#5fc4d2;--accent-ink:#06171b;--accentSoft:#173238;--ok:#6fd393;--okSoft:#15301f;--warm:#f2a65a;--warmSoft:#35250f;--danger:#ff8b7e;--code-bg:#11181d;--link:#8fd0ff;--shadow:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 19px/1.65 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+code,pre{font-family:"Cascadia Mono","JetBrains Mono",Consolas,ui-monospace,Menlo,monospace}
+a{color:var(--link);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}
+.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{max-width:1180px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;gap:18px}
+.brand{white-space:nowrap;flex:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none}
+.brand svg{width:28px;height:28px}
+.top nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px}
+.top nav a{color:var(--ink2);text-decoration:none;font-size:17px;padding:6px 10px;border-radius:8px}
+.top nav a[aria-current]{color:var(--ink);background:var(--surface2);font-weight:600}
+.top nav a:hover{background:var(--surface2)}
+.spacer{flex:1}
+.btn{font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--ink2)}.btn svg{width:18px;height:18px}
+.pbar{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:40}
+main{max-width:940px;margin:0 auto;padding:40px 28px 80px}
+.crumb{font-size:17px;color:var(--ink2);margin:0 0 6px}
+h1{font-size:50px;line-height:1.1;letter-spacing:-.02em;margin:6px 0 18px;font-weight:750}
+.lede{font-size:22px;line-height:1.55;color:var(--ink2);margin:0 0 30px}
+h2{font-size:33px;line-height:1.2;letter-spacing:-.01em;margin:64px 0 16px;padding-top:22px;border-top:1px solid var(--line);font-weight:700}
+h3{font-size:25px;line-height:1.3;margin:40px 0 12px;font-weight:650}
+h4{font-size:21px;margin:28px 0 8px}
+h1,h2,h3,h4{scroll-margin-top:84px;position:relative;overflow-wrap:anywhere}
+.anchor{opacity:0;margin-left:10px;text-decoration:none;color:var(--accent);font-weight:400}
+h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 18px}ul,ol{margin:0 0 20px;padding-left:28px}li{margin:6px 0}li>ul,li>ol{margin:6px 0}
+strong{font-weight:650;color:var(--ink)}
+:not(pre)>code{font-size:.86em;background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+.code{margin:0 0 24px;border:1px solid var(--line);border-radius:12px;background:var(--code-bg);overflow:hidden}
+.code-bar{display:flex;justify-content:space-between;align-items:center;padding:6px 10px 6px 16px;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.copy{font:inherit;font-size:15px;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 10px;cursor:pointer}
+.copy:hover{border-color:var(--ink2)}
+pre{margin:0;padding:16px 18px;overflow-x:auto;font-size:16.5px;line-height:1.55;color:var(--ink)}
+.table-wrap{overflow-x:auto;margin:0 0 26px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:18px;line-height:1.45}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface2);font-weight:650;color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+.num{font-variant-numeric:tabular-nums;font-weight:650;color:var(--ink);background:var(--accentSoft);border-radius:5px;padding:0 4px}
+.callout{margin:0 0 26px;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.callout-strong{background:var(--warmSoft);border-color:var(--warm)}
+.callout>:last-child{margin-bottom:0}
+hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+figure.diagram{margin:10px 0 34px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.fig-scroll{overflow-x:auto}
+figure svg{display:block;width:100%;height:auto;min-width:600px}
+.hbars{display:grid;gap:12px}.hb-row{display:grid;grid-template-columns:210px 1fr 150px;align-items:center;gap:14px}
+.hb-label{font-weight:600;text-align:right}.hb-track{background:var(--surface2);border-radius:6px;height:28px;overflow:hidden}
+.hb-bar{height:100%;background:var(--accent);opacity:.6;border-radius:6px}.hb-bar.strong{opacity:1}.hb-bar.warm{background:var(--warm);opacity:1}
+.hb-val{font-weight:650;font-variant-numeric:tabular-nums}
+figcaption{font-size:17px;color:var(--ink2);margin-top:14px;line-height:1.5}
+svg .box{fill:var(--surface2);stroke:var(--line);stroke-width:1.5}
+svg .accent{fill:var(--accent);stroke:var(--accent)}svg .ok{fill:var(--okSoft);stroke:var(--ok);stroke-width:1.5}svg .warm{fill:var(--warmSoft);stroke:var(--warm);stroke-width:1.5}
+svg .frame{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 5}
+svg .t{fill:var(--ink);font:500 17px "Segoe UI",system-ui,sans-serif}svg .tb{font-weight:650;font-size:18px}svg .ts{font-size:15.5px;fill:var(--ink2)}
+svg .on-accent{fill:var(--accent-ink)}svg .on-ok,svg .on-warm{fill:var(--ink)}svg .ok-t{fill:var(--ok)}
+svg .arrow{stroke:var(--ink2);stroke-width:2}svg .arrow.okline{stroke:var(--ok)}svg .ahead{fill:var(--ink2)}
+svg .track{fill:var(--surface2)}svg .bar{fill:var(--accent);opacity:.55}svg .bar.strong{opacity:1}svg .warmbar{fill:var(--warm);opacity:1}
+svg .grid{stroke:var(--line);stroke-width:1}
+svg .ln-a{stroke:var(--accent);stroke-width:3}svg .ln-b{stroke:var(--warm);stroke-width:3}svg .ln-a-dot{fill:var(--accent)}svg .ln-b-dot{fill:var(--warm)}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:24px;border-top:1px solid var(--line)}
+.pager a{display:block;flex:1;padding:14px 18px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);background:var(--surface)}
+.pager a:hover{border-color:var(--accent)}.pager small{display:block;font-size:16px;color:var(--ink2)}.pager .next{text-align:right}
+footer{font-size:16px;color:var(--ink2);margin-top:28px}
+/* contents menu: middle-left, auto-hide */
+.navtab{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:25;writing-mode:vertical-rl;rotate:180deg;font:600 16px/1 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:0;border-radius:0 10px 10px 0;padding:16px 9px;cursor:pointer;transition:opacity .2s}
+.sidenav{position:fixed;left:14px;top:50%;transform:translate(calc(-100% - 30px),-50%);z-index:26;width:300px;max-height:76vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 10px 14px 14px;box-shadow:0 10px 40px rgba(0,0,0,.14);transition:transform .28s ease}
+body.nav-open .sidenav{transform:translate(0,-50%)}body.nav-open .navtab{opacity:0;pointer-events:none}
+.sidenav-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 8px 6px;font-weight:700;font-size:17px}
+.sidenav-head button{font:inherit;font-size:15px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 8px;cursor:pointer}
+.sidenav ol{list-style:none;margin:0;padding:0}.sidenav li{margin:0}
+.sidenav a{display:block;padding:6px 8px;border-radius:7px;color:var(--ink2);text-decoration:none;font-size:16.5px;line-height:1.35}
+.sidenav a.l3{padding-left:22px;font-size:16px}
+.sidenav a:hover{background:var(--surface2);color:var(--ink)}
+.sidenav a.active{background:var(--accentSoft);color:var(--ink);font-weight:650}
+
+@media (max-width:1240px){.top nav{display:none}}
+@media (max-width:700px){body{font-size:18px}main{padding:26px 18px 60px}h1{font-size:36px}h2{font-size:27px;margin-top:48px}h3{font-size:22px}.lede{font-size:19.5px}.top-in{padding:10px 16px;gap:10px}.brand span{display:none}table{font-size:17px}th,td{padding:9px 10px}pre{font-size:15.5px}figure.diagram{padding:14px}.sidenav{width:min(300px,84vw)}main{padding-left:38px}.navtab{font-size:14px;padding:12px 5px}.hb-row{grid-template-columns:1fr auto;gap:4px 10px}.hb-label{text-align:left;grid-column:1/-1}.hb-track{height:22px}.pager{flex-direction:column}}
+.docmenu{position:fixed;inset:60px 12px auto auto;z-index:35;width:min(340px,92vw);max-height:80vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 10px 40px rgba(0,0,0,.16);display:none}
+.docmenu.open{display:block}.docmenu h4{margin:10px 8px 4px;font-size:16px}.docmenu a{display:block;padding:7px 10px;border-radius:7px;color:var(--ink);text-decoration:none;font-size:17px}.docmenu a:hover{background:var(--surface2)}
+@media print{.top,.navtab,.sidenav,.pbar,.copy,.pager,.docmenu{display:none!important}body{font-size:12pt}main{max-width:none;padding:0}h2{break-after:avoid}figure,table,.code{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="pbar"></div>
+<header class="top"><div class="top-in">
+<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="var(--accent)"/><path d="M8 9h16M16 9v15M9 19c2 4 5 5 7 5s5-1 7-5" stroke="var(--accent-ink)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg><span>Keel docs</span></a>
+<nav aria-label="Documentation"><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="concepts.html">Concepts</a><a href="api-reference.html">API reference</a><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="faq.html">FAQ</a></nav>
+<div class="spacer"></div>
+<button class="btn alldocs" id="alldocs" type="button" aria-haspopup="true">All docs</button>
+<button class="btn" id="theme" type="button" aria-label="Toggle dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Dark</span></button>
+</div></header>
+<div class="docmenu" id="docmenu"><h4>Get started</h4><a href="index.html">Overview</a><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="deployment.html">Deploy</a><a href="concepts.html">Concepts</a><a href="use-cases.html">50 use cases</a><h4>Reference</h4><a href="api-reference.html">API reference</a><a href="help-guide.html">Help guide</a><a href="faq.html">FAQ</a><h4>Evidence</h4><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="comparison.html">Comparison</a><a href="why-keel.html">Why Keel</a><a href="model-card.html">Model card</a><a href="keel-pro.html">Keel-Pro story</a><h4>Internals</h4><a href="architecture.html">Architecture</a><a href="design-doc.html">Design doc</a><a href="training-guide.html">Training guide</a><a href="release-notes.html">Release notes</a><a href="licenses.html">Licenses</a><a href="press.html">Press kit</a></div>
+<button class="navtab" type="button" aria-label="Open contents">Contents</button>
+<aside class="sidenav" aria-label="On this page"><div class="sidenav-head"><span>On this page</span><button id="navclose" type="button" aria-label="Close contents">Close</button></div><ol><li><a class="l2" href="#the-big-picture">The big picture</a></li><li><a class="l2" href="#request-path">Request path</a></li><li><a class="l2" href="#model-aliases">Model aliases</a></li><li><a class="l2" href="#the-mcp-server">The MCP server</a></li><li><a class="l2" href="#model-loading">Model loading</a></li><li><a class="l3" href="#keeljson-reference">keel.json reference</a></li><li><a class="l2" href="#training-pipeline">Training pipeline</a></li><li><a class="l2" href="#design-choices">Design choices</a></li></ol></aside>
+<main>
+<p class="crumb"><a href="index.html">Keel docs</a> / Architecture</p>
+<h1>Architecture</h1>
+<p class="lede">How a request flows through Keel, how the MCP server and vendor aliases fit in, how models are loaded, and how a model gets from training data to <code>models/keel-2</code>.</p>
+<h2 id="the-big-picture">The big picture<a class="anchor" href="#the-big-picture" aria-label="Link to this section">#</a></h2>
+<figure class="diagram" id="fig-request-flow"><div class="fig-scroll"><svg viewBox="0 0 1000 430" role="img" aria-label="Architecture: clients, MCP bridge, local server, model" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="20" y="20" width="200" height="60" rx="10" class="box"/><text x="120" y="56" class="t tb" text-anchor="middle">Copilot CLI · VS Code</text><rect x="20" y="95" width="200" height="60" rx="10" class="box"/><text x="120" y="131" class="t tb" text-anchor="middle">Claude Code · Codex</text><rect x="20" y="170" width="200" height="60" rx="10" class="box"/><text x="120" y="206" class="t tb" text-anchor="middle">Cursor · MCP clients</text><rect x="20" y="265" width="200" height="60" rx="10" class="box"/><text x="120" y="301" class="t tb" text-anchor="middle">Jev / MSD1 SDKs</text><rect x="20" y="340" width="200" height="60" rx="10" class="box"/><text x="120" y="376" class="t tb" text-anchor="middle">curl · your app</text><line x1="220" y1="50" x2="270" y2="110" class="arrow" marker-end="url(#ah)"/><line x1="220" y1="125" x2="270" y2="125" class="arrow" marker-end="url(#ah)"/><line x1="220" y1="200" x2="270" y2="140" class="arrow" marker-end="url(#ah)"/><rect x="270" y="85" width="170" height="80" rx="10" class="accent"/><text x="355" y="121" class="t tb on-accent" text-anchor="middle">keel-mcp</text><text x="355" y="145" class="t ts on-accent" text-anchor="middle">stdio → HTTP</text><line x1="440" y1="125" x2="500" y2="185" class="arrow" marker-end="url(#ah)"/><line x1="220" y1="295" x2="500" y2="210" class="arrow" marker-end="url(#ah)"/><line x1="220" y1="370" x2="500" y2="230" class="arrow" marker-end="url(#ah)"/><rect x="490" y="15" width="495" height="400" rx="14" class="frame"/><text x="737" y="42" class="t tb" text-anchor="middle">Keel server, localhost:8080</text><rect x="510" y="160" width="200" height="90" rx="10" class="box"/><text x="610" y="201" class="t tb" text-anchor="middle">HTTP routes</text><text x="610" y="225" class="t ts" text-anchor="middle">Jev + MSD1 paths</text><path d="M710,185 L735,185 L735,90 L760,90" class="arrow" fill="none" marker-end="url(#ah)"/><rect x="760" y="60" width="205" height="60" rx="10" class="box"/><text x="862.5" y="96" class="t tb" text-anchor="middle">auth · switch · rate limit</text><rect x="760" y="135" width="205" height="60" rx="10" class="box"/><text x="862.5" y="171" class="t tb" text-anchor="middle">wire parse (wire.ts)</text><rect x="760" y="210" width="205" height="60" rx="10" class="accent"/><text x="862.5" y="246" class="t tb on-accent" text-anchor="middle">ONNX cross-encoder</text><rect x="760" y="285" width="205" height="60" rx="10" class="box"/><text x="862.5" y="321" class="t tb" text-anchor="middle">calibrate · project</text><line x1="862" y1="120" x2="862" y2="135" class="arrow" marker-end="url(#ah)"/><line x1="862" y1="195" x2="862" y2="210" class="arrow" marker-end="url(#ah)"/><line x1="862" y1="270" x2="862" y2="285" class="arrow" marker-end="url(#ah)"/><path d="M760,315 L610,315 L610,250" class="arrow" fill="none" marker-end="url(#ah)"/><text x="660" y="340" class="t ts" text-anchor="middle">answer</text><rect x="510" y="345" width="200" height="55" rx="10" class="box"/><text x="610" y="368.5" class="t tb" text-anchor="middle">lexical fallback</text><text x="610" y="392.5" class="t ts" text-anchor="middle">if the model fails</text></svg></div><figcaption>Request flow. Every box on the right runs inside one local Node process; nothing on the decision path touches the network.</figcaption></figure>
+<p>Keel is one Node process built with TanStack Start. It serves the bench UI, the HTTP API and the model. Agents talk to it over HTTP directly, or through a small stdio MCP server that translates tool calls into HTTP calls.</p>
+<div class="table-wrap"><table><thead><tr><th>Layer</th><th>Path</th><th>Role</th></tr></thead><tbody><tr><td>Clients</td><td>Copilot CLI, VS Code, Claude Code, Codex, Cursor, SDKs, curl</td><td>Send System One requests</td></tr><tr><td>MCP bridge</td><td><code>mcp/keel-mcp-server.mjs</code></td><td>Exposes <code>keel_status</code>, <code>keel_decide</code>, <code>keel_switch</code> over stdio; holds the key in its environment</td></tr><tr><td>Routes</td><td><code>src/routes/api/v1/*.ts</code>, <code>src/routes/providers/microsoft/v1/systemone.ts</code>, shared handler <code>src/lib/decider/systemone-route.server.ts</code></td><td>Auth, JSON parsing, error envelope</td></tr><tr><td>Wire</td><td><code>src/lib/decider/wire.ts</code></td><td>Aliases, limits, request parsing, response projection</td></tr><tr><td>Judge</td><td><code>src/lib/decider/judge.server.ts</code></td><td>Switch check, rate limit, neural call, lexical fallback</td></tr><tr><td>Neural</td><td><code>src/lib/decider/neural.server.ts</code></td><td>Tokenizer, ONNX Runtime, margins, calibration, abstain</td></tr><tr><td>Lexical</td><td><code>src/lib/decider/local.ts</code></td><td>Keel-1 feature model, fallback</td></tr><tr><td>Auth</td><td><code>src/lib/decider/auth.server.ts</code></td><td>Derives the local key: HMAC of <code>KEEL_SECRET</code>, or of a random per-install secret in <code>~/.keel/secret</code> (<code>KEEL_SECRET_FILE</code>, mode 0600)</td></tr></tbody></table></div>
+<h2 id="request-path">Request path<a class="anchor" href="#request-path" aria-label="Link to this section">#</a></h2>
+<ol><li><strong>Route.</strong> <code>POST /api/v1/systemone</code>, or the alias <code>POST /providers/microsoft/v1/systemone</code>, reads the key from <code>Authorization: Bearer</code> or <code>api-key</code> and compares it in constant time. A missing or wrong key returns 401.</li><li><strong>Parse.</strong> <code>tryParse</code> in <code>wire.ts</code> resolves the model alias, checks every limit (64 questions, 1,024 alternatives, 8,000-character state and so on) and normalises the question shapes: Jev <code>options</code> arrays, score objects and noul criteria. Errors return 400 with a message naming the field.</li><li><strong>Switch.</strong> If Keel is switched off, the judge returns 409 before any model work.</li><li><strong>Rate limit.</strong> A process-local limiter allows 120 decisions per 60 seconds and returns 429 beyond that.</li><li><strong>Engine.</strong> The neural path runs unless the request pins <code>decider-1.x</code> or <code>KEEL_ENGINE=lexical</code> is set.</li><li><strong>Hypotheses.</strong> <code>hypothesis.ts</code> turns each option, score level or yes/no into a hypothesis sentence. <code>training/keel/hypothesis.py</code> mirrors it exactly. <code>hypothesisVersion</code> in <code>keel.json</code> must match.</li><li><strong>Model.</strong> Each (state, hypothesis) pair is tokenised to 256 tokens and run through the int8 ONNX graph. The output is an entailment margin per pair.</li><li><strong>Calibrate.</strong> Margins are divided by the per-type temperature. If no option is entailed above <code>abstain.threshold</code>, the distribution is flattened toward uniform. An optional lexical blend is added.</li><li><strong>Project.</strong> <code>projectWeights</code> builds the answer: choice, expected score, P(yes), confidence (top probability, or Jev style for <code>jev-*</code> aliases), rounded probabilities and <code>usage: 0</code>.</li><li><strong>Fallback.</strong> Any exception in the neural path is caught, and the lexical judge answers as <code>decider-1.2.0</code>. The response <code>model</code> always names the judge that answered.</li></ol>
+<h2 id="model-aliases">Model aliases<a class="anchor" href="#model-aliases" aria-label="Link to this section">#</a></h2>
+<p><code>wire.ts</code> holds one alias table. Every alias resolves to a judge and a confidence style:</p>
+<div class="table-wrap"><table><thead><tr><th>Alias family</th><th>Judge</th><th>Confidence</th></tr></thead><tbody><tr><td><code>decider-latest</code>, <code>decider-3.0.0</code>, <code>decider-preview</code></td><td>Neural (Keel-3)</td><td>Top probability</td></tr><tr><td><code>decider-2.0.0</code></td><td>Keel-2, pinned</td><td>Top probability</td></tr><tr><td><code>decider-1.0.0</code>, <code>decider-1.1.0</code>, <code>decider-1.2.0</code></td><td>Lexical</td><td>Top probability</td></tr><tr><td><code>jev-latest</code>, <code>jev-1.14.0</code>, <code>jev-1.13.0</code>, <code>jev-preview</code></td><td>Neural</td><td>Jev style</td></tr><tr><td><code>microsoft-decision-1</code> and three spellings</td><td>Neural</td><td>Top probability</td></tr></tbody></table></div>
+<p>The Microsoft-Decision-1 aliases and the <code>/providers/microsoft/v1/systemone</code> route share one handler with the main route, so behaviour cannot drift between them.</p>
+<h2 id="the-mcp-server">The MCP server<a class="anchor" href="#the-mcp-server" aria-label="Link to this section">#</a></h2>
+<p><code>mcp/keel-mcp-server.mjs</code> is a stdio server built on <code>@modelcontextprotocol/sdk</code> and <code>zod</code>:</p>
+<ul><li><strong><code>keel_status</code></strong> calls <code>GET /api/v1/status</code>.</li><li><strong><code>keel_decide</code></strong> validates <code>{state, questions, model?}</code> with a zod schema (1–8 questions, 1,200-character instructions) and calls <code>POST /api/v1/systemone</code>.</li><li><strong><code>keel_switch</code></strong> calls <code>POST /api/v1/switch</code>.</li></ul>
+<p>It reads <code>KEEL_URL</code>, <code>KEEL_TOKEN</code> and <code>KEEL_TIMEOUT_MS</code> from its environment, so the key never appears in prompts. HTTP errors become MCP tool errors with the status and a one-line hint. At start-up it sends MCP <code>instructions</code>, which some clients (such as Codex) show to the model. <code>mcp/smoke.mjs</code> spawns it and calls every tool.</p>
+<h2 id="model-loading">Model loading<a class="anchor" href="#model-loading" aria-label="Link to this section">#</a></h2>
+<p><code>neural.server.ts</code> looks for a model directory in this order:</p>
+<ol><li><code>KEEL_MODEL_DIR</code></li><li><code>models/keel-3</code> (Keel-3, <code>decider-3.0.0</code>, the default)</li><li><code>models/keel-2</code> (Keel-2, <code>decider-2.0.0</code>)</li><li><code>models/keel-base</code> (the untrained base; answers as <code>decider-2.0.0-zeroshot</code>)</li></ol>
+<p>A directory counts only when its ONNX weights are present. Keel-2 is also loaded on demand (<code>KEEL2_MODEL_DIR</code>, default <code>models/keel-2</code>), so requests for <code>decider-2.0.0</code> keep working.</p>
+<p>A directory is loadable when it has <code>tokenizer.json</code> and <code>config.json</code>. <code>keel.json</code> supplies the id, the ONNX path and the calibration. Release candidates live in <code>models/candidates/&lt;name&gt;/</code>. Promotion copies one into place.</p>
+<div class="code"><div class="code-bar"><span>text</span><button type="button" class="copy">Copy</button></div><pre><code>models/keel-2/
+  config.json  tokenizer.json  tokenizer_config.json  special_tokens_map.json  vocab.txt
+  keel.json
+  onnx/model_quantized.onnx</code></pre></div>
+<h3 id="keeljson-reference">keel.json reference<a class="anchor" href="#keeljson-reference" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>Meaning</th></tr></thead><tbody><tr><td><code>id</code></td><td>Runtime model id, such as <code>decider-3.0.0</code></td></tr><tr><td><code>base</code></td><td>Base model identifier</td></tr><tr><td><code>hypothesisVersion</code></td><td>Must match <code>HYPOTHESIS_VERSION</code> in TypeScript and Python</td></tr><tr><td><code>maxLength</code></td><td>Tokens per pair, 256</td></tr><tr><td><code>threads</code></td><td>ONNX intra-op threads</td></tr><tr><td><code>onnx</code></td><td>Relative path to the graph</td></tr><tr><td><code>quantization</code></td><td><code>dynamic</code> or <code>mixed</code></td></tr><tr><td><code>temperature.choice</code> / <code>.score</code> / <code>.noul</code></td><td>Per-type calibration temperatures</td></tr><tr><td><code>abstain.threshold</code>, <code>abstain.floor</code></td><td>When and how far to flatten toward uniform</td></tr><tr><td><code>lexicalBlend.*</code></td><td>Weight of the lexical log-probabilities added to neural logits (0 in Keel-3)</td></tr><tr><td><code>scoreSmoothing</code>, <code>noulBias</code></td><td>Optional score and noul adjustments</td></tr><tr><td><code>calibration</code></td><td>Fitted temperatures, dev NLL and group counts</td></tr><tr><td><code>calibrationSet</code></td><td>Which dev files the calibration was fitted on</td></tr><tr><td><code>trainedOn</code>, <code>training</code></td><td>Provenance: data, steps, minutes, best dev loss</td></tr></tbody></table></div>
+<h2 id="training-pipeline">Training pipeline<a class="anchor" href="#training-pipeline" aria-label="Link to this section">#</a></h2>
+<figure class="diagram" id="fig-training-pipeline"><div class="fig-scroll"><svg viewBox="0 0 1000 260" role="img" aria-label="Training pipeline" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="15" y="20" width="175" height="60" rx="10" class="box"/><text x="102.5" y="56" class="t tb" text-anchor="middle">Synthetic families</text><rect x="15" y="100" width="175" height="60" rx="10" class="box"/><text x="102.5" y="136" class="t tb" text-anchor="middle">Public train splits</text><rect x="15" y="180" width="175" height="60" rx="10" class="box"/><text x="102.5" y="216" class="t tb" text-anchor="middle">Teacher soft labels</text><line x1="190" y1="50" x2="240" y2="120" class="arrow" marker-end="url(#ah)"/><line x1="190" y1="130" x2="240" y2="130" class="arrow" marker-end="url(#ah)"/><line x1="190" y1="210" x2="240" y2="140" class="arrow" marker-end="url(#ah)"/><rect x="240" y="95" width="150" height="70" rx="10" class="box"/><text x="315" y="126" class="t tb" text-anchor="middle">build_data</text><text x="315" y="150" class="t ts" text-anchor="middle">decontaminate</text><line x1="390" y1="130" x2="430" y2="130" class="arrow" marker-end="url(#ah)"/><rect x="430" y="95" width="150" height="70" rx="10" class="accent"/><text x="505" y="126" class="t tb on-accent" text-anchor="middle">train.py</text><text x="505" y="150" class="t ts on-accent" text-anchor="middle">CPU, PyTorch</text><line x1="580" y1="130" x2="620" y2="130" class="arrow" marker-end="url(#ah)"/><rect x="620" y="95" width="150" height="70" rx="10" class="box"/><text x="695" y="126" class="t tb" text-anchor="middle">export</text><text x="695" y="150" class="t ts" text-anchor="middle">int8 ONNX + calibrate</text><line x1="770" y1="130" x2="805" y2="130" class="arrow" marker-end="url(#ah)"/><rect x="805" y="20" width="180" height="70" rx="10" class="box"/><text x="895" y="51" class="t tb" text-anchor="middle">parity bench</text><text x="895" y="75" class="t ts" text-anchor="middle">held-out + blind</text><line x1="895" y1="90" x2="895" y2="110" class="arrow" marker-end="url(#ah)"/><rect x="805" y="110" width="180" height="60" rx="10" class="box"/><text x="895" y="136" class="t tb" text-anchor="middle">release gates</text><text x="895" y="160" class="t ts" text-anchor="middle">G1–G6</text><line x1="895" y1="170" x2="895" y2="185" class="arrow" marker-end="url(#ah)"/><rect x="805" y="185" width="180" height="60" rx="10" class="ok"/><text x="895" y="221" class="t tb on-ok" text-anchor="middle">models/keel-3</text></svg></div><figcaption>Training pipeline. Every candidate is benchmarked on suites it never saw; only one that passes the release gates becomes models/keel-3.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Stage</th><th>Tool</th><th>Output</th></tr></thead><tbody><tr><td>Families</td><td><code>training/keel/families.py</code>, <code>families_v3.py</code></td><td>Templated decision families with soft labels</td></tr><tr><td>Data build</td><td><code>training/keel/build_data.py</code></td><td><code>train.jsonl</code> and <code>dev.jsonl</code>, 6-gram decontaminated against held-out and blind states</td></tr><tr><td>Public data</td><td><code>training/public/</code></td><td>Converted train splits from datasets whose licenses allow training</td></tr><tr><td>Teacher</td><td><code>training/keel/t2_train.py</code></td><td>Keel-3-Pro (DeBERTa-v3-xsmall) and its soft labels</td></tr><tr><td>Student</td><td><code>training/keel/train.py</code></td><td>Checkpoints in <code>training/runs/&lt;name&gt;/best</code></td></tr><tr><td>Export</td><td><code>training/keel/export.py</code></td><td>ONNX graph, mixed int8 quantization, calibrated <code>keel.json</code></td></tr><tr><td>Bench</td><td><code>scripts/keel-parity-bench.ts</code>, <code>scripts/keel-tokens.ts</code></td><td>Scoreboard rows and token reports</td></tr><tr><td>Promote</td><td>Copy to <code>models/keel-2</code> (or <code>models/keel-3</code>)</td><td>Served by default</td></tr></tbody></table></div>
+<p>See <a href="training-guide.html">Training guide</a> for the commands.</p>
+<h2 id="design-choices">Design choices<a class="anchor" href="#design-choices" aria-label="Link to this section">#</a></h2>
+<ul><li><strong>A cross-encoder, not a generator.</strong> Scoring each option against the state gives order-invariant probabilities in a single forward pass per option. There is no decoding, sampling or parsing.</li><li><strong>Small on purpose.</strong> A 6-layer, 256-wide model runs in milliseconds on any CPU and fits in a repository. Breadth is traded for latency, privacy and cost.</li><li><strong>Calibration lives in config.</strong> Temperatures and thresholds are in <code>keel.json</code>, so a model can be recalibrated without retraining.</li><li><strong>A lexical fallback always answers.</strong> If ONNX fails to load, decisions keep working, and the response <code>model</code> says so.</li><li><strong>Same wire as the hosted models.</strong> Clients can move between Keel, Jev and Microsoft-Decision-1, or use them in a cascade.</li></ul>
+<nav class="pager" aria-label="Previous and next"><a href="keel-pro.html"><small>Previous</small>Keel-Pro story</a><a class="next" href="design-doc.html"><small>Next</small>Design doc</a></nav>
+<footer>Generated from <a href="architecture.md">architecture.md</a> by <code>node docs/build-html.mjs</code>. Keel is released under the Apache-2.0 licence.</footer>
+</main>
+
+<script>
+(function(){
+var root=document.documentElement,body=document.body;
+var tbtn=document.getElementById('theme');
+function label(){var d=root.dataset.theme==='dark';tbtn.querySelector('span').textContent=d?'Light':'Dark';tbtn.setAttribute('aria-pressed',d)}
+label();tbtn.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('keel-docs-theme',root.dataset.theme)}catch(e){}label()});
+var dm=document.getElementById('docmenu'),db=document.getElementById('alldocs');
+db.addEventListener('click',function(e){e.stopPropagation();dm.classList.toggle('open')});document.addEventListener('click',function(e){if(!dm.contains(e.target))dm.classList.remove('open')});
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.closest('.code').querySelector('code').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1400)},function(){})})});
+var pbar=document.querySelector('.pbar');
+var nav=document.querySelector('.sidenav'),tab=document.querySelector('.navtab');
+if(!nav)return;
+var pinned=false,timer=null,hover=false,wide=matchMedia('(min-width:1101px)');
+function open(){body.classList.add('nav-open')}function close(){if(!pinned&&!hover)body.classList.remove('nav-open')}
+function peek(){if(!wide.matches)return;open();clearTimeout(timer);timer=setTimeout(close,1800)}
+tab.addEventListener('click',function(){pinned=true;open()});
+document.getElementById('navclose').addEventListener('click',function(){pinned=false;hover=false;body.classList.remove('nav-open')});
+nav.addEventListener('mouseenter',function(){hover=true;clearTimeout(timer)});nav.addEventListener('mouseleave',function(){hover=false;timer=setTimeout(close,900)});
+document.addEventListener('mousemove',function(e){if(e.clientX<110&&wide.matches){open();clearTimeout(timer);timer=setTimeout(close,1800)}});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(!wide.matches){pinned=false;body.classList.remove('nav-open')}})});
+var links=[].slice.call(nav.querySelectorAll('a')),heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+var last=0,ticking=false;
+window.addEventListener('scroll',function(){if(ticking)return;ticking=true;requestAnimationFrame(function(){ticking=false;var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;pbar.style.width=(h>0?y/h*100:0)+'%';
+var cur=-1;for(var i=0;i<heads.length;i++){if(heads[i]&&heads[i].getBoundingClientRect().top<120)cur=i}
+links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+if(Math.abs(y-last)>40){peek();last=y}})},{passive:true});
+})();</script>
+</body>
+</html>

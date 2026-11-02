@@ -1,0 +1,38 @@
+# Normalize text to LF in the repository; Windows checkouts may still use CRLF via core.autocrlf.
+* text=auto eol=lf
+
+# Windows-only scripts keep CRLF.
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Model weights and binary assets: never diff or merge as text.
+# Weights are NOT stored with Git LFS: shipped weights are GitHub Release assets and
+# Hugging Face files fetched by `npm run model:fetch` (see RELEASE_CHECKLIST.md, "Size").
+# models/keel-2/onnx/model_quantized.onnx is grandfathered as a plain blob.
+*.onnx binary
+*.onnx_data binary
+*.safetensors binary
+*.bin binary
+*.pt binary
+*.ckpt binary
+*.model binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.gz binary
+*.tgz binary
+*.zip binary
+
+# Generated files: collapse in diffs and exclude from language stats.
+package-lock.json linguist-generated=true
+src/routeTree.gen.ts linguist-generated=true
+artifacts/** linguist-generated=true
+docs/**/*.html linguist-documentation=true
+
+# Vendor platform scaffolding (pending removal; see RELEASE_CHECKLIST.md) is not project code.

@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use Keel or its weights, please cite it as below."
+type: software
+title: "Keel: an open-weight, local System One decision model"
+abstract: >-
+  Keel answers typed decision questions (choice, score, yes/no) for coding agents with a
+  small in-process ONNX cross-encoder. It speaks a System One-compatible HTTP wire and an
+  MCP bridge, runs on CPU, and makes no network call on the decision path.
+authors:
+  - name: "The Keel Authors"
+version: 3.0.0
+date-released: 2026-11-15
+license: Apache-2.0
+repository-code: "https://github.com/sivamatic/Keel"
+url: "https://github.com/sivamatic/Keel"
+keywords:
+  - decision model
+  - cross-encoder
+  - natural language inference
+  - zero-shot classification
+  - ONNX
+  - coding agents
+  - Model Context Protocol
+references:
+  - type: software
+    title: "xtremedistil-l6-h256-zeroshot-v1.1-all-33"
+    authors:
+      - family-names: Laurer
+        given-names: Moritz
+    url: "https://huggingface.co/MoritzLaurer/xtremedistil-l6-h256-zeroshot-v1.1-all-33"
+    license: MIT

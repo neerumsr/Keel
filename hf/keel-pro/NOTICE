@@ -1,0 +1,9 @@
+Keel-Pro
+Copyright 2026 The Keel authors. Licensed under the Apache License, Version 2.0.
+
+This model is a LoRA fine-tune of Qwen3.5 (https://huggingface.co/Qwen), Copyright Alibaba Cloud
+(Qwen team), licensed under the Apache License, Version 2.0. The base weights are not modified
+except through the published adapter; GGUF files contain the merged weights.
+
+Training data licenses are listed in docs/licenses.md and artifacts/parity/pro/DATA.md of the Keel
+repository. Some training rows derive from CC BY-SA sources; see those files for attribution.

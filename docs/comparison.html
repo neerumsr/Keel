@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keel, Jev and Microsoft-Decision-1 · Keel docs</title>
+<meta name="description" content="Three models that speak the same System One wire, built for different trade-offs. This page shows where each one is the right choice, and what a million decisions costs on each.">
+<script>try{var t=localStorage.getItem('keel-docs-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--bg:#fbfaf6;--surface:#ffffff;--surface2:#f1efe8;--ink:#14171c;--ink2:#262b33;--line:#d9d5c9;--accent:#0b6170;--accent-ink:#ffffff;--accentSoft:#e2f0f1;--ok:#1d6b3a;--okSoft:#e3f2e7;--warm:#9a4a05;--warmSoft:#fbecdc;--danger:#a3261b;--code-bg:#f3f1ea;--link:#0a5a86;--shadow:0 1px 2px rgba(20,23,28,.06),0 6px 20px rgba(20,23,28,.05)}
+html[data-theme=dark]{--bg:#0f1418;--surface:#161d22;--surface2:#1d262c;--ink:#f1f4f6;--ink2:#dbe2e6;--line:#33414a;--accent:#5fc4d2;--accent-ink:#06171b;--accentSoft:#173238;--ok:#6fd393;--okSoft:#15301f;--warm:#f2a65a;--warmSoft:#35250f;--danger:#ff8b7e;--code-bg:#11181d;--link:#8fd0ff;--shadow:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 19px/1.65 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+code,pre{font-family:"Cascadia Mono","JetBrains Mono",Consolas,ui-monospace,Menlo,monospace}
+a{color:var(--link);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}
+.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{max-width:1180px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;gap:18px}
+.brand{white-space:nowrap;flex:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none}
+.brand svg{width:28px;height:28px}
+.top nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px}
+.top nav a{color:var(--ink2);text-decoration:none;font-size:17px;padding:6px 10px;border-radius:8px}
+.top nav a[aria-current]{color:var(--ink);background:var(--surface2);font-weight:600}
+.top nav a:hover{background:var(--surface2)}
+.spacer{flex:1}
+.btn{font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--ink2)}.btn svg{width:18px;height:18px}
+.pbar{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:40}
+main{max-width:940px;margin:0 auto;padding:40px 28px 80px}
+.crumb{font-size:17px;color:var(--ink2);margin:0 0 6px}
+h1{font-size:50px;line-height:1.1;letter-spacing:-.02em;margin:6px 0 18px;font-weight:750}
+.lede{font-size:22px;line-height:1.55;color:var(--ink2);margin:0 0 30px}
+h2{font-size:33px;line-height:1.2;letter-spacing:-.01em;margin:64px 0 16px;padding-top:22px;border-top:1px solid var(--line);font-weight:700}
+h3{font-size:25px;line-height:1.3;margin:40px 0 12px;font-weight:650}
+h4{font-size:21px;margin:28px 0 8px}
+h1,h2,h3,h4{scroll-margin-top:84px;position:relative;overflow-wrap:anywhere}
+.anchor{opacity:0;margin-left:10px;text-decoration:none;color:var(--accent);font-weight:400}
+h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 18px}ul,ol{margin:0 0 20px;padding-left:28px}li{margin:6px 0}li>ul,li>ol{margin:6px 0}
+strong{font-weight:650;color:var(--ink)}
+:not(pre)>code{font-size:.86em;background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+.code{margin:0 0 24px;border:1px solid var(--line);border-radius:12px;background:var(--code-bg);overflow:hidden}
+.code-bar{display:flex;justify-content:space-between;align-items:center;padding:6px 10px 6px 16px;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.copy{font:inherit;font-size:15px;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 10px;cursor:pointer}
+.copy:hover{border-color:var(--ink2)}
+pre{margin:0;padding:16px 18px;overflow-x:auto;font-size:16.5px;line-height:1.55;color:var(--ink)}
+.table-wrap{overflow-x:auto;margin:0 0 26px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:18px;line-height:1.45}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface2);font-weight:650;color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+.num{font-variant-numeric:tabular-nums;font-weight:650;color:var(--ink);background:var(--accentSoft);border-radius:5px;padding:0 4px}
+.callout{margin:0 0 26px;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.callout-strong{background:var(--warmSoft);border-color:var(--warm)}
+.callout>:last-child{margin-bottom:0}
+hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+figure.diagram{margin:10px 0 34px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.fig-scroll{overflow-x:auto}
+figure svg{display:block;width:100%;height:auto;min-width:600px}
+.hbars{display:grid;gap:12px}.hb-row{display:grid;grid-template-columns:210px 1fr 150px;align-items:center;gap:14px}
+.hb-label{font-weight:600;text-align:right}.hb-track{background:var(--surface2);border-radius:6px;height:28px;overflow:hidden}
+.hb-bar{height:100%;background:var(--accent);opacity:.6;border-radius:6px}.hb-bar.strong{opacity:1}.hb-bar.warm{background:var(--warm);opacity:1}
+.hb-val{font-weight:650;font-variant-numeric:tabular-nums}
+figcaption{font-size:17px;color:var(--ink2);margin-top:14px;line-height:1.5}
+svg .box{fill:var(--surface2);stroke:var(--line);stroke-width:1.5}
+svg .accent{fill:var(--accent);stroke:var(--accent)}svg .ok{fill:var(--okSoft);stroke:var(--ok);stroke-width:1.5}svg .warm{fill:var(--warmSoft);stroke:var(--warm);stroke-width:1.5}
+svg .frame{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 5}
+svg .t{fill:var(--ink);font:500 17px "Segoe UI",system-ui,sans-serif}svg .tb{font-weight:650;font-size:18px}svg .ts{font-size:15.5px;fill:var(--ink2)}
+svg .on-accent{fill:var(--accent-ink)}svg .on-ok,svg .on-warm{fill:var(--ink)}svg .ok-t{fill:var(--ok)}
+svg .arrow{stroke:var(--ink2);stroke-width:2}svg .arrow.okline{stroke:var(--ok)}svg .ahead{fill:var(--ink2)}
+svg .track{fill:var(--surface2)}svg .bar{fill:var(--accent);opacity:.55}svg .bar.strong{opacity:1}svg .warmbar{fill:var(--warm);opacity:1}
+svg .grid{stroke:var(--line);stroke-width:1}
+svg .ln-a{stroke:var(--accent);stroke-width:3}svg .ln-b{stroke:var(--warm);stroke-width:3}svg .ln-a-dot{fill:var(--accent)}svg .ln-b-dot{fill:var(--warm)}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:24px;border-top:1px solid var(--line)}
+.pager a{display:block;flex:1;padding:14px 18px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);background:var(--surface)}
+.pager a:hover{border-color:var(--accent)}.pager small{display:block;font-size:16px;color:var(--ink2)}.pager .next{text-align:right}
+footer{font-size:16px;color:var(--ink2);margin-top:28px}
+/* contents menu: middle-left, auto-hide */
+.navtab{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:25;writing-mode:vertical-rl;rotate:180deg;font:600 16px/1 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:0;border-radius:0 10px 10px 0;padding:16px 9px;cursor:pointer;transition:opacity .2s}
+.sidenav{position:fixed;left:14px;top:50%;transform:translate(calc(-100% - 30px),-50%);z-index:26;width:300px;max-height:76vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 10px 14px 14px;box-shadow:0 10px 40px rgba(0,0,0,.14);transition:transform .28s ease}
+body.nav-open .sidenav{transform:translate(0,-50%)}body.nav-open .navtab{opacity:0;pointer-events:none}
+.sidenav-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 8px 6px;font-weight:700;font-size:17px}
+.sidenav-head button{font:inherit;font-size:15px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 8px;cursor:pointer}
+.sidenav ol{list-style:none;margin:0;padding:0}.sidenav li{margin:0}
+.sidenav a{display:block;padding:6px 8px;border-radius:7px;color:var(--ink2);text-decoration:none;font-size:16.5px;line-height:1.35}
+.sidenav a.l3{padding-left:22px;font-size:16px}
+.sidenav a:hover{background:var(--surface2);color:var(--ink)}
+.sidenav a.active{background:var(--accentSoft);color:var(--ink);font-weight:650}
+
+@media (max-width:1240px){.top nav{display:none}}
+@media (max-width:700px){body{font-size:18px}main{padding:26px 18px 60px}h1{font-size:36px}h2{font-size:27px;margin-top:48px}h3{font-size:22px}.lede{font-size:19.5px}.top-in{padding:10px 16px;gap:10px}.brand span{display:none}table{font-size:17px}th,td{padding:9px 10px}pre{font-size:15.5px}figure.diagram{padding:14px}.sidenav{width:min(300px,84vw)}main{padding-left:38px}.navtab{font-size:14px;padding:12px 5px}.hb-row{grid-template-columns:1fr auto;gap:4px 10px}.hb-label{text-align:left;grid-column:1/-1}.hb-track{height:22px}.pager{flex-direction:column}}
+.docmenu{position:fixed;inset:60px 12px auto auto;z-index:35;width:min(340px,92vw);max-height:80vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 10px 40px rgba(0,0,0,.16);display:none}
+.docmenu.open{display:block}.docmenu h4{margin:10px 8px 4px;font-size:16px}.docmenu a{display:block;padding:7px 10px;border-radius:7px;color:var(--ink);text-decoration:none;font-size:17px}.docmenu a:hover{background:var(--surface2)}
+@media print{.top,.navtab,.sidenav,.pbar,.copy,.pager,.docmenu{display:none!important}body{font-size:12pt}main{max-width:none;padding:0}h2{break-after:avoid}figure,table,.code{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="pbar"></div>
+<header class="top"><div class="top-in">
+<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="var(--accent)"/><path d="M8 9h16M16 9v15M9 19c2 4 5 5 7 5s5-1 7-5" stroke="var(--accent-ink)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg><span>Keel docs</span></a>
+<nav aria-label="Documentation"><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="concepts.html">Concepts</a><a href="api-reference.html">API reference</a><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="faq.html">FAQ</a></nav>
+<div class="spacer"></div>
+<button class="btn alldocs" id="alldocs" type="button" aria-haspopup="true">All docs</button>
+<button class="btn" id="theme" type="button" aria-label="Toggle dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Dark</span></button>
+</div></header>
+<div class="docmenu" id="docmenu"><h4>Get started</h4><a href="index.html">Overview</a><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="deployment.html">Deploy</a><a href="concepts.html">Concepts</a><a href="use-cases.html">50 use cases</a><h4>Reference</h4><a href="api-reference.html">API reference</a><a href="help-guide.html">Help guide</a><a href="faq.html">FAQ</a><h4>Evidence</h4><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="comparison.html">Comparison</a><a href="why-keel.html">Why Keel</a><a href="model-card.html">Model card</a><a href="keel-pro.html">Keel-Pro story</a><h4>Internals</h4><a href="architecture.html">Architecture</a><a href="design-doc.html">Design doc</a><a href="training-guide.html">Training guide</a><a href="release-notes.html">Release notes</a><a href="licenses.html">Licenses</a><a href="press.html">Press kit</a></div>
+<button class="navtab" type="button" aria-label="Open contents">Contents</button>
+<aside class="sidenav" aria-label="On this page"><div class="sidenav-head"><span>On this page</span><button id="navclose" type="button" aria-label="Close contents">Close</button></div><ol><li><a class="l2" href="#at-a-glance">At a glance</a></li><li><a class="l2" href="#when-to-choose-which">When to choose which</a></li><li><a class="l2" href="#cost-per-1-million-decisions">Cost per 1 million decisions</a></li><li><a class="l3" href="#the-hosted-models">The hosted models</a></li><li><a class="l3" href="#keel">Keel</a></li><li><a class="l3" href="#a-general-llm">A general LLM</a></li><li><a class="l2" href="#wire-compatibility">Wire compatibility</a></li><li><a class="l2" href="#what-we-have-not-verified">What we have not verified</a></li></ol></aside>
+<main>
+<p class="crumb"><a href="index.html">Keel docs</a> / Comparison</p>
+<h1>Keel, Jev and Microsoft-Decision-1</h1>
+<p class="lede">Three models that speak the same System One wire, built for different trade-offs. This page shows where each one is the right choice, and what a million decisions costs on each.</p>
+<h2 id="at-a-glance">At a glance<a class="anchor" href="#at-a-glance" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th></th><th><strong>Keel</strong></th><th><strong>Jev</strong> (TypeSafe)</th><th><strong>Microsoft-Decision-1</strong></th></tr></thead><tbody><tr><td>Where it runs</td><td>Your CPU, in-process or on localhost</td><td>TypeSafe's hosted API</td><td>Azure AI Foundry, OpenRouter</td></tr><tr><td>Model</td><td>xtremedistil-l6-h256 NLI cross-encoder, about 13M parameters</td><td>Proprietary, size undisclosed</td><td>Post-trained Qwen3.5-9B (vendor-documented)</td></tr><tr><td>Download size</td><td><span class="num" data-num="k3.size">17.7 MB</span> (Keel-3), <span class="num" data-num="k2.size">13 MB</span> (Keel-2)</td><td>No download</td><td>No download</td></tr><tr><td>Weights</td><td><strong>Open, Apache-2.0</strong>, fine-tunable</td><td>Closed</td><td>Closed</td></tr><tr><td>Network and account</td><td>None</td><td>API key</td><td>Azure key or Entra ID</td></tr><tr><td>Privacy</td><td>Text never leaves the machine</td><td>Cloud; vendor states no training on customer data</td><td>Cloud, Azure data zones</td></tr><tr><td>Latency</td><td><span class="num" data-num="k3.p95.idle">13.7–14.3 ms</span> p95 in-process on an idle CPU (Keel-3)</td><td>70–500 ms end-to-end (vendor)</td><td>85 ms p50, 125 ms p95 (vendor)</td></tr><tr><td>Price</td><td>$0 marginal</td><td>$0.042 per 1M input tokens, output free</td><td>$0.042 per 1M input tokens, output free</td></tr><tr><td>Context read</td><td>About 256 tokens per (state, option) pair</td><td>64k tokens per request (vendor)</td><td>32,768 tokens (vendor)</td></tr><tr><td>Question types</td><td>choice, score, noul</td><td>choice, score, noul, box, images</td><td>choice, score, noul</td></tr><tr><td>Languages</td><td>English</td><td>English best, others weaker (vendor)</td><td>Multilingual evaluation (vendor)</td></tr><tr><td>Accuracy on broad benchmarks</td><td><span class="num" data-num="pub.k2.mean">42.8%</span> mean over 18 public datasets (measured)</td><td>not measured by us</td><td>83.5% over 36 undisclosed benchmarks (vendor-reported)</td></tr><tr><td>Integrations</td><td>HTTP, MCP server, Jev SDK, Foundry path</td><td>HTTP, official SDKs</td><td>Foundry, OpenRouter</td></tr></tbody></table></div>
+<p>Vendor figures come from the <a href="https://commandline.microsoft.com/microsoft-decision-1-model-foundry/" rel="noopener">Microsoft announcement</a>, the <a href="https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-microsoft-decision" rel="noopener">Microsoft Learn page</a>, <a href="https://docs.typesafe.ai/models" rel="noopener">TypeSafe's models page</a> and the <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" rel="noopener">TypeSafe launch post</a>. We have not verified them.</p>
+<p><strong>Keel-Pro.</strong> If you have a GPU, Keel-Pro (model <code>decider-pro-1.0.0</code>, an open-weight Qwen3.5-27B LoRA, local sidecar) scores <strong>62.73</strong> on the full Decision Index public 0.3 suite (all 139,677 public requests; HLE is gated and counted as 0), and 61.96 (95% CI 58.98–64.42) on an earlier report sample. Jev 1.14 is 60.70 on the DI board and Microsoft-Decision-1 is about 62 (estimate). That is on par with both. Median latency is 245 ms on an RTX 5090 (p80 438 ms, mean 528 ms). See <a href="keel-pro.html">Keel-Pro</a> and <a href="benchmarks.html#decision-index-keel-pro">Benchmarks</a>.</p>
+<h2 id="when-to-choose-which">When to choose which<a class="anchor" href="#when-to-choose-which" aria-label="Link to this section">#</a></h2>
+<p><strong>Choose Keel when:</strong></p>
+<ul><li>the text must not leave the machine, or the machine is offline: air-gapped networks, regulated data, on-device apps, CI runners without secrets;</li><li>the decision sits on a hot path, such as a tool-call gate or a per-message router, where 20 ms matters and 500 ms does not fit;</li><li>you want to own the model: pin a version, fine-tune it on your own decision families, ship it inside your product;</li><li>you want an LLM-free first pass that hands only the hard cases to an LLM. See <a href="token-savings.html">Token savings</a>.</li></ul>
+<p><strong>Choose a hosted 9B model (Jev or Microsoft-Decision-1) when:</strong></p>
+<ul><li>the decision needs world knowledge or multi-step reasoning, as in exam-style questions;</li><li>the state is long (a full contract, a long thread) and the deciding fact may be anywhere in it;</li><li>you need images, <code>box</code> questions, or languages other than English;</li><li>you need the best available accuracy on unfamiliar inputs and a vendor SLA, and the data can go to the cloud.</li></ul>
+<p><strong>Choose a general LLM when:</strong></p>
+<ul><li>you need a rationale, not just a probability;</li><li>the options are not known in advance;</li><li>the decision is safety-critical and no Keel model is yet at zero safety misses. On our blind suite, claude-haiku-4.5 got <span class="num" data-num="llm.blind">215/234</span> fully right with <span class="num" data-num="llm.blind.safety">0</span> safety misses, against <span class="num" data-num="k3.blind">125/234</span> and <span class="num" data-num="k3.blind.safety">11</span> for the Keel-3 RC.</li></ul>
+<p><strong>Combine them.</strong> Because all three speak the same wire, a client can ask Keel first and send low-confidence questions to Jev, Microsoft-Decision-1 or an LLM with the same request body.</p>
+<figure class="diagram" id="fig-keel-first"><div class="fig-scroll"><svg viewBox="0 0 980 300" role="img" aria-label="Flow: the agent asks Keel; if confidence is at least tau it acts, otherwise it asks an LLM" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="20" y="110" width="170" height="80" rx="10" class="box"/><text x="105" y="146" class="t tb" text-anchor="middle">Agent or app</text><text x="105" y="170" class="t ts" text-anchor="middle">typed question</text><line x1="190" y1="150" x2="250" y2="150" class="arrow" marker-end="url(#ah)"/><rect x="250" y="95" width="210" height="110" rx="10" class="accent"/><text x="355" y="146" class="t tb on-accent" text-anchor="middle">Keel</text><text x="355" y="170" class="t ts on-accent" text-anchor="middle">local · ms · $0</text><line x1="460" y1="150" x2="540" y2="150" class="arrow" marker-end="url(#ah)"/><polygon points="620,95 700,150 620,205 540,150" class="box"/><text x="620" y="146" class="t ts" text-anchor="middle">confidence</text><text x="620" y="168" class="t tb" text-anchor="middle">≥ τ ?</text><path d="M700,150 L760,150 L760,70 L790,70" class="arrow okline" fill="none" marker-end="url(#ah)"/><text x="735" y="60" class="t ts ok-t" text-anchor="middle">yes</text><rect x="790" y="30" width="175" height="80" rx="10" class="ok"/><text x="877.5" y="66" class="t tb on-ok" text-anchor="middle">Act on answer</text><text x="877.5" y="90" class="t ts on-ok" text-anchor="middle">75/100 of cases</text><path d="M700,150 L760,150 L760,230 L790,230" class="arrow" fill="none" marker-end="url(#ah)"/><text x="735" y="252" class="t ts" text-anchor="middle">no</text><rect x="790" y="190" width="175" height="80" rx="10" class="warm"/><text x="877.5" y="226" class="t tb on-warm" text-anchor="middle">Ask the LLM</text><text x="877.5" y="250" class="t ts on-warm" text-anchor="middle">Jev, MSD1 or LLM</text></svg></div><figcaption>Keel first, LLM fallback. Measured with the Keel-3 RC on the held-out suites at τ = 0.6: 75/100 LLM calls avoided, 75.8% fewer LLM tokens.</figcaption></figure>
+<h2 id="cost-per-1-million-decisions">Cost per 1 million decisions<a class="anchor" href="#cost-per-1-million-decisions" aria-label="Link to this section">#</a></h2>
+<h3 id="the-hosted-models">The hosted models<a class="anchor" href="#the-hosted-models" aria-label="Link to this section">#</a></h3>
+<p>Jev and Microsoft-Decision-1 both list $0.042 per 1M input tokens, with output free. Cost therefore depends only on the size of the request. We assume a mean of <strong>654 input tokens per decision</strong>, the mean H2O measured on the third-party JevBench suite, and show 300 and 2,000 tokens for sensitivity.</p>
+<div class="code"><div class="code-bar"><span>text</span><button type="button" class="copy">Copy</button></div><pre><code>price per token  = $0.042 / 1,000,000 = $4.2e-8
+cost per 1M      = tokens per decision × 1,000,000 × $4.2e-8
+
+  300 tokens  →   300 × 1e6 × 4.2e-8 = $12.60
+  654 tokens  →   654 × 1e6 × 4.2e-8 = $27.47
+2,000 tokens  → 2,000 × 1e6 × 4.2e-8 = $84.00</code></pre></div>
+<h3 id="keel">Keel<a class="anchor" href="#keel" aria-label="Link to this section">#</a></h3>
+<p>Keel has no per-token price. It costs CPU time you already have.</p>
+<div class="code"><div class="code-bar"><span>text</span><button type="button" class="copy">Copy</button></div><pre><code>CPU time  = 1,000,000 decisions × ~10 ms = 10,000 s ≈ 2.8 CPU-hours (single thread, idle-laptop p50)
+power     = 2.8 h × 0.015 kW (assumed extra package power) × $0.15/kWh ≈ $0.006
+rented    = 2.8 vCPU-hours × $0.05 (assumed) ≈ $0.14
+
+at 20 ms (the loaded-box p50): 5.6 CPU-hours ≈ $0.28 rented vCPU</code></pre></div>
+<h3 id="a-general-llm">A general LLM<a class="anchor" href="#a-general-llm" aria-label="Link to this section">#</a></h3>
+<p>For comparison, a dedicated LLM decision call on our held-out suites averaged about 248 o200k tokens of visible prompt and answer (24,830 tokens over 100 decisions). At an assumed list price of $1 per 1M input and $5 per 1M output tokens, which is roughly the small-model tier, and assuming a 230/18 input/output split, that is:</p>
+<div class="code"><div class="code-bar"><span>text</span><button type="button" class="copy">Copy</button></div><pre><code>input   230 × 1e6 × $1e-6 = $230
+output   18 × 1e6 × $5e-6 =  $90
+total ≈ $320 per 1M decisions, before hidden reasoning tokens</code></pre></div>
+<p>Hidden reasoning on claude-haiku-4.5 added about 367 tokens per question in our measurements, which more than doubles the output bill. Running each decision as a sub-agent in a coding harness (about 21k input tokens per call) is far more expensive again.</p>
+<figure class="diagram" id="fig-cost-bars"><div class="fig-scroll"><div class="hbars" role="img" aria-label="Cost per million decisions"><div class="hb-row"><div class="hb-label">Keel (local)</div><div class="hb-track"><div class="hb-bar strong" style="width:28.9%"></div></div><div class="hb-val">≈ $0.01–0.28</div></div><div class="hb-row"><div class="hb-label">Jev (vendor price)</div><div class="hb-track"><div class="hb-bar" style="width:68.8%"></div></div><div class="hb-val">$27.47</div></div><div class="hb-row"><div class="hb-label">MSD1 (vendor price)</div><div class="hb-track"><div class="hb-bar" style="width:68.8%"></div></div><div class="hb-val">$27.47</div></div><div class="hb-row"><div class="hb-label">Small LLM</div><div class="hb-track"><div class="hb-bar warm" style="width:90.1%"></div></div><div class="hb-val">≈ $320</div></div></div></div><figcaption>Cash cost per 1 million decisions, log scale. Jev and MSD1 are computed from vendor list prices at 654 input tokens per decision; Keel is local electricity; the small LLM assumes $1/$5 per 1M tokens. See the table below.</figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Per 1M decisions</th><th style="text-align:right">Keel</th><th style="text-align:right">Jev</th><th style="text-align:right">Microsoft-Decision-1</th><th style="text-align:right">Small LLM (assumed $1/$5)</th></tr></thead><tbody><tr><td>Cash, 654-token decisions</td><td style="text-align:right">≈ $0.01–0.28</td><td style="text-align:right">$27.47</td><td style="text-align:right">$27.47</td><td style="text-align:right">≈ $320 at 248 tokens</td></tr><tr><td>Serial wall time, one request in flight</td><td style="text-align:right">≈ 3–6 h</td><td style="text-align:right">≈ 19–139 h (70–500 ms)</td><td style="text-align:right">≈ 24 h (85 ms)</td><td style="text-align:right">days</td></tr></tbody></table></div>
+<p>The honest reading: $27 per million decisions is already cheap. Keel's real advantages are <strong>offline operation, privacy, latency and having no account</strong>, not the bill. And on a 2,000-token state, Keel is reading a truncated input, so it is not doing the same work as a 32k–64k model.</p>
+<h2 id="wire-compatibility">Wire compatibility<a class="anchor" href="#wire-compatibility" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table><thead><tr><th>Feature</th><th>Keel</th><th>Notes</th></tr></thead><tbody><tr><td><code>POST /v1/systemone</code> with state and questions</td><td>Yes</td><td>At <code>/api/v1/systemone</code></td></tr><tr><td>Foundry path <code>/providers/microsoft/v1/systemone</code></td><td>Yes</td><td>Same handler</td></tr><tr><td><code>Authorization: Bearer</code> and <code>api-key</code> headers</td><td>Yes</td><td>Local key, not a vendor key</td></tr><tr><td>choice, score, noul</td><td>Yes</td><td></td></tr><tr><td>Jev-style confidence</td><td>Yes</td><td>With <code>jev-*</code> aliases</td></tr><tr><td>box questions, images</td><td>No</td><td>Returns 400</td></tr><tr><td>Compressed request bodies</td><td>No</td><td>Use <code>compression=False</code> in Jev SDKs</td></tr><tr><td><code>models.list()</code> in the Jev SDK</td><td>No</td><td>Keel returns an OpenAI-style list</td></tr><tr><td>Long-context header</td><td>Ignored</td><td>Keel reads about 256 tokens per pair</td></tr></tbody></table></div>
+<h2 id="what-we-have-not-verified">What we have not verified<a class="anchor" href="#what-we-have-not-verified" aria-label="Link to this section">#</a></h2>
+<ul><li>We have not run Jev or Microsoft-Decision-1 on our held-out or blind suites. The harnesses exist (<code>npm run keel:compare-jev</code>, <code>npm run keel:compare-msd1</code>) and need credentials.</li><li>All latency and accuracy figures for Jev and Microsoft-Decision-1 on this page are vendor-reported or third-party.</li><li>Keel is an independent project. It is not affiliated with or endorsed by TypeSafe or Microsoft. See <a href="../NOTICE">NOTICE</a>.</li></ul>
+<nav class="pager" aria-label="Previous and next"><a href="token-savings.html"><small>Previous</small>Token savings</a><a class="next" href="why-keel.html"><small>Next</small>Why Keel</a></nav>
+<footer>Generated from <a href="comparison.md">comparison.md</a> by <code>node docs/build-html.mjs</code>. Keel is released under the Apache-2.0 licence.</footer>
+</main>
+
+<script>
+(function(){
+var root=document.documentElement,body=document.body;
+var tbtn=document.getElementById('theme');
+function label(){var d=root.dataset.theme==='dark';tbtn.querySelector('span').textContent=d?'Light':'Dark';tbtn.setAttribute('aria-pressed',d)}
+label();tbtn.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('keel-docs-theme',root.dataset.theme)}catch(e){}label()});
+var dm=document.getElementById('docmenu'),db=document.getElementById('alldocs');
+db.addEventListener('click',function(e){e.stopPropagation();dm.classList.toggle('open')});document.addEventListener('click',function(e){if(!dm.contains(e.target))dm.classList.remove('open')});
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.closest('.code').querySelector('code').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1400)},function(){})})});
+var pbar=document.querySelector('.pbar');
+var nav=document.querySelector('.sidenav'),tab=document.querySelector('.navtab');
+if(!nav)return;
+var pinned=false,timer=null,hover=false,wide=matchMedia('(min-width:1101px)');
+function open(){body.classList.add('nav-open')}function close(){if(!pinned&&!hover)body.classList.remove('nav-open')}
+function peek(){if(!wide.matches)return;open();clearTimeout(timer);timer=setTimeout(close,1800)}
+tab.addEventListener('click',function(){pinned=true;open()});
+document.getElementById('navclose').addEventListener('click',function(){pinned=false;hover=false;body.classList.remove('nav-open')});
+nav.addEventListener('mouseenter',function(){hover=true;clearTimeout(timer)});nav.addEventListener('mouseleave',function(){hover=false;timer=setTimeout(close,900)});
+document.addEventListener('mousemove',function(e){if(e.clientX<110&&wide.matches){open();clearTimeout(timer);timer=setTimeout(close,1800)}});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(!wide.matches){pinned=false;body.classList.remove('nav-open')}})});
+var links=[].slice.call(nav.querySelectorAll('a')),heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+var last=0,ticking=false;
+window.addEventListener('scroll',function(){if(ticking)return;ticking=true;requestAnimationFrame(function(){ticking=false;var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;pbar.style.width=(h>0?y/h*100:0)+'%';
+var cur=-1;for(var i=0;i<heads.length;i++){if(heads[i]&&heads[i].getBoundingClientRect().top<120)cur=i}
+links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+if(Math.abs(y-last)>40){peek();last=y}})},{passive:true});
+})();</script>
+</body>
+</html>

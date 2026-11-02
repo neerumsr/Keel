@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Release notes · Keel docs</title>
+<meta name="description" content="&gt; Keel-3 (decider-3.0.0, training run t1-r11) was promoted to models/keel-3 on 2026-10-30 and is the default. This release also adds Keel-Pro (decider-pro-1.0.0, 62.73 on the full ">
+<script>try{var t=localStorage.getItem('keel-docs-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<style>
+:root{--bg:#fbfaf6;--surface:#ffffff;--surface2:#f1efe8;--ink:#14171c;--ink2:#262b33;--line:#d9d5c9;--accent:#0b6170;--accent-ink:#ffffff;--accentSoft:#e2f0f1;--ok:#1d6b3a;--okSoft:#e3f2e7;--warm:#9a4a05;--warmSoft:#fbecdc;--danger:#a3261b;--code-bg:#f3f1ea;--link:#0a5a86;--shadow:0 1px 2px rgba(20,23,28,.06),0 6px 20px rgba(20,23,28,.05)}
+html[data-theme=dark]{--bg:#0f1418;--surface:#161d22;--surface2:#1d262c;--ink:#f1f4f6;--ink2:#dbe2e6;--line:#33414a;--accent:#5fc4d2;--accent-ink:#06171b;--accentSoft:#173238;--ok:#6fd393;--okSoft:#15301f;--warm:#f2a65a;--warmSoft:#35250f;--danger:#ff8b7e;--code-bg:#11181d;--link:#8fd0ff;--shadow:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 19px/1.65 "Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;overflow-x:hidden}
+code,pre{font-family:"Cascadia Mono","JetBrains Mono",Consolas,ui-monospace,Menlo,monospace}
+a{color:var(--link);text-underline-offset:3px}a:hover{text-decoration-thickness:2px}
+.top{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{max-width:1180px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;gap:18px}
+.brand{white-space:nowrap;flex:none;display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--ink);text-decoration:none}
+.brand svg{width:28px;height:28px}
+.top nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px}
+.top nav a{color:var(--ink2);text-decoration:none;font-size:17px;padding:6px 10px;border-radius:8px}
+.top nav a[aria-current]{color:var(--ink);background:var(--surface2);font-weight:600}
+.top nav a:hover{background:var(--surface2)}
+.spacer{flex:1}
+.btn{font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{border-color:var(--ink2)}.btn svg{width:18px;height:18px}
+.pbar{position:fixed;top:0;left:0;height:3px;background:var(--accent);width:0;z-index:40}
+main{max-width:940px;margin:0 auto;padding:40px 28px 80px}
+.crumb{font-size:17px;color:var(--ink2);margin:0 0 6px}
+h1{font-size:50px;line-height:1.1;letter-spacing:-.02em;margin:6px 0 18px;font-weight:750}
+.lede{font-size:22px;line-height:1.55;color:var(--ink2);margin:0 0 30px}
+h2{font-size:33px;line-height:1.2;letter-spacing:-.01em;margin:64px 0 16px;padding-top:22px;border-top:1px solid var(--line);font-weight:700}
+h3{font-size:25px;line-height:1.3;margin:40px 0 12px;font-weight:650}
+h4{font-size:21px;margin:28px 0 8px}
+h1,h2,h3,h4{scroll-margin-top:84px;position:relative;overflow-wrap:anywhere}
+.anchor{opacity:0;margin-left:10px;text-decoration:none;color:var(--accent);font-weight:400}
+h2:hover .anchor,h3:hover .anchor{opacity:1}
+p{margin:0 0 18px}ul,ol{margin:0 0 20px;padding-left:28px}li{margin:6px 0}li>ul,li>ol{margin:6px 0}
+strong{font-weight:650;color:var(--ink)}
+:not(pre)>code{font-size:.86em;background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+.code{margin:0 0 24px;border:1px solid var(--line);border-radius:12px;background:var(--code-bg);overflow:hidden}
+.code-bar{display:flex;justify-content:space-between;align-items:center;padding:6px 10px 6px 16px;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.copy{font:inherit;font-size:15px;background:transparent;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 10px;cursor:pointer}
+.copy:hover{border-color:var(--ink2)}
+pre{margin:0;padding:16px 18px;overflow-x:auto;font-size:16.5px;line-height:1.55;color:var(--ink)}
+.table-wrap{overflow-x:auto;margin:0 0 26px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:18px;line-height:1.45}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:var(--surface2);font-weight:650;color:var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+.num{font-variant-numeric:tabular-nums;font-weight:650;color:var(--ink);background:var(--accentSoft);border-radius:5px;padding:0 4px}
+.callout{margin:0 0 26px;padding:18px 22px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.callout-strong{background:var(--warmSoft);border-color:var(--warm)}
+.callout>:last-child{margin-bottom:0}
+hr{border:0;border-top:1px solid var(--line);margin:36px 0}
+figure.diagram{margin:10px 0 34px;padding:22px;border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow)}
+.fig-scroll{overflow-x:auto}
+figure svg{display:block;width:100%;height:auto;min-width:600px}
+.hbars{display:grid;gap:12px}.hb-row{display:grid;grid-template-columns:210px 1fr 150px;align-items:center;gap:14px}
+.hb-label{font-weight:600;text-align:right}.hb-track{background:var(--surface2);border-radius:6px;height:28px;overflow:hidden}
+.hb-bar{height:100%;background:var(--accent);opacity:.6;border-radius:6px}.hb-bar.strong{opacity:1}.hb-bar.warm{background:var(--warm);opacity:1}
+.hb-val{font-weight:650;font-variant-numeric:tabular-nums}
+figcaption{font-size:17px;color:var(--ink2);margin-top:14px;line-height:1.5}
+svg .box{fill:var(--surface2);stroke:var(--line);stroke-width:1.5}
+svg .accent{fill:var(--accent);stroke:var(--accent)}svg .ok{fill:var(--okSoft);stroke:var(--ok);stroke-width:1.5}svg .warm{fill:var(--warmSoft);stroke:var(--warm);stroke-width:1.5}
+svg .frame{fill:none;stroke:var(--line);stroke-width:1.5;stroke-dasharray:6 5}
+svg .t{fill:var(--ink);font:500 17px "Segoe UI",system-ui,sans-serif}svg .tb{font-weight:650;font-size:18px}svg .ts{font-size:15.5px;fill:var(--ink2)}
+svg .on-accent{fill:var(--accent-ink)}svg .on-ok,svg .on-warm{fill:var(--ink)}svg .ok-t{fill:var(--ok)}
+svg .arrow{stroke:var(--ink2);stroke-width:2}svg .arrow.okline{stroke:var(--ok)}svg .ahead{fill:var(--ink2)}
+svg .track{fill:var(--surface2)}svg .bar{fill:var(--accent);opacity:.55}svg .bar.strong{opacity:1}svg .warmbar{fill:var(--warm);opacity:1}
+svg .grid{stroke:var(--line);stroke-width:1}
+svg .ln-a{stroke:var(--accent);stroke-width:3}svg .ln-b{stroke:var(--warm);stroke-width:3}svg .ln-a-dot{fill:var(--accent)}svg .ln-b-dot{fill:var(--warm)}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:64px;padding-top:24px;border-top:1px solid var(--line)}
+.pager a{display:block;flex:1;padding:14px 18px;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);background:var(--surface)}
+.pager a:hover{border-color:var(--accent)}.pager small{display:block;font-size:16px;color:var(--ink2)}.pager .next{text-align:right}
+footer{font-size:16px;color:var(--ink2);margin-top:28px}
+/* contents menu: middle-left, auto-hide */
+.navtab{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:25;writing-mode:vertical-rl;rotate:180deg;font:600 16px/1 "Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-left:0;border-radius:0 10px 10px 0;padding:16px 9px;cursor:pointer;transition:opacity .2s}
+.sidenav{position:fixed;left:14px;top:50%;transform:translate(calc(-100% - 30px),-50%);z-index:26;width:300px;max-height:76vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 10px 14px 14px;box-shadow:0 10px 40px rgba(0,0,0,.14);transition:transform .28s ease}
+body.nav-open .sidenav{transform:translate(0,-50%)}body.nav-open .navtab{opacity:0;pointer-events:none}
+.sidenav-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 8px 6px;font-weight:700;font-size:17px}
+.sidenav-head button{font:inherit;font-size:15px;background:none;border:1px solid var(--line);color:var(--ink);border-radius:6px;padding:2px 8px;cursor:pointer}
+.sidenav ol{list-style:none;margin:0;padding:0}.sidenav li{margin:0}
+.sidenav a{display:block;padding:6px 8px;border-radius:7px;color:var(--ink2);text-decoration:none;font-size:16.5px;line-height:1.35}
+.sidenav a.l3{padding-left:22px;font-size:16px}
+.sidenav a:hover{background:var(--surface2);color:var(--ink)}
+.sidenav a.active{background:var(--accentSoft);color:var(--ink);font-weight:650}
+
+@media (max-width:1240px){.top nav{display:none}}
+@media (max-width:700px){body{font-size:18px}main{padding:26px 18px 60px}h1{font-size:36px}h2{font-size:27px;margin-top:48px}h3{font-size:22px}.lede{font-size:19.5px}.top-in{padding:10px 16px;gap:10px}.brand span{display:none}table{font-size:17px}th,td{padding:9px 10px}pre{font-size:15.5px}figure.diagram{padding:14px}.sidenav{width:min(300px,84vw)}main{padding-left:38px}.navtab{font-size:14px;padding:12px 5px}.hb-row{grid-template-columns:1fr auto;gap:4px 10px}.hb-label{text-align:left;grid-column:1/-1}.hb-track{height:22px}.pager{flex-direction:column}}
+.docmenu{position:fixed;inset:60px 12px auto auto;z-index:35;width:min(340px,92vw);max-height:80vh;overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:0 10px 40px rgba(0,0,0,.16);display:none}
+.docmenu.open{display:block}.docmenu h4{margin:10px 8px 4px;font-size:16px}.docmenu a{display:block;padding:7px 10px;border-radius:7px;color:var(--ink);text-decoration:none;font-size:17px}.docmenu a:hover{background:var(--surface2)}
+@media print{.top,.navtab,.sidenav,.pbar,.copy,.pager,.docmenu{display:none!important}body{font-size:12pt}main{max-width:none;padding:0}h2{break-after:avoid}figure,table,.code{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="pbar"></div>
+<header class="top"><div class="top-in">
+<a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="var(--accent)"/><path d="M8 9h16M16 9v15M9 19c2 4 5 5 7 5s5-1 7-5" stroke="var(--accent-ink)" stroke-width="2.6" fill="none" stroke-linecap="round"/></svg><span>Keel docs</span></a>
+<nav aria-label="Documentation"><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="concepts.html">Concepts</a><a href="api-reference.html">API reference</a><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="faq.html">FAQ</a></nav>
+<div class="spacer"></div>
+<button class="btn alldocs" id="alldocs" type="button" aria-haspopup="true">All docs</button>
+<button class="btn" id="theme" type="button" aria-label="Toggle dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Dark</span></button>
+</div></header>
+<div class="docmenu" id="docmenu"><h4>Get started</h4><a href="index.html">Overview</a><a href="quickstart.html">Quickstart</a><a href="integrations.html">Integrations</a><a href="deployment.html">Deploy</a><a href="concepts.html">Concepts</a><a href="use-cases.html">50 use cases</a><h4>Reference</h4><a href="api-reference.html">API reference</a><a href="help-guide.html">Help guide</a><a href="faq.html">FAQ</a><h4>Evidence</h4><a href="benchmarks.html">Benchmarks</a><a href="token-savings.html">Token savings</a><a href="comparison.html">Comparison</a><a href="why-keel.html">Why Keel</a><a href="model-card.html">Model card</a><a href="keel-pro.html">Keel-Pro story</a><h4>Internals</h4><a href="architecture.html">Architecture</a><a href="design-doc.html">Design doc</a><a href="training-guide.html">Training guide</a><a href="release-notes.html">Release notes</a><a href="licenses.html">Licenses</a><a href="press.html">Press kit</a></div>
+<button class="navtab" type="button" aria-label="Open contents">Contents</button>
+<aside class="sidenav" aria-label="On this page"><div class="sidenav-head"><span>On this page</span><button id="navclose" type="button" aria-label="Close contents">Close</button></div><ol><li><a class="l2" href="#keel-300-2026-11-15-first-public-release">Keel 3.0.0 (2026-11-15, first public release)</a></li><li><a class="l3" href="#highlights">Highlights</a></li><li><a class="l3" href="#known-regression-blind-c">Known regression: blind-c</a></li><li><a class="l3" href="#release-gates">Release gates</a></li><li><a class="l3" href="#compatibility">Compatibility</a></li><li><a class="l3" href="#security-fixes">Security fixes</a></li><li><a class="l3" href="#known-issues">Known issues</a></li><li><a class="l3" href="#upgrade">Upgrade</a></li><li><a class="l2" href="#keel-200-2026-09-24">Keel 2.0.0 (2026-09-24)</a></li><li><a class="l3" href="#what-was-new-compared-with-120">What was new compared with 1.2.0</a></li><li><a class="l3" href="#compatibility-1">Compatibility</a></li><li><a class="l3" href="#measured-on-todays-suites">Measured on today's suites</a></li><li><a class="l2" href="#keel-120">Keel 1.2.0</a></li></ol></aside>
+<main>
+<p class="crumb"><a href="index.html">Keel docs</a> / Release notes</p>
+<h1>Release notes</h1>
+<h2 id="keel-300-2026-11-15-first-public-release">Keel 3.0.0 (2026-11-15, first public release)<a class="anchor" href="#keel-300-2026-11-15-first-public-release" aria-label="Link to this section">#</a></h2>
+<blockquote class="callout"><p>Keel-3 (<code>decider-3.0.0</code>, training run <code>t1-r11</code>) was promoted to <code>models/keel-3</code> on 2026-10-30 and is the default. This release also adds <strong>Keel-Pro</strong> (<code>decider-pro-1.0.0</code>, 62.73 on the full Decision Index public 0.3 suite; see <a href="keel-pro.html">Keel-Pro</a>). The full list of changes is in <code>CHANGELOG.md</code>.</p></blockquote>
+<h3 id="highlights">Highlights<a class="anchor" href="#highlights" aria-label="Link to this section">#</a></h3>
+<ul><li><strong>Keel-3 is the default model.</strong> <code>decider-latest</code>, the <code>jev-*</code> aliases and the Microsoft-Decision-1 aliases now resolve to <code>decider-3.0.0</code> (<span class="num" data-num="k3.size">17.7 MB</span>, mixed int8 ONNX, same 13M-parameter architecture). <code>decider-2.0.0</code> stays pinnable, and <code>GET /api/v1/models</code> reports what each alias <code>resolves_to</code>. Keel-3 improves on Keel-2 on every suite that decided the promotion:</p>
+<div class="table-wrap"><table><thead><tr><th>Suite</th><th>Keel-2</th><th>Keel-3</th></tr></thead><tbody><tr><td>holdout-20</td><td><span class="num" data-num="k2.h20">15/20</span></td><td><span class="num" data-num="k3.h20">18/20</span></td></tr><tr><td>holdout-b-20</td><td><span class="num" data-num="k2.hb20">10/20</span></td><td><span class="num" data-num="k3.hb20">18/20</span></td></tr><tr><td>open-60</td><td><span class="num" data-num="k2.open60">34/60</span></td><td><span class="num" data-num="k3.open60">52/60</span></td></tr><tr><td>Held-out 100 (the three above)</td><td><span class="num" data-num="k2.h100">59/100</span></td><td><span class="num" data-num="k3.h100">88/100</span></td></tr><tr><td>Blind 234 (safety misses)</td><td><span class="num" data-num="k2.blind">92/234</span> (<span class="num" data-num="k2.blind.safety">11</span>)</td><td><span class="num" data-num="k3.blind">125/234</span> (<span class="num" data-num="k3.blind.safety">11</span>)</td></tr><tr><td>All held-out 334 (safety misses)</td><td><span class="num" data-num="k2.heldout">151/334</span> (<span class="num" data-num="k2.heldout.safety">14</span>)</td><td><span class="num" data-num="k3.heldout">213/334</span> (<span class="num" data-num="k3.heldout.safety">12</span>)</td></tr><tr><td>Blind calibration error (ECE, lower is better)</td><td><span class="num" data-num="k2.ece.blind">0.182</span></td><td><span class="num" data-num="k3.ece.blind">0.108</span></td></tr><tr><td>In-process p95, idle CPU</td><td><span class="num" data-num="k2.p95.idle">13.3–14.5 ms</span></td><td><span class="num" data-num="k3.p95.idle">13.7–14.3 ms</span></td></tr><tr><td><strong>blind-c 100, confirmation (safety misses)</strong></td><td><span class="num" data-num="k2.blindc">47/100</span> (<span class="num" data-num="k2.blindc.safety">10</span>)</td><td><strong><span class="num" data-num="k3.blindc">40/100</span> (<span class="num" data-num="k3.blindc.safety">12</span>)</strong></td></tr></tbody></table></div>
+<p>Counts are &quot;cases fully right&quot;. Sources: <code>artifacts/parity/t1-r11-parity.md</code>, <code>artifacts/parity/scoreboard.md</code>, <code>artifacts/parity/train-r2.md</code>.</li><li><strong>Measured token savings (release candidate).</strong> With the earlier release candidate <code>t1-r2e</code> in front of an LLM at τ = 0.6, LLM decision tokens on the held-out suites fell by <span class="num" data-num="tok.k3.ho.cut">75.8%</span> and accuracy rose (<span class="num" data-num="tok.k3.ho.acc">75 → 89 of 100 cases fully right</span>). On the blind suite the cut was <span class="num" data-num="tok.k3.blind.cut">44.9%</span> at a small accuracy cost (<span class="num" data-num="tok.k3.blind.acc">64/71 → 63/71 (−1.4 pts)</span>). The promoted <code>t1-r11</code> has not been re-measured for tokens. See <a href="token-savings.html">Token savings</a>.</li><li><strong>MCP server.</strong> <code>mcp/keel-mcp-server.mjs</code> (bin <code>keel-mcp</code>) exposes <code>keel_status</code>, <code>keel_decide</code> and <code>keel_switch</code> to any MCP client. See <a href="integrations.html">Integrations</a>.</li><li><strong>Microsoft-Decision-1 route.</strong> <code>POST /providers/microsoft/v1/systemone</code> with <code>api-key</code> header auth; MSD1 model names resolve to Keel's neural model.</li><li><strong>Broader Jev wire compatibility.</strong> More Jev-shaped questions are accepted.</li><li><strong>Benchmarks you can rerun.</strong> A blind 234-case suite no model trained on, a 100-case blind-c confirmation suite, public-benchmark adapters, a parity harness (<code>scripts/keel-parity-bench.ts</code>), a latency tool that times each model in its own process (<code>scripts/keel-latency.ts</code>) and a token-savings benchmark (<code>npm run keel:tokens</code>).</li><li><strong>Standalone server.</strong> <code>npm run build</code> then <code>npm start</code> runs a self-contained Node server; <code>npm run dev</code> is plain <code>vite dev</code>. Both bind <code>127.0.0.1:8080</code> unless <code>KEEL_HOST</code> says otherwise.</li><li><strong>Open-source release scaffolding.</strong> Apache-2.0 <code>LICENSE</code> and <code>NOTICE</code>, contributing guide, code of conduct, security policy, CI, <code>CITATION.cff</code> and a repeatable secret/PII/size audit (<code>scripts/oss-audit.mjs</code>).</li><li><strong>Keel-Pro DeBERTa (experimental, now retired; the Keel-Pro name now refers to the Qwen3.5 LoRA).</strong> A 70M-parameter line, <code>t2-dxs-b3</code> (<span class="num" data-num="pro.size">108 MB</span>), scores <span class="num" data-num="pro.blind">134/234</span> on blind but runs at <span class="num" data-num="pro.blind.lat">117 / 242 ms</span> p50 / p95. It is not shipped; it served as the distillation teacher for Keel-3.</li></ul>
+<h3 id="known-regression-blind-c">Known regression: blind-c<a class="anchor" href="#known-regression-blind-c" aria-label="Link to this section">#</a></h3>
+<p>blind-c is the untouched 100-case confirmation suite; it was not used to select, calibrate or promote any model. <strong>Keel-3 is worse than Keel-2 there</strong>: <span class="num" data-num="k3.blindc">40/100</span> fully right against <span class="num" data-num="k2.blindc">47/100</span> (<span class="num" data-num="k3.blindc.delta">−7</span>), and <span class="num" data-num="k3.blindc.safety">12</span> safety misses against <span class="num" data-num="k2.blindc.safety">10</span> (<span class="num" data-num="k3.blindc.safety.delta">+2</span>). Most of the loss is on yes/no questions, and every Keel-3 candidate this round scored below Keel-2 on blind-c.</p>
+<p><strong>Recommendation:</strong> for safety-critical gates (destructive commands, secrets, injection, moderation), use the hybrid setting, where Keel answers only above τ and an LLM handles the rest, or pin <code>&quot;model&quot;: &quot;decider-2.0.0&quot;</code> for those questions. Do not let either model approve a destructive action on its own. See <a href="benchmarks.html#the-blind-c-regression">Benchmarks</a>.</p>
+<h3 id="release-gates">Release gates<a class="anchor" href="#release-gates" aria-label="Link to this section">#</a></h3>
+<p>Keel-3 was promoted under the round-2 rule: (a) no more safety misses than Keel-2 on blind and held-out, (b) strictly more cases fully right, (c) in-process p95 under 20 ms. It passes all three, with blind safety tied at 11. Checkpoints were chosen on dev loss and calibrated on dev data only.</p>
+<p>Against the stricter parity gates in <code>artifacts/parity/CONTRACT.md</code>:</p>
+<div class="table-wrap"><table><thead><tr><th>Gate</th><th>Requirement</th><th>Keel-3</th></tr></thead><tbody><tr><td>G1</td><td>Zero safety misses on every held-out suite</td><td><strong>Not met</strong>: <span class="num" data-num="k3.blind.safety">11</span> on blind, <span class="num" data-num="k3.heldout.safety">12</span> across all held-out suites</td></tr><tr><td>G2</td><td>At least the LLM baseline on held-out (75/100) and on blind</td><td>Held-out met (<span class="num" data-num="k3.h100">88/100</span>); blind <strong>not met</strong> (<span class="num" data-num="k3.blind">125/234</span> vs <span class="num" data-num="llm.blind">215/234</span>)</td></tr><tr><td>G3</td><td>Strictly better than Keel-2 on blind and held-out</td><td>Met on accuracy; blind safety ties (<span class="num" data-num="k2.blind.safety">11</span> vs <span class="num" data-num="k3.blind.safety">11</span>); <strong>regresses on blind-c</strong></td></tr><tr><td>G4</td><td>In-process p95 under 20 ms</td><td>Met (<span class="num" data-num="k3.p95.idle">13.7–14.3 ms</span>, idle CPU, one model per process)</td></tr><tr><td>G5</td><td>Public benchmarks reported honestly</td><td>Done for Keel-2 (<a href="benchmarks.html">Benchmarks</a>); Keel-3 not measured yet</td></tr><tr><td>G6</td><td>Token savings measured</td><td>Done with <code>t1-r2e</code> (<a href="token-savings.html">Token savings</a>); not re-measured for <code>t1-r11</code></td></tr></tbody></table></div>
+<h3 id="compatibility">Compatibility<a class="anchor" href="#compatibility" aria-label="Link to this section">#</a></h3>
+<ul><li>No wire-breaking changes, but <strong>answers change</strong>: <code>decider-latest</code>, <code>decider-preview</code>, the <code>jev-*</code> aliases and the Microsoft-Decision-1 aliases now resolve to <code>decider-3.0.0</code>, and responses report <code>&quot;model&quot;: &quot;decider-3.0.0&quot;</code>. Send <code>&quot;model&quot;: &quot;decider-2.0.0&quot;</code> to keep Keel-2 for a request, or set <code>KEEL_MODEL_DIR=models/keel-2</code> to make it the default.</li><li><code>.gitignore</code> allows both shipped ONNX files (<code>models/keel-3</code>, <code>models/keel-2</code>). If the Keel-3 weights file is missing, Keel falls back to Keel-2, then to the zero-shot base; check <code>neural.id</code> in <code>GET /api/v1/status</code>.</li><li>Node 22.6 or later is required (<code>--experimental-strip-types</code>).</li><li>The package is renamed <code>keel-decider</code>.</li></ul>
+<h3 id="security-fixes">Security fixes<a class="anchor" href="#security-fixes" aria-label="Link to this section">#</a></h3>
+<ul><li><strong>Per-install bearer secret.</strong> The bearer token used to be derived from a public built-in constant. It is now HMAC(secret, <code>&quot;keel-local-decider-v1&quot;</code>), truncated to 40 base64url characters, where the secret is <code>KEEL_SECRET</code> or a random secret generated on first use in <code>~/.keel/secret</code> (path override <code>KEEL_SECRET_FILE</code>, mode 0600). Print your token with <code>npm run keel:token</code>.</li><li><strong>Loopback by default.</strong> The server (<code>npm run dev</code> or <code>npm start</code>) binds <code>127.0.0.1:8080</code>; set <code>KEEL_HOST</code> to opt in to other interfaces. The bench UI's Copilot setup panel serves the token only to loopback requests.</li><li><strong>Commit-safe agent files.</strong> <code>npm run keel:agents</code> writes <code>&lt;KEEL_TOKEN&gt;</code> placeholders into <code>.github/agents/keel.agent.md</code> and <code>.github/copilot-instructions.md</code>, and the real token only into <code>~/.copilot/agents/keel.agent.md</code> and the Keel block of <code>~/.copilot/copilot-instructions.md</code>. <code>--repo-key</code> restores the old behaviour of embedding the token in the repo.</li></ul>
+<h3 id="known-issues">Known issues<a class="anchor" href="#known-issues" aria-label="Link to this section">#</a></h3>
+<ul><li>Safety misses remain (see G1), and Keel-3 regresses on blind-c (see above). Do not use Keel as the only check before a destructive action.</li><li>Public benchmarks (G5) have not been rerun on Keel-3, and token savings were measured on the <code>t1-r2e</code> release candidate, not on the promoted <code>t1-r11</code>.</li><li>Some training data is CC BY-SA, and the base model's upstream training mix included ANLI (non-commercial). Pending maintainer review; see <a href="licenses.html">Licenses</a>.</li><li>Jev and MSD1 quality were <strong>not measured</strong> live (no credentials). Only vendor-reported figures are quoted.</li></ul>
+<h3 id="upgrade">Upgrade<a class="anchor" href="#upgrade" aria-label="Link to this section">#</a></h3>
+<ol><li><code>npm install</code>. Run <code>npm run model:fetch</code> only if <code>models/</code> is missing. Check <code>GET /api/v1/status</code>: <code>model</code> should be <code>decider-3.0.0</code>.</li><li>Re-check any thresholds you tuned on Keel-2. Keel-3 is calibrated differently (blind ECE <span class="num" data-num="k3.ece.blind">0.108</span> vs <span class="num" data-num="k2.ece.blind">0.182</span>), so the same τ defers a different share of questions. For safety-critical gates see the blind-c recommendation above.</li><li><strong>Your token changes.</strong> Unless you set <code>KEEL_SECRET</code>, the first start generates <code>~/.keel/secret</code> and a new token. Run <code>npm run keel:agents</code>, and update any MCP or client config that stores the old token (<code>npm run keel:token</code> prints the new one).</li><li>If another machine or container called Keel over the network, set <code>KEEL_HOST</code> deliberately and firewall port 8080.</li><li>Verify with <code>npm run test:keel</code>.</li></ol>
+<h2 id="keel-200-2026-09-24">Keel 2.0.0 (2026-09-24)<a class="anchor" href="#keel-200-2026-09-24" aria-label="Link to this section">#</a></h2>
+<p>Keel 2.0.0 added a local neural NLI cross-encoder (<code>decider-2.0.0</code>, <span class="num" data-num="k2.size">13 MB</span> int8 ONNX, fine-tuned from xtremedistil-l6-h256) while keeping the System One wire contract and the Keel-1 lexical fallback. The decision path stayed offline, local and zero-token.</p>
+<h3 id="what-was-new-compared-with-120">What was new compared with 1.2.0<a class="anchor" href="#what-was-new-compared-with-120" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Area</th><th>1.2.0</th><th>2.0.0</th></tr></thead><tbody><tr><td>Judge</td><td>Lexical feature model</td><td>NLI cross-encoder with lexical fallback</td></tr><tr><td>Model artefact</td><td>Code only</td><td>ONNX int8 + tokenizer + <code>keel.json</code></td></tr><tr><td>Semantics</td><td>Feature and overlap driven</td><td>State-hypothesis entailment margins</td></tr><tr><td>Calibration</td><td>Lexical softmax/sigmoid constants</td><td>Per-type temperature, abstain threshold, optional blend</td></tr><tr><td>Status</td><td>Basic switch and model</td><td>Engine, neural loaded/id/error, fallback</td></tr></tbody></table></div>
+<h3 id="compatibility-1">Compatibility<a class="anchor" href="#compatibility-1" aria-label="Link to this section">#</a></h3>
+<p>No wire-breaking changes. The concrete model id became <code>decider-2.0.0</code> when the neural model loads. Explicit <code>decider-1.x</code> requests still pin the lexical judge and answer as <code>decider-1.2.0</code>. <code>GET /api/v1/status</code> gained <code>engine</code>, <code>neural.loaded</code>, <code>neural.id</code>, <code>neural.error</code> and <code>fallback</code>; <code>GET /api/v1/models</code> lists aliases and <code>resolves_to</code>.</p>
+<h3 id="measured-on-todays-suites">Measured on today's suites<a class="anchor" href="#measured-on-todays-suites" aria-label="Link to this section">#</a></h3>
+<p>Re-measured with the parity harness: holdout-20 <span class="num" data-num="k2.h20">15/20</span>, holdout-b-20 <span class="num" data-num="k2.hb20">10/20</span>, open-60 <span class="num" data-num="k2.open60">34/60</span>, blind <span class="num" data-num="k2.blind">92/234</span> with <span class="num" data-num="k2.blind.safety">11</span> blind safety misses. Typical warm latency on short prompts is <span class="num" data-num="k2.p50.clean">6–12 ms</span>. The original 2.0.0 notes reported per-type results on smaller, partly in-sample suites; those are superseded by <a href="benchmarks.html">Benchmarks</a>.</p>
+<h2 id="keel-120">Keel 1.2.0<a class="anchor" href="#keel-120" aria-label="Link to this section">#</a></h2>
+<p>The lexical decider (<code>decider-1.2.0</code>), the System One wire (<code>POST /api/v1/systemone</code>), the on/off switch and the Copilot agent files.</p>
+<nav class="pager" aria-label="Previous and next"><a href="training-guide.html"><small>Previous</small>Training guide</a><a class="next" href="licenses.html"><small>Next</small>Licenses</a></nav>
+<footer>Generated from <a href="release-notes.md">release-notes.md</a> by <code>node docs/build-html.mjs</code>. Keel is released under the Apache-2.0 licence.</footer>
+</main>
+
+<script>
+(function(){
+var root=document.documentElement,body=document.body;
+var tbtn=document.getElementById('theme');
+function label(){var d=root.dataset.theme==='dark';tbtn.querySelector('span').textContent=d?'Light':'Dark';tbtn.setAttribute('aria-pressed',d)}
+label();tbtn.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('keel-docs-theme',root.dataset.theme)}catch(e){}label()});
+var dm=document.getElementById('docmenu'),db=document.getElementById('alldocs');
+db.addEventListener('click',function(e){e.stopPropagation();dm.classList.toggle('open')});document.addEventListener('click',function(e){if(!dm.contains(e.target))dm.classList.remove('open')});
+document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.closest('.code').querySelector('code').innerText;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1400)},function(){})})});
+var pbar=document.querySelector('.pbar');
+var nav=document.querySelector('.sidenav'),tab=document.querySelector('.navtab');
+if(!nav)return;
+var pinned=false,timer=null,hover=false,wide=matchMedia('(min-width:1101px)');
+function open(){body.classList.add('nav-open')}function close(){if(!pinned&&!hover)body.classList.remove('nav-open')}
+function peek(){if(!wide.matches)return;open();clearTimeout(timer);timer=setTimeout(close,1800)}
+tab.addEventListener('click',function(){pinned=true;open()});
+document.getElementById('navclose').addEventListener('click',function(){pinned=false;hover=false;body.classList.remove('nav-open')});
+nav.addEventListener('mouseenter',function(){hover=true;clearTimeout(timer)});nav.addEventListener('mouseleave',function(){hover=false;timer=setTimeout(close,900)});
+document.addEventListener('mousemove',function(e){if(e.clientX<110&&wide.matches){open();clearTimeout(timer);timer=setTimeout(close,1800)}});
+nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(!wide.matches){pinned=false;body.classList.remove('nav-open')}})});
+var links=[].slice.call(nav.querySelectorAll('a')),heads=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1))});
+var last=0,ticking=false;
+window.addEventListener('scroll',function(){if(ticking)return;ticking=true;requestAnimationFrame(function(){ticking=false;var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;pbar.style.width=(h>0?y/h*100:0)+'%';
+var cur=-1;for(var i=0;i<heads.length;i++){if(heads[i]&&heads[i].getBoundingClientRect().top<120)cur=i}
+links.forEach(function(a,i){a.classList.toggle('active',i===cur)});
+if(Math.abs(y-last)>40){peek();last=y}})},{passive:true});
+})();</script>
+</body>
+</html>

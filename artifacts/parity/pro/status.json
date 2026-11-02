@@ -1,0 +1,128 @@
+{
+  "machine": "RTX 5090 32 GB (Windows WDDM), torch 2.11 cu128, transformers 5.20.2",
+  "di-bench": {
+    "steps": {
+      "kit-setup": {
+        "state": "done",
+        "updated": "2026-10-30T01:25:00-07:00",
+        "note": "C:\\KeelWork\\decision-index @25c6ec7 + scripts/di/di-kit-local.patch; venv with CUDA torch, FLA kernels; hub JSON normalized to LF (Windows autocrlf broke hash checks)"
+      },
+      "suite-rebuild": {
+        "state": "done",
+        "updated": "2026-10-30T01:25:00-07:00",
+        "note": "suite-0.3 imported; per-benchmark request counts equal the manifest except HLE (skipped, 0/513); file hashes differ from the frozen suite"
+      },
+      "samples": {
+        "state": "done",
+        "updated": "2026-10-30T01:25:00-07:00",
+        "note": "scripts/di/make_samples.py seed 20261030: dev 1633 rows, report 3272 rows, 42 benchmarks, disjoint"
+      },
+      "eval-service": {
+        "state": "done",
+        "updated": "2026-10-30T01:25:00-07:00",
+        "note": "scripts/di/eval_model.py + score_sample.py on GPU; smoke-tested on Qwen3.5-0.8B (60 rows)"
+      },
+      "baselines": {
+        "state": "done",
+        "updated": "2026-10-31T19:00:00-07:00",
+        "note": "dev: Keel-Lite over http 5.27 (13% rows rejected by Keel's wire); stock Qwen3.5-4B 12.35 end-token / 7.02 kit; stock 9B 10.13 kit"
+      }
+    },
+    "updated": "2026-10-31T19:00:00-07:00"
+  },
+  "pro-trainer": {
+    "steps": {
+      "corpus": {
+        "state": "done",
+        "updated": "2026-10-30T01:25:00-07:00",
+        "note": "330,232 train / 3,367 holdout rows, 24 DI benchmarks, see DATA.md"
+      },
+      "it1": {
+        "state": "done",
+        "updated": "2026-10-31T19:00:00-07:00",
+        "note": "4B, 64k rows: dev 45.06 kit / 49.70 end-token"
+      },
+      "it2": {
+        "state": "done",
+        "updated": "2026-10-31T19:00:00-07:00",
+        "note": "4B + end-token targets, max-len 2048: dev 48.88 (no gain)"
+      },
+      "it3": {
+        "state": "done",
+        "updated": "2026-10-31T19:00:00-07:00",
+        "note": "9B base, 48k rows: dev 54.25 (CI 49.79-57.24)"
+      },
+      "it4": {
+        "state": "stopped",
+        "updated": "2026-11-01T00:10:00-07:00",
+        "note": "stopped at step 150; slot given to it5 (letters)"
+      },
+      "it5": {
+        "state": "done",
+        "updated": "2026-11-01T00:10:00-07:00",
+        "note": "9B letters, 96k rows: dev 52.50 (CI 49.29-55.67), median 86 ms"
+      },
+      "it6": {
+        "state": "failed",
+        "updated": "2026-11-01T00:10:00-07:00",
+        "note": "9B letters data2 max-len 6144: CUDA OOM at step 50; not evaluated"
+      },
+      "it7": {
+        "state": "done",
+        "updated": "2026-11-01T12:15:00-08:00",
+        "note": "27B QLoRA letters data2 48k rows (attempt 2, 399 min): dev 60.32 (CI 55.09-62.68), median 319 ms; max-len 4096 dropped all API-Bank and POP909 chord rows"
+      },
+      "it8": {
+        "state": "done",
+        "updated": "2026-11-01T20:40:00-08:00",
+        "note": "27B QLoRA continue from it7, 16k fresh rows + extra chord/cfcolor/chess/SATA, max-len 5120 (sdpa K/V-repeat memory fix), 250 min: dev 59.61 (CI 56.52-62.33); chords 0.02->0.85, iSarcasmEval 1->0 (one tweet)"
+      },
+      "soup78": {
+        "state": "done",
+        "updated": "2026-11-01T20:40:00-08:00",
+        "note": "exact average of it7+it8 adapters (PEFT cat 0.5/0.5): dev 62.06 (CI 56.63-64.13), median 321 ms. FINALIST"
+      },
+      "report": {
+        "state": "done",
+        "updated": "2026-11-02T00:30:00-08:00",
+        "note": "soup78 on the report sample (3272 rows), scored once: 61.96 (CI 58.98-64.42), median 329 ms, p95 11.0 s"
+      },
+      "gguf": {
+        "state": "done",
+        "updated": "2026-11-02T00:30:00-08:00",
+        "note": "soup78 Q8_0 29.0 GB / Q4_K_M 16.8 GB: 30/30 agreement; CUDA llama-server median 243/242 ms; CPU 15.4 s"
+      },
+      "latency": {
+        "state": "done",
+        "updated": "2026-11-02T02:00:00-08:00",
+        "note": "DI board rule (median, mean, p80 <= 1,000 ms): shared-prefix engine on the report sample, RTX 5090: median 316, mean 844, p80 847 ms; 17,150/17,182 same answers; scores 61.66 (CI 58.83-64.28)"
+      },
+      "full_public": {
+        "state": "done-except-hle",
+        "updated": "2026-11-13T16:26:22-08:00",
+        "note": "full public 0.3 suite, fast engine: 139,677/139,677 answered, public index 62.73 (raw 71.77); latency median 245, p80 438, mean 528, p95 1,265 ms (RTX 5090). HLE gated and scored 0, so complete=false until HLE is added and resumed"
+      }
+    },
+    "updated": "2026-11-13T16:26:22-08:00"
+  },
+  "orchestrator": {
+    "steps": {
+      "sidecar": {
+        "state": "done",
+        "updated": "2026-10-30T01:25:00-07:00",
+        "note": "serve/keel_pro_server.py (loopback :8090), SERVE.md"
+      },
+      "proxy": {
+        "state": "done",
+        "updated": "2026-10-30T01:25:00-07:00",
+        "note": "decider-pro-1.0.0 pin -> pro.server.ts -> sidecar; 503 when down; MCP hint; tests pass"
+      },
+      "limits": {
+        "state": "done",
+        "updated": "2026-10-31T19:00:00-07:00",
+        "note": "PRO_LIMITS for the Pro pin (empty state, long text); KEEL_RATE_PER_MINUTE; sidecar CPU path; end-to-end smoke through /api/v1/systemone"
+      }
+    },
+    "updated": "2026-10-31T19:00:00-07:00"
+  }
+}

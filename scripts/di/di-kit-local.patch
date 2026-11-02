@@ -1,0 +1,63 @@
+diff --git a/decision_index/suite/build/freeze.py b/decision_index/suite/build/freeze.py
+index 748fa65..7acff82 100644
+--- a/decision_index/suite/build/freeze.py
++++ b/decision_index/suite/build/freeze.py
+@@ -76,7 +76,7 @@ def freeze(layout, out_dir, log=print):
+         req = fields = 0
+         for p in paths:
+             dst = active / p.name
+-            with dst.open("w", encoding="utf-8") as f:
++            with dst.open("w", encoding="utf-8", newline="\n") as f:
+                 for r in read_jsonl(p):
+                     if gid(r) not in chosen:
+                         continue
+@@ -94,7 +94,7 @@ def freeze(layout, out_dir, log=print):
+     proxy = 0
+     totalfields = 0
+     rows_path = out_dir / "selected-rows.jsonl"
+-    with rows_path.open("w", encoding="utf-8") as sf:
++    with rows_path.open("w", encoding="utf-8", newline="\n") as sf:
+         for n, name, p in selected_paths:
+             for r in read_jsonl(p):
+                 payload = {"model": REFERENCE_MODEL, "state": r["state"], "questions": r["questions"]}
+diff --git a/decision_index/suite/build/rebuild.py b/decision_index/suite/build/rebuild.py
+index 8477e21..1746fe6 100644
+--- a/decision_index/suite/build/rebuild.py
++++ b/decision_index/suite/build/rebuild.py
+@@ -1,5 +1,6 @@
+ import gzip
+ import json
++import os
+ import shutil
+ from pathlib import Path
+ 
+@@ -9,6 +10,11 @@ from decision_index.suite.build import adapters_creative, adapters_mechanical, a
+ from decision_index.suite.build.layout import DATASETS, Layout
+ from decision_index.suite.io import read_jsonl
+ 
++# Local Keel patch: DI_SKIP_BENCHMARKS=45 drops benchmarks we cannot fetch (HLE is gated);
++# DI_ALLOW_PARTIAL=1 lets the 0.2 cut and 0.3 GSM8K steps run on non-byte-identical v1 rows.
++SKIP = {int(x) for x in os.environ.get("DI_SKIP_BENCHMARKS", "").replace(" ", "").split(",") if x}
++ALLOW_PARTIAL = os.environ.get("DI_ALLOW_PARTIAL") == "1"
++
+ BUILDERS = {}
+ for module in (normalize_direct, normalize_text, adapters_mechanical, adapters_selection, adapters_scored, adapters_retrieval, adapters_creative, home_appliance):
+     BUILDERS.update(module.BUILDERS)
+@@ -65,7 +71,7 @@ def main_v2(work, only, skip_download, skip_normalize, reference, log, exclusion
+     if not only or base:
+         v1 = main_v1(work, base or None, skip_download, skip_normalize, None, log)
+         result["release_v1"] = v1
+-        if v1["byte_identical"]:
++        if v1["byte_identical"] or ALLOW_PARTIAL:
+             v1_rows = Path(v1["out"]) / "selected-rows.jsonl"
+         else:
+             log(json.dumps({"event": "release_v2_skipped", "reason": "release-v1 rows are not byte-identical, so the v2 cut would not be either"}))
+@@ -94,7 +100,7 @@ def main_v3(work, only, skip_download, skip_normalize, reference, log, exclusion
+ 
+ def main_v1(work, only=None, skip_download=False, skip_normalize=False, reference=None, log=print):
+     layout = Layout(work)
+-    numbers = sorted(only) if only else sorted(BUILDERS)
++    numbers = [n for n in (sorted(only) if only else sorted(BUILDERS)) if n not in SKIP]
+     if not skip_download:
+         acq.acquire(layout, numbers, log=log)
+     if not skip_normalize:
