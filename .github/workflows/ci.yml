@@ -35,7 +35,7 @@ jobs:
       # Set the repository variable KEEL_FETCH_MODEL=true to also download the zero-shot base.
       - name: Cache downloaded model
         if: vars.KEEL_FETCH_MODEL == 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: models/keel-base
           key: keel-base-${{ hashFiles('scripts/fetch-model.mjs') }}
