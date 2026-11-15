@@ -31,7 +31,7 @@ jobs:
           - name: keel-pro-sidecar
             dockerfile: serve/Dockerfile
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Free disk space for the CUDA image
         if: matrix.name == 'keel-pro-sidecar'
@@ -72,7 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: docker build -t keel:ci .
       - name: Run and ask one question
         run: |
