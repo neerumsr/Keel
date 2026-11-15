@@ -3,14 +3,14 @@
 #   docker run --rm -p 8080:8080 -e KEEL_SECRET=<a long random string> keel
 # See docs/deployment.md.
 
-FROM node:22-bookworm-slim AS build
+FROM node:26-bookworm-slim AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --no-audit --no-fund
 COPY . .
 RUN npm run build
 
-FROM node:22-bookworm-slim
+FROM node:26-bookworm-slim
 LABEL org.opencontainers.image.title="Keel" \
       org.opencontainers.image.description="Local typed decision model (System One wire)" \
       org.opencontainers.image.licenses="Apache-2.0" \
